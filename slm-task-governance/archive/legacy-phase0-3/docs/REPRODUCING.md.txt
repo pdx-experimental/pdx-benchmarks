@@ -1,0 +1,119 @@
+HISTORICAL TRANSCRIPT — NOT A CURRENT REPORT OR VERIFIED CLAIM
+Personal identifiers removed. Historical assertions may be incorrect or superseded.
+
+# Reproducing the SLM Task Governance Benchmark Suite
+
+This guide provides step-by-step instructions to reproduce all evaluations across the **three benchmark campaigns** on Kaggle Dual Tesla T4 GPUs (free cloud compute tier) or locally on your own GPU workstation.
+
+---
+
+## 1. Prerequisites
+
+- **Python**: Version 3.10 or higher.
+- **Kaggle Account**: A Kaggle account with GPU quota (Dual Tesla T4 is available under the free tier).
+- **Kaggle API Credentials**:
+  - Download your API token from `https://www.kaggle.com/settings` -> **Create New Token** (`kaggle.json`).
+  - Place `kaggle.json` in `~/.kaggle/kaggle.json` (Linux/macOS) or `%USERPROFILE%\.kaggle\kaggle.json` (Windows).
+
+---
+
+## 2. Environment Setup
+
+```bash
+cd slm-task-governance
+pip install -r requirements.txt
+```
+
+Verify authentication:
+```bash
+kaggle kernels list --mine
+```
+
+---
+
+## 3. Running Local Unit Tests
+
+Verify local execution contracts and fallback runners:
+```bash
+pytest tests/ -q
+```
+Expected result: `26 passed in ~20-25s`.
+
+---
+
+## 4. Cloud Reproduction via Kaggle Kernels
+
+Each of the three campaigns is available as a standalone executable Jupyter notebook:
+
+| Campaign | Notebook File | Evals | Typical Runtime |
+| :--- | :--- | :---: | :---: |
+| **Phase 0 Fair Benchmark** | `notebooks/pdx_phase0_fair_benchmark.ipynb` | 760 | ~3.5 hours |
+| **Phase 2 Exp 1 (2x2 Factorial)** | `notebooks/pdx_phase2_2x2_factorial.ipynb` | 912 | ~4.0 hours |
+| **Phase 2 Exp 2 (C4 Windowing)** | `notebooks/pdx_phase2_c4_ruler_window.ipynb` | 189 | ~1.5 hours |
+
+### Step 1: Configure Kernel Metadata
+Copy `kernel-metadata.example.json` to `kernel-metadata.json`:
+```powershell
+# Windows
+Copy-Item kernel-metadata.example.json kernel-metadata.json
+
+# Linux / macOS
+cp kernel-metadata.example.json kernel-metadata.json
+```
+Edit `kernel-metadata.json` with your Kaggle username and select the desired notebook in `"code_file"`.
+
+### Step 2: Push & Launch
+```powershell
+# Windows
+.\scripts\eval.ps1 push
+
+# Linux / macOS
+./scripts/eval.sh build
+```
+
+### Step 3: Check Status
+```powershell
+.\scripts\eval.ps1 status
+```
+
+### Step 4: Fetch Outputs
+When status is `complete`:
+```powershell
+.\scripts\eval.ps1 fetch
+```
+
+### Step 5: Generate Reports
+```powershell
+# Report default root ledger / Phase 0 canonical strict fair (760 evals, 77 vs 57)
+.\scripts\eval.ps1 report
+# Or explicitly: .\scripts\eval.ps1 report -Experiment phase0
+
+# Report Campaign 2 (2x2 Factorial: 912 evals)
+.\scripts\eval.ps1 report -Experiment 2x2
+
+# Report Campaign 3 (C4 Windowing: 189 evals)
+.\scripts\eval.ps1 report -Experiment c4
+
+# (Optional Audit) Report pre-hardening exploratory ledger (149 / 760 = 85 vs 64)
+.\scripts\eval.ps1 report -Experiment unhardened
+```
+
+On Linux / macOS:
+```bash
+# Canonical reports
+./scripts/eval.sh report
+./scripts/eval.sh report 2x2
+./scripts/eval.sh report c4
+
+# (Optional Audit) Pre-hardening exploratory ledger
+./scripts/eval.sh report unhardened
+```
+
+---
+
+## 5. Local Workstation Reproduction
+
+If you have a local machine equipped with sufficient VRAM (e.g. Dual RTX 3090/4090 or single 48GB GPU):
+1. Open the target notebook in VS Code or Jupyter Lab.
+2. Confirm CUDA availability (`torch.cuda.is_available() == True`).
+3. Execute all cells. The execution output is written to `benchmark_ledger.jsonl`.

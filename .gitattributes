@@ -19,3 +19,5 @@ slm-task-governance/evidence/** -text
 
 # Historical evidence retains its original CRLF bytes.
 slm-task-governance/evidence/** whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+# Keep historical whitespace and line endings intact for published digests.
+slm-task-governance/archive/** -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol

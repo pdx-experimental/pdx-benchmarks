@@ -1,0 +1,20 @@
+{
+  "schema_version": "pdx_fair_run_manifest_v1",
+  "benchmark": "PDX Synthetic SLM Dispatch Fair Comparison",
+  "conditions": [
+    "goldplan_react",
+    "goldplan_isolated"
+  ],
+  "engine_invocations": 0,
+  "completed_at": "2026-09-18T06:16:46.879933+00:00",
+  "total_evaluations": 760,
+  "model_statuses": {
+    "qwen2.5_coder_1.5b": "evaluated",
+    "qwen2.5_coder_3b": "evaluated",
+    "llama3.2_1b": "evaluated",
+    "llama3.2_3b": "evaluated",
+    "gemma3_1b": "evaluated",
+    "gemma3_4b": "invalid_empty_generation"
+  },
+  "status": "completed"
+}

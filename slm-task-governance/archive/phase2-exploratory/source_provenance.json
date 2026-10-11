@@ -1,0 +1,86 @@
+[
+  {
+    "public_path": "data/phase2_2x2/benchmark_ledger.jsonl",
+    "source_relative_path": "data/results/phase2_2x2/benchmark_ledger.jsonl",
+    "source_sha256": "734546e2df14a738a20ffe34bfb30aaa04abbb8f330e2861d8f179ccb02ffc5b",
+    "transformation": "none; original bytes"
+  },
+  {
+    "public_path": "data/phase2_2x2/benchmark_summary.json",
+    "source_relative_path": "data/results/phase2_2x2/benchmark_summary.json",
+    "source_sha256": "ff25e4ffd4806a669b7ffdbb8c93403d1c5d9de1114442685dbdf03340fdf76e",
+    "transformation": "none; original bytes"
+  },
+  {
+    "public_path": "data/phase2_2x2/run_manifest.json",
+    "source_relative_path": "data/results/phase2_2x2/run_manifest.json",
+    "source_sha256": "970936176292dc919dd1338bcf0bb428e9a7aa957960dac9e7211661b3c2a6a2",
+    "transformation": "none; original bytes"
+  },
+  {
+    "public_path": "notebooks/pdx_phase2_2x2_factorial.ipynb",
+    "source_relative_path": "notebooks/pdx_phase2_2x2_factorial.ipynb",
+    "source_sha256": "5a3ae0b6fac917263b5a1bdea1be08149c515b64d00aed32a0da5a084bdfe511",
+    "transformation": "remove notebook/cell metadata, outputs and execution counts; source unchanged"
+  },
+  {
+    "public_path": "cpu/phase2_2x2_scoring.py",
+    "source_relative_path": "notebooks/pdx_phase2_2x2_factorial.ipynb",
+    "source_sha256": "5a3ae0b6fac917263b5a1bdea1be08149c515b64d00aed32a0da5a084bdfe511",
+    "transformation": "exact source of code cell 4; zero-based cell index"
+  },
+  {
+    "public_path": "cpu/phase2_2x2_tasks.py",
+    "source_relative_path": "notebooks/pdx_phase2_2x2_factorial.ipynb",
+    "source_sha256": "5a3ae0b6fac917263b5a1bdea1be08149c515b64d00aed32a0da5a084bdfe511",
+    "transformation": "exact source of code cell 6; zero-based cell index"
+  },
+  {
+    "public_path": "data/phase2_2x2/task_registry.json",
+    "source_relative_path": "notebooks/pdx_phase2_2x2_factorial.ipynb",
+    "source_sha256": "5a3ae0b6fac917263b5a1bdea1be08149c515b64d00aed32a0da5a084bdfe511",
+    "transformation": "task definitions evaluated from embedded loader; adds full_gold_steps for terminal-stage audit"
+  },
+  {
+    "public_path": "data/phase2_c4/benchmark_ledger.jsonl",
+    "source_relative_path": "data/results/phase2_c4/benchmark_ledger.jsonl",
+    "source_sha256": "202502041c1d2fb9aa945469ecb474210cd974129856ed80e9b58571d7718e14",
+    "transformation": "none; original bytes"
+  },
+  {
+    "public_path": "data/phase2_c4/benchmark_summary.json",
+    "source_relative_path": "data/results/phase2_c4/benchmark_summary.json",
+    "source_sha256": "4554ebcb649cfdfdd3bf31b98fd4d88e9b4747136cc43c87469e58cfcc089999",
+    "transformation": "none; original bytes"
+  },
+  {
+    "public_path": "data/phase2_c4/run_manifest.json",
+    "source_relative_path": "data/results/phase2_c4/run_manifest.json",
+    "source_sha256": "9f454e39c52be01cabb27919d340deb8c041d1d087a58a362503c39fd2c4aa0f",
+    "transformation": "none; original bytes"
+  },
+  {
+    "public_path": "notebooks/pdx_phase2_c4_ruler_window.ipynb",
+    "source_relative_path": "notebooks/pdx_phase2_c4_ruler_window.ipynb",
+    "source_sha256": "72543e5885afb769aa6a331aa78ef1469b449d7eee0009a676848d748582a932",
+    "transformation": "remove notebook/cell metadata, outputs and execution counts; source unchanged"
+  },
+  {
+    "public_path": "cpu/phase2_c4_scoring.py",
+    "source_relative_path": "notebooks/pdx_phase2_c4_ruler_window.ipynb",
+    "source_sha256": "72543e5885afb769aa6a331aa78ef1469b449d7eee0009a676848d748582a932",
+    "transformation": "exact source of code cell 4; zero-based cell index"
+  },
+  {
+    "public_path": "cpu/phase2_c4_tasks.py",
+    "source_relative_path": "notebooks/pdx_phase2_c4_ruler_window.ipynb",
+    "source_sha256": "72543e5885afb769aa6a331aa78ef1469b449d7eee0009a676848d748582a932",
+    "transformation": "exact source of code cell 5; zero-based cell index"
+  },
+  {
+    "public_path": "data/phase2_c4/task_registry.json",
+    "source_relative_path": "notebooks/pdx_phase2_c4_ruler_window.ipynb",
+    "source_sha256": "72543e5885afb769aa6a331aa78ef1469b449d7eee0009a676848d748582a932",
+    "transformation": "task definitions evaluated from embedded loader; adds full_gold_steps for terminal-stage audit"
+  }
+]

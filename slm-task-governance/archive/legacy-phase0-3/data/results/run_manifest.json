@@ -1,0 +1,54 @@
+{
+  "schema_version": "pdx_master_run_manifest_v1",
+  "benchmark_suite": "PDX SLM Task Governance Benchmark Suite",
+  "status": "completed",
+  "campaigns": [
+    {
+      "name": "Phase 0 Fair Benchmark (Strict Scoring)",
+      "directory": "phase0_fair",
+      "run_id": "20260918-141853",
+      "total_evaluations": 760,
+      "models_evaluated": 5,
+      "tasks_evaluated": 76,
+      "conditions": [
+        "goldplan_react",
+        "goldplan_isolated"
+      ],
+      "engine_invocations": 0,
+      "ledger_sha256": "96b57a97f1692e16f357d36f80af301a5ed73c53baeebebf4112de13208a3f37"
+    },
+    {
+      "name": "Phase 2 Experiment 1: 2x2 Factorial Matrix (Exemplar x Grammar)",
+      "directory": "phase2_2x2",
+      "run_id": "20260918-225459",
+      "total_evaluations": 912,
+      "models_evaluated": 3,
+      "tasks_evaluated": 76,
+      "conditions": [
+        "C0_anchor",
+        "C1_grammar",
+        "C2_oneshot",
+        "C3_dual_governed"
+      ],
+      "engine_invocations": 0,
+      "ledger_sha256": "734546e2df14a738a20ffe34bfb30aaa04abbb8f330e2861d8f179ccb02ffc5b"
+    },
+    {
+      "name": "Phase 2 Experiment 2: C4 Leaf-Worker Windowing Benchmark",
+      "directory": "phase2_c4",
+      "run_id": "20260919-075358",
+      "total_evaluations": 189,
+      "models_evaluated": 3,
+      "tasks_evaluated": 21,
+      "conditions": [
+        "W0_full",
+        "W1_head_2k",
+        "W2_keyword_2k"
+      ],
+      "engine_invocations": 0,
+      "ledger_sha256": "202502041c1d2fb9aa945469ecb474210cd974129856ed80e9b58571d7718e14"
+    }
+  ],
+  "total_aggregate_evaluations": 1861,
+  "hardware": "Dual NVIDIA Tesla T4 (Kaggle Cloud Kernel)"
+}

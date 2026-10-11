@@ -1,0 +1,77 @@
+{
+  "run_id": "s5_qwen15_20260922_083017",
+  "timestamp": "2026-09-22T08:30:17.347392",
+  "model_key": "qwen15",
+  "model_slug": "Qwen/Qwen2.5-Coder-1.5B-Instruct",
+  "cohort": "dag_chain_v3_subsets_a_b_18",
+  "evaluated_conditions": [
+    "C0_anchor",
+    "C2s_schema",
+    "C2sf_scalar"
+  ],
+  "ledger_sha256": "5e28e9e2c8f7ea70c3513fd10287cffbc32a12051d7a182a09d2b4e9c50015a3",
+  "system": {
+    "platform": "Linux-6.12.90+-x86_64-with-glibc2.35",
+    "python": "3.12.13",
+    "torch": "2.10.0+cu128",
+    "cuda": "12.8",
+    "gpu_count": 2,
+    "gpu_names": [
+      "Tesla T4",
+      "Tesla T4"
+    ]
+  },
+  "primary_n18": {
+    "c0_pass": 0,
+    "c0_rate": 0.0,
+    "c2s_pass": 1,
+    "c2s_rate": 0.0556,
+    "c2sf_pass": 0,
+    "c2sf_rate": 0.0,
+    "net_diff_vs_own_c0": 0,
+    "p_value_vs_own_c0": 1.0,
+    "net_diff_vs_own_c2s": -1,
+    "p_value_vs_own_c2s": 1.0,
+    "mcnemar_table_vs_own_c0": {
+      "a": 0,
+      "b": 0,
+      "c": 0,
+      "d": 18
+    },
+    "mcnemar_table_vs_own_c2s": {
+      "a": 0,
+      "b": 0,
+      "c": 1,
+      "d": 17
+    },
+    "decision": "[non-English historical annotation omitted] (No Demonstrable Advantage)",
+    "integrity_status": "INTEGRITY_VERIFIED: Zero passes among the 7 Qwen-7B frozen Type I reference tasks.",
+    "type_i_reference_7_passes": [],
+    "receipt_parse_transfer_passes": []
+  },
+  "sensitivity_n17": {
+    "c2sf_pass": 0,
+    "c0_pass": 0,
+    "net_diff": 0,
+    "p_value": 1.0
+  },
+  "sensitivity_n14": {
+    "c2sf_pass": 0,
+    "c0_pass": 0,
+    "net_diff": 0,
+    "p_value": 1.0
+  },
+  "subsets": {
+    "subset_a_routing_12": {
+      "c0": 0,
+      "c2sf": 0
+    },
+    "subset_b_system_6": {
+      "c0": 0,
+      "c2sf": 0
+    }
+  },
+  "failure_typology": {
+    "Type_I_Tool_Or_Logic_Failure": 18
+  }
+}

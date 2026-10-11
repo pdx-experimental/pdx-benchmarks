@@ -1,0 +1,66 @@
+{
+  "run_id": "c2s_20260922_034739",
+  "timestamp": "2026-09-22T03:47:39.256979",
+  "model": "Qwen/Qwen2.5-Coder-7B-Instruct",
+  "condition": "C2s_schema",
+  "cohort": "dag_chain_v3_subsets_a_b_18",
+  "ledger_sha256": "0e097638a6b6c19314085affa1e5a53dbab4920b1a362660080e8e143dcc3cce",
+  "system": {
+    "platform": "Linux-6.12.90+-x86_64-with-glibc2.35",
+    "python": "3.12.13",
+    "torch": "2.10.0+cu128",
+    "cuda": "12.8",
+    "gpu_count": 2,
+    "gpu_names": [
+      "Tesla T4",
+      "Tesla T4"
+    ]
+  },
+  "primary_n18": {
+    "c2s_pass": 3,
+    "c2s_rate": 0.1667,
+    "c0_frozen_pass": 1,
+    "c0_frozen_rate": 0.0556,
+    "c2_frozen_pass": 0,
+    "c2_frozen_rate": 0.0,
+    "net_diff": 2,
+    "mcnemar_table": {
+      "a": 0,
+      "b": 3,
+      "c": 1,
+      "d": 14
+    },
+    "p_value": 0.625,
+    "decision": "[non-English historical annotation omitted] (Weak Directional Signal)"
+  },
+  "sensitivity_n17": {
+    "c2s_pass": 3,
+    "c2s_rate": 0.1765,
+    "c0_pass": 0,
+    "c0_rate": 0.0,
+    "net_diff": 3,
+    "p_value": 0.25
+  },
+  "sensitivity_n14": {
+    "c2s_pass": 3,
+    "c2s_rate": 0.2143,
+    "c0_pass": 0,
+    "c0_rate": 0.0,
+    "net_diff": 3,
+    "p_value": 0.25
+  },
+  "subsets": {
+    "subset_a_routing_12": {
+      "c2s": 3
+    },
+    "subset_b_system_6": {
+      "c2s": 0
+    }
+  },
+  "failure_typology": {
+    "Type_I_Tool_Or_Logic_Failure": 10,
+    "PASS": 3,
+    "Type_IIa_Verbosity_Gate": 4,
+    "Type_IIb_Unanchored_Numbers": 1
+  }
+}

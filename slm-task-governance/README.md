@@ -9,6 +9,10 @@ An empirical benchmark evaluating **Interface Governance**, **Prompt Contracts**
 [![Formal Evaluations](https://img.shields.io/badge/evaluations-1444_contracted-success.svg)](data/results_formal_candidate/)
 [Result export verifier](scripts/verify_public_candidate_formal.py) · [Protocol verification limitations](evidence/frozen-protocol/README.md)
 
+[Historical Phase 2 audit status](../docs/PHASE2_STATUS.md): 1,101 earlier exploratory evaluations are outside the A12 denominator. Their retained execution path directly calls tools rather than dispatching through the public Engine; they must not be presented as Engine-governed evidence.
+
+[Historical Phase 0–3 archive](archive/legacy-phase0-3/) restores available earlier data, source and report transcripts with sanitization records and a CPU integrity verifier. It discloses missing material and malformed historical rows rather than treating all old campaigns as validated. [Phase 2 CPU reproduction](archive/phase2-exploratory/) independently exposes its retained scoring pipeline.
+
 ---
 
 ## Executive Summary

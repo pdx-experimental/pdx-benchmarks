@@ -1,0 +1,235 @@
+HISTORICAL TRANSCRIPT — NOT A CURRENT REPORT OR VERIFIED CLAIM
+Personal identifiers removed. Historical assertions may be incorrect or superseded.
+
+# When Contracts Help and When They Hurt: A Four-Architecture Factorial Benchmark of Interface and Format Governance on Small Language Models
+
+**[REDACTED]**  
+*PDX Research Project*  
+September 2026  
+Target Venue: Conference / Journal Submission (e.g., NeurIPS / ICLR Benchmark Track, arXiv)  
+
+---
+
+## Abstract
+
+Multi-step tool invocation in Small Language Models (SLMs, 1B–8B parameters) commonly exhibits near-zero completion rates on standard autonomous agent benchmarks. A prevailing assumption is that this reflects an intrinsic deficit in multi-step reasoning capacity. In this work, we deconstruct multi-step task execution failures into interface impedance (parameter schema mismatches), context referral impedance (unstructured intermediate receipt citation), and format impedance (conversational verbosity triggering automated parsing failure). We formalize a prompt-level governance hierarchy comprising OpenAPI parameter schemas ($C_{2s}$) and terminal scalar output contracts ($C_{2sf}$) across calibrated multi-step directed acyclic graph (DAG) tasks ($n=18$, `dag_chain_v3`).
+
+In **Study 1 (Single-Architecture Ablation on Qwen 2.5 Coder 7B)**, layering interface schemas and scalar format contracts elevates task completion from **1/18 (5.6%)** under Frozen $C_0$ (the 18-task slice `v3_01`–`v3_18` of the frozen Phase 3 baseline `3946b001`) to **3/18 (16.7%)** under schema governance ($C_{2s}, p = 0.6250$), and to **10/18 (55.6%)** under the full format contract ($C_{2sf}$; net $\Delta = +9, p = 0.00391$ vs Frozen $C_0$; net $\Delta = +7, p = 0.01562$ vs $C_{2s}$). Sensitivity analyses demonstrate consistent gains across sub-cohorts ($n=17$: 52.9%, $p = 0.00391$; $n=14$: 57.1%, $p = 0.00781$).
+
+In **Study 2 (Pre-Registered Four-Model Cross-Architecture Matrix)**, we evaluate the generalizability of this governance bundle across four distinct architectures under a standardized unassisted zero-shot anchor ($C_{0\text{-anchor}}$):
+1. **Llama 3.1 8B Instruct**: Achieves statistically significant format recovery, advancing from 1/18 (5.6%) under $C_{0\text{-anchor}}$ to 2/18 (11.1%) under $C_{2s}$, and to **7/18 (38.9%)** under $C_{2sf}$ ($\Delta = +6, p = 0.03125$ vs $C_{0\text{-anchor}}$; $\Delta = +5, p = 0.0625$ vs $C_{2s}$). Granular step-receipt audits demonstrate that the contract functions as an execution brake rather than inducing de novo reasoning.
+2. **Mistral 7B v0.3**: Exhibits non-monotonic task-swapping interference (0/18 under $C_{0\text{-anchor}}$, 3/18 under $C_{2s}$, 2/18 under $C_{2sf}$), where rigid terminal format constraints destabilize previously viable generation trajectories.
+3. **Qwen 2.5 Coder 1.5B**: Scores 0/18 under $C_{0\text{-anchor}}$, 1/18 under $C_{2s}$, and 0/18 under $C_{2sf}$, revealing a hard cognitive capacity floor.
+4. **Llama 3.2 3B**: Exhibits structured output suppression across all conditions (54/54 `empty_prediction` records, 101 recorded invalid outputs, 0/18, 0.0%).
+
+Based on our pre-registered criterion requiring $\ge 3/4$ models to validate the gain, the **universal generalization hypothesis is rejected (1/4 models achieved criteria)**. Prompt contracts do not function as universal cognitive enhancers; rather, they act as interface friction reducers that succeed on $\ge 7\text{B}$ architectures with prior code/tool or instruct tuning (Qwen 7B Coder and Llama 3.1 8B Instruct), while inducing non-monotonic task-swapping interference in Mistral 7B, proving inert below the 2B parameter floor (Qwen 1.5B), or failing against structured output suppression (Llama 3.2 3B).
+
+---
+
+## 1. Introduction
+
+Deploying Small Language Models (SLMs, 1B–8B parameters) on commodity edge hardware (e.g., dual NVIDIA Tesla T4 GPUs) is essential for private, cost-effective enterprise AI infrastructure. However, empirical evaluations of compact models on compound agentic benchmarks—such as multi-step tool invocation, API routing, and ReAct frameworks—routinely report pass rates approaching zero. The standard literature interprets these results as evidence of a fundamental cognitive ceiling: models below 10B parameters are assumed to lack the working memory and attention capacity required for multi-step reasoning, parameter tracking, and state maintenance.
+
+In this paper, we challenge this cognitive deficit assumption. Through granular execution tracing, we demonstrate that standard evaluation pipelines conflate cognitive inability with three distinct layers of operational impedance:
+1. **Interface Impedance**: Tool definitions provided without explicit parameter schemas cause models to hallucinate argument structures (e.g., emitting `{"query": "SELECT ..."}` for key-value databases).
+2. **Context Referral Impedance**: Intermediate execution receipts lack standardized citation syntax, causing models to dump unparsed template placeholders into downstream calls.
+3. **Format Impedance (Verbal Wrapping)**: Even when multi-step calculations execute with mathematical precision, models generate conversational framing (e.g., `"The calculated total latency is 1800000 ms"`), causing automated exact-match evaluators to record a catastrophic failure.
+
+To disentangle these factors, the **PDX Task Governance Benchmark** introduces a deterministic experimental framework that systematically isolates interface definitions and output format contracts within an orchestrator-directed multi-step DAG suite ($n=18$, `dag_chain_v3`). Across an exploratory single-model ablation (Study 1) and a pre-registered four-model cross-architecture matrix (Study 2), we investigate whether prompt-level governance universally rescues latent tool execution, or whether its efficacy is bounded by architectural trade-offs.
+
+---
+
+## 2. Related Work
+
+### 2.1 Agentic Tool-Use Benchmarks
+Recent benchmarks such as ToolBench (Qin et al., 2023), AgentBench (Liu et al., 2023), and SWE-bench (Jimenez et al., 2024) evaluate language models in complex, multi-turn environments. However, these benchmarks predominantly target commercial frontier models (e.g., GPT-4, Claude 3.5 Sonnet). When applied to compact models, evaluations typically report aggregate failure without isolating whether failure stems from planning, tool selection, argument parameterization, or automated string matching friction. Synthetic micro-benchmarks like ToolQA (Zhuang et al., 2023) and DAG-structured tool chains provide controlled environments to isolate step-by-step dependency tracking from open-ended environmental variance.
+
+### 2.2 Constrained Decoding vs. Prompt-Level Scaffolding
+Two primary paradigms exist for enforcing structured outputs in language models:
+- **Grammar-Constrained Decoding**: Finite-State Machine (FSM) or Context-Free Grammar (CFG) masking (e.g., Outlines, Guidance, llama.cpp grammars) forces token generation to strictly follow a JSON Schema. While effective at eliminating syntax errors, recent work shows that rigid logit masking can distort autoregressive generation paths and paradoxically impair multi-step logical reasoning in code-tuned models.
+- **Prompt-Level Scaffolding**: Providing OpenAPI parameter schemas, few-shot demonstrations, and explicit format boundaries within the prompt context preserves natural sampling dynamics while supplying structural guardrails. Our work investigates the precise empirical boundary where prompt scaffolding succeeds, causes task interference, or collapses.
+
+### 2.3 Context Windowing in Compound Agents
+In extended multi-step trajectories, models must attend to accumulating historical receipts. While frontier models handle contexts up to 1M tokens, compact SLMs suffer severe performance degradation (the "Lost in the Middle" phenomenon; Liu et al., 2024) when attention is dispersed across unnecessary context. In our prior experimental campaign (Phase 2 Experiment 2, C4 RULER window benchmark), keyword-directed receptive field windowing demonstrated that providing targeted $\le 2\text{k}$ token context slices can maintain needle retrieval parity while reducing compute latency by 62%.
+
+---
+
+## 3. The Multi-Stage Governance Hierarchy
+
+We formalize three experimental treatments evaluated across calibrated multi-step DAG workflows:
+
+```
+┌────────────────────────────────────────────────────────────────────────┐
+│                        GOVERNANCE TREATMENTS                           │
+└───────────────────────────────────┬────────────────────────────────────┘
+                                    │
+       ┌────────────────────────────┴─────────────────────────────┐
+       ▼                                                           ▼
+┌───────────────────────────────┐               ┌────────────────────────────────┐
+│   CONTROL ARMS (NON-POOLED)   │               │       TREATMENT ARMS           │
+├───────────────────────────────┤               ├────────────────────────────────┤
+│ Study 1: Frozen C0            │               │ Arm C2s (Interface Governance) │
+│ - 18-task slice of 3946b001   │               │ - Full OpenAPI parameter schema│
+│ - Naive ReAct baseline        │               │ - 3-turn multi-tool exemplars  │
+│                               │               │                                │
+│ Study 2: C0_anchor            │               │ Arm C2sf (Scalar Contract)     │
+│ - Phase2FactorialRunner       │               │ - Full OpenAPI parameter schema│
+│ - Zero-shot prompt skeleton   │               │ - 4th exemplar: terminal scalar│
+│ - Schema stripped to name/desc│               │ - Explicit raw scalar Rule 3   │
+└───────────────────────────────┘               └────────────────────────────────┘
+```
+
+1. **Control Arms (Non-Pooled)**:
+   - **Study 1 Control (Frozen $C_0$)**: Anchored strictly on the 18-task slice (`v3_01`–`v3_18`) of the frozen Phase 3 baseline ledger (`3946b001`), executed under naive ReAct prompting without parameter schemas.
+   - **Study 2 Control ($C_{0\text{-anchor}}$)**: Standardized zero-shot prompt skeleton executed under `Phase2FactorialRunner`, where tool schemas are stripped to name and short description only.
+2. **Interface Governance ($C_{2s}$)**: Introduces formal OpenAPI 3.0 `parameters` JSON schemas for all available tools, coupled with 3-turn few-shot exemplars demonstrating structured dispatch (`db_lookup` with `key`, `json_filter` with `json`+`predicate`, and `calc` with `expression`).
+3. **Interface + Final-Step Scalar Contract ($C_{2sf}$)**: Retains full OpenAPI schemas and appends a strict terminal scalar format contract bundle:
+   - System Rule 3: `"3. If action is 'final_answer', 'answer' must be ONLY the raw scalar value (number, identifier, or hash) with NO conversational filler, units, prefixes, or full sentences."` (In $C_0$ and $C_{2s}$, Rule 3 specifies: `"3. If action is 'final_answer', 'answer' must contain the final answer string."`).
+   - A 4th few-shot exemplar demonstrating `step_final` resolving parent step receipts and outputting a bare scalar `"20"` with an empty tool payload.
+
+---
+
+## 4. Experimental Setup & Benchmark Calibration
+
+### 4.1 Benchmark Suite: `dag_chain_v3` ($N=18$ Tasks)
+Evaluations are conducted on the calibrated `dag_chain_v3` suite, comprising 18 deterministic multi-step dependency tasks across two functional domains:
+- **Subset A (Dynamic API & Routing, 12 Tasks)**: `v3_01_db_mean_delta` through `v3_12_filter_hash_cost_4step` evaluate sequential tool chains requiring 3 to 5 discrete steps (database lookups, base64 decoding, network latency calculation, and cryptographic hashing).
+- **Subset B (Systems & CAS Integrity, 6 Tasks)**: `v3_13_cache_miss_ratio` through `v3_18_cas_artifact_hash_chain` evaluate content-addressed storage (CAS) lookup, parent receipt referencing, visual JSON extraction, and SHA-256 integrity chains.
+
+### 4.2 Scoring Oracle & Invariant Rules
+To eliminate subjective grading, execution correctness is evaluated by a strict deterministic oracle:
+- **Numerical Tolerance**: Evaluated via `math.isclose(actual, gold, rel_tol=1e-3, abs_tol=1e-2)` combined with `round(actual, 1)`.
+- **String & Hash Equality**: Exact case-sensitive match against pre-computed gold receipts.
+- **Gate IIa Length Constraint**: Final answers containing more than 6 whitespace-separated words are automatically marked as failed to filter conversational verbosity.
+
+### 4.3 Hardware & Quantization Protocol
+All evaluations were executed on dual NVIDIA Tesla T4 GPUs (32GB aggregate VRAM) under BitsAndBytes INT8 quantization (`load_in_8bit=True`) with FP16 compute kernels. Sampling parameters were fixed at deterministic greedy decoding ($T = 0.0$, `max_new_tokens=512`).
+
+---
+
+## 5. Study 1: Single-Architecture Ablation (Qwen 2.5 Coder 7B)
+
+Study 1 evaluates the sequential impact of adding interface schemas ($C_{2s}$) and terminal format contracts ($C_{2sf}$) on `Qwen/Qwen2.5-Coder-7B-Instruct`.
+
+### 5.1 Primary Results
+
+Table 1 summarizes the performance progression across the 18 evaluation tasks.
+
+**Table 1: Stepwise performance progression on Qwen 2.5 Coder 7B ($N=18$ tasks).**  
+$\Delta$ and $p$-values denote paired McNemar exact tests against the frozen control baseline and preceding arm. Complete contingency tables and artifact checksums are reported in Appendix A and B.
+
+| Condition | Passed / Total | Pass Rate | vs. Frozen $C_0$ ($\Delta, p$) | vs. $C_{2s}$ ($\Delta, p$) | Pre-Registered Verdict |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| **Frozen $C_0$ (18-task slice)** | 1 / 18 | 5.6% | — | — | Baseline Reference |
+| **Arm $C_{2s}$ (Schema)** | 3 / 18 | 16.7% | $\Delta = +2, p = 0.6250$ | — | Weak Directional Signal |
+| **Arm $C_{2sf}$ (Scalar Contract)** | **10 / 18** | **55.6%** | **$\Delta = +9, p = 0.00391$** | **$\Delta = +7, p = 0.01562$** | **Significant Format Recovery** |
+
+### 5.2 Statistical Testing & Paired Contingency
+- **$C_{2s}$ vs. Frozen $C_0$**: Discordant pairs $b=3$ (`v3_03, 04, 08`), $c=1$ (`v3_16`). Two-tailed exact binomial $p = 0.6250$. Providing OpenAPI schemas alone yielded a marginal directional gain but failed to achieve statistical significance.
+- **$C_{2sf}$ vs. Frozen $C_0$**: Discordant pairs $b=9, c=0$ ($d=8, a=1$). Exact binomial $p = 2 \times (0.5)^9 = \mathbf{0.00391} < 0.01$, demonstrating highly significant capability recovery.
+- **$C_{2sf}$ vs. $C_{2s}$**: Discordant pairs $b=7, c=0$ ($d=8, a=3$). Exact binomial $p = 2 \times (0.5)^7 = \mathbf{0.01562} < 0.05$, validating a statistically significant incremental gain specifically attributable to the terminal format contract.
+
+### 5.3 Forensic Decomposition of the $+7$ Incremental Gain
+Granular audit of intermediate step receipts reveals that the $+7$ task gain over $C_{2s}$ is driven by two distinct operational mechanisms:
+1. **Format Near-Miss Recoveries (5 Tasks)**: In `v3_07_filter_active_nodes` (74.67), `v3_10_region_headroom_budget_4step` (483.99), `v3_13_cache_miss_ratio` (5.0), and `v3_16_incident_impact_sum` (680), intermediate calculations were executed correctly under $C_{2s}$, but outputs were wrapped in 7–10 words of conversational framing, triggering Gate IIa rejection. In `v3_11_decode_verify_budget_4step` (12000.0), the model appended an entity identifier (`svc_omega_v3`) to the number, causing string extraction failure. $C_{2sf}$ eliminated conversational framing, recovering all 5 tasks.
+2. **Receipt Referral Recoveries (2 Tasks)**: In `v3_05_decrypt_prefix_hash` (88c82bc8) and `v3_18_cas_artifact_hash_chain` (0d3a3b3f), the model under $C_{2s}$ passed literal unparsed template strings (`"{{parent_step_receipts.step_2_decode.artifact}}"`) into `crypto_transform`, resulting in base64 `TOOL_ERROR` failures. In $C_{2sf}$, the 4th exemplar demonstrated concrete receipt indexing, enabling the model to extract and pass the decoded payloads (`PDX_AUTH_9921`, `PACKAGE_CONTENT_V1`), successfully computing gold hashes.
+3. *Failure Retention*: `v3_17_gateway_throughput_ratio` emitted a serialized dictionary string (`{'bandwidth_drop': 510...}`) rather than extracting the numerical scalar, remaining a failure across all arms.
+
+### 5.4 Sensitivity Subsets
+- **Subset $n=17$ (Excluding `v3_16` Visual Read Task)**: $C_{2sf}$ achieved **9 / 17 (52.9%)** vs. Frozen $C_0$ 0 / 17 (0.0%), yielding net $\Delta = +9, p = 0.00391$.
+- **Subset $n=14$ (Excluding All 4 Visual JSON Tasks)**: $C_{2sf}$ achieved **8 / 14 (57.1%)** vs. Frozen $C_0$ 0 / 14 (0.0%) ($\Delta = +8, p = 0.00781$). Compared to $C_{2s}$ (3/14, 21.4%), the gain was $\Delta = +5, p = 0.06250$, rigorously classified as a directional trend.
+
+---
+
+## 6. Study 2: Confirmatory Multi-Architecture Matrix
+
+Study 2 tests whether the governance advantage observed in Study 1 generalizes across model families, parameter scales (1.5B to 8B), and training specializations under pre-registered protocol Option A.
+
+### 6.1 Confirmatory Matrix Results
+
+Table 2 presents the full factorial evaluation across the four deployed model architectures.
+
+**Table 2: Confirmatory cross-architecture factorial matrix ($N=18$ tasks).**  
+Evaluated across unassisted baseline ($C_{0\text{-anchor}}$), schema governance ($C_{2s}$), and terminal scalar contract ($C_{2sf}$). $\Delta$ and $p$-values denote paired McNemar exact tests against each model's own control arms. Complete artifact manifests and checksums are documented in Appendix A.
+
+| Model Key | Model Identifier | Parameter Scale | $C_{0\text{-anchor}}$ Pass | $C_{2s}$ Pass | $C_{2sf}$ Pass | $\Delta_{C0}$ ($p$) | $\Delta_{C2s}$ ($p$) | Pre-Registered Verdict |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
+| `qwen15` | `Qwen/Qwen2.5-Coder-1.5B-Instruct` | 1.54B | 0 / 18 (0.0%) | 1 / 18 (5.6%) | 0 / 18 (0.0%) | 0 ($1.00$) | -1 ($1.00$) | Cognitive Capacity Floor |
+| `mistral` | `mistralai/Mistral-7B-Instruct-v0.3` | 7.25B | 0 / 18 (0.0%) | 3 / 18 (16.7%) | 2 / 18 (11.1%) | +2 ($0.50$) | -1 ($1.00$) | Task-Swapping Interference |
+| `llama3` | `meta-llama/Llama-3.2-3B-Instruct` | 3.21B | 0 / 18 (0.0%) | 0 / 18 (0.0%) | 0 / 18 (0.0%) | 0 ($1.00$) | 0 ($1.00$) | Structured Output Suppression |
+| `llama8` | `meta-llama/Llama-3.1-8B-Instruct` | 8.03B | 1 / 18 (5.6%) | 2 / 18 (11.1%) | **7 / 18 (38.9%)** | **+6 ($0.031$)** | **+5 ($0.062$)** | **Significant Format Recovery** |
+
+### 6.2 Pre-Registered Gate 1 Evaluation & Rejection
+- **Pre-Registered Hypothesis**: Universal generalizability requires $\ge 3/4$ models to satisfy the primary gate criteria ($\Delta_{C0} \ge 5, p_{C0} < 0.05$ AND $\Delta_{C2s} \ge 4$).
+- **Empirical Outcome**:
+  - `llama8`: Met criteria ($\Delta_{C0} = +6, p = 0.03125 < 0.05; \Delta_{C2s} = +5 \ge 4$).
+  - `qwen15`, `mistral`, `llama3`: Failed to satisfy criteria.
+  - Overall success rate: **1 / 4 models (25%)**.
+- **Formal Decision**: **The Gate 1 Universal Generalization Hypothesis is conclusively REJECTED.**
+
+### 6.3 Granular Model Analyses
+
+#### `meta-llama/Llama-3.1-8B-Instruct`
+Llama 3.1 8B replicated the format recovery pattern observed in Study 1, achieving 7/18 passes under $C_{2sf}$ ($p=0.03125$ vs $C_{0\text{-anchor}}$; $p=0.0625$ vs $C_{2s}$):
+- **Recovered Tasks**: `v3_13_cache_miss_ratio` passed across all three arms; `v3_04_decode_rate_budget` passed under $C_{2s}$ and remained stable; `v3_11_decode_verify_budget_4step` and `v3_17_gateway_throughput_ratio` were recovered via terminal scalar formatting; `v3_05_decrypt_prefix_hash` and `v3_18_cas_artifact_hash_chain` were recovered via receipt referral formatting.
+- **The Execution Brake Mechanism (`v3_14_crypto_key_token_hash`)**: Step-receipt auditing reveals that the task queries database key `api_credential_prod`, yielding credentials with salt `U0FMVF85OTAy`. Under $C_{2s}$, Step 1 (`db_lookup`), Step 2 (`crypto_transform b64decode`), and Step 3 (`crypto_transform sha256_prefix`) all executed correctly, successfully computing gold value `d6023142`. However, at the terminal step (`step_final`), the model lacked an explicit stopping rule and invoked `crypto_transform` with the exact same `sha256_prefix` arguments again, resulting in an `empty_prediction` (no `final_answer`). Under $C_{2sf}$, the scalar contract provided an explicit stopping boundary, halting tool dispatch and emitting `d6023142` as `final_answer`.
+- **Remaining 11 Failures**: Comprise 1 arithmetic deviation (`v3_10_region_headroom_budget_4step`: `396.99 != 483.99`), 2 wrong hashes (`v3_09_batch_cost_hash_4step` and `v3_12_filter_hash_cost_4step` both emitting `22fce89b`), 2 unsafe calculator expressions (`v3_01_db_mean_delta`, `v3_03_region_capacity_cost`), and 6 empty predictions (`v3_02_inventory_cost_total`, `v3_06_filter_high_cost_items`, `v3_07_filter_active_nodes`, `v3_08_dual_lookup_margin`, `v3_15_inventory_reorder_ceil`, `v3_16_incident_impact_sum`).
+
+#### `mistralai/Mistral-7B-Instruct-v0.3`
+Mistral 7B passed 3 tasks under $C_{2s}$ (`v3_10`, `v3_15`, `v3_16`) and 2 tasks under $C_{2sf}$ (`v3_04`, `v3_17`). Crucially, under $C_{2sf}$, all three tasks solved under $C_{2s}$ collapsed into empty predictions, while two previously failed tasks passed. This non-monotonic shift ($\Delta_{C2s} = -1$) demonstrates that rigid format exemplars can actively compete with tool-selection attention in general-instruct models lacking code/tool pretraining.
+
+#### `Qwen/Qwen2.5-Coder-1.5B-Instruct`
+Qwen 1.5B achieved 0/18 under $C_{0\text{-anchor}}$, 1/18 under $C_{2s}$ (`v3_15`), and 0/18 under $C_{2sf}$. Despite code-specific pretraining, models below 2B parameters hit a hard parameter floor, repeatedly failing to preserve state across sequential dependencies regardless of prompt scaffolding.
+
+#### `meta-llama/Llama-3.2-3B-Instruct`
+Llama 3.2 3B produced **54/54 `empty_prediction`** records across all evaluated conditions (with 101 aggregate invalid outputs recorded in the ledger), completely failing to emit syntactically parseable tool calls under unconstrained sampling.
+
+---
+
+## 7. Discussion: When Contracts Help and When They Hurt
+
+Our empirical findings demonstrate that prompt governance is not a monotonic amplifier of agentic capability, but a mechanism governed by strict architectural boundaries:
+
+```
+┌────────────────────────────────────────────────────────────────────────┐
+│                   ARCHITECTURAL RESPONSE ENVELOPE                      │
+├──────────────────────────┬─────────────────────────────────────────────┤
+│ Scale & Tuning Regime    │ Observed Response to Governance Contracts   │
+├──────────────────────────┼─────────────────────────────────────────────┤
+│ ≥ 7B Dense Architectures │ Significant Format Recovery                 │
+│ (Code or Instruct Tuned) │ Qwen 7B Coder (+9); Llama 3.1 8B Inst (+6)  │
+├──────────────────────────┼─────────────────────────────────────────────┤
+│ ≥ 7B General-Instruct    │ Task-Swapping Interference (Mistral 7B, -1) │
+│ (Without Tool Tuning)    │ Constraints compete with tool attention     │
+├──────────────────────────┼─────────────────────────────────────────────┤
+│ < 3B Parameter Floor     │ Zero Recovery (Qwen 1.5B 0/18; Llama 3B 0/18│
+│                          │ State tracking collapses regardless of prompt│
+└──────────────────────────┴─────────────────────────────────────────────┘
+```
+
+1. **Contracts Act as Execution Brakes, Not Cognitive Accelerators**: As demonstrated by Llama 8B on `v3_14`, prompt contracts do not instill multi-step planning de novo. Rather, they provide explicit boundary conditions that prevent models from re-invoking tools after the required value has already been computed.
+2. **The Risk of Contract Interference**: In general-instruct models (Mistral 7B), rigid output contracts compete with tool-argument generation attention, destabilizing previously functional generation paths.
+3. **The Cognitive Capacity Floor**: Prompt engineering cannot overcome sub-2B parameter boundaries. When an architecture cannot maintain sequential state across 3 or more hops, external prompt contracts provide zero compensatory benefit.
+
+---
+
+## 8. Threats to Validity
+
+1. **Task Suite Scale**: Findings are derived from $n=18$ calibrated DAG tasks (`v3_01`–`v3_18`). While each task requires 3–5 sequential dependencies, sample size limits statistical power on marginal effects.
+2. **Quantization Bounds**: Evaluations were conducted under BitsAndBytes INT8 quantization. Precision drift relative to FP16 compute was not isolated.
+3. **Guided Single-Step Execution**: Models operated within an orchestrator that resolved parent DAG dependencies, evaluating step-level parameterization rather than autonomous long-horizon exploration.
+4. **Deterministic Sampling**: Evaluations used single-seed greedy decoding ($T=0.0$). Variance under stochastic temperature sampling ($T > 0$) remains unquantified.
+5. **Anti-Pooling Constraint**: Cross-model data pooling ($n=72$) was strictly prohibited to prevent Simpson's paradox; statistical inferences apply strictly per model.
+6. **Scope Discipline**: Grammar-constrained FSM decoding and software middleware solutions were excluded to prevent post-hoc protocol expansion.
+
+---
+
+## 9. Conclusion
+
+This work establishes that multi-step agent failure in Small Language Models is frequently an interface and format artifact rather than an intrinsic cognitive deficit. However, prompt-level governance is not a universal panacea: in a pre-registered cross-architecture matrix, the universal generalization hypothesis was rejected (1/4 models passed). Prompt contracts operate as precision tools—capable of converting near-misses into confirmed passes in models $\ge 7\text{B}$ with code or instruct tuning, but risking task-swapping interference in general-instruct models lacking tool tuning, and proving powerless below the 2B parameter floor.
+
+---
+
+## Data and Code Availability
+
+All primary evaluation ledgers, run manifests, and analysis scripts are permanently cryptographically archived. Full 64-character SHA-256 checksums, repository relative paths, and hardware manifests are documented in **Appendix A** and mirrored in the open-source repository at `slm-task-governance/data/results/`.

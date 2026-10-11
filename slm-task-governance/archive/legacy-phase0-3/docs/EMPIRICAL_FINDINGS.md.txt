@@ -1,0 +1,88 @@
+HISTORICAL TRANSCRIPT — NOT A CURRENT REPORT OR VERIFIED CLAIM
+Personal identifiers removed. Historical assertions may be incorrect or superseded.
+
+# Empirical Findings & Forensic Analysis
+
+This document synthesizes empirical findings across **1,861 standardized evaluations** in the Small Language Model (SLM) Task Governance Benchmark Suite, spanning three experimental campaigns on cloud Dual Tesla T4 GPUs across 5 Small Language Models (1B to 3B parameters).
+
+---
+
+## 1. The Core Orchestration Axiom
+
+> **External orchestration is entropy reduction and format stabilization, NOT a cognitive amplifier.**
+
+Across all 1,861 evaluations, deterministic governance (DAG decomposition, CAS receipts, and JSON schema constraints):
+- Completely eliminated multi-turn conversational drift and context pollution.
+- Reduced schema violations by up to **17x**.
+- Enabled models to consistently reach their intrinsic upper bound of single-step reasoning.
+- **However**, governance cannot substitute for latent parameter capacity: tasks requiring multi-parameter symbolic routing or multi-file AST mutations (`dag_chain`) exposed an intrinsic cognitive ceiling across all models under 4B parameters (only **1 / 96 passed**, ~1.0%).
+
+---
+
+## 2. Campaign 1: Phase 0 Strict Fair Benchmark ($N=760$)
+
+### Divergence Analysis: Level 1 Baseline vs Level 2 Advanced
+
+In the strict fair benchmark with zero oracle engine bypass (`engine_invocations == 0`):
+- **Aggregate Pass Rate**: Bounded Isolated Step Dispatch (`goldplan_isolated`) achieved **77 / 380 (20.3%)** vs. Naive ReAct (`goldplan_react`) **57 / 380 (15.0%)**.
+- **Statistical Significance**: McNemar's exact paired test yields $p = 0.0291$ (discordant pairs: **48 vs 28**), establishing a statistically significant advantage for isolated step dispatch.
+- **Contract Violations**: Dropped from 604 under ReAct to 379 under isolated dispatch (-37.3%).
+
+| Difficulty Tier | Naive ReAct | Governed Isolated Dispatch | Delta |
+| :--- | :---: | :---: | :---: |
+| **Level 1 (Baseline, 40 tasks)** | 38 / 200 (19.0%) | 53 / 200 (26.5%) | **+7.5 pp** |
+| **Level 2 (Advanced, 36 tasks)** | 19 / 180 (10.6%) | 24 / 180 (13.3%) | **+2.7 pp** |
+
+### Note on Gemma 3 4B in Exploratory vs. Canonical Runs
+- In the initial exploratory run (`20260917-123806`), `unsloth/gemma-3-4b-it` was run across both arms:
+  - `naive_react`: 0 passed / 76 tasks, **76/76 empty outputs**, and **76 schema violations**.
+  - `pdx_engine`: 33 passed / 76 tasks, **37 empty outputs**, and **102 schema violations**.
+- In the strict fair rerun (`20260918-141853`), the pre-flight smoke test observed empty string outputs (`""`). To ensure the public benchmark contains only valid generation traces, it was marked as `invalid_empty_generation` in `run_manifest.json` and excluded. The canonical matrix thus comprises 5 models (1B to 3B parameters).
+
+---
+
+## 3. Campaign 2: 2×2 Factorial Matrix ($N=912$)
+
+To understand *why* governance works, Experiment 1 crossed **Prompt Scaffolding** (Factor A: 0-shot anchor vs 1-shot generic exemplar) with **Decoding Substrate** (Factor B: Free greedy vs Dynamic JSON Schema Grammar FSM):
+
+| Model | C0: Anchor (0-shot, Free) | C1: Grammar (0-shot, FSM) | C2: 1-Shot (1-shot, Free) | C3: Dual (1-shot, FSM) |
+| :--- | :---: | :---: | :---: | :---: |
+| **Qwen 2.5 Coder 3B** | 26 / 76 (34.2%) | 14 / 76 (18.4%) | **43 / 76 (56.6%)** 🏆 | 32 / 76 (42.1%) |
+| **Qwen 2.5 Coder 1.5B** | 24 / 76 (31.6%) | 13 / 76 (17.1%) | **30 / 76 (39.5%)** | 19 / 76 (25.0%) |
+| **Llama 3.2 3B** | 3 / 76 (3.9%) | **16 / 76 (21.1%)** 🛡️ | 1 / 76 (1.3%) | 10 / 76 (13.2%) |
+
+### Discovery A: 1-Shot Generic Exemplar as a Format Stabilizer
+Providing a single task-agnostic exemplar (`calc 1+1` yielding `{"thought": "Calculate the sum of 1 and 1.", "action": "execute_tool", "tool_call": {"name": "calc", "args": {"expression": "1 + 1"}}, "answer": ""}`) dramatically enhanced Qwen 2.5 Coder 3B from **34.2% to 56.6%** (+22.4 pp, McNemar paired $p = 0.0003$, $b=20, c=3$; pooled across 3 models from 23.2% to 32.5%, $p = 0.0018$, $b=31, c=10$).
+
+### Discovery B: Grammar FSM Rescues Chat Models from Refusal
+- Llama 3.2 3B exhibits severe chat-alignment bias: when presented with raw instructions, it generates polite narrative preambles (*"Certainly! I will help you with this..."*) instead of JSON, scoring a near-zero 3.9% in C0 and 1.3% in C2.
+- Dynamically masking non-JSON tokens via Grammar FSM forces token compliance, rocketing pass rate to **21.1% (a 5.4x improvement)** and dropping violations from 176 to 27.
+
+### Discovery C: The "Grammar Tax" on Code Reasoning
+- For code models that already know JSON syntax (Qwen 2.5 Coder), Grammar FSM causes a severe performance drop: **34.2% -> 18.4%** on 3B, and **31.6% -> 17.1%** on 1.5B.
+- Token-level logit masking prevents the model from generating intermediate scratchpads or formatting tokens when formulating complex tool arguments, truncating necessary reasoning trajectories.
+
+---
+
+## 4. Campaign 3: C4 Leaf-Worker Windowing ($N=189$)
+
+Evaluating context window management on RULER needle retrieval (4k single-hop and 8k–12k multi-hop, context up to ~40k characters):
+- **$W_0$ (Full Context)**: Full document context (up to 39,577 characters / ~10k tokens).
+- **$W_1$ (Head 2k Baseline)**: Naive head truncation (`[:2000]` characters).
+- **$W_2$ (Keyword 2k Window)**: Bounded 2,000-character window centered deterministically on question keywords.
+
+| Candidate Model | $W_0$ (Full Context) | $W_1$ (Head 2k) | $W_2$ (Keyword 2k) | Latency Reduction |
+| :--- | :---: | :---: | :---: | :---: |
+| **Qwen 2.5 Coder 3B** | 11 / 21 (52.4%) | 0 / 21 (0.0%) | 9 / 21 (42.9%) | 30.3s -> 11.6s (-61.7%) |
+| **Qwen 2.5 Coder 1.5B** | 8 / 21 (38.1%) | 1 / 21 (4.8%) | 8 / 21 (38.1%) | 22.3s -> 8.8s (-60.7%) |
+| **Llama 3.2 3B** | 1 / 21 (4.8%) | 0 / 21 (0.0%) | 0 / 21 (0.0%) | 26.9s -> 9.9s (-63.1%) |
+| **Aggregate Total** | **20 / 63 (31.7%)** | 1 / 63 (1.6%) | 17 / 63 (27.0%) | **26.5s -> 10.1s (-61.9%)** |
+
+### Scientific Boundary & Rigorous Verification
+1. **$W_2$ vs $W_1$ ($p = 0.000177$)**:
+   - $W_2$ (27.0%) decisively beats naive truncation $W_1$ (1.6%). This rejects the hypothesis that SLM gains in bounded windows stem merely from shorter inputs.
+2. **$W_2$ vs $W_0$ ($p = 0.450$)**:
+   - $W_2$ is **not statistically superior to full context**.
+   - **Single-hop needle retrieval**: $W_2$ achieves exact parity with $W_0$ (**33.3% vs 31.1%**, $p=1.0$) while slashing latency by **61.9%** (26.5s -> 10.1s).
+   - **Multi-hop needle retrieval**: $W_2$ regresses from 33.3% to 11.1%. In multi-hop tasks, needles are distributed across distinct sections of the document (>6,000 characters apart). A single contiguous 2,000-character window inevitably captures only one needle and severs the other.
+   - **Conclusion**: Single-window slicing works for single-hop tasks. Multi-hop tasks require **Multi-Anchor Union Slicing (MAUS)**.

@@ -1,0 +1,78 @@
+{
+  "run_id": "s5_mistral_20260922_103254",
+  "timestamp": "2026-09-22T10:32:54.746296",
+  "model_key": "mistral",
+  "model_slug": "mistralai/Mistral-7B-Instruct-v0.3",
+  "cohort": "dag_chain_v3_subsets_a_b_18",
+  "evaluated_conditions": [
+    "C0_anchor",
+    "C2s_schema",
+    "C2sf_scalar"
+  ],
+  "ledger_sha256": "2702bd229307a66f5c99d4bb07d6739e4c4bf89e7b7004fe43e51790f293b7cc",
+  "system": {
+    "platform": "Linux-6.12.90+-x86_64-with-glibc2.35",
+    "python": "3.12.13",
+    "torch": "2.10.0+cu128",
+    "cuda": "12.8",
+    "gpu_count": 2,
+    "gpu_names": [
+      "Tesla T4",
+      "Tesla T4"
+    ]
+  },
+  "primary_n18": {
+    "c0_pass": 0,
+    "c0_rate": 0.0,
+    "c2s_pass": 3,
+    "c2s_rate": 0.1667,
+    "c2sf_pass": 2,
+    "c2sf_rate": 0.1111,
+    "net_diff_vs_own_c0": 2,
+    "p_value_vs_own_c0": 0.5,
+    "net_diff_vs_own_c2s": -1,
+    "p_value_vs_own_c2s": 1.0,
+    "mcnemar_table_vs_own_c0": {
+      "a": 0,
+      "b": 2,
+      "c": 0,
+      "d": 16
+    },
+    "mcnemar_table_vs_own_c2s": {
+      "a": 0,
+      "b": 2,
+      "c": 3,
+      "d": 13
+    },
+    "decision": "[non-English historical annotation omitted] (Weak Directional Signal)",
+    "integrity_status": "INTEGRITY_VERIFIED: Zero passes among the 7 Qwen-7B frozen Type I reference tasks.",
+    "type_i_reference_7_passes": [],
+    "receipt_parse_transfer_passes": []
+  },
+  "sensitivity_n17": {
+    "c2sf_pass": 2,
+    "c0_pass": 0,
+    "net_diff": 2,
+    "p_value": 0.5
+  },
+  "sensitivity_n14": {
+    "c2sf_pass": 2,
+    "c0_pass": 0,
+    "net_diff": 2,
+    "p_value": 0.5
+  },
+  "subsets": {
+    "subset_a_routing_12": {
+      "c0": 0,
+      "c2sf": 1
+    },
+    "subset_b_system_6": {
+      "c0": 0,
+      "c2sf": 1
+    }
+  },
+  "failure_typology": {
+    "Type_I_Tool_Or_Logic_Failure": 16,
+    "PASS": 2
+  }
+}

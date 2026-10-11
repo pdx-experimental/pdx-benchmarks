@@ -1,0 +1,1101 @@
+{
+  "total_evaluations": 912,
+  "overall": [
+    {
+      "model": "llama3.2_3b",
+      "mode": "C0_anchor",
+      "total": 76,
+      "passed": 3,
+      "pass_rate_pct": 3.9,
+      "violations": 176,
+      "avg_latency_s": 10.48
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "C1_grammar",
+      "total": 76,
+      "passed": 16,
+      "pass_rate_pct": 21.1,
+      "violations": 27,
+      "avg_latency_s": 12.65
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "C2_oneshot",
+      "total": 76,
+      "passed": 1,
+      "pass_rate_pct": 1.3,
+      "violations": 168,
+      "avg_latency_s": 11.14
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "C3_dual_governed",
+      "total": 76,
+      "passed": 10,
+      "pass_rate_pct": 13.2,
+      "violations": 34,
+      "avg_latency_s": 11.68
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "C0_anchor",
+      "total": 76,
+      "passed": 24,
+      "pass_rate_pct": 31.6,
+      "violations": 24,
+      "avg_latency_s": 13.58
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "C1_grammar",
+      "total": 76,
+      "passed": 13,
+      "pass_rate_pct": 17.1,
+      "violations": 22,
+      "avg_latency_s": 15.0
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "C2_oneshot",
+      "total": 76,
+      "passed": 30,
+      "pass_rate_pct": 39.5,
+      "violations": 24,
+      "avg_latency_s": 11.74
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "C3_dual_governed",
+      "total": 76,
+      "passed": 19,
+      "pass_rate_pct": 25.0,
+      "violations": 9,
+      "avg_latency_s": 12.52
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "C0_anchor",
+      "total": 76,
+      "passed": 26,
+      "pass_rate_pct": 34.2,
+      "violations": 20,
+      "avg_latency_s": 16.75
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "C1_grammar",
+      "total": 76,
+      "passed": 14,
+      "pass_rate_pct": 18.4,
+      "violations": 10,
+      "avg_latency_s": 18.41
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "C2_oneshot",
+      "total": 76,
+      "passed": 43,
+      "pass_rate_pct": 56.6,
+      "violations": 14,
+      "avg_latency_s": 15.33
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "C3_dual_governed",
+      "total": 76,
+      "passed": 32,
+      "pass_rate_pct": 42.1,
+      "violations": 5,
+      "avg_latency_s": 16.66
+    }
+  ],
+  "by_tier": [
+    {
+      "model": "llama3.2_3b",
+      "mode": "C0_anchor",
+      "tier": "level_1",
+      "total": 40,
+      "passed": 3,
+      "pass_rate_pct": 7.5,
+      "violations": 84
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "C0_anchor",
+      "tier": "level_2",
+      "total": 36,
+      "passed": 0,
+      "pass_rate_pct": 0.0,
+      "violations": 92
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "C1_grammar",
+      "tier": "level_1",
+      "total": 40,
+      "passed": 10,
+      "pass_rate_pct": 25.0,
+      "violations": 14
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "C1_grammar",
+      "tier": "level_2",
+      "total": 36,
+      "passed": 6,
+      "pass_rate_pct": 16.7,
+      "violations": 13
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "C2_oneshot",
+      "tier": "level_1",
+      "total": 40,
+      "passed": 0,
+      "pass_rate_pct": 0.0,
+      "violations": 85
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "C2_oneshot",
+      "tier": "level_2",
+      "total": 36,
+      "passed": 1,
+      "pass_rate_pct": 2.8,
+      "violations": 83
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "C3_dual_governed",
+      "tier": "level_1",
+      "total": 40,
+      "passed": 4,
+      "pass_rate_pct": 10.0,
+      "violations": 20
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "C3_dual_governed",
+      "tier": "level_2",
+      "total": 36,
+      "passed": 6,
+      "pass_rate_pct": 16.7,
+      "violations": 14
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "C0_anchor",
+      "tier": "level_1",
+      "total": 40,
+      "passed": 17,
+      "pass_rate_pct": 42.5,
+      "violations": 11
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "C0_anchor",
+      "tier": "level_2",
+      "total": 36,
+      "passed": 7,
+      "pass_rate_pct": 19.4,
+      "violations": 13
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "C1_grammar",
+      "tier": "level_1",
+      "total": 40,
+      "passed": 9,
+      "pass_rate_pct": 22.5,
+      "violations": 11
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "C1_grammar",
+      "tier": "level_2",
+      "total": 36,
+      "passed": 4,
+      "pass_rate_pct": 11.1,
+      "violations": 11
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "C2_oneshot",
+      "tier": "level_1",
+      "total": 40,
+      "passed": 21,
+      "pass_rate_pct": 52.5,
+      "violations": 13
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "C2_oneshot",
+      "tier": "level_2",
+      "total": 36,
+      "passed": 9,
+      "pass_rate_pct": 25.0,
+      "violations": 11
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "C3_dual_governed",
+      "tier": "level_1",
+      "total": 40,
+      "passed": 15,
+      "pass_rate_pct": 37.5,
+      "violations": 5
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "C3_dual_governed",
+      "tier": "level_2",
+      "total": 36,
+      "passed": 4,
+      "pass_rate_pct": 11.1,
+      "violations": 4
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "C0_anchor",
+      "tier": "level_1",
+      "total": 40,
+      "passed": 18,
+      "pass_rate_pct": 45.0,
+      "violations": 9
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "C0_anchor",
+      "tier": "level_2",
+      "total": 36,
+      "passed": 8,
+      "pass_rate_pct": 22.2,
+      "violations": 11
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "C1_grammar",
+      "tier": "level_1",
+      "total": 40,
+      "passed": 11,
+      "pass_rate_pct": 27.5,
+      "violations": 6
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "C1_grammar",
+      "tier": "level_2",
+      "total": 36,
+      "passed": 3,
+      "pass_rate_pct": 8.3,
+      "violations": 4
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "C2_oneshot",
+      "tier": "level_1",
+      "total": 40,
+      "passed": 27,
+      "pass_rate_pct": 67.5,
+      "violations": 12
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "C2_oneshot",
+      "tier": "level_2",
+      "total": 36,
+      "passed": 16,
+      "pass_rate_pct": 44.4,
+      "violations": 2
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "C3_dual_governed",
+      "tier": "level_1",
+      "total": 40,
+      "passed": 24,
+      "pass_rate_pct": 60.0,
+      "violations": 4
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "C3_dual_governed",
+      "tier": "level_2",
+      "total": 36,
+      "passed": 8,
+      "pass_rate_pct": 22.2,
+      "violations": 1
+    }
+  ],
+  "by_suite": [
+    {
+      "model": "llama3.2_3b",
+      "mode": "C0_anchor",
+      "suite": "dag_chain",
+      "total": 8,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "C0_anchor",
+      "suite": "gaia_l1",
+      "total": 15,
+      "passed": 1,
+      "pass_rate_pct": 6.7
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "C0_anchor",
+      "suite": "gaia_l2",
+      "total": 8,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "C0_anchor",
+      "suite": "gsm8k_hard",
+      "total": 6,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "C0_anchor",
+      "suite": "ruler_l1",
+      "total": 15,
+      "passed": 2,
+      "pass_rate_pct": 13.3
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "C0_anchor",
+      "suite": "ruler_multihop",
+      "total": 6,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "C0_anchor",
+      "suite": "swe_algo",
+      "total": 8,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "C0_anchor",
+      "suite": "swe_l1",
+      "total": 10,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "C1_grammar",
+      "suite": "dag_chain",
+      "total": 8,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "C1_grammar",
+      "suite": "gaia_l1",
+      "total": 15,
+      "passed": 5,
+      "pass_rate_pct": 33.3
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "C1_grammar",
+      "suite": "gaia_l2",
+      "total": 8,
+      "passed": 1,
+      "pass_rate_pct": 12.5
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "C1_grammar",
+      "suite": "gsm8k_hard",
+      "total": 6,
+      "passed": 2,
+      "pass_rate_pct": 33.3
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "C1_grammar",
+      "suite": "ruler_l1",
+      "total": 15,
+      "passed": 1,
+      "pass_rate_pct": 6.7
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "C1_grammar",
+      "suite": "ruler_multihop",
+      "total": 6,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "C1_grammar",
+      "suite": "swe_algo",
+      "total": 8,
+      "passed": 3,
+      "pass_rate_pct": 37.5
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "C1_grammar",
+      "suite": "swe_l1",
+      "total": 10,
+      "passed": 4,
+      "pass_rate_pct": 40.0
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "C2_oneshot",
+      "suite": "dag_chain",
+      "total": 8,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "C2_oneshot",
+      "suite": "gaia_l1",
+      "total": 15,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "C2_oneshot",
+      "suite": "gaia_l2",
+      "total": 8,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "C2_oneshot",
+      "suite": "gsm8k_hard",
+      "total": 6,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "C2_oneshot",
+      "suite": "ruler_l1",
+      "total": 15,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "C2_oneshot",
+      "suite": "ruler_multihop",
+      "total": 6,
+      "passed": 1,
+      "pass_rate_pct": 16.7
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "C2_oneshot",
+      "suite": "swe_algo",
+      "total": 8,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "C2_oneshot",
+      "suite": "swe_l1",
+      "total": 10,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "C3_dual_governed",
+      "suite": "dag_chain",
+      "total": 8,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "C3_dual_governed",
+      "suite": "gaia_l1",
+      "total": 15,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "C3_dual_governed",
+      "suite": "gaia_l2",
+      "total": 8,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "C3_dual_governed",
+      "suite": "gsm8k_hard",
+      "total": 6,
+      "passed": 2,
+      "pass_rate_pct": 33.3
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "C3_dual_governed",
+      "suite": "ruler_l1",
+      "total": 15,
+      "passed": 2,
+      "pass_rate_pct": 13.3
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "C3_dual_governed",
+      "suite": "ruler_multihop",
+      "total": 6,
+      "passed": 2,
+      "pass_rate_pct": 33.3
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "C3_dual_governed",
+      "suite": "swe_algo",
+      "total": 8,
+      "passed": 2,
+      "pass_rate_pct": 25.0
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "C3_dual_governed",
+      "suite": "swe_l1",
+      "total": 10,
+      "passed": 2,
+      "pass_rate_pct": 20.0
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "C0_anchor",
+      "suite": "dag_chain",
+      "total": 8,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "C0_anchor",
+      "suite": "gaia_l1",
+      "total": 15,
+      "passed": 7,
+      "pass_rate_pct": 46.7
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "C0_anchor",
+      "suite": "gaia_l2",
+      "total": 8,
+      "passed": 1,
+      "pass_rate_pct": 12.5
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "C0_anchor",
+      "suite": "gsm8k_hard",
+      "total": 6,
+      "passed": 1,
+      "pass_rate_pct": 16.7
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "C0_anchor",
+      "suite": "ruler_l1",
+      "total": 15,
+      "passed": 7,
+      "pass_rate_pct": 46.7
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "C0_anchor",
+      "suite": "ruler_multihop",
+      "total": 6,
+      "passed": 3,
+      "pass_rate_pct": 50.0
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "C0_anchor",
+      "suite": "swe_algo",
+      "total": 8,
+      "passed": 2,
+      "pass_rate_pct": 25.0
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "C0_anchor",
+      "suite": "swe_l1",
+      "total": 10,
+      "passed": 3,
+      "pass_rate_pct": 30.0
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "C1_grammar",
+      "suite": "dag_chain",
+      "total": 8,
+      "passed": 1,
+      "pass_rate_pct": 12.5
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "C1_grammar",
+      "suite": "gaia_l1",
+      "total": 15,
+      "passed": 4,
+      "pass_rate_pct": 26.7
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "C1_grammar",
+      "suite": "gaia_l2",
+      "total": 8,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "C1_grammar",
+      "suite": "gsm8k_hard",
+      "total": 6,
+      "passed": 1,
+      "pass_rate_pct": 16.7
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "C1_grammar",
+      "suite": "ruler_l1",
+      "total": 15,
+      "passed": 3,
+      "pass_rate_pct": 20.0
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "C1_grammar",
+      "suite": "ruler_multihop",
+      "total": 6,
+      "passed": 1,
+      "pass_rate_pct": 16.7
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "C1_grammar",
+      "suite": "swe_algo",
+      "total": 8,
+      "passed": 1,
+      "pass_rate_pct": 12.5
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "C1_grammar",
+      "suite": "swe_l1",
+      "total": 10,
+      "passed": 2,
+      "pass_rate_pct": 20.0
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "C2_oneshot",
+      "suite": "dag_chain",
+      "total": 8,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "C2_oneshot",
+      "suite": "gaia_l1",
+      "total": 15,
+      "passed": 11,
+      "pass_rate_pct": 73.3
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "C2_oneshot",
+      "suite": "gaia_l2",
+      "total": 8,
+      "passed": 2,
+      "pass_rate_pct": 25.0
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "C2_oneshot",
+      "suite": "gsm8k_hard",
+      "total": 6,
+      "passed": 3,
+      "pass_rate_pct": 50.0
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "C2_oneshot",
+      "suite": "ruler_l1",
+      "total": 15,
+      "passed": 6,
+      "pass_rate_pct": 40.0
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "C2_oneshot",
+      "suite": "ruler_multihop",
+      "total": 6,
+      "passed": 2,
+      "pass_rate_pct": 33.3
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "C2_oneshot",
+      "suite": "swe_algo",
+      "total": 8,
+      "passed": 2,
+      "pass_rate_pct": 25.0
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "C2_oneshot",
+      "suite": "swe_l1",
+      "total": 10,
+      "passed": 4,
+      "pass_rate_pct": 40.0
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "C3_dual_governed",
+      "suite": "dag_chain",
+      "total": 8,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "C3_dual_governed",
+      "suite": "gaia_l1",
+      "total": 15,
+      "passed": 8,
+      "pass_rate_pct": 53.3
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "C3_dual_governed",
+      "suite": "gaia_l2",
+      "total": 8,
+      "passed": 1,
+      "pass_rate_pct": 12.5
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "C3_dual_governed",
+      "suite": "gsm8k_hard",
+      "total": 6,
+      "passed": 1,
+      "pass_rate_pct": 16.7
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "C3_dual_governed",
+      "suite": "ruler_l1",
+      "total": 15,
+      "passed": 4,
+      "pass_rate_pct": 26.7
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "C3_dual_governed",
+      "suite": "ruler_multihop",
+      "total": 6,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "C3_dual_governed",
+      "suite": "swe_algo",
+      "total": 8,
+      "passed": 2,
+      "pass_rate_pct": 25.0
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "C3_dual_governed",
+      "suite": "swe_l1",
+      "total": 10,
+      "passed": 3,
+      "pass_rate_pct": 30.0
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "C0_anchor",
+      "suite": "dag_chain",
+      "total": 8,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "C0_anchor",
+      "suite": "gaia_l1",
+      "total": 15,
+      "passed": 6,
+      "pass_rate_pct": 40.0
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "C0_anchor",
+      "suite": "gaia_l2",
+      "total": 8,
+      "passed": 1,
+      "pass_rate_pct": 12.5
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "C0_anchor",
+      "suite": "gsm8k_hard",
+      "total": 6,
+      "passed": 1,
+      "pass_rate_pct": 16.7
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "C0_anchor",
+      "suite": "ruler_l1",
+      "total": 15,
+      "passed": 6,
+      "pass_rate_pct": 40.0
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "C0_anchor",
+      "suite": "ruler_multihop",
+      "total": 6,
+      "passed": 3,
+      "pass_rate_pct": 50.0
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "C0_anchor",
+      "suite": "swe_algo",
+      "total": 8,
+      "passed": 3,
+      "pass_rate_pct": 37.5
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "C0_anchor",
+      "suite": "swe_l1",
+      "total": 10,
+      "passed": 6,
+      "pass_rate_pct": 60.0
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "C1_grammar",
+      "suite": "dag_chain",
+      "total": 8,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "C1_grammar",
+      "suite": "gaia_l1",
+      "total": 15,
+      "passed": 5,
+      "pass_rate_pct": 33.3
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "C1_grammar",
+      "suite": "gaia_l2",
+      "total": 8,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "C1_grammar",
+      "suite": "gsm8k_hard",
+      "total": 6,
+      "passed": 1,
+      "pass_rate_pct": 16.7
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "C1_grammar",
+      "suite": "ruler_l1",
+      "total": 15,
+      "passed": 2,
+      "pass_rate_pct": 13.3
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "C1_grammar",
+      "suite": "ruler_multihop",
+      "total": 6,
+      "passed": 1,
+      "pass_rate_pct": 16.7
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "C1_grammar",
+      "suite": "swe_algo",
+      "total": 8,
+      "passed": 1,
+      "pass_rate_pct": 12.5
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "C1_grammar",
+      "suite": "swe_l1",
+      "total": 10,
+      "passed": 4,
+      "pass_rate_pct": 40.0
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "C2_oneshot",
+      "suite": "dag_chain",
+      "total": 8,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "C2_oneshot",
+      "suite": "gaia_l1",
+      "total": 15,
+      "passed": 13,
+      "pass_rate_pct": 86.7
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "C2_oneshot",
+      "suite": "gaia_l2",
+      "total": 8,
+      "passed": 3,
+      "pass_rate_pct": 37.5
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "C2_oneshot",
+      "suite": "gsm8k_hard",
+      "total": 6,
+      "passed": 4,
+      "pass_rate_pct": 66.7
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "C2_oneshot",
+      "suite": "ruler_l1",
+      "total": 15,
+      "passed": 8,
+      "pass_rate_pct": 53.3
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "C2_oneshot",
+      "suite": "ruler_multihop",
+      "total": 6,
+      "passed": 4,
+      "pass_rate_pct": 66.7
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "C2_oneshot",
+      "suite": "swe_algo",
+      "total": 8,
+      "passed": 5,
+      "pass_rate_pct": 62.5
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "C2_oneshot",
+      "suite": "swe_l1",
+      "total": 10,
+      "passed": 6,
+      "pass_rate_pct": 60.0
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "C3_dual_governed",
+      "suite": "dag_chain",
+      "total": 8,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "C3_dual_governed",
+      "suite": "gaia_l1",
+      "total": 15,
+      "passed": 12,
+      "pass_rate_pct": 80.0
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "C3_dual_governed",
+      "suite": "gaia_l2",
+      "total": 8,
+      "passed": 2,
+      "pass_rate_pct": 25.0
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "C3_dual_governed",
+      "suite": "gsm8k_hard",
+      "total": 6,
+      "passed": 2,
+      "pass_rate_pct": 33.3
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "C3_dual_governed",
+      "suite": "ruler_l1",
+      "total": 15,
+      "passed": 6,
+      "pass_rate_pct": 40.0
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "C3_dual_governed",
+      "suite": "ruler_multihop",
+      "total": 6,
+      "passed": 1,
+      "pass_rate_pct": 16.7
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "C3_dual_governed",
+      "suite": "swe_algo",
+      "total": 8,
+      "passed": 3,
+      "pass_rate_pct": 37.5
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "C3_dual_governed",
+      "suite": "swe_l1",
+      "total": 10,
+      "passed": 6,
+      "pass_rate_pct": 60.0
+    }
+  ]
+}

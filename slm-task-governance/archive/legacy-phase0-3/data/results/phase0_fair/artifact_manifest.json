@@ -1,0 +1,13 @@
+{
+  "schema_version": "pdx_artifact_manifest_v1",
+  "artifacts": [
+    {
+      "path": "benchmark_ledger.jsonl",
+      "sha256": "6b746583545b9681746e206dcc0d7052d6966e3fd88ceb66bdebaefc95632f93"
+    },
+    {
+      "path": "run_manifest.json",
+      "sha256": "2b2e2b8bc1fc238068604901c173a9cd10fd33bd83425470fcd9a71cb686ea8a"
+    }
+  ]
+}

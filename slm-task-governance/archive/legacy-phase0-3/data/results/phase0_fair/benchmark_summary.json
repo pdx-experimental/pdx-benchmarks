@@ -1,0 +1,919 @@
+{
+  "total_evaluations": 760,
+  "overall": [
+    {
+      "model": "gemma3_1b",
+      "mode": "goldplan_isolated",
+      "total": 76,
+      "passed": 17,
+      "pass_rate_pct": 22.4,
+      "violations": 60,
+      "avg_latency_s": 17.44
+    },
+    {
+      "model": "gemma3_1b",
+      "mode": "goldplan_react",
+      "total": 76,
+      "passed": 18,
+      "pass_rate_pct": 23.7,
+      "violations": 99,
+      "avg_latency_s": 16.02
+    },
+    {
+      "model": "llama3.2_1b",
+      "mode": "goldplan_isolated",
+      "total": 76,
+      "passed": 5,
+      "pass_rate_pct": 6.6,
+      "violations": 120,
+      "avg_latency_s": 6.56
+    },
+    {
+      "model": "llama3.2_1b",
+      "mode": "goldplan_react",
+      "total": 76,
+      "passed": 7,
+      "pass_rate_pct": 9.2,
+      "violations": 166,
+      "avg_latency_s": 13.27
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "goldplan_isolated",
+      "total": 76,
+      "passed": 4,
+      "pass_rate_pct": 5.3,
+      "violations": 161,
+      "avg_latency_s": 13.71
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "goldplan_react",
+      "total": 76,
+      "passed": 0,
+      "pass_rate_pct": 0.0,
+      "violations": 287,
+      "avg_latency_s": 31.4
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "goldplan_isolated",
+      "total": 76,
+      "passed": 24,
+      "pass_rate_pct": 31.6,
+      "violations": 24,
+      "avg_latency_s": 13.95
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "goldplan_react",
+      "total": 76,
+      "passed": 11,
+      "pass_rate_pct": 14.5,
+      "violations": 20,
+      "avg_latency_s": 14.74
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "goldplan_isolated",
+      "total": 76,
+      "passed": 27,
+      "pass_rate_pct": 35.5,
+      "violations": 14,
+      "avg_latency_s": 18.08
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "goldplan_react",
+      "total": 76,
+      "passed": 21,
+      "pass_rate_pct": 27.6,
+      "violations": 32,
+      "avg_latency_s": 18.68
+    }
+  ],
+  "by_tier": [
+    {
+      "model": "gemma3_1b",
+      "mode": "goldplan_isolated",
+      "tier": "level_1",
+      "total": 40,
+      "passed": 11,
+      "pass_rate_pct": 27.5,
+      "violations": 26
+    },
+    {
+      "model": "gemma3_1b",
+      "mode": "goldplan_isolated",
+      "tier": "level_2",
+      "total": 36,
+      "passed": 6,
+      "pass_rate_pct": 16.7,
+      "violations": 34
+    },
+    {
+      "model": "gemma3_1b",
+      "mode": "goldplan_react",
+      "tier": "level_1",
+      "total": 40,
+      "passed": 13,
+      "pass_rate_pct": 32.5,
+      "violations": 56
+    },
+    {
+      "model": "gemma3_1b",
+      "mode": "goldplan_react",
+      "tier": "level_2",
+      "total": 36,
+      "passed": 5,
+      "pass_rate_pct": 13.9,
+      "violations": 43
+    },
+    {
+      "model": "llama3.2_1b",
+      "mode": "goldplan_isolated",
+      "tier": "level_1",
+      "total": 40,
+      "passed": 4,
+      "pass_rate_pct": 10.0,
+      "violations": 61
+    },
+    {
+      "model": "llama3.2_1b",
+      "mode": "goldplan_isolated",
+      "tier": "level_2",
+      "total": 36,
+      "passed": 1,
+      "pass_rate_pct": 2.8,
+      "violations": 59
+    },
+    {
+      "model": "llama3.2_1b",
+      "mode": "goldplan_react",
+      "tier": "level_1",
+      "total": 40,
+      "passed": 4,
+      "pass_rate_pct": 10.0,
+      "violations": 71
+    },
+    {
+      "model": "llama3.2_1b",
+      "mode": "goldplan_react",
+      "tier": "level_2",
+      "total": 36,
+      "passed": 3,
+      "pass_rate_pct": 8.3,
+      "violations": 95
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "goldplan_isolated",
+      "tier": "level_1",
+      "total": 40,
+      "passed": 3,
+      "pass_rate_pct": 7.5,
+      "violations": 77
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "goldplan_isolated",
+      "tier": "level_2",
+      "total": 36,
+      "passed": 1,
+      "pass_rate_pct": 2.8,
+      "violations": 84
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "goldplan_react",
+      "tier": "level_1",
+      "total": 40,
+      "passed": 0,
+      "pass_rate_pct": 0.0,
+      "violations": 154
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "goldplan_react",
+      "tier": "level_2",
+      "total": 36,
+      "passed": 0,
+      "pass_rate_pct": 0.0,
+      "violations": 133
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "goldplan_isolated",
+      "tier": "level_1",
+      "total": 40,
+      "passed": 17,
+      "pass_rate_pct": 42.5,
+      "violations": 11
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "goldplan_isolated",
+      "tier": "level_2",
+      "total": 36,
+      "passed": 7,
+      "pass_rate_pct": 19.4,
+      "violations": 13
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "goldplan_react",
+      "tier": "level_1",
+      "total": 40,
+      "passed": 8,
+      "pass_rate_pct": 20.0,
+      "violations": 10
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "goldplan_react",
+      "tier": "level_2",
+      "total": 36,
+      "passed": 3,
+      "pass_rate_pct": 8.3,
+      "violations": 10
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "goldplan_isolated",
+      "tier": "level_1",
+      "total": 40,
+      "passed": 18,
+      "pass_rate_pct": 45.0,
+      "violations": 9
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "goldplan_isolated",
+      "tier": "level_2",
+      "total": 36,
+      "passed": 9,
+      "pass_rate_pct": 25.0,
+      "violations": 5
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "goldplan_react",
+      "tier": "level_1",
+      "total": 40,
+      "passed": 13,
+      "pass_rate_pct": 32.5,
+      "violations": 21
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "goldplan_react",
+      "tier": "level_2",
+      "total": 36,
+      "passed": 8,
+      "pass_rate_pct": 22.2,
+      "violations": 11
+    }
+  ],
+  "by_suite": [
+    {
+      "model": "gemma3_1b",
+      "mode": "goldplan_isolated",
+      "suite": "dag_chain",
+      "total": 8,
+      "passed": 1,
+      "pass_rate_pct": 12.5
+    },
+    {
+      "model": "gemma3_1b",
+      "mode": "goldplan_isolated",
+      "suite": "gaia_l1",
+      "total": 15,
+      "passed": 6,
+      "pass_rate_pct": 40.0
+    },
+    {
+      "model": "gemma3_1b",
+      "mode": "goldplan_isolated",
+      "suite": "gaia_l2",
+      "total": 8,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "gemma3_1b",
+      "mode": "goldplan_isolated",
+      "suite": "gsm8k_hard",
+      "total": 6,
+      "passed": 1,
+      "pass_rate_pct": 16.7
+    },
+    {
+      "model": "gemma3_1b",
+      "mode": "goldplan_isolated",
+      "suite": "ruler_l1",
+      "total": 15,
+      "passed": 2,
+      "pass_rate_pct": 13.3
+    },
+    {
+      "model": "gemma3_1b",
+      "mode": "goldplan_isolated",
+      "suite": "ruler_multihop",
+      "total": 6,
+      "passed": 2,
+      "pass_rate_pct": 33.3
+    },
+    {
+      "model": "gemma3_1b",
+      "mode": "goldplan_isolated",
+      "suite": "swe_algo",
+      "total": 8,
+      "passed": 2,
+      "pass_rate_pct": 25.0
+    },
+    {
+      "model": "gemma3_1b",
+      "mode": "goldplan_isolated",
+      "suite": "swe_l1",
+      "total": 10,
+      "passed": 3,
+      "pass_rate_pct": 30.0
+    },
+    {
+      "model": "gemma3_1b",
+      "mode": "goldplan_react",
+      "suite": "dag_chain",
+      "total": 8,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "gemma3_1b",
+      "mode": "goldplan_react",
+      "suite": "gaia_l1",
+      "total": 15,
+      "passed": 10,
+      "pass_rate_pct": 66.7
+    },
+    {
+      "model": "gemma3_1b",
+      "mode": "goldplan_react",
+      "suite": "gaia_l2",
+      "total": 8,
+      "passed": 2,
+      "pass_rate_pct": 25.0
+    },
+    {
+      "model": "gemma3_1b",
+      "mode": "goldplan_react",
+      "suite": "gsm8k_hard",
+      "total": 6,
+      "passed": 1,
+      "pass_rate_pct": 16.7
+    },
+    {
+      "model": "gemma3_1b",
+      "mode": "goldplan_react",
+      "suite": "ruler_l1",
+      "total": 15,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "gemma3_1b",
+      "mode": "goldplan_react",
+      "suite": "ruler_multihop",
+      "total": 6,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "gemma3_1b",
+      "mode": "goldplan_react",
+      "suite": "swe_algo",
+      "total": 8,
+      "passed": 2,
+      "pass_rate_pct": 25.0
+    },
+    {
+      "model": "gemma3_1b",
+      "mode": "goldplan_react",
+      "suite": "swe_l1",
+      "total": 10,
+      "passed": 3,
+      "pass_rate_pct": 30.0
+    },
+    {
+      "model": "llama3.2_1b",
+      "mode": "goldplan_isolated",
+      "suite": "dag_chain",
+      "total": 8,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "llama3.2_1b",
+      "mode": "goldplan_isolated",
+      "suite": "gaia_l1",
+      "total": 15,
+      "passed": 3,
+      "pass_rate_pct": 20.0
+    },
+    {
+      "model": "llama3.2_1b",
+      "mode": "goldplan_isolated",
+      "suite": "gaia_l2",
+      "total": 8,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "llama3.2_1b",
+      "mode": "goldplan_isolated",
+      "suite": "gsm8k_hard",
+      "total": 6,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "llama3.2_1b",
+      "mode": "goldplan_isolated",
+      "suite": "ruler_l1",
+      "total": 15,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "llama3.2_1b",
+      "mode": "goldplan_isolated",
+      "suite": "ruler_multihop",
+      "total": 6,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "llama3.2_1b",
+      "mode": "goldplan_isolated",
+      "suite": "swe_algo",
+      "total": 8,
+      "passed": 1,
+      "pass_rate_pct": 12.5
+    },
+    {
+      "model": "llama3.2_1b",
+      "mode": "goldplan_isolated",
+      "suite": "swe_l1",
+      "total": 10,
+      "passed": 1,
+      "pass_rate_pct": 10.0
+    },
+    {
+      "model": "llama3.2_1b",
+      "mode": "goldplan_react",
+      "suite": "dag_chain",
+      "total": 8,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "llama3.2_1b",
+      "mode": "goldplan_react",
+      "suite": "gaia_l1",
+      "total": 15,
+      "passed": 2,
+      "pass_rate_pct": 13.3
+    },
+    {
+      "model": "llama3.2_1b",
+      "mode": "goldplan_react",
+      "suite": "gaia_l2",
+      "total": 8,
+      "passed": 1,
+      "pass_rate_pct": 12.5
+    },
+    {
+      "model": "llama3.2_1b",
+      "mode": "goldplan_react",
+      "suite": "gsm8k_hard",
+      "total": 6,
+      "passed": 1,
+      "pass_rate_pct": 16.7
+    },
+    {
+      "model": "llama3.2_1b",
+      "mode": "goldplan_react",
+      "suite": "ruler_l1",
+      "total": 15,
+      "passed": 2,
+      "pass_rate_pct": 13.3
+    },
+    {
+      "model": "llama3.2_1b",
+      "mode": "goldplan_react",
+      "suite": "ruler_multihop",
+      "total": 6,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "llama3.2_1b",
+      "mode": "goldplan_react",
+      "suite": "swe_algo",
+      "total": 8,
+      "passed": 1,
+      "pass_rate_pct": 12.5
+    },
+    {
+      "model": "llama3.2_1b",
+      "mode": "goldplan_react",
+      "suite": "swe_l1",
+      "total": 10,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "goldplan_isolated",
+      "suite": "dag_chain",
+      "total": 8,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "goldplan_isolated",
+      "suite": "gaia_l1",
+      "total": 15,
+      "passed": 1,
+      "pass_rate_pct": 6.7
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "goldplan_isolated",
+      "suite": "gaia_l2",
+      "total": 8,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "goldplan_isolated",
+      "suite": "gsm8k_hard",
+      "total": 6,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "goldplan_isolated",
+      "suite": "ruler_l1",
+      "total": 15,
+      "passed": 2,
+      "pass_rate_pct": 13.3
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "goldplan_isolated",
+      "suite": "ruler_multihop",
+      "total": 6,
+      "passed": 1,
+      "pass_rate_pct": 16.7
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "goldplan_isolated",
+      "suite": "swe_algo",
+      "total": 8,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "goldplan_isolated",
+      "suite": "swe_l1",
+      "total": 10,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "goldplan_react",
+      "suite": "dag_chain",
+      "total": 8,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "goldplan_react",
+      "suite": "gaia_l1",
+      "total": 15,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "goldplan_react",
+      "suite": "gaia_l2",
+      "total": 8,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "goldplan_react",
+      "suite": "gsm8k_hard",
+      "total": 6,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "goldplan_react",
+      "suite": "ruler_l1",
+      "total": 15,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "goldplan_react",
+      "suite": "ruler_multihop",
+      "total": 6,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "goldplan_react",
+      "suite": "swe_algo",
+      "total": 8,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "goldplan_react",
+      "suite": "swe_l1",
+      "total": 10,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "goldplan_isolated",
+      "suite": "dag_chain",
+      "total": 8,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "goldplan_isolated",
+      "suite": "gaia_l1",
+      "total": 15,
+      "passed": 7,
+      "pass_rate_pct": 46.7
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "goldplan_isolated",
+      "suite": "gaia_l2",
+      "total": 8,
+      "passed": 1,
+      "pass_rate_pct": 12.5
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "goldplan_isolated",
+      "suite": "gsm8k_hard",
+      "total": 6,
+      "passed": 1,
+      "pass_rate_pct": 16.7
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "goldplan_isolated",
+      "suite": "ruler_l1",
+      "total": 15,
+      "passed": 7,
+      "pass_rate_pct": 46.7
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "goldplan_isolated",
+      "suite": "ruler_multihop",
+      "total": 6,
+      "passed": 3,
+      "pass_rate_pct": 50.0
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "goldplan_isolated",
+      "suite": "swe_algo",
+      "total": 8,
+      "passed": 2,
+      "pass_rate_pct": 25.0
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "goldplan_isolated",
+      "suite": "swe_l1",
+      "total": 10,
+      "passed": 3,
+      "pass_rate_pct": 30.0
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "goldplan_react",
+      "suite": "dag_chain",
+      "total": 8,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "goldplan_react",
+      "suite": "gaia_l1",
+      "total": 15,
+      "passed": 4,
+      "pass_rate_pct": 26.7
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "goldplan_react",
+      "suite": "gaia_l2",
+      "total": 8,
+      "passed": 1,
+      "pass_rate_pct": 12.5
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "goldplan_react",
+      "suite": "gsm8k_hard",
+      "total": 6,
+      "passed": 1,
+      "pass_rate_pct": 16.7
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "goldplan_react",
+      "suite": "ruler_l1",
+      "total": 15,
+      "passed": 4,
+      "pass_rate_pct": 26.7
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "goldplan_react",
+      "suite": "ruler_multihop",
+      "total": 6,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "goldplan_react",
+      "suite": "swe_algo",
+      "total": 8,
+      "passed": 1,
+      "pass_rate_pct": 12.5
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "goldplan_react",
+      "suite": "swe_l1",
+      "total": 10,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "goldplan_isolated",
+      "suite": "dag_chain",
+      "total": 8,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "goldplan_isolated",
+      "suite": "gaia_l1",
+      "total": 15,
+      "passed": 6,
+      "pass_rate_pct": 40.0
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "goldplan_isolated",
+      "suite": "gaia_l2",
+      "total": 8,
+      "passed": 1,
+      "pass_rate_pct": 12.5
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "goldplan_isolated",
+      "suite": "gsm8k_hard",
+      "total": 6,
+      "passed": 1,
+      "pass_rate_pct": 16.7
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "goldplan_isolated",
+      "suite": "ruler_l1",
+      "total": 15,
+      "passed": 6,
+      "pass_rate_pct": 40.0
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "goldplan_isolated",
+      "suite": "ruler_multihop",
+      "total": 6,
+      "passed": 4,
+      "pass_rate_pct": 66.7
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "goldplan_isolated",
+      "suite": "swe_algo",
+      "total": 8,
+      "passed": 3,
+      "pass_rate_pct": 37.5
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "goldplan_isolated",
+      "suite": "swe_l1",
+      "total": 10,
+      "passed": 6,
+      "pass_rate_pct": 60.0
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "goldplan_react",
+      "suite": "dag_chain",
+      "total": 8,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "goldplan_react",
+      "suite": "gaia_l1",
+      "total": 15,
+      "passed": 6,
+      "pass_rate_pct": 40.0
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "goldplan_react",
+      "suite": "gaia_l2",
+      "total": 8,
+      "passed": 3,
+      "pass_rate_pct": 37.5
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "goldplan_react",
+      "suite": "gsm8k_hard",
+      "total": 6,
+      "passed": 3,
+      "pass_rate_pct": 50.0
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "goldplan_react",
+      "suite": "ruler_l1",
+      "total": 15,
+      "passed": 2,
+      "pass_rate_pct": 13.3
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "goldplan_react",
+      "suite": "ruler_multihop",
+      "total": 6,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "goldplan_react",
+      "suite": "swe_algo",
+      "total": 8,
+      "passed": 2,
+      "pass_rate_pct": 25.0
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "goldplan_react",
+      "suite": "swe_l1",
+      "total": 10,
+      "passed": 5,
+      "pass_rate_pct": 50.0
+    }
+  ]
+}

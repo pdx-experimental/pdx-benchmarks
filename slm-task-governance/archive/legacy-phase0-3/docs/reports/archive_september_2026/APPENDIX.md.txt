@@ -1,0 +1,157 @@
+HISTORICAL TRANSCRIPT — NOT A CURRENT REPORT OR VERIFIED CLAIM
+Personal identifiers removed. Historical assertions may be incorrect or superseded.
+
+# Supplementary Material: Technical Appendix & Cryptographic Provenance
+
+**Accompanying the paper:**  
+*When Contracts Help and When They Hurt: A Four-Architecture Factorial Benchmark of Interface and Format Governance on Small Language Models*
+
+---
+
+## Appendix A: Cryptographic Manifest & Artifact Provenance
+
+To guarantee bit-level scientific reproducibility without cluttering the primary analytical tables in the main text, Table A1 records the cryptographic SHA-256 checksums, execution timestamps, and repository release targets for all primary evaluation runs.
+
+**Table A1: Cryptographic run registry and content-addressed storage (CAS) targets.**  
+All paths correspond to the public repository structure under `slm-task-governance/data/results/`. Checksums represent the SHA-256 hash of the complete `benchmark_ledger.jsonl` file.
+
+| Cohort / Model | Benchmark Run Target Path | Primary Ledger SHA-256 Checksum | Repository Export Status |
+| :--- | :--- | :--- | :---: |
+| **Qwen 2.5 Coder 7B (Frozen $C_0$)** | `phase3_v3_c0c2_qwen7b/20260922-104328/` | `3946b001b257efd358b9362fe6df1d81959c23b4c04e263a3e613655be7197b8` | Sanitized / Exported on Disk |
+| **Qwen 2.5 Coder 7B ($C_{2s}$)** | `phase3_v3_c2s_qwen7b/20260922-115806/` | `0e097638a6b6c19314085affa1e5a53dbab4920b1a362660080e8e143dcc3cce` | Sanitized / Exported on Disk |
+| **Qwen 2.5 Coder 7B ($C_{2sf}$)** | `phase3_v3_c2sf_qwen7b/20260922-131033/` | `25c2f708fd4e3cceddd06209699f9be982f59234cefbb260b595b15bc7d5df73` | Sanitized / Exported on Disk |
+| **Qwen 2.5 Coder 1.5B (S5)** | `phase3_s5_qwen15_coder/20260922-163405/` | `5e28e9e2c8f7ea70c3513fd10287cffbc32a12051d7a182a09d2b4e9c50015a3` | Sanitized / Exported on Disk |
+| **Mistral 7B v0.3 (S5)** | `phase3_s5_mistral7b/20260923-091406/` | `2702bd229307a66f5c99d4bb07d6739e4c4bf89e7b7004fe43e51790f293b7cc` | Sanitized / Exported on Disk |
+| **Llama 3.2 3B (S5)** | `phase3_s5_llama32_3b/20260923-105118/` | `52de56f465097b4465d8fdc20ad2405028f575fba38ff9716cb6c38ece5e6620` | Sanitized / Exported on Disk |
+| **Llama 3.1 8B (S5)** | `phase3_s5_llama31_8b/20260923-120520/` | `a1f8e6f7a8039f8dee13b02ca613207698d5e04a150748b13e3929c9e70e4db9` | Sanitized / Exported on Disk |
+
+Each exported run package contains three self-contained artifacts:
+1. `benchmark_ledger.jsonl`: Line-by-line JSONL ledger recording input prompt tokens, raw model generations, structured tool calls, step receipts, execution latencies, and scoring evaluations.
+2. `run_manifest.json`: Hardware, platform, runtime environment metadata, and summary statistical distributions.
+3. `artifact_manifest.json`: Local CAS checksum registry indexing the directory contents.
+
+---
+
+## Appendix B: Paired Contingency Tables ($2 \times 2$ McNemar Matrices)
+
+To provide full mathematical transparency for all statistical hypothesis tests reported in the main text, Table A2 provides the cell counts for paired McNemar tests:
+- Cell $a$: Both conditions pass ($+/+$).
+- Cell $b$: Treatment passes, baseline fails ($+/-$, positive discordance).
+- Cell $c$: Treatment fails, baseline passes ($-/+$, negative discordance).
+- Cell $d$: Both conditions fail ($-/-$).
+- Exact $p$-value: Two-tailed exact binomial distribution on discordant pairs, $p = 2 \times \sum_{k=b}^{n_d} \binom{n_d}{k} (0.5)^{n_d}$ where $n_d = b + c$.
+
+**Table A2: Exact contingency cell distributions across Study 1 and Study 2.**
+
+| Model / Comparison Pair | $N$ | Cell $a$ ($+/+$) | Cell $b$ ($+/-$) | Cell $c$ ($-/+$) | Cell $d$ ($-/-$) | Net $\Delta$ | Discordant ($b, c$) | Exact $p$-value | Statistical Inference |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
+| **Study 1: Qwen 7B ($C_{2s}$ vs. Frozen $C_0$)** | 18 | 0 | 3 | 1 | 14 | $+2$ | $(3, 1)$ | $0.6250$ | Non-Significant Trend |
+| **Study 1: Qwen 7B ($C_{2sf}$ vs. Frozen $C_0$)** | 18 | 1 | 9 | 0 | 8 | $+9$ | $(9, 0)$ | $\mathbf{0.00391}$ | Highly Significant ($p < 0.01$) |
+| **Study 1: Qwen 7B ($C_{2sf}$ vs. $C_{2s}$)** | 18 | 3 | 7 | 0 | 8 | $+7$ | $(7, 0)$ | $\mathbf{0.01562}$ | Statistically Significant ($p < 0.05$) |
+| **Study 1: Qwen 7B ($n=17$ Sensitivity)** | 17 | 0 | 9 | 0 | 8 | $+9$ | $(9, 0)$ | $\mathbf{0.00391}$ | Highly Significant ($p < 0.01$) |
+| **Study 1: Qwen 7B ($n=14$ Sensitivity)** | 14 | 0 | 8 | 0 | 6 | $+8$ | $(8, 0)$ | $\mathbf{0.00781}$ | Highly Significant ($p < 0.01$) |
+| **Study 2: Llama 8B ($C_{2sf}$ vs. $C_{0\text{-anchor}}$)** | 18 | 1 | 6 | 0 | 11 | $+6$ | $(6, 0)$ | $\mathbf{0.03125}$ | Statistically Significant ($p < 0.05$) |
+| **Study 2: Llama 8B ($C_{2sf}$ vs. $C_{2s}$)** | 18 | 2 | 5 | 0 | 11 | $+5$ | $(5, 0)$ | $0.06250$ | Directional Trend ($p \approx 0.06$) |
+| **Study 2: Mistral 7B ($C_{2sf}$ vs. $C_{0\text{-anchor}}$)** | 18 | 0 | 2 | 0 | 16 | $+2$ | $(2, 0)$ | $0.50000$ | Non-Significant |
+| **Study 2: Mistral 7B ($C_{2sf}$ vs. $C_{2s}$)** | 18 | 0 | 2 | 3 | 13 | $-1$ | $(2, 3)$ | $1.00000$ | Task-Swapping Interference |
+| **Study 2: Qwen 1.5B ($C_{2sf}$ vs. $C_{0\text{-anchor}}$)** | 18 | 0 | 0 | 0 | 18 | $0$ | $(0, 0)$ | $1.00000$ | Floor Invariant |
+| **Study 2: Llama 3.2 3B ($C_{2sf}$ vs. $C_{0\text{-anchor}}$)** | 18 | 0 | 0 | 0 | 18 | $0$ | $(0, 0)$ | $1.00000$ | Suppression Invariant |
+
+---
+
+## Appendix C: Granular Task-by-Task Error Typology & Forensic Receipts
+
+### C.1 Detailed Accounting of the 18 Tasks for Llama 3.1 8B under $C_{2sf}$
+Every task in `dag_chain_v3` ($N=18$) is strictly accounted for using its canonical benchmark task identifier:
+
+- **Passed Tasks (7 Tasks)**:
+  - `v3_13_cache_miss_ratio`: Passed across all three conditions ($C_{0\text{-anchor}}, C_{2s}, C_{2sf}$).
+  - `v3_04_decode_rate_budget`: Passed under $C_{2s}$ and remained stable under $C_{2sf}$.
+  - `v3_11_decode_verify_budget_4step`: Recovered via terminal scalar extraction (Gate IIa verbosity eliminated).
+  - `v3_17_gateway_throughput_ratio`: Recovered via terminal scalar extraction.
+  - `v3_05_decrypt_prefix_hash`: Recovered via parent receipt parsing exemplar transfer.
+  - `v3_18_cas_artifact_hash_chain`: Recovered via parent receipt parsing exemplar transfer.
+  - `v3_14_crypto_key_token_hash`: Recovered via execution brake stopping condition (see C.2).
+
+- **Failed Tasks (11 Tasks)**:
+  - **Arithmetic Calculation Deviation (1 Task)**: `v3_10_region_headroom_budget_4step` (model output: `396.99`, gold value: `483.99`).
+  - **Cryptographic Hash Mismatches (2 Tasks)**: `v3_09_batch_cost_hash_4step` and `v3_12_filter_hash_cost_4step` (both emitted erroneous hash `22fce89b`).
+  - **Unsafe Calculator Expressions (2 Tasks)**: `v3_01_db_mean_delta` and `v3_03_region_capacity_cost` (triggered AST safety filter due to invalid expression syntax).
+  - **Empty Terminal Predictions (6 Tasks)**: `v3_02_inventory_cost_total`, `v3_06_filter_high_cost_items`, `v3_07_filter_active_nodes`, `v3_08_dual_lookup_margin`, `v3_15_inventory_reorder_ceil`, and `v3_16_incident_impact_sum`.
+
+$$\text{Total Tasks} = 7 \text{ (Passed)} + 1 \text{ (Arithmetic)} + 2 \text{ (Hash)} + 2 \text{ (Unsafe)} + 6 \text{ (Empty)} = 18 \text{ Tasks (Conservation Verified)}$$
+
+### C.2 Forensic Step-Receipt Case Study: `v3_14_crypto_key_token_hash`
+In task `v3_14_crypto_key_token_hash`, the objective requires three sequential steps:
+1. `db_lookup` with key `api_credential_prod` $\to$ receipt: `{"client_id": "PDX_CLIENT_77", "salt_b64": "U0FMVF85OTAy"}`
+2. `crypto_transform` with action `b64decode` and data `U0FMVF85OTAy` $\to$ receipt: `SALT_9902`
+3. `crypto_transform` with action `sha256_prefix` and data `PDX_CLIENT_77:SALT_9902` $\to$ receipt: `d6023142`
+
+Under Arm $C_{2s}$:
+- Step 1: Dispatched `{"name": "tool_db_lookup", "args": {"key": "api_credential_prod"}}` $\to$ Success (`{"client_id": "PDX_CLIENT_77", "salt_b64": "U0FMVF85OTAy"}`).
+- Step 2: Dispatched `{"name": "tool_crypto_transform", "args": {"op": "b64decode", "data": "U0FMVF85OTAy"}}` $\to$ Success (`SALT_9902`).
+- Step 3: Dispatched `{"name": "tool_crypto_transform", "args": {"op": "sha256_prefix", "data": "PDX_CLIENT_77:SALT_9902"}}` $\to$ Success, computed gold receipt `d6023142`.
+- Terminal Step (`step_final`): Model lacked an explicit stopping rule. Instead of executing `final_answer`, it re-invoked `crypto_transform` with the exact same arguments `{"op": "sha256_prefix", "data": "PDX_CLIENT_77:SALT_9902"}`, yielding an `empty_prediction` (no `final_answer`). Recorded as a failure.
+
+Under Arm $C_{2sf}$:
+- Steps 1–3 executed identically.
+- Terminal Step: Governed by Rule 3 and Exemplar 4, the model recognized completion and emitted:
+  ```json
+  {"thought": "Calculations complete.", "action": "final_answer", "tool_call": null, "args": null, "artifact": "d6023142"}
+  ```
+The contract supplied an execution brake rather than inducing reasoning capacity.
+
+---
+
+## Appendix D: Governance Prompt Contracts & Exemplar Specifications
+
+### D.1 System Prompt Rules
+The governing system prompt enforces structured step execution:
+
+```markdown
+You are an isolated step execution agent.
+You must respond ONLY with valid JSON conforming to the following schema:
+{
+  "thought": "one short sentence",
+  "action": "execute_tool" | "final_answer",
+  "tool_call": {"name": "<tool>", "args": {"key": "val"}},
+  "answer": "<string>"
+}
+
+Available Tools:
+<JSON Schema of available tools>
+
+Rules:
+1. Output ONLY the JSON object. No Markdown conversation, no preamble.
+2. If action is 'execute_tool', 'tool_call' must specify a valid tool and non-empty args.
+3. [Rule 3 Condition Dependent]
+```
+
+**Rule 3 Specification by Arm**:
+- In Arm $C_{2sf}$: `"3. If action is 'final_answer', 'answer' must be ONLY the raw scalar value (number, identifier, or hash) with NO conversational filler, units, prefixes, or full sentences."`
+- In Arms $C_0$ and $C_{2s}$: `"3. If action is 'final_answer', 'answer' must contain the final answer string."`
+
+### D.2 Few-Shot Demonstration Turns (from `src/runners/phase2_runner.py`)
+- **Turn 1 (`db_lookup`)**:
+  - User: `Goal: Lookup telemetry metrics for cluster 'cluster_demo'`
+  - Assistant: `{"thought": "Lookup telemetry record for cluster_demo.", "action": "execute_tool", "tool_call": {"name": "db_lookup", "args": {"key": "cluster_demo"}}, "answer": ""}`
+- **Turn 2 (`json_filter`)**:
+  - User: `Goal: Filter active worker records from the registry manifest... Context: [{"id": "d1", "status": "active"}, {"id": "d2", "status": "idle"}]`
+  - Assistant: `{"thought": "Filter records where status is active.", "action": "execute_tool", "tool_call": {"name": "json_filter", "args": {"json": "[{\"id\": \"d1\", \"status\": \"active\"}, {\"id\": \"d2\", \"status\": \"idle\"}]", "predicate": "status == active"}}, "answer": ""}`
+- **Turn 3 (`calc`)**:
+  - User: `Goal: Calculate total provisioned compute units... Instruction: Use calc to compute 10 * 2.`
+  - Assistant: `{"thought": "Compute the product of 10 and 2.", "action": "execute_tool", "tool_call": {"name": "calc", "args": {"expression": "10 * 2"}}, "answer": ""}`
+- **Turn 4 (`step_final`, Arm $C_{2sf}$ Only)**:
+  - User: `Parent Step Receipts: - Step 'step_2_calc': artifact='20' (sha256=d41d8cd98f00b204, status=completed)... Instruction: Output the task's final answer only.`
+  - Assistant: `{"thought": "Emit the total provisioned compute units as a raw scalar.", "action": "final_answer", "tool_call": {"name": "", "args": {}}, "answer": "20"}`
+
+---
+
+## Appendix E: Computational Infrastructure & Environment Invariants
+
+All benchmarks were evaluated in isolated environments with fixed hardware specifications:
+- **Compute Accelerators**: Dual NVIDIA Tesla T4 GPUs (16,384 MiB VRAM per GPU; aggregate 32,768 MiB).
+- **Host Platform**: Linux 6.12.90+ x86_64, CUDA 12.8, PyTorch 2.10.0+cu128.
+- **Quantization Engine**: BitsAndBytes INT8 (`load_in_8bit=True`, `llm_int8_threshold=6.0`), compute dtype `torch.float16`.
+- **Generation Settings**: Greedy decoding (`temperature=0.0`, `do_sample=False`, `max_new_tokens=512`).
+- **Tool Library**: Deterministic backend implementations (`src/tools.py`) adhering strictly to OpenAPI 3.0 schema declarations.

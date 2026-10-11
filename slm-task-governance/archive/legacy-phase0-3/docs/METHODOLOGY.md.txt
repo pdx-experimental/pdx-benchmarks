@@ -1,0 +1,128 @@
+HISTORICAL TRANSCRIPT — NOT A CURRENT REPORT OR VERIFIED CLAIM
+Personal identifiers removed. Historical assertions may be incorrect or superseded.
+
+# Benchmark Methodology & Experimental Formulation
+
+This document formally details the mathematical formulation, experimental design, and evaluation protocol used in the **SLM Task Governance Benchmark Suite**.
+
+---
+
+## 1. Mathematical Formulation
+
+Let a user task be formalized as a tuple $T = (G, C, \mathcal{T}, Y)$, where:
+- $G$ is the natural language goal description.
+- $C$ is the initial environment context (document, database snapshot, or codebase).
+- $\mathcal{T} = \{t_1, t_2, \dots, t_k\}$ is the set of callable tools with formal JSON input/output schemas.
+- $Y$ is the ground-truth terminal assertion.
+
+---
+
+### A. Paradigm 1: Naive ReAct Loop
+
+In the Naive ReAct paradigm, execution unfolds as an open-ended conversational trajectory over discrete turns $t \in [1, T_{\max}]$:
+
+$$\mathcal{H}_t = \left( G, C, \mathcal{T}, a_1, o_1, a_2, o_2, \dots, a_{t-1}, o_{t-1} \right)$$
+
+At each turn $t$, the model generates the next action $a_t$:
+
+$$a_t \sim M(\mathcal{H}_t)$$
+
+Where $a_t$ is parsed into an action token $\text{Action: } t_i[x]$ or terminal answer $\text{Final Answer: } y$. The environment executes $t_i(x)$ and appends observation $o_t$ to create $\mathcal{H}_{t+1}$.
+
+**Degradation Characteristic**: Prompt length grows monotonically as $|\mathcal{H}_t| = O(t \cdot \bar{L}_o)$. For small models, accumulated history dilutes attention and compounds parsing failure.
+
+---
+
+### B. Paradigm 2: PDX Governed Step Dispatch
+
+In the PDX Governed paradigm, the model is decoupled from conversational history. A compiler or template maps $G$ into a Directed Acyclic Graph (DAG) $\mathcal{D} = (\mathcal{V}, \mathcal{E})$:
+
+$$\mathcal{D} = \text{Plan}(G, \mathcal{T})$$
+
+Where each node $v_j \in \mathcal{V}$ is an atomic step, and edges $(v_i, v_j) \in \mathcal{E}$ represent validated data dependencies.
+
+For each step $v_j$, the runtime prepares an **isolated, bounded context** $\mathcal{I}_j$:
+
+$$\mathcal{I}_j = \left( G, \text{StepDesc}(v_j), \{ \mathcal{R}_i \mid (v_i, v_j) \in \mathcal{E} \}, \mathcal{S}_j \right)$$
+
+Where:
+- $\mathcal{R}_i$ is the verified Content-Addressed Storage (CAS) receipt of upstream step $v_i$, containing only its output hash and payload.
+- $\mathcal{S}_j$ is the strict JSON schema enforcing valid action parameters.
+
+The model executes as a stateless step resolution function:
+
+$$a_j \sim M(\mathcal{I}_j) \quad \text{s.t.} \quad a_j \models \mathcal{S}_j$$
+
+**Stability Invariant**: Prompt size is invariant to execution depth ($|\mathcal{I}_j| = O(1)$ with respect to graph steps), completely insulating the model from multi-turn degradation.
+
+---
+
+### C. Campaign 2: 2x2 Factorial Matrix Formulation
+
+To isolate causal drivers of governance, Experiment 1 crosses:
+1. **Factor A (Prompt Scaffolding)**:
+   - $A_0$ (0-Shot Anchor): System instruction + Schema definition only.
+   - $A_1$ (1-Shot Generic Exemplar): Appending a task-agnostic reference invocation (`calc 1+1` yielding valid JSON) demonstrating formatting without revealing task-specific clues.
+2. **Factor B (Decoding Substrate)**:
+   - $B_0$ (Free Greedy Decoding): Standard deterministic decoding $\text{argmax}_{w} P(w \mid w_{<t})$.
+   - $B_1$ (Grammar FSM Constrained Decoding): Applying dynamic prefix-trie logit masking enforcing that every generated token strictly obeys the regular expression / JSON grammar $\mathcal{G}$:
+
+$$P_{\text{masked}}(w \mid w_{<t}) = \begin{cases} P(w \mid w_{<t}), & \text{if } w_{<t} \circ w \text{ is a valid prefix of } \mathcal{G} \\ 0, & \text{otherwise} \end{cases}$$
+
+---
+
+### D. Campaign 3: Context Windowing & Multi-Anchor Slicing
+
+Evaluating the trade-off between attention sharpness and context completeness:
+- **$W_0$ (Full Context)**: Full document context $C_{\text{in}} = C$ (up to 39,577 characters / ~10k tokens).
+- **$W_1$ (Head 2k Truncation)**: $C_{\text{in}} = C[0:2000]$.
+- **$W_2$ (Keyword 2k Window)**: Centered on keyword anchor $k = \text{find}(C, \text{keywords})$:
+
+$$C_{\text{in}} = C[\max(0, k - 1000) : \min(|C|, k + 1000)]$$
+
+- **Multi-Anchor Union Slicing (MAUS)** (Formulation for Multi-Hop): For queries with multiple key entities $\{k_1, k_2, \dots, k_m\}$:
+
+$$C_{\text{in}} = \bigcup_{m} C[\max(0, k_m - L_c) : \min(|C|, k_m + L_c)]$$
+
+Preserving localized context around all dependency anchors while avoiding full-document noise.
+
+---
+
+## 2. Experimental Testbed & Hardware Configuration
+
+All benchmark runs are executed on Dual NVIDIA Tesla T4 GPUs with the following pinned environment:
+
+| Parameter | Value |
+| :--- | :--- |
+| **Hardware Platform** | Dual NVIDIA Tesla T4 (16 GB GDDR6 each, 32 GB aggregate) |
+| **Host System** | Kaggle Cloud Kernel (4 vCPU, 30 GB System RAM, Ubuntu 22.04 LTS) |
+| **PyTorch Backend** | PyTorch 2.6.0+cu124, Scaled Dot-Product Attention (SDPA) |
+| **Precision** | `torch.float16` |
+| **Sampling Parameters** | `do_sample=False`, `temperature=0.0` (Greedy deterministic decoding) |
+| **Max Tokens per Step** | 512 tokens |
+| **Timeout per Step** | 60 seconds |
+
+---
+
+## 3. Evaluated Model Set
+
+The canonical benchmark evaluates **5 Small Language Models (1B to 3B parameters)**:
+
+| Model Identifier | Parameters | Context Window | Architecture / Pretraining |
+| :--- | :---: | :---: | :--- |
+| `Qwen/Qwen2.5-Coder-1.5B-Instruct` | 1.54B | 32k | Dense Transformer, RoPE, GQA, Code-Specialized |
+| `Qwen/Qwen2.5-Coder-3B-Instruct` | 3.09B | 32k | Dense Transformer, RoPE, GQA, Code-Specialized |
+| `unsloth/Llama-3.2-1B-Instruct` | 1.23B | 128k | Dense Transformer, RoPE, GQA, General Dialogue |
+| `unsloth/Llama-3.2-3B-Instruct` | 3.21B | 128k | Dense Transformer, RoPE, GQA, General Dialogue |
+| `unsloth/gemma-3-1b-it` | 1.00B | 32k | Dense Transformer, MQA, General Dialogue |
+
+> **Note on Model Exclusion (Gemma 3 4B)**:
+> In preliminary Phase 0 exploratory trials (`20260917-123806`), `unsloth/gemma-3-4b-it` was run across both arms: under `naive_react`, it recorded 0 passed / 76 tasks with 76/76 empty outputs and 76 schema violations; under `pdx_engine`, it recorded 33 passed / 76 tasks with 37 empty outputs and 102 schema violations. During the subsequent strict fair rerun (`20260918-141853`), the pre-flight smoke test observed empty string generations (`""`). To maintain scientific integrity and prevent corrupted data in the public ledger, it was marked as `invalid_empty_generation` in `run_manifest.json` and excluded from the canonical 760-evaluation matrix.
+
+---
+
+## 4. Scoring Protocol & Rigorous Evaluation
+
+1. **Strict Numeric Gating**: For numeric tasks, candidate answers are extracted and evaluated under numerical tolerance ($|y - \hat{y}| / \max(1, |y|) < 10^{-4}$). Natural language strings containing unparsed numbers are rejected.
+2. **Exact String Match**: For retrieval and code tasks, answers are normalized (trimmed whitespace, normalized case where appropriate) and checked against canonical gold answers.
+3. **Audit Ledger Verification**: Every execution step logs model output, execution time, token length, schema violation status, and CAS SHA-256 receipts into immutable `.jsonl` audit ledgers.

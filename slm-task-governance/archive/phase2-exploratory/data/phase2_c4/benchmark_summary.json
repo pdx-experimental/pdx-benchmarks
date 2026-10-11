@@ -1,0 +1,396 @@
+{
+  "total_evaluations": 189,
+  "overall": [
+    {
+      "model": "llama3.2_3b",
+      "mode": "W0_full",
+      "total": 21,
+      "passed": 1,
+      "pass_rate_pct": 4.8,
+      "violations": 47,
+      "avg_latency_s": 26.92
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "W1_head_2k",
+      "total": 21,
+      "passed": 0,
+      "pass_rate_pct": 0.0,
+      "violations": 39,
+      "avg_latency_s": 9.19
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "W2_keyword_2k",
+      "total": 21,
+      "passed": 0,
+      "pass_rate_pct": 0.0,
+      "violations": 44,
+      "avg_latency_s": 9.93
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "W0_full",
+      "total": 21,
+      "passed": 8,
+      "pass_rate_pct": 38.1,
+      "violations": 0,
+      "avg_latency_s": 22.32
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "W1_head_2k",
+      "total": 21,
+      "passed": 1,
+      "pass_rate_pct": 4.8,
+      "violations": 4,
+      "avg_latency_s": 8.45
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "W2_keyword_2k",
+      "total": 21,
+      "passed": 8,
+      "pass_rate_pct": 38.1,
+      "violations": 1,
+      "avg_latency_s": 8.77
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "W0_full",
+      "total": 21,
+      "passed": 11,
+      "pass_rate_pct": 52.4,
+      "violations": 10,
+      "avg_latency_s": 30.33
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "W1_head_2k",
+      "total": 21,
+      "passed": 0,
+      "pass_rate_pct": 0.0,
+      "violations": 1,
+      "avg_latency_s": 10.71
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "W2_keyword_2k",
+      "total": 21,
+      "passed": 9,
+      "pass_rate_pct": 42.9,
+      "violations": 0,
+      "avg_latency_s": 11.57
+    }
+  ],
+  "by_tier": [
+    {
+      "model": "llama3.2_3b",
+      "mode": "W0_full",
+      "tier": "level_1",
+      "total": 15,
+      "passed": 0,
+      "pass_rate_pct": 0.0,
+      "violations": 28
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "W0_full",
+      "tier": "level_2",
+      "total": 6,
+      "passed": 1,
+      "pass_rate_pct": 16.7,
+      "violations": 19
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "W1_head_2k",
+      "tier": "level_1",
+      "total": 15,
+      "passed": 0,
+      "pass_rate_pct": 0.0,
+      "violations": 26
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "W1_head_2k",
+      "tier": "level_2",
+      "total": 6,
+      "passed": 0,
+      "pass_rate_pct": 0.0,
+      "violations": 13
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "W2_keyword_2k",
+      "tier": "level_1",
+      "total": 15,
+      "passed": 0,
+      "pass_rate_pct": 0.0,
+      "violations": 30
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "W2_keyword_2k",
+      "tier": "level_2",
+      "total": 6,
+      "passed": 0,
+      "pass_rate_pct": 0.0,
+      "violations": 14
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "W0_full",
+      "tier": "level_1",
+      "total": 15,
+      "passed": 6,
+      "pass_rate_pct": 40.0,
+      "violations": 0
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "W0_full",
+      "tier": "level_2",
+      "total": 6,
+      "passed": 2,
+      "pass_rate_pct": 33.3,
+      "violations": 0
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "W1_head_2k",
+      "tier": "level_1",
+      "total": 15,
+      "passed": 1,
+      "pass_rate_pct": 6.7,
+      "violations": 0
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "W1_head_2k",
+      "tier": "level_2",
+      "total": 6,
+      "passed": 0,
+      "pass_rate_pct": 0.0,
+      "violations": 4
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "W2_keyword_2k",
+      "tier": "level_1",
+      "total": 15,
+      "passed": 7,
+      "pass_rate_pct": 46.7,
+      "violations": 1
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "W2_keyword_2k",
+      "tier": "level_2",
+      "total": 6,
+      "passed": 1,
+      "pass_rate_pct": 16.7,
+      "violations": 0
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "W0_full",
+      "tier": "level_1",
+      "total": 15,
+      "passed": 8,
+      "pass_rate_pct": 53.3,
+      "violations": 8
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "W0_full",
+      "tier": "level_2",
+      "total": 6,
+      "passed": 3,
+      "pass_rate_pct": 50.0,
+      "violations": 2
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "W1_head_2k",
+      "tier": "level_1",
+      "total": 15,
+      "passed": 0,
+      "pass_rate_pct": 0.0,
+      "violations": 1
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "W1_head_2k",
+      "tier": "level_2",
+      "total": 6,
+      "passed": 0,
+      "pass_rate_pct": 0.0,
+      "violations": 0
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "W2_keyword_2k",
+      "tier": "level_1",
+      "total": 15,
+      "passed": 8,
+      "pass_rate_pct": 53.3,
+      "violations": 0
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "W2_keyword_2k",
+      "tier": "level_2",
+      "total": 6,
+      "passed": 1,
+      "pass_rate_pct": 16.7,
+      "violations": 0
+    }
+  ],
+  "by_suite": [
+    {
+      "model": "llama3.2_3b",
+      "mode": "W0_full",
+      "suite": "ruler_l1",
+      "total": 15,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "W0_full",
+      "suite": "ruler_multihop",
+      "total": 6,
+      "passed": 1,
+      "pass_rate_pct": 16.7
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "W1_head_2k",
+      "suite": "ruler_l1",
+      "total": 15,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "W1_head_2k",
+      "suite": "ruler_multihop",
+      "total": 6,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "W2_keyword_2k",
+      "suite": "ruler_l1",
+      "total": 15,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "llama3.2_3b",
+      "mode": "W2_keyword_2k",
+      "suite": "ruler_multihop",
+      "total": 6,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "W0_full",
+      "suite": "ruler_l1",
+      "total": 15,
+      "passed": 6,
+      "pass_rate_pct": 40.0
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "W0_full",
+      "suite": "ruler_multihop",
+      "total": 6,
+      "passed": 2,
+      "pass_rate_pct": 33.3
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "W1_head_2k",
+      "suite": "ruler_l1",
+      "total": 15,
+      "passed": 1,
+      "pass_rate_pct": 6.7
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "W1_head_2k",
+      "suite": "ruler_multihop",
+      "total": 6,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "W2_keyword_2k",
+      "suite": "ruler_l1",
+      "total": 15,
+      "passed": 7,
+      "pass_rate_pct": 46.7
+    },
+    {
+      "model": "qwen2.5_coder_1.5b",
+      "mode": "W2_keyword_2k",
+      "suite": "ruler_multihop",
+      "total": 6,
+      "passed": 1,
+      "pass_rate_pct": 16.7
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "W0_full",
+      "suite": "ruler_l1",
+      "total": 15,
+      "passed": 8,
+      "pass_rate_pct": 53.3
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "W0_full",
+      "suite": "ruler_multihop",
+      "total": 6,
+      "passed": 3,
+      "pass_rate_pct": 50.0
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "W1_head_2k",
+      "suite": "ruler_l1",
+      "total": 15,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "W1_head_2k",
+      "suite": "ruler_multihop",
+      "total": 6,
+      "passed": 0,
+      "pass_rate_pct": 0.0
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "W2_keyword_2k",
+      "suite": "ruler_l1",
+      "total": 15,
+      "passed": 8,
+      "pass_rate_pct": 53.3
+    },
+    {
+      "model": "qwen2.5_coder_3b",
+      "mode": "W2_keyword_2k",
+      "suite": "ruler_multihop",
+      "total": 6,
+      "passed": 1,
+      "pass_rate_pct": 16.7
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "protocol": "Phase 3 dag_chain_v3 Head-to-Head",
+  "run_timestamp": "20260922-020821",
+  "model": "Qwen/Qwen2.5-Coder-7B-Instruct",
+  "quantization": "INT8",
+  "arms": [
+    "C0_naive",
+    "C2_oneshot"
+  ],
+  "total_tasks": 24,
+  "ledger_sha256": "3946b001b257efd358b9362fe6df1d81959c23b4c04e263a3e613655be7197b8",
+  "primary_n24": {
+    "c0_pass": 1,
+    "c0_rate": 0.0417,
+    "c2_pass": 0,
+    "c2_rate": 0.0,
+    "net_diff": -1,
+    "mcnemar_table": {
+      "a": 0,
+      "b": 0,
+      "c": 1,
+      "d": 23
+    },
+    "p_value": 1.0,
+    "decision": "[non-English historical annotation omitted] (No Demonstrable Governance Advantage)"
+  },
+  "sensitivity_n20": {
+    "c0_pass": 0,
+    "c0_rate": 0.0,
+    "c2_pass": 0,
+    "c2_rate": 0.0
+  },
+  "subsets": {
+    "subset_a_routing_12": {
+      "c0": 0,
+      "c2": 0
+    },
+    "subset_b_system_6": {
+      "c0": 1,
+      "c2": 0
+    },
+    "subset_c_ruler_6": {
+      "c0": 0,
+      "c2": 0
+    }
+  },
+  "forensic_breakdown_c2": {
+    "Type_I_Cognitive_Execution_Failure": 18,
+    "Type_I_invalid_oom": 6
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "run_id": "s5_llama8_20260923_040205",
+  "timestamp": "2026-09-23T04:02:05.530452",
+  "model_key": "llama8",
+  "model_slug": "meta-llama/Llama-3.1-8B-Instruct",
+  "cohort": "dag_chain_v3_subsets_a_b_18",
+  "evaluated_conditions": [
+    "C0_anchor",
+    "C2s_schema",
+    "C2sf_scalar"
+  ],
+  "ledger_sha256": "a1f8e6f7a8039f8dee13b02ca613207698d5e04a150748b13e3929c9e70e4db9",
+  "system": {
+    "platform": "Linux-6.12.90+-x86_64-with-glibc2.35",
+    "python": "3.12.13",
+    "torch": "2.10.0+cu128",
+    "cuda": "12.8",
+    "gpu_count": 2,
+    "gpu_names": [
+      "Tesla T4",
+      "Tesla T4"
+    ]
+  },
+  "primary_n18": {
+    "c0_pass": 1,
+    "c0_rate": 0.0556,
+    "c2s_pass": 2,
+    "c2s_rate": 0.1111,
+    "c2sf_pass": 7,
+    "c2sf_rate": 0.3889,
+    "net_diff_vs_own_c0": 6,
+    "p_value_vs_own_c0": 0.03125,
+    "net_diff_vs_own_c2s": 5,
+    "p_value_vs_own_c2s": 0.0625,
+    "mcnemar_table_vs_own_c0": {
+      "a": 1,
+      "b": 6,
+      "c": 0,
+      "d": 11
+    },
+    "mcnemar_table_vs_own_c2s": {
+      "a": 2,
+      "b": 5,
+      "c": 0,
+      "d": 11
+    },
+    "decision": "[non-English historical annotation omitted] (Statistically Significant Format Advantage: vs C0 Schema+Format bundle, vs C2s verbosity gate cleared)",
+    "integrity_status": "INTEGRITY_EXCEPTION: Passed Qwen-7B frozen Type I reference tasks: ['v3_14_crypto_key_token_hash']. Requires granular step receipt audit.",
+    "type_i_reference_7_passes": [
+      "v3_14_crypto_key_token_hash"
+    ],
+    "receipt_parse_transfer_passes": [
+      "v3_05_decrypt_prefix_hash",
+      "v3_18_cas_artifact_hash_chain"
+    ]
+  },
+  "sensitivity_n17": {
+    "c2sf_pass": 7,
+    "c0_pass": 1,
+    "net_diff": 6,
+    "p_value": 0.03125
+  },
+  "sensitivity_n14": {
+    "c2sf_pass": 7,
+    "c0_pass": 1,
+    "net_diff": 6,
+    "p_value": 0.03125
+  },
+  "subsets": {
+    "subset_a_routing_12": {
+      "c0": 0,
+      "c2sf": 3
+    },
+    "subset_b_system_6": {
+      "c0": 1,
+      "c2sf": 4
+    }
+  },
+  "failure_typology": {
+    "Type_I_Tool_Or_Logic_Failure": 11,
+    "PASS": 7
+  }
+}

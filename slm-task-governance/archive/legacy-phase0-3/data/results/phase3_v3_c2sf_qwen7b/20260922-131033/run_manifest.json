@@ -1,0 +1,73 @@
+{
+  "run_id": "c2sf_20260922_050701",
+  "timestamp": "2026-09-22T05:07:01.022820",
+  "model": "Qwen/Qwen2.5-Coder-7B-Instruct",
+  "condition": "C2sf_scalar",
+  "cohort": "dag_chain_v3_subsets_a_b_18",
+  "ledger_sha256": "25c2f708fd4e3cceddd06209699f9be982f59234cefbb260b595b15bc7d5df73",
+  "system": {
+    "platform": "Linux-6.12.90+-x86_64-with-glibc2.35",
+    "python": "3.12.13",
+    "torch": "2.10.0+cu128",
+    "cuda": "12.8",
+    "gpu_count": 2,
+    "gpu_names": [
+      "Tesla T4",
+      "Tesla T4"
+    ]
+  },
+  "primary_n18": {
+    "c2sf_pass": 10,
+    "c2sf_rate": 0.5556,
+    "c0_frozen_pass": 1,
+    "c0_frozen_rate": 0.0556,
+    "c2s_frozen_pass": 3,
+    "c2s_frozen_rate": 0.1667,
+    "net_diff_vs_c0": 9,
+    "p_value_vs_c0": 0.00391,
+    "net_diff_vs_c2s": 7,
+    "p_value_vs_c2s": 0.01562,
+    "mcnemar_table_vs_c0": {
+      "a": 1,
+      "b": 9,
+      "c": 0,
+      "d": 8
+    },
+    "mcnemar_table_vs_c2s": {
+      "a": 3,
+      "b": 7,
+      "c": 0,
+      "d": 8
+    },
+    "decision": "[non-English historical annotation omitted] (Statistically Significant Format Advantage: vs C0 Schema+Format bundle, vs C2s verbosity gate cleared)",
+    "integrity_status": "INTEGRITY_EXCEPTION: Type I tasks passed unexpectedly: ['v3_05_decrypt_prefix_hash', 'v3_18_cas_artifact_hash_chain']. Requires forensic trace audit."
+  },
+  "sensitivity_n17": {
+    "c2sf_pass": 9,
+    "c2sf_rate": 0.5294,
+    "c0_pass": 0,
+    "c0_rate": 0.0,
+    "net_diff": 9,
+    "p_value": 0.00391
+  },
+  "sensitivity_n14": {
+    "c2sf_pass": 8,
+    "c2sf_rate": 0.5714,
+    "c0_pass": 0,
+    "c0_rate": 0.0,
+    "net_diff": 8,
+    "p_value": 0.00781
+  },
+  "subsets": {
+    "subset_a_routing_12": {
+      "c2sf": 7
+    },
+    "subset_b_system_6": {
+      "c2sf": 3
+    }
+  },
+  "failure_typology": {
+    "Type_I_Tool_Or_Logic_Failure": 8,
+    "PASS": 10
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "scope": "sanitized historical export; integrity only",
+  "files": [
+    {
+      "path": "cpu/phase2_2x2_scoring.py",
+      "sha256": "4d2382363fcc869f1a5fc787ffd8df1e174f038ea550c4082133c4e0fe3bfbfe"
+    },
+    {
+      "path": "cpu/phase2_2x2_tasks.py",
+      "sha256": "d339547083befd5250e3522e77b8cbf5ab64a45376ef2f916956b834270deb75"
+    },
+    {
+      "path": "cpu/phase2_c4_scoring.py",
+      "sha256": "4d2382363fcc869f1a5fc787ffd8df1e174f038ea550c4082133c4e0fe3bfbfe"
+    },
+    {
+      "path": "cpu/phase2_c4_tasks.py",
+      "sha256": "a24ed5c03d4ef4cdbab9009d57630d0b2c7263b1b2d87c58dacee7f286634cb0"
+    },
+    {
+      "path": "data/phase2_2x2/benchmark_ledger.jsonl",
+      "sha256": "734546e2df14a738a20ffe34bfb30aaa04abbb8f330e2861d8f179ccb02ffc5b"
+    },
+    {
+      "path": "data/phase2_2x2/benchmark_summary.json",
+      "sha256": "ff25e4ffd4806a669b7ffdbb8c93403d1c5d9de1114442685dbdf03340fdf76e"
+    },
+    {
+      "path": "data/phase2_2x2/run_manifest.json",
+      "sha256": "970936176292dc919dd1338bcf0bb428e9a7aa957960dac9e7211661b3c2a6a2"
+    },
+    {
+      "path": "data/phase2_2x2/task_registry.json",
+      "sha256": "5f8f3510922babd8457be741912ecaf2d38c6456058ab255173621ceabd2553c"
+    },
+    {
+      "path": "data/phase2_c4/benchmark_ledger.jsonl",
+      "sha256": "202502041c1d2fb9aa945469ecb474210cd974129856ed80e9b58571d7718e14"
+    },
+    {
+      "path": "data/phase2_c4/benchmark_summary.json",
+      "sha256": "4554ebcb649cfdfdd3bf31b98fd4d88e9b4747136cc43c87469e58cfcc089999"
+    },
+    {
+      "path": "data/phase2_c4/run_manifest.json",
+      "sha256": "9f454e39c52be01cabb27919d340deb8c041d1d087a58a362503c39fd2c4aa0f"
+    },
+    {
+      "path": "data/phase2_c4/task_registry.json",
+      "sha256": "f3a258584810802f465a61de01e9a3cf5de9abacb2d4d7c7203e808a55320259"
+    },
+    {
+      "path": "notebooks/pdx_phase2_2x2_factorial.ipynb",
+      "sha256": "6e949a5bfaabdf84046cf65b8d1ca95f58f40cf3e4f511ce3539fa16a5a22fb5"
+    },
+    {
+      "path": "notebooks/pdx_phase2_c4_ruler_window.ipynb",
+      "sha256": "8c0b4c8c8346e2f810814ffbd84d7ebff0541b6754340589f5bafcdae2c2dd0a"
+    },
+    {
+      "path": "README.md",
+      "sha256": "6ade26e0bcaee7577b7fd5663cce50079518bf814babfe2c91a14ac3bde1b198"
+    },
+    {
+      "path": "source_provenance.json",
+      "sha256": "ef2d09388b7e8d7af1ef0b2432e68402ab7ebe5c72fec397d7b7ddf09dfb50c6"
+    },
+    {
+      "path": "verify_phase2.py",
+      "sha256": "773113622d754e4a5dfe5a3aa679629b4fdf99de4f447900546b6792c801c6d7"
+    }
+  ]
+}
