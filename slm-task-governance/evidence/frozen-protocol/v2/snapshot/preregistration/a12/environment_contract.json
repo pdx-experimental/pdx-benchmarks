@@ -1,0 +1,1089 @@
+{
+  "contract_schema_version": "pdx_benchmark_environment_contract_v2",
+  "contract_status": "FROZEN",
+  "canonical_engine": {
+    "distribution": "pdx-artifact-engine",
+    "version": "0.3.0a12",
+    "official_wheel_filename": "pdx_artifact_engine-0.3.0a12-py3-none-any.whl",
+    "official_wheel_sha256": "1ac34e04702029d8b0dd4819d579284a7660ea077fad8ad3489fb5e6b9211a77"
+  },
+  "runtime_lock": {
+    "python_version": "3.13.15",
+    "torch_version": "2.11.0+cu128",
+    "cuda_runtime_version": "12.8",
+    "transformers_version": "4.50.0",
+    "transformers_distribution_standard": "pypi:transformers==4.50.0",
+    "accelerate_version": "0.34.2",
+    "bitsandbytes_version": "0.48.0",
+    "vllm_version": "0.6.3",
+    "rfc8785_version": "0.1.4",
+    "jsonschema_version": "4.23.0"
+  },
+  "hardware_requirements": {
+    "gpu_model": "NVIDIA Tesla T4",
+    "gpu_count": 2,
+    "vram_per_gpu_gb": 16,
+    "total_vram_gb": 32,
+    "host_ram_min_gb": 30
+  },
+  "models": {
+    "Qwen/Qwen2.5-Coder-7B-Instruct": {
+      "requested_model_id": "Qwen/Qwen2.5-Coder-7B-Instruct",
+      "requested_revision": "c03e6d358207e414f1eca0bb1891e29f1db0e242",
+      "resolved_commit_hash": "c03e6d358207e414f1eca0bb1891e29f1db0e242",
+      "tokenizer_resolved_commit_hash": "c03e6d358207e414f1eca0bb1891e29f1db0e242",
+      "config_sha256": "c0242402ad6a13b331ea320feea8c7e3776ffb7a4eff0757b9cd667e116d9a28",
+      "tokenizer_config_sha256": "959e7f1d9a1b7641a6d6ce05ca97b75c7894fcb66cbe5a040406458fb1128ee4",
+      "architecture": "Qwen2ForCausalLM",
+      "parameter_count_nominal": "7B",
+      "access_status": "public",
+      "license": "apache-2.0",
+      "runtime_distribution": "pypi:transformers==4.50.0",
+      "revision_api_audit": {
+        "model": "Qwen/Qwen2.5-Coder-7B-Instruct",
+        "requested_revision": "c03e6d358207e414f1eca0bb1891e29f1db0e242",
+        "status": 200,
+        "error_code": null,
+        "resolved_sha": "c03e6d358207e414f1eca0bb1891e29f1db0e242",
+        "error": null
+      },
+      "resolution_status": "EXACT_FILES_VERIFIED",
+      "artifact_download_audit": {
+        "model_id": "Qwen/Qwen2.5-Coder-7B-Instruct",
+        "selected_revision": "c03e6d358207e414f1eca0bb1891e29f1db0e242",
+        "official_repository_id": "Qwen/Qwen2.5-Coder-7B-Instruct",
+        "revision_http_status": 200,
+        "resolved_commit_hash": "c03e6d358207e414f1eca0bb1891e29f1db0e242",
+        "config.json_http_status": 200,
+        "config.json_error_code": null,
+        "config.json_sha256": "c0242402ad6a13b331ea320feea8c7e3776ffb7a4eff0757b9cd667e116d9a28",
+        "architectures": [
+          "Qwen2ForCausalLM"
+        ],
+        "tokenizer_config.json_http_status": 200,
+        "tokenizer_config.json_error_code": null,
+        "tokenizer_config.json_sha256": "959e7f1d9a1b7641a6d6ce05ca97b75c7894fcb66cbe5a040406458fb1128ee4",
+        "verified": true
+      }
+    },
+    "Qwen/Qwen2.5-Coder-1.5B-Instruct": {
+      "requested_model_id": "Qwen/Qwen2.5-Coder-1.5B-Instruct",
+      "requested_revision": "2e1fd397ee46e1388853d2af2c993145b0f1098a",
+      "resolved_commit_hash": "2e1fd397ee46e1388853d2af2c993145b0f1098a",
+      "tokenizer_resolved_commit_hash": "2e1fd397ee46e1388853d2af2c993145b0f1098a",
+      "config_sha256": "88f9a17863c05fb313515d2ff74b1098e0c35579f99068e32beda00618508ae0",
+      "tokenizer_config_sha256": "959e7f1d9a1b7641a6d6ce05ca97b75c7894fcb66cbe5a040406458fb1128ee4",
+      "architecture": "Qwen2ForCausalLM",
+      "parameter_count_nominal": "1.5B",
+      "access_status": "public",
+      "license": "apache-2.0",
+      "runtime_distribution": "pypi:transformers==4.50.0",
+      "revision_api_audit": {
+        "model": "Qwen/Qwen2.5-Coder-1.5B-Instruct",
+        "requested_revision": "2e1fd397ee46e1388853d2af2c993145b0f1098a",
+        "status": 200,
+        "error_code": null,
+        "resolved_sha": "2e1fd397ee46e1388853d2af2c993145b0f1098a",
+        "error": null
+      },
+      "resolution_status": "EXACT_FILES_VERIFIED",
+      "artifact_download_audit": {
+        "model_id": "Qwen/Qwen2.5-Coder-1.5B-Instruct",
+        "selected_revision": "2e1fd397ee46e1388853d2af2c993145b0f1098a",
+        "official_repository_id": "Qwen/Qwen2.5-Coder-1.5B-Instruct",
+        "revision_http_status": 200,
+        "resolved_commit_hash": "2e1fd397ee46e1388853d2af2c993145b0f1098a",
+        "config.json_http_status": 200,
+        "config.json_error_code": null,
+        "config.json_sha256": "88f9a17863c05fb313515d2ff74b1098e0c35579f99068e32beda00618508ae0",
+        "architectures": [
+          "Qwen2ForCausalLM"
+        ],
+        "tokenizer_config.json_http_status": 200,
+        "tokenizer_config.json_error_code": null,
+        "tokenizer_config.json_sha256": "959e7f1d9a1b7641a6d6ce05ca97b75c7894fcb66cbe5a040406458fb1128ee4",
+        "verified": true
+      }
+    },
+    "Qwen/Qwen2.5-Coder-3B-Instruct": {
+      "requested_model_id": "Qwen/Qwen2.5-Coder-3B-Instruct",
+      "requested_revision": "488639f1ff808d1d3d0ba301aef8c11461451ec5",
+      "resolved_commit_hash": "488639f1ff808d1d3d0ba301aef8c11461451ec5",
+      "tokenizer_resolved_commit_hash": "488639f1ff808d1d3d0ba301aef8c11461451ec5",
+      "config_sha256": "8f85440a3222d18772e964b1ef0b4b1574a1c5e6260c99aa23fcddd05c28b8ae",
+      "tokenizer_config_sha256": "959e7f1d9a1b7641a6d6ce05ca97b75c7894fcb66cbe5a040406458fb1128ee4",
+      "architecture": "Qwen2ForCausalLM",
+      "parameter_count_nominal": "3B",
+      "access_status": "public",
+      "license": "other",
+      "runtime_distribution": "pypi:transformers==4.50.0",
+      "revision_api_audit": {
+        "model": "Qwen/Qwen2.5-Coder-3B-Instruct",
+        "requested_revision": "488639f1ff808d1d3d0ba301aef8c11461451ec5",
+        "status": 200,
+        "error_code": null,
+        "resolved_sha": "488639f1ff808d1d3d0ba301aef8c11461451ec5",
+        "error": null
+      },
+      "resolution_status": "EXACT_FILES_VERIFIED",
+      "artifact_download_audit": {
+        "model_id": "Qwen/Qwen2.5-Coder-3B-Instruct",
+        "selected_revision": "488639f1ff808d1d3d0ba301aef8c11461451ec5",
+        "official_repository_id": "Qwen/Qwen2.5-Coder-3B-Instruct",
+        "revision_http_status": 200,
+        "resolved_commit_hash": "488639f1ff808d1d3d0ba301aef8c11461451ec5",
+        "config.json_http_status": 200,
+        "config.json_error_code": null,
+        "config.json_sha256": "8f85440a3222d18772e964b1ef0b4b1574a1c5e6260c99aa23fcddd05c28b8ae",
+        "architectures": [
+          "Qwen2ForCausalLM"
+        ],
+        "tokenizer_config.json_http_status": 200,
+        "tokenizer_config.json_error_code": null,
+        "tokenizer_config.json_sha256": "959e7f1d9a1b7641a6d6ce05ca97b75c7894fcb66cbe5a040406458fb1128ee4",
+        "verified": true
+      }
+    },
+    "meta-llama/Llama-3.2-1B-Instruct": {
+      "requested_model_id": "meta-llama/Llama-3.2-1B-Instruct",
+      "requested_revision": "9213176726f574b556790deb65791e0c5aa438b6",
+      "resolved_commit_hash": "9213176726f574b556790deb65791e0c5aa438b6",
+      "tokenizer_resolved_commit_hash": "9213176726f574b556790deb65791e0c5aa438b6",
+      "config_sha256": "2febf68cea25bf4611be02b7536f2488a5ba523bb1134986e3610152abe74fdb",
+      "tokenizer_config_sha256": "9823dcfdc1121869029da45192238e85cf44f0b232a6d9dc20e4fe6f4242a14e",
+      "architecture": "LlamaForCausalLM",
+      "parameter_count_nominal": "1B",
+      "access_status": "gated",
+      "license": "llama3.2",
+      "runtime_distribution": "pypi:transformers==4.50.0",
+      "revision_api_audit": {
+        "model": "meta-llama/Llama-3.2-1B-Instruct",
+        "requested_revision": "e9f83f7a672728be26c11b15c48b264b4c7304bf",
+        "status": 404,
+        "error_code": "RevisionNotFound",
+        "resolved_sha": null,
+        "error": "Invalid rev id: e9f83f7a672728be26c11b15c48b264b4c7304bf"
+      },
+      "legacy_unverified_facts": {
+        "resolved_commit_hash": "e9f83f7a672728be26c11b15c48b264b4c7304bf",
+        "tokenizer_resolved_commit_hash": "e9f83f7a672728be26c11b15c48b264b4c7304bf",
+        "config_sha256": "780d2d82172b961556b3283b61c52f3202bf1ca6b8a805f18f164750589321b7",
+        "tokenizer_config_sha256": null
+      },
+      "resolution_status": "EXACT_FILES_VERIFIED",
+      "artifact_download_audit": {
+        "model_id": "meta-llama/Llama-3.2-1B-Instruct",
+        "selected_revision": "9213176726f574b556790deb65791e0c5aa438b6",
+        "official_repository_id": "meta-llama/Llama-3.2-1B-Instruct",
+        "revision_http_status": 200,
+        "resolved_commit_hash": "9213176726f574b556790deb65791e0c5aa438b6",
+        "config.json_http_status": 200,
+        "config.json_error_code": null,
+        "config.json_sha256": "2febf68cea25bf4611be02b7536f2488a5ba523bb1134986e3610152abe74fdb",
+        "architectures": [
+          "LlamaForCausalLM"
+        ],
+        "tokenizer_config.json_http_status": 200,
+        "tokenizer_config.json_error_code": null,
+        "tokenizer_config.json_sha256": "9823dcfdc1121869029da45192238e85cf44f0b232a6d9dc20e4fe6f4242a14e",
+        "verified": true
+      }
+    },
+    "meta-llama/Llama-3.2-3B-Instruct": {
+      "requested_model_id": "meta-llama/Llama-3.2-3B-Instruct",
+      "requested_revision": "0cb88a4f764b7a12671c53f0838cd831a0843b95",
+      "resolved_commit_hash": "0cb88a4f764b7a12671c53f0838cd831a0843b95",
+      "tokenizer_resolved_commit_hash": "0cb88a4f764b7a12671c53f0838cd831a0843b95",
+      "config_sha256": "39fb36dc5416f445ebc4e71cb71fbcf6727e80a35836d8ba1a1474c318467b7a",
+      "tokenizer_config_sha256": "9823dcfdc1121869029da45192238e85cf44f0b232a6d9dc20e4fe6f4242a14e",
+      "architecture": "LlamaForCausalLM",
+      "parameter_count_nominal": "3B",
+      "access_status": "gated",
+      "license": "llama3.2",
+      "runtime_distribution": "pypi:transformers==4.50.0",
+      "revision_api_audit": {
+        "model": "meta-llama/Llama-3.2-3B-Instruct",
+        "requested_revision": "0cb88d447e17d983e23075678eb1b6c008cf518a",
+        "status": 404,
+        "error_code": "RevisionNotFound",
+        "resolved_sha": null,
+        "error": "Invalid rev id: 0cb88d447e17d983e23075678eb1b6c008cf518a"
+      },
+      "legacy_unverified_facts": {
+        "resolved_commit_hash": "0cb88d447e17d983e23075678eb1b6c008cf518a",
+        "tokenizer_resolved_commit_hash": "0cb88d447e17d983e23075678eb1b6c008cf518a",
+        "config_sha256": "780d2d82172b961556b3283b61c52f3202bf1ca6b8a805f18f164750589321b7",
+        "tokenizer_config_sha256": null
+      },
+      "resolution_status": "EXACT_FILES_VERIFIED",
+      "artifact_download_audit": {
+        "model_id": "meta-llama/Llama-3.2-3B-Instruct",
+        "selected_revision": "0cb88a4f764b7a12671c53f0838cd831a0843b95",
+        "official_repository_id": "meta-llama/Llama-3.2-3B-Instruct",
+        "revision_http_status": 200,
+        "resolved_commit_hash": "0cb88a4f764b7a12671c53f0838cd831a0843b95",
+        "config.json_http_status": 200,
+        "config.json_error_code": null,
+        "config.json_sha256": "39fb36dc5416f445ebc4e71cb71fbcf6727e80a35836d8ba1a1474c318467b7a",
+        "architectures": [
+          "LlamaForCausalLM"
+        ],
+        "tokenizer_config.json_http_status": 200,
+        "tokenizer_config.json_error_code": null,
+        "tokenizer_config.json_sha256": "9823dcfdc1121869029da45192238e85cf44f0b232a6d9dc20e4fe6f4242a14e",
+        "verified": true
+      }
+    },
+    "meta-llama/Meta-Llama-3.1-8B-Instruct": {
+      "requested_model_id": "meta-llama/Meta-Llama-3.1-8B-Instruct",
+      "requested_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+      "resolved_commit_hash": "0e9e39f249a16976918f6564b8830bc894c89659",
+      "tokenizer_resolved_commit_hash": "0e9e39f249a16976918f6564b8830bc894c89659",
+      "config_sha256": "29e4c210b0d6ac178b16b2a255a568bdb23b581e50ca1ef6a6d071dd85704e6e",
+      "tokenizer_config_sha256": "177c7b61e616fecb84c17ce0591acb92c6c4d60e9ac5ababfb940ff23bbcd424",
+      "architecture": "LlamaForCausalLM",
+      "parameter_count_nominal": "8B",
+      "access_status": "gated",
+      "license": "llama3.1",
+      "runtime_distribution": "pypi:transformers==4.50.0",
+      "revision_api_audit": {
+        "model": "meta-llama/Meta-Llama-3.1-8B-Instruct",
+        "requested_revision": "48d6d03e92438657d39b83ab799e570751da17fb",
+        "status": 404,
+        "error_code": "RevisionNotFound",
+        "resolved_sha": null,
+        "error": "Invalid rev id: 48d6d03e92438657d39b83ab799e570751da17fb"
+      },
+      "legacy_unverified_facts": {
+        "resolved_commit_hash": "48d6d03e92438657d39b83ab799e570751da17fb",
+        "tokenizer_resolved_commit_hash": "48d6d03e92438657d39b83ab799e570751da17fb",
+        "config_sha256": "8bfe5b7b5d80ad6dec6294e40a3f965ef3644ced83b8f1fd3701d45529b4bf4f",
+        "tokenizer_config_sha256": null
+      },
+      "resolution_status": "EXACT_FILES_VERIFIED",
+      "artifact_download_audit": {
+        "model_id": "meta-llama/Meta-Llama-3.1-8B-Instruct",
+        "selected_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+        "official_repository_id": "meta-llama/Llama-3.1-8B-Instruct",
+        "revision_http_status": 200,
+        "resolved_commit_hash": "0e9e39f249a16976918f6564b8830bc894c89659",
+        "config.json_http_status": 200,
+        "config.json_error_code": null,
+        "config.json_sha256": "29e4c210b0d6ac178b16b2a255a568bdb23b581e50ca1ef6a6d071dd85704e6e",
+        "architectures": [
+          "LlamaForCausalLM"
+        ],
+        "tokenizer_config.json_http_status": 200,
+        "tokenizer_config.json_error_code": null,
+        "tokenizer_config.json_sha256": "177c7b61e616fecb84c17ce0591acb92c6c4d60e9ac5ababfb940ff23bbcd424",
+        "verified": true
+      }
+    },
+    "mistralai/Mistral-7B-Instruct-v0.3": {
+      "requested_model_id": "mistralai/Mistral-7B-Instruct-v0.3",
+      "requested_revision": "c170c708c41dac9275d15a8fff4eca08d52bab71",
+      "resolved_commit_hash": "c170c708c41dac9275d15a8fff4eca08d52bab71",
+      "tokenizer_resolved_commit_hash": "c170c708c41dac9275d15a8fff4eca08d52bab71",
+      "config_sha256": "affafc6478ec0fd07a32f0ca57aa2fc57743f4d17d6730f86a96ac24d1507f99",
+      "tokenizer_config_sha256": "0533dec9cfe319163801b6618d0f3ec9cfa126b6288e3df5deca6e32acb09cd2",
+      "architecture": "MistralForCausalLM",
+      "parameter_count_nominal": "7B",
+      "access_status": "public",
+      "license": "apache-2.0",
+      "runtime_distribution": "pypi:transformers==4.50.0",
+      "revision_api_audit": {
+        "model": "mistralai/Mistral-7B-Instruct-v0.3",
+        "requested_revision": "4a0129a0082729a63aa08ec13f36a445cb403ea1",
+        "status": 404,
+        "error_code": "RevisionNotFound",
+        "resolved_sha": null,
+        "error": "Invalid rev id: 4a0129a0082729a63aa08ec13f36a445cb403ea1"
+      },
+      "legacy_unverified_facts": {
+        "resolved_commit_hash": "4a0129a0082729a63aa08ec13f36a445cb403ea1",
+        "tokenizer_resolved_commit_hash": "4a0129a0082729a63aa08ec13f36a445cb403ea1",
+        "config_sha256": "1ab8d2e7ec6d5fe9a1e63f02d9797d44f753bf133b36a965154b3838614dbd55",
+        "tokenizer_config_sha256": null
+      },
+      "resolution_status": "EXACT_FILES_VERIFIED",
+      "artifact_download_audit": {
+        "model_id": "mistralai/Mistral-7B-Instruct-v0.3",
+        "selected_revision": "c170c708c41dac9275d15a8fff4eca08d52bab71",
+        "official_repository_id": "mistralai/Mistral-7B-Instruct-v0.3",
+        "revision_http_status": 200,
+        "resolved_commit_hash": "c170c708c41dac9275d15a8fff4eca08d52bab71",
+        "config.json_http_status": 200,
+        "config.json_error_code": null,
+        "config.json_sha256": "affafc6478ec0fd07a32f0ca57aa2fc57743f4d17d6730f86a96ac24d1507f99",
+        "architectures": [
+          "MistralForCausalLM"
+        ],
+        "tokenizer_config.json_http_status": 200,
+        "tokenizer_config.json_error_code": null,
+        "tokenizer_config.json_sha256": "0533dec9cfe319163801b6618d0f3ec9cfa126b6288e3df5deca6e32acb09cd2",
+        "verified": true
+      }
+    },
+    "google/gemma-3-1b-it": {
+      "requested_model_id": "google/gemma-3-1b-it",
+      "requested_revision": "dcc83ea841ab6100d6b47a070329e1ba4cf78752",
+      "resolved_commit_hash": "dcc83ea841ab6100d6b47a070329e1ba4cf78752",
+      "tokenizer_resolved_commit_hash": "dcc83ea841ab6100d6b47a070329e1ba4cf78752",
+      "config_sha256": "19cb5d28c97778271ba2b3c3df47bf76bdd6706724777a2318b3522230afe91e",
+      "tokenizer_config_sha256": "bfe25c2735e395407beb78456ea9a6984a1f00d8c16fa04a8b75f2a614cf53e1",
+      "architecture": "Gemma3ForCausalLM",
+      "parameter_count_nominal": "1B",
+      "access_status": "gated",
+      "license": "gemma",
+      "runtime_distribution": "pypi:transformers==4.50.0",
+      "revision_api_audit": {
+        "model": "google/gemma-3-1b-it",
+        "requested_revision": "dcc83ea841ab6100d6b47a070329e1ba4cf78752",
+        "status": 200,
+        "error_code": null,
+        "resolved_sha": "dcc83ea841ab6100d6b47a070329e1ba4cf78752",
+        "error": null
+      },
+      "resolution_status": "EXACT_FILES_VERIFIED",
+      "artifact_download_audit": {
+        "model_id": "google/gemma-3-1b-it",
+        "selected_revision": "dcc83ea841ab6100d6b47a070329e1ba4cf78752",
+        "official_repository_id": "google/gemma-3-1b-it",
+        "revision_http_status": 200,
+        "resolved_commit_hash": "dcc83ea841ab6100d6b47a070329e1ba4cf78752",
+        "config.json_http_status": 200,
+        "config.json_error_code": null,
+        "config.json_sha256": "19cb5d28c97778271ba2b3c3df47bf76bdd6706724777a2318b3522230afe91e",
+        "architectures": [
+          "Gemma3ForCausalLM"
+        ],
+        "tokenizer_config.json_http_status": 200,
+        "tokenizer_config.json_error_code": null,
+        "tokenizer_config.json_sha256": "bfe25c2735e395407beb78456ea9a6984a1f00d8c16fa04a8b75f2a614cf53e1",
+        "verified": true
+      }
+    },
+    "swiss-ai/Apertus-v1.5-8B": {
+      "requested_model_id": "swiss-ai/Apertus-v1.5-8B",
+      "requested_revision": "a411d838600baf0e3635a3daf66fb7c55fc97bb6",
+      "resolved_commit_hash": "a411d838600baf0e3635a3daf66fb7c55fc97bb6",
+      "tokenizer_resolved_commit_hash": "a411d838600baf0e3635a3daf66fb7c55fc97bb6",
+      "config_sha256": "391963f8b992c8445f68123306c8fb4aff1df62ddb5477989efd5cd2d491b686",
+      "tokenizer_config_sha256": "43cdc9d1f25c45ae88cd4ee6509ec63a8088a19af1dc7300d13b874a626de871",
+      "architecture": "Apertus1p5ForConditionalGeneration",
+      "parameter_count_nominal": "8B",
+      "access_status": "gated",
+      "license": "apache-2.0",
+      "runtime_distribution": "git+https://github.com/swiss-ai/transformers.git@3797303dda74844e3d1f8977ff5518bb91f818b4",
+      "branch": "swiss-ai/transformers@3797303dda74844e3d1f8977ff5518bb91f818b4",
+      "branch_commit": "3797303dda74844e3d1f8977ff5518bb91f818b4",
+      "transformers_git_commit": "3797303dda74844e3d1f8977ff5518bb91f818b4",
+      "transformers_git_distribution": "git+https://github.com/swiss-ai/transformers.git@3797303dda74844e3d1f8977ff5518bb91f818b4",
+      "revision_api_audit": {
+        "model": "swiss-ai/Apertus-v1.5-8B",
+        "requested_revision": "a411d838600baf0e3635a3daf66fb7c55fc97bb6",
+        "status": 200,
+        "error_code": null,
+        "resolved_sha": "a411d838600baf0e3635a3daf66fb7c55fc97bb6",
+        "error": null
+      },
+      "resolution_status": "EXACT_FILES_VERIFIED",
+      "artifact_download_audit": {
+        "model_id": "swiss-ai/Apertus-v1.5-8B",
+        "selected_revision": "a411d838600baf0e3635a3daf66fb7c55fc97bb6",
+        "official_repository_id": "swiss-ai/Apertus-v1.5-8B",
+        "revision_http_status": 200,
+        "resolved_commit_hash": "a411d838600baf0e3635a3daf66fb7c55fc97bb6",
+        "config.json_http_status": 200,
+        "config.json_error_code": null,
+        "config.json_sha256": "391963f8b992c8445f68123306c8fb4aff1df62ddb5477989efd5cd2d491b686",
+        "architectures": [
+          "Apertus1p5ForConditionalGeneration"
+        ],
+        "tokenizer_config.json_http_status": 200,
+        "tokenizer_config.json_error_code": null,
+        "tokenizer_config.json_sha256": "43cdc9d1f25c45ae88cd4ee6509ec63a8088a19af1dc7300d13b874a626de871",
+        "verified": true
+      },
+      "runtime_profile": {
+        "profile_id": "apertus_v1p5_isolated_runtime",
+        "description": "Dedicated runtime profile for Apertus 1.5 fork requiring transformers 5.14.0.dev0 and accelerate 1.14.0",
+        "transformers_distribution": "git+https://github.com/swiss-ai/transformers.git@3797303dda74844e3d1f8977ff5518bb91f818b4",
+        "transformers_commit": "3797303dda74844e3d1f8977ff5518bb91f818b4",
+        "transformers_version_nominal": "5.14.0.dev0",
+        "accelerate_version": "1.14.0",
+        "accelerate_min_version": "1.1.0",
+        "bitsandbytes_version": "0.48.0",
+        "rfc8785_version": "0.1.4",
+        "jsonschema_version": "4.23.0"
+      }
+    }
+  },
+  "hyperparameters": {
+    "decoding": {
+      "do_sample": false,
+      "temperature": 0.0,
+      "seed": 42,
+      "max_new_tokens_step": 256,
+      "max_new_tokens_terminal": 256
+    },
+    "quantization": {
+      "load_in_8bit": true,
+      "llm_int8_threshold": 6.0,
+      "llm_int8_has_fp16_weight": false
+    }
+  },
+  "retry_policy": {
+    "max_infra_retries_per_row": 3,
+    "retry_backoff_base_seconds": 10.0,
+    "retry_on_oom": false,
+    "retry_on_schema_violation": false,
+    "retry_on_model_refusal": false
+  },
+  "component_digests": {
+    "scoring_source_digest": "b6380652495b69252ec72fd13b5ce46a3eb40f684943d99de59f1ee86f0d5e4b",
+    "benchmark_loader_digest": "bc915aefebd7260c292c74f1dcda349a4ea91dd6a7e436c540568e4f00b0df8e",
+    "tools_source_digest": "bb73bc77643a7e2b582691b0e0735979bd49f729854923bcf2b680e9c7ad0144",
+    "engine_adapter_digest": "2888ae72780943052d1920ba875059d2d380e37f1615522a883133fd202ccd1a",
+    "ledger_adapter_digest": "f2a16677c7c17891da0d7eebd8bbcc3ea0e9b1d871aea0aae110ccf13ea62854",
+    "verifier_source_digest": "a43a848a3d22d9701c4d4e0264208732cf9949894603ee55502b6058dae39963"
+  },
+  "revisions": [
+    {
+      "version": "2.0",
+      "status": "archived",
+      "archive_file": "environment_contract_v2.0_archive.json",
+      "sha256": "f869397f6c564f15c7de9000e62c82c6fd25506c15e933922e9c060f74ab7324"
+    },
+    {
+      "version": "2.2",
+      "status": "active",
+      "description": "Unified answering budget (N execution steps + 1 terminal generation), decoupled metrics (answer_correct vs tool_execution_success), real GPU Dual Tesla T4 runtime lock (Python 3.13.15, torch 2.11.0+cu128, bnb 0.48.0, INT8 maintained)"
+    }
+  ],
+  "batch_registries": {
+    "master": {
+      "filename": "row_registry.jsonl",
+      "relative_path": "preregistration/a12/row_registry.jsonl",
+      "row_count": 1444,
+      "sha256": "bed6c3bc533f82852e919451113c1ebdb8fce11bc6d7a68edc73d931b463483c"
+    },
+    "phase0_synthetic_fair": {
+      "filename": "phase0_synthetic_fair.jsonl",
+      "relative_path": "preregistration/a12/cohorts/phase0_synthetic_fair.jsonl",
+      "row_count": 1120,
+      "sha256": "85ef7674045262929022a631b15af1f02b9582e6a490f6e5efb90e8abdf795c8"
+    },
+    "sprint5_qwen7b_coder": {
+      "filename": "sprint5_qwen7b_coder.jsonl",
+      "relative_path": "preregistration/a12/cohorts/sprint5_qwen7b_coder.jsonl",
+      "model_slug": "Qwen/Qwen2.5-Coder-7B-Instruct",
+      "row_count": 54,
+      "sha256": "fd408edd17407755a19c8aab90e719c79a7ff3c5e6e61000dbfe3883cea88848"
+    },
+    "sprint5_qwen15_coder": {
+      "filename": "sprint5_qwen15_coder.jsonl",
+      "relative_path": "preregistration/a12/cohorts/sprint5_qwen15_coder.jsonl",
+      "model_slug": "Qwen/Qwen2.5-Coder-1.5B-Instruct",
+      "row_count": 54,
+      "sha256": "c2fb75e5c54ab35e3384e895b141f8ad0b56149c4cf37aaca106c8d09e6b1c7b"
+    },
+    "sprint5_llama32_3b": {
+      "filename": "sprint5_llama32_3b.jsonl",
+      "relative_path": "preregistration/a12/cohorts/sprint5_llama32_3b.jsonl",
+      "model_slug": "meta-llama/Llama-3.2-3B-Instruct",
+      "row_count": 54,
+      "sha256": "2b5cdc6974874098c987223a3b07e49c13b1ae54f3d09329fe4ab5471eb535d1"
+    },
+    "sprint5_llama31_8b": {
+      "filename": "sprint5_llama31_8b.jsonl",
+      "relative_path": "preregistration/a12/cohorts/sprint5_llama31_8b.jsonl",
+      "model_slug": "meta-llama/Meta-Llama-3.1-8B-Instruct",
+      "row_count": 54,
+      "sha256": "2e594f909e211071be4b0df42f1830cb218a08f59845bde5d475e45439b1dd5f"
+    },
+    "sprint5_mistral7b": {
+      "filename": "sprint5_mistral7b.jsonl",
+      "relative_path": "preregistration/a12/cohorts/sprint5_mistral7b.jsonl",
+      "model_slug": "mistralai/Mistral-7B-Instruct-v0.3",
+      "row_count": 54,
+      "sha256": "152242ece7ce09423b384f4d5c76ce8ccc17634c40a82b5d6282fc068da7f88d"
+    },
+    "apertus_smoke_1task": {
+      "filename": "apertus_smoke_1task.jsonl",
+      "relative_path": "preregistration/a12/cohorts/apertus_smoke_1task.jsonl",
+      "row_count": 1,
+      "sha256": "8ef7c6f4c8c016c6a8d57ce15ea5e17e0fbfdc58d5e0092fbe103b96826e0881"
+    },
+    "apertus_admission_c0": {
+      "filename": "apertus_admission_c0.jsonl",
+      "relative_path": "preregistration/a12/cohorts/apertus_admission_c0.jsonl",
+      "row_count": 1,
+      "sha256": "c1b836fac7c2b83cc8bd03294066bca3cb370ec9c16aa851e200b04606fc03b7"
+    },
+    "apertus_admission_c2sf": {
+      "filename": "apertus_admission_c2sf.jsonl",
+      "relative_path": "preregistration/a12/cohorts/apertus_admission_c2sf.jsonl",
+      "row_count": 1,
+      "sha256": "8ef7c6f4c8c016c6a8d57ce15ea5e17e0fbfdc58d5e0092fbe103b96826e0881"
+    },
+    "phase0_admission_pilot": {
+      "filename": "phase0_admission_pilot.jsonl",
+      "relative_path": "preregistration/a12/cohorts/phase0_admission_pilot.jsonl",
+      "row_count": 6,
+      "sha256": "ab52fdae463e2a551ac71e3fe980e7e5db1f3af6632b22d70a9ba4933c3e9d9a"
+    },
+    "sprint5_qwen7b_coder_c0": {
+      "filename": "sprint5_qwen7b_coder_c0.jsonl",
+      "relative_path": "preregistration/a12/cohorts/sprint5_qwen7b_coder_c0.jsonl",
+      "model_slug": "Qwen/Qwen2.5-Coder-7B-Instruct",
+      "row_count": 18,
+      "sha256": "e0b3ed96b7e111bc4793426da973e7d9e7f8a622c6af6ec186bb02bdda10024d"
+    },
+    "sprint5_qwen7b_coder_c2s": {
+      "filename": "sprint5_qwen7b_coder_c2s.jsonl",
+      "relative_path": "preregistration/a12/cohorts/sprint5_qwen7b_coder_c2s.jsonl",
+      "model_slug": "Qwen/Qwen2.5-Coder-7B-Instruct",
+      "row_count": 18,
+      "sha256": "bdcab2fb601ceb752e5c16d20fedd553782f80ba1870af50036db74e3509d362"
+    },
+    "sprint5_qwen7b_coder_c2sf": {
+      "filename": "sprint5_qwen7b_coder_c2sf.jsonl",
+      "relative_path": "preregistration/a12/cohorts/sprint5_qwen7b_coder_c2sf.jsonl",
+      "model_slug": "Qwen/Qwen2.5-Coder-7B-Instruct",
+      "row_count": 18,
+      "sha256": "01cd6ccb42cdc0aeb3cb16e7ed84e97644820a40ed67d814c20020eac31388d1"
+    },
+    "sprint5_qwen15_coder_c0": {
+      "filename": "sprint5_qwen15_coder_c0.jsonl",
+      "relative_path": "preregistration/a12/cohorts/sprint5_qwen15_coder_c0.jsonl",
+      "model_slug": "Qwen/Qwen2.5-Coder-1.5B-Instruct",
+      "row_count": 18,
+      "sha256": "07873b9f0c2c3eaf3f1de569a466734060e6236f98102994fff339c3e5878589"
+    },
+    "sprint5_qwen15_coder_c2s": {
+      "filename": "sprint5_qwen15_coder_c2s.jsonl",
+      "relative_path": "preregistration/a12/cohorts/sprint5_qwen15_coder_c2s.jsonl",
+      "model_slug": "Qwen/Qwen2.5-Coder-1.5B-Instruct",
+      "row_count": 18,
+      "sha256": "a081cb8471ce59af5add4de6f0af7bc8e35563b7308ada352203b7a7eaf3273d"
+    },
+    "sprint5_qwen15_coder_c2sf": {
+      "filename": "sprint5_qwen15_coder_c2sf.jsonl",
+      "relative_path": "preregistration/a12/cohorts/sprint5_qwen15_coder_c2sf.jsonl",
+      "model_slug": "Qwen/Qwen2.5-Coder-1.5B-Instruct",
+      "row_count": 18,
+      "sha256": "b905bda67a771f35ab210be2db9a8f1736b084ef2df80a301cca544464bf4cbd"
+    },
+    "sprint5_llama32_3b_c0": {
+      "filename": "sprint5_llama32_3b_c0.jsonl",
+      "relative_path": "preregistration/a12/cohorts/sprint5_llama32_3b_c0.jsonl",
+      "model_slug": "meta-llama/Llama-3.2-3B-Instruct",
+      "row_count": 18,
+      "sha256": "d9c5a70432d5a0df127af3954e854d5044f8d14b96ef4d1f56e80fb8c701f90a"
+    },
+    "sprint5_llama32_3b_c2s": {
+      "filename": "sprint5_llama32_3b_c2s.jsonl",
+      "relative_path": "preregistration/a12/cohorts/sprint5_llama32_3b_c2s.jsonl",
+      "model_slug": "meta-llama/Llama-3.2-3B-Instruct",
+      "row_count": 18,
+      "sha256": "43fdf20b7a175d1652bb8cf3303ff75c1e84936ae1fbcb4f8d33c2f66369dd91"
+    },
+    "sprint5_llama32_3b_c2sf": {
+      "filename": "sprint5_llama32_3b_c2sf.jsonl",
+      "relative_path": "preregistration/a12/cohorts/sprint5_llama32_3b_c2sf.jsonl",
+      "model_slug": "meta-llama/Llama-3.2-3B-Instruct",
+      "row_count": 18,
+      "sha256": "0ee40b78e9b3614303c24e40815bd416a3fea8765bfcddc567d17c97ccaaae03"
+    },
+    "sprint5_llama31_8b_c0": {
+      "filename": "sprint5_llama31_8b_c0.jsonl",
+      "relative_path": "preregistration/a12/cohorts/sprint5_llama31_8b_c0.jsonl",
+      "model_slug": "meta-llama/Meta-Llama-3.1-8B-Instruct",
+      "row_count": 18,
+      "sha256": "15c434b7437a0e2cf6985a13f1bfe3e2f2943645a934aef8931de506a68b0c65"
+    },
+    "sprint5_llama31_8b_c2s": {
+      "filename": "sprint5_llama31_8b_c2s.jsonl",
+      "relative_path": "preregistration/a12/cohorts/sprint5_llama31_8b_c2s.jsonl",
+      "model_slug": "meta-llama/Meta-Llama-3.1-8B-Instruct",
+      "row_count": 18,
+      "sha256": "cd1bb576687591a93c9afcd513e63ec648f395fb2f20be4b7fa0a9d843869611"
+    },
+    "sprint5_llama31_8b_c2sf": {
+      "filename": "sprint5_llama31_8b_c2sf.jsonl",
+      "relative_path": "preregistration/a12/cohorts/sprint5_llama31_8b_c2sf.jsonl",
+      "model_slug": "meta-llama/Meta-Llama-3.1-8B-Instruct",
+      "row_count": 18,
+      "sha256": "158303962b6ed5119a066d4975b3c065e08a5011e93a6c25bf6642d7bee7fab6"
+    },
+    "sprint5_mistral7b_c0": {
+      "filename": "sprint5_mistral7b_c0.jsonl",
+      "relative_path": "preregistration/a12/cohorts/sprint5_mistral7b_c0.jsonl",
+      "model_slug": "mistralai/Mistral-7B-Instruct-v0.3",
+      "row_count": 18,
+      "sha256": "3c47f5c4cb731152183397a0b1b0128ca293b0a3d7d8684c2ac3817d517c1cf2"
+    },
+    "sprint5_mistral7b_c2s": {
+      "filename": "sprint5_mistral7b_c2s.jsonl",
+      "relative_path": "preregistration/a12/cohorts/sprint5_mistral7b_c2s.jsonl",
+      "model_slug": "mistralai/Mistral-7B-Instruct-v0.3",
+      "row_count": 18,
+      "sha256": "96edee1b77468b1a13f4df67e5075b5c2cd5fb83e8f7255ef2b67c72b7297195"
+    },
+    "sprint5_mistral7b_c2sf": {
+      "filename": "sprint5_mistral7b_c2sf.jsonl",
+      "relative_path": "preregistration/a12/cohorts/sprint5_mistral7b_c2sf.jsonl",
+      "model_slug": "mistralai/Mistral-7B-Instruct-v0.3",
+      "row_count": 18,
+      "sha256": "b9723943c5994fa82a356c2bcdfd6092b26c1b896e7c0450e2397ccfe7bd28af"
+    },
+    "admission_qwen7_c0": {
+      "relative_path": "preregistration/a12/cohorts/admission_qwen7_c0.jsonl",
+      "filename": "admission_qwen7_c0.jsonl",
+      "sha256": "b9a25af199506ae52ff3526bdfd1cfeb04598788fbbe7f17a471d7197c015c94"
+    },
+    "admission_qwen7_c2s": {
+      "relative_path": "preregistration/a12/cohorts/admission_qwen7_c2s.jsonl",
+      "filename": "admission_qwen7_c2s.jsonl",
+      "sha256": "fd9c7fe25c6835071e14c65b6cc2db0887b0ff1ed275270cfebcfbba7d3ca504"
+    },
+    "admission_qwen7_c2sf": {
+      "relative_path": "preregistration/a12/cohorts/admission_qwen7_c2sf.jsonl",
+      "filename": "admission_qwen7_c2sf.jsonl",
+      "sha256": "ed02822e1b5cdeacda5179bc0d0096b21d94e8b6cf43694b9f917765d2efb8c5"
+    },
+    "admission_qwen15_c0": {
+      "relative_path": "preregistration/a12/cohorts/admission_qwen15_c0.jsonl",
+      "filename": "admission_qwen15_c0.jsonl",
+      "sha256": "3181c2f6cee0c3e5001e6c7ef3d24e572d6514cc109215a58837c6ce51891329"
+    },
+    "admission_qwen15_c2s": {
+      "relative_path": "preregistration/a12/cohorts/admission_qwen15_c2s.jsonl",
+      "filename": "admission_qwen15_c2s.jsonl",
+      "sha256": "20c85b3150d8237ec313fb746e41be6975c8487ef27c9eca15d5c2ede86f40de"
+    },
+    "admission_qwen15_c2sf": {
+      "relative_path": "preregistration/a12/cohorts/admission_qwen15_c2sf.jsonl",
+      "filename": "admission_qwen15_c2sf.jsonl",
+      "sha256": "bec76e402675c4a38516cac8c591b13d8215b44b8f0db6f0c5c7eebc33714dbd"
+    },
+    "admission_llama3_c0": {
+      "relative_path": "preregistration/a12/cohorts/admission_llama3_c0.jsonl",
+      "filename": "admission_llama3_c0.jsonl",
+      "sha256": "dd2bae4c725d01f3116f0ff14581eae5769a54dafc50f744439af40c2a91d178"
+    },
+    "admission_llama3_c2s": {
+      "relative_path": "preregistration/a12/cohorts/admission_llama3_c2s.jsonl",
+      "filename": "admission_llama3_c2s.jsonl",
+      "sha256": "106fc048828b0de592b993764155fad7b18e48931b28caff7e2e61d69bc0a377"
+    },
+    "admission_llama3_c2sf": {
+      "relative_path": "preregistration/a12/cohorts/admission_llama3_c2sf.jsonl",
+      "filename": "admission_llama3_c2sf.jsonl",
+      "sha256": "3e98670e57a87853a64d4beda2c1999352ee4687a3a3ccfe095c7fa6b8ef214c"
+    },
+    "admission_llama8_c0": {
+      "relative_path": "preregistration/a12/cohorts/admission_llama8_c0.jsonl",
+      "filename": "admission_llama8_c0.jsonl",
+      "sha256": "a2b1b230f797dec48c0be8fd3f9d0f574877088a7f5a5899fd85feda56831b41"
+    },
+    "admission_llama8_c2s": {
+      "relative_path": "preregistration/a12/cohorts/admission_llama8_c2s.jsonl",
+      "filename": "admission_llama8_c2s.jsonl",
+      "sha256": "b0205c171a75de53de7c386415e669a4075c1a7c57480518b5c676afe0bd087f"
+    },
+    "admission_llama8_c2sf": {
+      "relative_path": "preregistration/a12/cohorts/admission_llama8_c2sf.jsonl",
+      "filename": "admission_llama8_c2sf.jsonl",
+      "sha256": "7b3564ac66b7db2da0d0d1e0c44029a64f39cb349475ac5037e57766c2346098"
+    },
+    "admission_mistral_c0": {
+      "relative_path": "preregistration/a12/cohorts/admission_mistral_c0.jsonl",
+      "filename": "admission_mistral_c0.jsonl",
+      "sha256": "03214d91611058949e9bbf6dcb6025226f5ba942a6b2d173eabc048ca5df6ce6"
+    },
+    "admission_mistral_c2s": {
+      "relative_path": "preregistration/a12/cohorts/admission_mistral_c2s.jsonl",
+      "filename": "admission_mistral_c2s.jsonl",
+      "sha256": "5c3abab64467840d06fe436fa67414dcce5363378fd78a1d313081d54a6a516c"
+    },
+    "admission_mistral_c2sf": {
+      "relative_path": "preregistration/a12/cohorts/admission_mistral_c2sf.jsonl",
+      "filename": "admission_mistral_c2sf.jsonl",
+      "sha256": "5311374ea8a454c9dcbeddf884fd9e61735eb7a53595b1ffa481c51955d8c06a"
+    },
+    "apertus_admission_c2s": {
+      "relative_path": "preregistration/a12/cohorts/apertus_admission_c2s.jsonl",
+      "filename": "apertus_admission_c2s.jsonl",
+      "sha256": "31946df42f63fc8612aa526f5a263d25dabf9fd1929509f65acafd05a6731d24"
+    },
+    "admission_gemma3_1b_react": {
+      "relative_path": "preregistration/a12/cohorts/admission_gemma3_1b_react.jsonl",
+      "filename": "admission_gemma3_1b_react.jsonl",
+      "sha256": "a602ee3797709c12543aba8dfa105a2023584003e95e97ce45562f90c4a7e9f3"
+    },
+    "admission_gemma3_1b_isolated": {
+      "relative_path": "preregistration/a12/cohorts/admission_gemma3_1b_isolated.jsonl",
+      "filename": "admission_gemma3_1b_isolated.jsonl",
+      "sha256": "9b82b119c407a75467e69358857ac5fee3b46c8a7f7eb330b70db9fd0f38ab2e"
+    },
+    "admission_llama32_1b_react": {
+      "relative_path": "preregistration/a12/cohorts/admission_llama32_1b_react.jsonl",
+      "filename": "admission_llama32_1b_react.jsonl",
+      "sha256": "e9e7b39b8fd8a3c138fcb42cd9df756d0abcf643fc02c87d6b38f50d0f1f1db8"
+    },
+    "admission_llama32_1b_isolated": {
+      "relative_path": "preregistration/a12/cohorts/admission_llama32_1b_isolated.jsonl",
+      "filename": "admission_llama32_1b_isolated.jsonl",
+      "sha256": "84a4b12a34e28beed22602b6036b91fbd662cef3cec8585fdcf51cd0c06b1f48"
+    },
+    "admission_qwen25_3b_react": {
+      "relative_path": "preregistration/a12/cohorts/admission_qwen25_3b_react.jsonl",
+      "filename": "admission_qwen25_3b_react.jsonl",
+      "sha256": "f3db9b56f81f184182ddd0faeb8134a2068ca1886a97a7713a1f4b19eb0d8d47"
+    },
+    "admission_qwen25_3b_isolated": {
+      "relative_path": "preregistration/a12/cohorts/admission_qwen25_3b_isolated.jsonl",
+      "filename": "admission_qwen25_3b_isolated.jsonl",
+      "sha256": "da4da8341ef810aec8b4e2b107939aaafa94ff74d2872934f513a151778c1c15"
+    },
+    "admission_llama3_react": {
+      "relative_path": "preregistration/a12/cohorts/admission_llama3_react.jsonl",
+      "filename": "admission_llama3_react.jsonl",
+      "sha256": "cebc4cae7baa09aa7f3cee1e900dd9ba21fd49ceb722ddf5a4286ed37d35cc8a"
+    },
+    "admission_llama3_isolated": {
+      "relative_path": "preregistration/a12/cohorts/admission_llama3_isolated.jsonl",
+      "filename": "admission_llama3_isolated.jsonl",
+      "sha256": "80be701d52704d04add8b6bea0974057c9c6f5324f7b4e442a8dee7a234cc917"
+    },
+    "phase0_gemma3_1b_react": {
+      "relative_path": "preregistration/a12/cohorts/phase0_fair_gemma3_1b_react.jsonl",
+      "filename": "phase0_fair_gemma3_1b_react.jsonl",
+      "sha256": "9753ffd09bfd2f50a11ae73e48a25a635be1303c57e8f6f7d72c144eacdf28de",
+      "row_count": 112,
+      "model_key": "gemma3_1b",
+      "arm": "react",
+      "condition": "goldplan_react"
+    },
+    "phase0_gemma3_1b_isolated": {
+      "relative_path": "preregistration/a12/cohorts/phase0_fair_gemma3_1b_isolated.jsonl",
+      "filename": "phase0_fair_gemma3_1b_isolated.jsonl",
+      "sha256": "9f88456a43cbf7f0172ed9aa355a8d5ff765f0420dccacbd8c8d65d659a6cdc3",
+      "row_count": 112,
+      "model_key": "gemma3_1b",
+      "arm": "isolated",
+      "condition": "goldplan_isolated"
+    },
+    "phase0_llama32_1b_react": {
+      "relative_path": "preregistration/a12/cohorts/phase0_fair_llama32_1b_react.jsonl",
+      "filename": "phase0_fair_llama32_1b_react.jsonl",
+      "sha256": "cf97bfbac1dfa99a495e934ab3b66a05e61df2a251964fcc03272acf6862c938",
+      "row_count": 112,
+      "model_key": "llama32_1b",
+      "arm": "react",
+      "condition": "goldplan_react"
+    },
+    "phase0_llama32_1b_isolated": {
+      "relative_path": "preregistration/a12/cohorts/phase0_fair_llama32_1b_isolated.jsonl",
+      "filename": "phase0_fair_llama32_1b_isolated.jsonl",
+      "sha256": "2f48c830ee8b9e812a6f0c6d66398140e1bc8337927f20f37f95b1a29abacb5b",
+      "row_count": 112,
+      "model_key": "llama32_1b",
+      "arm": "isolated",
+      "condition": "goldplan_isolated"
+    },
+    "phase0_llama32_3b_react": {
+      "relative_path": "preregistration/a12/cohorts/phase0_fair_llama32_3b_react.jsonl",
+      "filename": "phase0_fair_llama32_3b_react.jsonl",
+      "sha256": "604ed7ab26fe5c83b1a5358d9cd481c8a343c8a8b3704f5060167ea01a4b38f9",
+      "row_count": 112,
+      "model_key": "llama32_3b",
+      "arm": "react",
+      "condition": "goldplan_react"
+    },
+    "phase0_llama32_3b_isolated": {
+      "relative_path": "preregistration/a12/cohorts/phase0_fair_llama32_3b_isolated.jsonl",
+      "filename": "phase0_fair_llama32_3b_isolated.jsonl",
+      "sha256": "766c2418051fcbadf27e334d8b3ab0e309634d0338871573f6d6dd2df186a8b2",
+      "row_count": 112,
+      "model_key": "llama32_3b",
+      "arm": "isolated",
+      "condition": "goldplan_isolated"
+    },
+    "phase0_qwen25_15b_react": {
+      "relative_path": "preregistration/a12/cohorts/phase0_fair_qwen25_15b_react.jsonl",
+      "filename": "phase0_fair_qwen25_15b_react.jsonl",
+      "sha256": "2f5c46182c4e00e030eb887c2c6e3b6c0a108398ea2765b5bcb429027bb1d83c",
+      "row_count": 112,
+      "model_key": "qwen25_15b",
+      "arm": "react",
+      "condition": "goldplan_react"
+    },
+    "phase0_qwen25_15b_isolated": {
+      "relative_path": "preregistration/a12/cohorts/phase0_fair_qwen25_15b_isolated.jsonl",
+      "filename": "phase0_fair_qwen25_15b_isolated.jsonl",
+      "sha256": "aaf4741baf3b08e4250815b096cfb8d752b85d613ebf00963257398f1209f5cd",
+      "row_count": 112,
+      "model_key": "qwen25_15b",
+      "arm": "isolated",
+      "condition": "goldplan_isolated"
+    },
+    "phase0_qwen25_3b_react": {
+      "relative_path": "preregistration/a12/cohorts/phase0_fair_qwen25_3b_react.jsonl",
+      "filename": "phase0_fair_qwen25_3b_react.jsonl",
+      "sha256": "7c7bac8e44105a5d14c7514ff715a995da08f93ffa645f39f1fc25db6fc55317",
+      "row_count": 112,
+      "model_key": "qwen25_3b",
+      "arm": "react",
+      "condition": "goldplan_react"
+    },
+    "phase0_qwen25_3b_isolated": {
+      "relative_path": "preregistration/a12/cohorts/phase0_fair_qwen25_3b_isolated.jsonl",
+      "filename": "phase0_fair_qwen25_3b_isolated.jsonl",
+      "sha256": "36a88746561317fe8f2127d4b929fa5b7e38eb18d3097a51abb2e05f0efbb783",
+      "row_count": 112,
+      "model_key": "qwen25_3b",
+      "arm": "isolated",
+      "condition": "goldplan_isolated"
+    },
+    "phase3_qwen7_c0": {
+      "relative_path": "preregistration/a12/cohorts/sprint5_qwen7b_coder_c0.jsonl",
+      "filename": "sprint5_qwen7b_coder_c0.jsonl",
+      "sha256": "85a3b5564a3fee0d790150d545576b1b48aadf7f9a92106ed08855523cd96f29",
+      "row_count": 18,
+      "model_key": "qwen7",
+      "arm": "c0",
+      "condition": "C0_anchor"
+    },
+    "phase3_qwen7_c2s": {
+      "relative_path": "preregistration/a12/cohorts/sprint5_qwen7b_coder_c2s.jsonl",
+      "filename": "sprint5_qwen7b_coder_c2s.jsonl",
+      "sha256": "3bb383758f2e979cc3473f8d2a5a9cab52a337c24cf65dee086d2f02a9788478",
+      "row_count": 18,
+      "model_key": "qwen7",
+      "arm": "c2s",
+      "condition": "C2s_schema"
+    },
+    "phase3_qwen7_c2sf": {
+      "relative_path": "preregistration/a12/cohorts/sprint5_qwen7b_coder_c2sf.jsonl",
+      "filename": "sprint5_qwen7b_coder_c2sf.jsonl",
+      "sha256": "62599ffb0c5e279f2c6bb28d7d6f081f1767353a225bc430ca32469cc1b846c7",
+      "row_count": 18,
+      "model_key": "qwen7",
+      "arm": "c2sf",
+      "condition": "C2sf_scalar"
+    },
+    "phase3_qwen15_c0": {
+      "relative_path": "preregistration/a12/cohorts/sprint5_qwen15_coder_c0.jsonl",
+      "filename": "sprint5_qwen15_coder_c0.jsonl",
+      "sha256": "6b29b9497faf148b4093e457fc0d90332a042906668ae7dc301e0e3cb7fa7363",
+      "row_count": 18,
+      "model_key": "qwen15",
+      "arm": "c0",
+      "condition": "C0_anchor"
+    },
+    "phase3_qwen15_c2s": {
+      "relative_path": "preregistration/a12/cohorts/sprint5_qwen15_coder_c2s.jsonl",
+      "filename": "sprint5_qwen15_coder_c2s.jsonl",
+      "sha256": "b2fbe3fc84fdc5b1e32b921e727e86d9f9c09633004f5666bb1567f63e4061eb",
+      "row_count": 18,
+      "model_key": "qwen15",
+      "arm": "c2s",
+      "condition": "C2s_schema"
+    },
+    "phase3_qwen15_c2sf": {
+      "relative_path": "preregistration/a12/cohorts/sprint5_qwen15_coder_c2sf.jsonl",
+      "filename": "sprint5_qwen15_coder_c2sf.jsonl",
+      "sha256": "4ae3786cbd0e64c9a353d2a69515f4519665ffc02bbd54cee5ba083d9ef5788f",
+      "row_count": 18,
+      "model_key": "qwen15",
+      "arm": "c2sf",
+      "condition": "C2sf_scalar"
+    },
+    "phase3_llama3_c0": {
+      "relative_path": "preregistration/a12/cohorts/sprint5_llama32_3b_c0.jsonl",
+      "filename": "sprint5_llama32_3b_c0.jsonl",
+      "sha256": "1c2d295eefbf99b41f395bd0b57f3b7637e1f5012a525df1b3cb502701cd1864",
+      "row_count": 18,
+      "model_key": "llama3",
+      "arm": "c0",
+      "condition": "C0_anchor"
+    },
+    "phase3_llama3_c2s": {
+      "relative_path": "preregistration/a12/cohorts/sprint5_llama32_3b_c2s.jsonl",
+      "filename": "sprint5_llama32_3b_c2s.jsonl",
+      "sha256": "88e8b4b94558e253f1ab74053899119cecd18691babc374e2bfe989843381652",
+      "row_count": 18,
+      "model_key": "llama3",
+      "arm": "c2s",
+      "condition": "C2s_schema"
+    },
+    "phase3_llama3_c2sf": {
+      "relative_path": "preregistration/a12/cohorts/sprint5_llama32_3b_c2sf.jsonl",
+      "filename": "sprint5_llama32_3b_c2sf.jsonl",
+      "sha256": "b55d0e6c551b9e5d09ac9ce6b091dfbe98cc0318b2e1767d38ebc7cfb9352f15",
+      "row_count": 18,
+      "model_key": "llama3",
+      "arm": "c2sf",
+      "condition": "C2sf_scalar"
+    },
+    "phase3_llama8_c0": {
+      "relative_path": "preregistration/a12/cohorts/sprint5_llama31_8b_c0.jsonl",
+      "filename": "sprint5_llama31_8b_c0.jsonl",
+      "sha256": "9398a4073a338cb48e2dd74cd24e729b2b348a5faa0a19b99eefc050e54ae91b",
+      "row_count": 18,
+      "model_key": "llama8",
+      "arm": "c0",
+      "condition": "C0_anchor"
+    },
+    "phase3_llama8_c2s": {
+      "relative_path": "preregistration/a12/cohorts/sprint5_llama31_8b_c2s.jsonl",
+      "filename": "sprint5_llama31_8b_c2s.jsonl",
+      "sha256": "927336432553a48232fc2d70a6c2849229cb64df07ec70c169377f4197a93e36",
+      "row_count": 18,
+      "model_key": "llama8",
+      "arm": "c2s",
+      "condition": "C2s_schema"
+    },
+    "phase3_llama8_c2sf": {
+      "relative_path": "preregistration/a12/cohorts/sprint5_llama31_8b_c2sf.jsonl",
+      "filename": "sprint5_llama31_8b_c2sf.jsonl",
+      "sha256": "022d7fe0eefc3e58c6565e0a7e07411a60b47bbe63a0d47b5f534b0be18ce02e",
+      "row_count": 18,
+      "model_key": "llama8",
+      "arm": "c2sf",
+      "condition": "C2sf_scalar"
+    },
+    "phase3_mistral_c0": {
+      "relative_path": "preregistration/a12/cohorts/sprint5_mistral7b_c0.jsonl",
+      "filename": "sprint5_mistral7b_c0.jsonl",
+      "sha256": "b61f4d098b6443fefe348ab4f08d7ef56505523de2fcb24a6e61f1fe87d5435e",
+      "row_count": 18,
+      "model_key": "mistral",
+      "arm": "c0",
+      "condition": "C0_anchor"
+    },
+    "phase3_mistral_c2s": {
+      "relative_path": "preregistration/a12/cohorts/sprint5_mistral7b_c2s.jsonl",
+      "filename": "sprint5_mistral7b_c2s.jsonl",
+      "sha256": "923825e9c28b0276f619c4a45cd848e93346de20facbdd0f49a4a6b17b11fcc1",
+      "row_count": 18,
+      "model_key": "mistral",
+      "arm": "c2s",
+      "condition": "C2s_schema"
+    },
+    "phase3_mistral_c2sf": {
+      "relative_path": "preregistration/a12/cohorts/sprint5_mistral7b_c2sf.jsonl",
+      "filename": "sprint5_mistral7b_c2sf.jsonl",
+      "sha256": "b9218ff39347db48f3330bb966487d06dcf874a8296f1854a46688918094d466",
+      "row_count": 18,
+      "model_key": "mistral",
+      "arm": "c2sf",
+      "condition": "C2sf_scalar"
+    },
+    "phase3_apertus_c0": {
+      "relative_path": "preregistration/a12/cohorts/sprint5_apertus_c0.jsonl",
+      "filename": "sprint5_apertus_c0.jsonl",
+      "sha256": "584a7e9981379c9c5c81ef1395b9ccc39a96c79cea9010dd62e8997427c9aa42",
+      "row_count": 18,
+      "model_key": "apertus",
+      "arm": "c0",
+      "condition": "C0_anchor"
+    },
+    "phase3_apertus_c2s": {
+      "relative_path": "preregistration/a12/cohorts/sprint5_apertus_c2s.jsonl",
+      "filename": "sprint5_apertus_c2s.jsonl",
+      "sha256": "da9b310b83f688daf2b1f90692a0b6bda05a9c6be0915cb0a3144e727157be8a",
+      "row_count": 18,
+      "model_key": "apertus",
+      "arm": "c2s",
+      "condition": "C2s_schema"
+    },
+    "phase3_apertus_c2sf": {
+      "relative_path": "preregistration/a12/cohorts/sprint5_apertus_c2sf.jsonl",
+      "filename": "sprint5_apertus_c2sf.jsonl",
+      "sha256": "3b157a5ca7f8bdd0600faf90ad31b95b994980cd37808db6bab00ca59ee68186",
+      "row_count": 18,
+      "model_key": "apertus",
+      "arm": "c2sf",
+      "condition": "C2sf_scalar"
+    }
+  },
+  "registry_counts": {
+    "total_rows": 1444,
+    "phase3_rows": 324,
+    "phase0_rows": 1120,
+    "unique_tasks": 112,
+    "admission_qwen7_c0": 1,
+    "admission_qwen7_c2s": 1,
+    "admission_qwen7_c2sf": 1,
+    "admission_qwen15_c0": 1,
+    "admission_qwen15_c2s": 1,
+    "admission_qwen15_c2sf": 1,
+    "admission_llama3_c0": 1,
+    "admission_llama3_c2s": 1,
+    "admission_llama3_c2sf": 1,
+    "admission_llama8_c0": 1,
+    "admission_llama8_c2s": 1,
+    "admission_llama8_c2sf": 1,
+    "admission_mistral_c0": 1,
+    "admission_mistral_c2s": 1,
+    "admission_mistral_c2sf": 1,
+    "apertus_admission_c2s": 1,
+    "admission_gemma3_1b_react": 1,
+    "admission_gemma3_1b_isolated": 1,
+    "admission_llama32_1b_react": 1,
+    "admission_llama32_1b_isolated": 1,
+    "admission_qwen25_3b_react": 1,
+    "admission_qwen25_3b_isolated": 1,
+    "admission_llama3_react": 1,
+    "admission_llama3_isolated": 1,
+    "phase0_gemma3_1b_react": 112,
+    "phase0_gemma3_1b_isolated": 112,
+    "phase0_llama32_1b_react": 112,
+    "phase0_llama32_1b_isolated": 112,
+    "phase0_llama32_3b_react": 112,
+    "phase0_llama32_3b_isolated": 112,
+    "phase0_qwen25_15b_react": 112,
+    "phase0_qwen25_15b_isolated": 112,
+    "phase0_qwen25_3b_react": 112,
+    "phase0_qwen25_3b_isolated": 112,
+    "phase3_qwen7_c0": 18,
+    "phase3_qwen7_c2s": 18,
+    "phase3_qwen7_c2sf": 18,
+    "phase3_qwen15_c0": 18,
+    "phase3_qwen15_c2s": 18,
+    "phase3_qwen15_c2sf": 18,
+    "phase3_llama3_c0": 18,
+    "phase3_llama3_c2s": 18,
+    "phase3_llama3_c2sf": 18,
+    "phase3_llama8_c0": 18,
+    "phase3_llama8_c2s": 18,
+    "phase3_llama8_c2sf": 18,
+    "phase3_mistral_c0": 18,
+    "phase3_mistral_c2s": 18,
+    "phase3_mistral_c2sf": 18,
+    "phase3_apertus_c0": 18,
+    "phase3_apertus_c2s": 18,
+    "phase3_apertus_c2sf": 18
+  },
+  "admission_harness_revision": "codex-recovery-2026-10-07",
+  "harness_sources": {
+    "src/build_benchmark_notebook.py": "53647241904a8f883d89e4557046f064891625962c938a9522bc9fbf60744ad2",
+    "src/runners/goldplan_react.py": "eb82b99e30ff1b3e6c25f37f61770dacb821e99b6f7b9f4654b32c83753fdf9b",
+    "src/runners/goldplan_isolated.py": "1fcca2bacfa4e079f70a8680b4da8343dc173c85b5cf00ed145f07ec9a53f097"
+  },
+  "formal_release_status": "PENDING_EXTERNAL_TIMESTAMP_VERIFICATION",
+  "model_provenance_evidence": "docs/verification/model-resolution/all-models-v8/model_resolution_diagnostic.json",
+  "handoff_checkpoint_status": "ENGINEERING_HANDOFF_READY",
+  "capacity_admissions": {
+    "qwen15": "docs/verification/admission-v7/codex_independent_verification.json",
+    "llama8": "docs/verification/llama8b-capacity-v9/codex_independent_capacity_verification.json"
+  },
+  "release_authorization_spec": {
+    "authorization_path": "preregistration/a12/formal_release_authorization.json",
+    "description": "Release authorization and external timestamp proofs are managed strictly outside this immutable evaluation bundle."
+  }
+}

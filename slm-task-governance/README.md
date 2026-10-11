@@ -7,7 +7,7 @@ An empirical benchmark evaluating **Interface Governance**, **Prompt Contracts**
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](../LICENSE)
 [![Engine](https://img.shields.io/badge/pdx--artifact--engine-0.3.0a12-green.svg)](https://pypi.org/project/pdx-artifact-engine/)
 [![Formal Evaluations](https://img.shields.io/badge/evaluations-1444_contracted-success.svg)](data/results_formal_candidate/)
-[![Reproducibility](https://img.shields.io/badge/reproducibility-100%25_verified-brightgreen.svg)](scripts/verify_public_candidate_formal.py)
+[Result export verifier](scripts/verify_public_candidate_formal.py) · [Protocol verification limitations](evidence/frozen-protocol/README.md)
 
 ---
 
@@ -22,7 +22,7 @@ This benchmark deconstructs multi-step task failure into three distinct operatio
 
 We evaluate prompt-level governance comprising **formal OpenAPI 3.0 schemas** ($C_{2s}$) and **terminal scalar contracts** ($C_{2sf}$), powered by [pdx-artifact-engine](https://pypi.org/project/pdx-artifact-engine/) (`0.3.0a12`), across **1,444 contracted task evaluations** executed across 28 standalone GPU jobs on dual NVIDIA Tesla T4 accelerators.
 
-**Observed outcome**: The **universal governance hypothesis is rejected**. Prompt contracts and execution boundaries do not function as universal cognitive enhancers. Rather, they operate as architecture-specific interface friction reducers that succeed primarily on specific code-specialized $\ge 7\text{B}$ models (Qwen 2.5 Coder 7B) and interface-stabilized architectures (Swiss AI Apertus 8B). However, rigid contracts induce significant regressions in compact models (Llama 3.2 1B), non-monotonic task interference in general instruct models (Mistral 7B), and prove ineffective when models persistently fail to emit structured syntax (Llama 3.2 3B).
+**Observed outcome**: Effects differed across models and conditions. These bundled interventions do not establish a universal benefit or isolate an Engine-specific causal effect. Architecture and attention explanations remain hypotheses.
 
 ---
 
@@ -38,7 +38,7 @@ Evaluated across 6 model architectures on multi-step dependency DAG tasks ($n=18
 | Model Architecture | Parameters | $C_0$ Pass | $C_{2s}$ Pass | $C_{2sf}$ Pass | $C_0 \to C_{2sf}$ ($\Delta, p_{\text{raw}}$) | Main-Effect $p_{\text{Holm}} (m=6)$ | Exploratory $p_{\text{Holm}} (m=18)$ | Observed Pattern |
 |:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---|
 | **Qwen 2.5 Coder 7B** | 7.61B | 2 / 18 (11.1%) | 3 / 18 (16.7%) | **10 / 18 (55.6%)** | **+8 ($p=0.00781$)** | **0.04688** | 0.14063 | Observed Format Recovery |
-| **Llama 3.1 8B Instruct** | 8.03B | 0 / 18 (0.0%) | 1 / 18 (5.6%) | **6 / 18 (33.3%)** | +6 ($p=0.03125$) | 0.15625 | 0.53125 | Observed increase; not significant after correction |
+| **Llama 3.1 8B Instruct** | 8.03B | 0 / 18 (0.0%) | 1 / 18 (5.6%) | **6 / 18 (33.3%)** | +6 ($p=0.03125$) | 0.15625 | 0.50000 | Observed increase; not significant after correction |
 | **Swiss AI Apertus 8B** | 8.00B | 2 / 18 (11.1%) | **8 / 18 (44.4%)** | 7 / 18 (38.9%) | +5 ($p=0.06250$) | 0.25000 | 0.93750 | Interface Benefit ($C_0 \to C_{2s}: p=0.031$) |
 | **Mistral 7B v0.3** | 7.25B | 0 / 18 (0.0%) | **4 / 18 (22.2%)** | 1 / 18 (5.6%) | +1 ($p=1.00000$) | 1.00000 | 1.00000 | Non-Monotonic Sensitivity |
 | **Qwen 2.5 Coder 1.5B** | 1.54B | 0 / 18 (0.0%) | 1 / 18 (5.6%) | 1 / 18 (5.6%) | +1 ($p=1.00000$) | 1.00000 | 1.00000 | Sub-2B Inactive |
@@ -146,3 +146,7 @@ Task cohorts, execution ledgers, and cryptographic evidence chains are distribut
 The dependency file supports CPU verification of recorded results only. The experiment used public Engine 0.3.0a12; installing the verifier does not rerun that Engine or model inference. Remote kernel version and complete attempt history are not established by the offline release. PDF editions and historical experiments are excluded. See [release scope](../docs/RELEASE_SCOPE.md).
 
 Reports: [main paper](docs/reports/MAIN_PAPER.md), [appendix](docs/reports/APPENDIX.md), [technical report](docs/reports/TECHNICAL_REPORT.md).
+
+## Protocol evidence and correction
+
+See the [retrospective protocol disclosure](evidence/frozen-protocol/README.md). v2–v4 TSA checks pass; v5 retained receipts fail their declared target. Prior claims of complete timestamp verification and advance specification of the statistical tests are withdrawn.

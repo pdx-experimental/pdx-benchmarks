@@ -9,7 +9,7 @@
 
 ## Appendix A: Cryptographic Run Registry & Candidate Provenance
 
-To guarantee bit-level scientific reproducibility, Table A1 records the cryptographic SHA-256 checksums, execution timestamps, and candidate export paths for all 28 primary formal evaluation jobs (1,444 contracted rows).
+To support byte-level integrity checks, Table A1 records the cryptographic SHA-256 checksums, execution timestamps, and candidate export paths for all 28 primary formal evaluation jobs (1,444 contracted rows).
 
 **Table A1: Cryptographic run registry and content-addressed storage (CAS) targets.**
 All paths correspond to the public candidate structure under `slm-task-governance/data/results_formal_candidate/`. `Private Source SHA-256` represents the pre-sanitized ledger hash; `Candidate Public SHA-256` represents the sanitized ledger hash.
@@ -118,3 +118,7 @@ To provide mathematical transparency for statistical testing, Table B1 reports t
 > 1. **時間戳定義**：`Manifest Completion (UTC)` 記錄各作業 `run_manifest.json` 於推論完成後寫入之 UTC 時間，並非推論開始時間。
 > 2. **Attempt 與遠端排程**：離線產物包未包含 Kaggle 遠端排程器內部之 attempt 計數器與遠端版本號（故標記為「未確認」）。表中 stage 數字係基於本機暫存目錄（如失敗保留之 `.stage-*-err`）之審計結果。
 > 3. **Notebook 雜湊**：表中 Notebook 雜湊為本機 staged 提交檔之 SHA-256，均與對應 Git 標籤一致。遠端執行環境位元組未獨立單獨留存。
+
+## Protocol evidence correction (2026-10-11)
+
+See the [original protocol snapshots and independent checks](../../evidence/frozen-protocol/README.md). These are retrospectively disclosed private snapshots, not prior public registration. v2–v4 RFC 3161 checks pass; the retained v5 receipts do not match the declared bundle. Advance specification of the statistical tests and universal pre-start freezing are not established. Interpret the comparisons as exploratory.

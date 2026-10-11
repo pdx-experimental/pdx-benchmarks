@@ -1,0 +1,74 @@
+{
+  "target_bundle": {
+    "commit_sha": "985b716dfd0745768333b6e0ae4b5dee6ccd733c",
+    "tag_name": "formal-a12-immutable-bundle-v2",
+    "tag_object_sha": "8b2df6c5647171fab1fceb602b08fcf2794a61b9",
+    "sha256sums_sha256": "953c47ba613300ce3d73248ebd9a04120b58ab3d40d301ed817b7d537e72b13f",
+    "immutable_bundle_sha256sums_sha256": "e589ef304e2cfef5fe9d839135fde9b6bf9a4b3e005c3d6deded7546f7996953",
+    "bundle_sha256": "70e1fc386316c0f622422311c84ba9bbb5269093c2c4fb37470743014ce15942"
+  },
+  "rfc3161_tsa_receipts": {
+    "DigiCert": {
+      "status": "GRANTED",
+      "cms_signature_verification": "OK",
+      "trust_chain_verification": "OK",
+      "trust_anchor": "ca-bundle.crt",
+      "gen_time": "20261009050405Z",
+      "serial_number": "84377912858847193680247831045572131536",
+      "policy": "2.16.840.1.114412.7.1",
+      "tsr_file": "bundle_digicert.tsr",
+      "tsr_bytes": 5995
+    },
+    "Sectigo": {
+      "status": "GRANTED",
+      "cms_signature_verification": "OK",
+      "trust_chain_verification": "OK",
+      "trust_anchor": "ca-bundle.crt",
+      "gen_time": "20261009050405Z",
+      "serial_number": "113062614752956946117434196103993118293819429381",
+      "policy": "1.3.6.1.4.1.6449.2.1.1",
+      "tsr_file": "bundle_sectigo.tsr",
+      "tsr_bytes": 6622
+    },
+    "FreeTSA": {
+      "status": "GRANTED",
+      "cms_signature_verification": "OK",
+      "trust_chain_verification": "OK",
+      "trust_anchor": "freetsa_cacert.pem",
+      "gen_time": "20261009050406Z",
+      "serial_number": "152026548",
+      "policy": "1.2.3.4.1",
+      "tsr_file": "bundle_freetsa.tsr",
+      "tsr_bytes": 4630
+    }
+  },
+  "opentimestamps_receipts": {
+    "pool": {
+      "status": "CALENDAR_SUBMITTED",
+      "bitcoin_chain_confirmed": false,
+      "note": "Submitted to calendar server; Bitcoin block confirmation pending.",
+      "proof_bytes": 242,
+      "ots_file": "bundle_pool.ots"
+    },
+    "alice": {
+      "status": "CALENDAR_SUBMITTED",
+      "bitcoin_chain_confirmed": false,
+      "note": "Submitted to calendar server; Bitcoin block confirmation pending.",
+      "proof_bytes": 137,
+      "ots_file": "bundle_alice.ots"
+    },
+    "bob": {
+      "status": "CALENDAR_SUBMITTED",
+      "bitcoin_chain_confirmed": false,
+      "note": "Submitted to calendar server; Bitcoin block confirmation pending.",
+      "proof_bytes": 170,
+      "ots_file": "bundle_bob.ots"
+    }
+  },
+  "verification_audit": {
+    "all_rfc3161_cms_verified": true,
+    "all_trust_chains_verified": true,
+    "all_message_imprints_match": true,
+    "verified_by": "OpenSSL 3.2.4 (Git for Windows)"
+  }
+}

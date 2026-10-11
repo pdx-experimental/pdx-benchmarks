@@ -1,0 +1,63 @@
+{
+  "status": "FAILED",
+  "scope": "Byte integrity and RFC3161 signatures only; not public-registration or pre-start proof",
+  "versions": [
+    {
+      "version": "v2",
+      "verified_snapshot_files": 68,
+      "timestamps": {
+        "digicert": "Time stamp: Oct  9 05:04:05 2026 GMT",
+        "sectigo": "Time stamp: Oct  9 05:04:05 2026 GMT",
+        "freetsa": "Time stamp: Oct  9 05:04:06 2026 GMT"
+      },
+      "changed_since_previous": []
+    },
+    {
+      "version": "v3",
+      "verified_snapshot_files": 68,
+      "timestamps": {
+        "digicert": "Time stamp: Oct  9 13:04:26 2026 GMT",
+        "sectigo": "Time stamp: Oct  9 13:04:27 2026 GMT",
+        "freetsa": "Time stamp: Oct  9 13:04:28 2026 GMT"
+      },
+      "changed_since_previous": [
+        "notebooks/pdx_phase3_formal_apertus_c0.ipynb",
+        "notebooks/pdx_phase3_formal_apertus_c2s.ipynb",
+        "notebooks/pdx_phase3_formal_apertus_c2sf.ipynb"
+      ]
+    },
+    {
+      "version": "v4",
+      "verified_snapshot_files": 68,
+      "timestamps": {
+        "digicert": "Time stamp: Oct  9 13:21:35 2026 GMT",
+        "sectigo": "Time stamp: Oct  9 13:21:35 2026 GMT",
+        "freetsa": "Time stamp: Oct  9 13:21:36 2026 GMT"
+      },
+      "changed_since_previous": [
+        "notebooks/pdx_phase3_formal_apertus_c0.ipynb",
+        "notebooks/pdx_phase3_formal_apertus_c2s.ipynb",
+        "notebooks/pdx_phase3_formal_apertus_c2sf.ipynb"
+      ]
+    },
+    {
+      "version": "v5",
+      "verified_snapshot_files": 68,
+      "timestamps": {
+        "digicert": {
+          "status": "FAILED",
+          "error": "Verification: FAILED\nUsing configuration from /usr/ssl/openssl.cnf\n100000000A000000:error:17800067:time stamp routines:ts_check_imprints:message imprint mismatch:crypto/ts/ts_rsp_verify.c:510:\n"
+        },
+        "sectigo": {
+          "status": "FAILED",
+          "error": "Verification: FAILED\nUsing configuration from /usr/ssl/openssl.cnf\n100000000A000000:error:17800067:time stamp routines:ts_check_imprints:message imprint mismatch:crypto/ts/ts_rsp_verify.c:510:\n"
+        },
+        "freetsa": {
+          "status": "FAILED",
+          "error": "Verification: FAILED\nUsing configuration from /usr/ssl/openssl.cnf\nWarning: certificate from '<checkout>\\slm-task-governance\\evidence\\frozen-protocol\\v5\\trust\\freetsa_tsa.crt' with subject '/O=Free TSA/OU=TSA/description=This certificate digitally signs documents and time stamp requests made using the freetsa.org online services/CN=www.freetsa.org/emailAddress=busilezas@mailbox.org/L=Wuerzburg/C=DE/ST=Bayern' is not a CA cert\n100000000A000000:error:17800067:time stamp routines:ts_check_imprints:message imprint mismatch:crypto/ts/ts_rsp_verify.c:510:\n"
+        }
+      },
+      "changed_since_previous": []
+    }
+  ]
+}

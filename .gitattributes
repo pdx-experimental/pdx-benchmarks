@@ -13,3 +13,6 @@
 
 # Preserve exact bytes of hash-bound evidence exports
 slm-task-governance/data/results_formal_candidate/** -text
+
+# Timestamp-bound protocol snapshots retain original bytes
+slm-task-governance/evidence/** -text

@@ -38,7 +38,7 @@ $$p = 2 \times \sum_{k=0}^{\min(b,c)} \binom{b+c}{k} 0.5^{b+c}$$
 
 ### 2.2 Family of Hypotheses Specification
 To prevent post-hoc significance inflation and maintain reporting transparency:
-1. **Post-Hoc Selected Main-Effect Family ($m=6$)**: Phase 3 evaluation testing whether full format contracts improve over unassisted baseline ($C_0 \to C_{2sf}$) across the 6 architectures. Under this family, Qwen 7B achieves $p_{\text{Holm}} = 0.04688$. *Disclosure*: While the pre-registered protocol (`master_execution_plan_a12.md`) specified McNemar exact testing and Holm adjustments, it did not pre-freeze $m=6$ as the sole confirmatory family prior to execution.
+1. **Post-Hoc Selected Main-Effect Family ($m=6$)**: Phase 3 evaluation testing whether full format contracts improve over unassisted baseline ($C_0 \to C_{2sf}$) across the 6 architectures. Under this family, Qwen 7B achieves $p_{\text{Holm}} = 0.04688$. *Disclosure*: The exported original protocol does not establish advance specification of McNemar testing, Holm adjustment, or the $m=6$ family. These analyses are exploratory.
 2. **Phase 0 Comparative Family ($m=5$)**: Phase 0 evaluation testing whether isolated dispatch improves over ReAct across the 5 architectures. Qwen 1.5B achieves $p_{\text{Holm}} = 0.0046$; Llama 1B demonstrates a significant regression ($p_{\text{Holm}} = 0.0094$).
 3. **Exploratory Family ($m=18$)**: Evaluating all pairwise comparisons within Phase 3 ($C_0 \to C_{2s}$, $C_0 \to C_{2sf}$, $C_{2s} \to C_{2sf}$). In this broader scope, Qwen 7B yields $p_{\text{Holm}} = 0.14063$ (not significant at $\alpha=0.05$).
 
@@ -50,7 +50,7 @@ To prevent post-hoc significance inflation and maintain reporting transparency:
 In Mistral 7B, providing schema definitions alone ($C_{2s}$) raised pass rate from 0/18 to 4/18 (22.2%). However, adding the terminal scalar contract ($C_{2sf}$) dropped completion back to 1/18 (5.6%). Granular inspection reveals that the strict Rule 3 formatting constraint competed with the model's generation capacity during argument construction, causing tool call omission on steps where $C_{2s}$ executed correctly.
 
 ### 3.2 Compact Model Context Sensitivity in Llama 3.2 1B
-In Llama 3.2 1B, isolation caused a statistically significant drop from 19/112 (17.0%) to 6/112 (5.4%). In accumulating ReAct loops, prior conversation history acts as a semantic scaffold that helps compact models maintain execution intent across steps. Under isolated single-step dispatch, the model receives only parent receipts without prior thoughts, leading to 29 schema rejections and increased failure rates.
+In Llama 3.2 1B, the combined intervention was associated with a drop from 19/112 (17.0%) to 6/112 (5.4%). Conversation history as a semantic scaffold is an untested explanation; this design does not isolate its contribution from prompts, receipt presentation, or dispatch policy.
 
 ### 3.3 Gemma 3 1B Architecture & Attention Backend Sensitivity
 Gemma 3 1B required two targeted engineering adaptations:
@@ -66,3 +66,7 @@ Gemma 3 1B required two targeted engineering adaptations:
 3. **Reproducibility Guarantee**: The public candidate dataset reproduces identical task scores (1,444/1,444 rows) and exact McNemar test statistics.
 4. **Security Clearance**: Comprehensive security scan confirms 0 leaked API keys, tokens, or private credentials across 942 candidate files (956 files total including documentation) and all 776 SQLite databases.
 5. **Release Gate**: `public_root_release_gate` remains strictly **`BLOCKED_PENDING_MATRIX_EXECUTION_AND_REVIEW`** pending final sign-off.
+
+## Protocol evidence correction (2026-10-11)
+
+See the [original protocol snapshots and independent checks](../../evidence/frozen-protocol/README.md). These are retrospectively disclosed private snapshots, not prior public registration. v2–v4 RFC 3161 checks pass; the retained v5 receipts do not match the declared bundle. Advance specification of the statistical tests and universal pre-start freezing are not established. Interpret the comparisons as exploratory.

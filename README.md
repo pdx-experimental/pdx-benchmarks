@@ -21,3 +21,7 @@ python scripts/verify_public_candidate_formal.py
 Verification needs no GPU, cloud credentials, model downloads or Engine execution. It checks exported file integrity, rescoring and paired statistics; it does not reproduce inference or independently prove remote submission identity.
 
 Code is licensed under [Apache-2.0](LICENSE); see [NOTICE](NOTICE).
+
+## Protocol evidence and correction
+
+See the [retrospective protocol disclosure](slm-task-governance/evidence/frozen-protocol/README.md). v2–v4 TSA checks pass; v5 retained receipts fail their declared target. Prior claims of complete timestamp verification and advance specification of the statistical tests are withdrawn.

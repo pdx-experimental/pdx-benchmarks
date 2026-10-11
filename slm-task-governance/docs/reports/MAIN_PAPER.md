@@ -6,13 +6,13 @@
 
 ## Abstract
 
-Multi-step tool invocation in Small Language Models (SLMs, 1B–8B parameters) commonly exhibits near-zero completion rates on compound autonomous agent benchmarks. A prevailing assumption is that this reflects an intrinsic deficit in multi-step reasoning capacity. In this work, we deconstruct multi-step task execution into interface impedance (parameter schema mismatches), context referral impedance (unstructured intermediate receipt citation), and format impedance (conversational verbosity triggering automated parsing failure). We evaluate a prompt-level governance hierarchy comprising OpenAPI parameter schemas ($C_{2s}$) and terminal scalar output contracts ($C_{2sf}$) across a pre-registered evaluation matrix spanning 1,444 contracted task executions across 28 standalone jobs on dual NVIDIA Tesla T4 GPUs.
+Multi-step tool invocation in Small Language Models (SLMs, 1B–8B parameters) commonly exhibits near-zero completion rates on compound autonomous agent benchmarks. A prevailing assumption is that this reflects an intrinsic deficit in multi-step reasoning capacity. In this work, we deconstruct multi-step task execution into interface impedance (parameter schema mismatches), context referral impedance (unstructured intermediate receipt citation), and format impedance (conversational verbosity triggering automated parsing failure). We evaluate a prompt-level governance hierarchy comprising OpenAPI parameter schemas ($C_{2s}$) and terminal scalar output contracts ($C_{2sf}$) across an evaluation matrix with retrospectively disclosed, privately timestamped protocol snapshots spanning 1,444 contracted task executions across 28 standalone jobs on dual NVIDIA Tesla T4 GPUs.
 
 In **Phase 3 (Calibrated Multi-Step Dependency Tasks, $N=324$ rows across 6 architectures)**, we evaluate an unassisted anchor ($C_0$), schema governance ($C_{2s}$), and full format contracts ($C_{2sf}$) on calibrated DAG tasks ($n=18$ per model, `dag_chain_v3`):
-1. **Qwen 2.5 Coder 7B**: Advances from 2/18 (11.1%) under $C_0$ to 3/18 (16.7%) under $C_{2s}$, and to **10/18 (55.6%)** under $C_{2sf}$ (paired $\Delta = +8, p_{\text{raw}} = 0.00781$). Under the post-hoc selected main-effect family of 6 primary model comparisons ($m=6$), this gain is statistically significant ($p_{\text{Holm}} = \mathbf{0.04688}$). However, under the full exploratory family across all 18 pairwise comparisons ($m=18$), the adjusted value is $p_{\text{Holm}} = 0.14063$, which does not meet conventional significance ($\alpha=0.05$). Note that while paired testing and step-down corrections were pre-registered, the restriction of the hypothesis family to $m=6$ was designated post-hoc.
+1. **Qwen 2.5 Coder 7B**: Advances from 2/18 (11.1%) under $C_0$ to 3/18 (16.7%) under $C_{2s}$, and to **10/18 (55.6%)** under $C_{2sf}$ (paired $\Delta = +8, p_{\text{raw}} = 0.00781$). Under the post-hoc selected main-effect family of 6 primary model comparisons ($m=6$), this gain is statistically significant ($p_{\text{Holm}} = \mathbf{0.04688}$). However, under the full exploratory family across all 18 pairwise comparisons ($m=18$), the adjusted value is $p_{\text{Holm}} = 0.14063$, which does not meet conventional significance ($\alpha=0.05$). The $m=6$ family was selected post-hoc; the exported original plan does not establish advance specification of McNemar testing or Holm correction.
 2. **Llama 3.1 8B Instruct**: Advances from 0/18 (0.0%) under $C_0$ to 1/18 (5.6%) under $C_{2s}$, and to **6/18 (33.3%)** under $C_{2sf}$ ($\Delta = +6, p_{\text{raw}} = 0.03125$; $p_{\text{Holm}} = 0.15625$ across $m=6$).
 3. **Swiss AI Apertus 8B**: Advances from 2/18 (11.1%) under $C_0$ to **8/18 (44.4%)** under $C_{2s}$ ($\Delta = +6, p_{\text{raw}} = 0.03125$), and to **7/18 (38.9%)** under $C_{2sf}$ ($\Delta = +5, p_{\text{raw}} = 0.0625$).
-4. **Mistral 7B v0.3**: Exhibits non-monotonic format sensitivity (0/18 under $C_0$, **4/18 (22.2%)** under $C_{2s}$, dropping to **1/18 (5.6%)** under $C_{2sf}$), where rigid terminal scalar constraints degraded accuracy relative to schema governance alone.
+4. **Mistral 7B v0.3**: Shows a descriptive, non-significant decrease from schema to scalar conditions (0/18 under $C_0$, **4/18 (22.2%)** under $C_{2s}$, dropping to **1/18 (5.6%)** under $C_{2sf}$), with a paired raw p-value of 0.25 for the decrease; this does not establish harm or a mechanism.
 5. **Qwen 2.5 Coder 1.5B**: Scores 0/18 under $C_0$, 1/18 under $C_{2s}$, and 1/18 under $C_{2sf}$, showing no significant change ($p = 1.000$).
 6. **Llama 3.2 3B**: Scores 0/18 across all conditions ($C_0$, $C_{2s}$, $C_{2sf}$) due to persistent non-parseable and empty output generation.
 
@@ -23,7 +23,7 @@ In **Phase 0 (Cross-Architecture Synthetic Fair Benchmark, $N=1,120$ rows across
 - **Llama 3.2 3B**: ReAct 29/112 (25.9%) vs. Isolated 26/112 (23.2%) ($\Delta = -2.7\%, p_{\text{raw}} = 0.7011$; not significant).
 - **Gemma 3 1B**: ReAct 17/112 (15.2%) vs. Isolated 18/112 (16.1%) ($\Delta = +0.9\%, p_{\text{raw}} = 1.000$; negligible difference with 34 schema rejections).
 
-Based on pre-registered criteria, the **universal governance hypothesis is rejected**. Prompt contracts and isolation boundaries do not function as universal cognitive enhancers. Rather, they operate as interface friction reducers that succeed primarily on specific architectures ($\ge 7\text{B}$ with prior code/tool specialization), while risking non-monotonic task interference in general instruct models (Mistral 7B), inducing significant regression in compact models (Llama 3.2 1B), or proving ineffective when models persistently fail to emit parseable structures.
+**Observed outcome**: Effects differed across models and conditions. These bundled interventions do not establish a universal benefit or isolate an Engine-specific causal effect. Architecture and attention explanations remain hypotheses.
 
 ---
 
@@ -31,7 +31,7 @@ Based on pre-registered criteria, the **universal governance hypothesis is rejec
 
 Deploying Small Language Models (SLMs, 1B–8B parameters) on commodity edge accelerators (e.g., dual NVIDIA Tesla T4 GPUs) is essential for cost-effective enterprise AI systems. However, evaluations of compact models on multi-step tool invocation tasks routinely report pass rates near zero. Standard literature often interprets these outcomes as evidence of an intrinsic cognitive ceiling: models below 10B parameters are assumed to lack working memory and attention capacity for multi-step execution.
 
-In this work, we investigate the operational boundaries of this assumption. Through granular execution tracing and pre-registered multi-arm comparisons, we observe that tool execution failures in compact models stem from three operational layers:
+In this work, we investigate the operational boundaries of this assumption. Execution traces and multi-arm comparisons identify three observed categories of failure:
 1. **Interface Impedance**: Tool definitions lacking explicit schemas trigger argument hallucination (e.g., emitting raw strings for structured key-value stores).
 2. **Context Referral Impedance**: Unstructured intermediate execution receipts lead to template placeholder emissions in downstream steps.
 3. **Format Impedance (Verbal Wrapping)**: Correct intermediate computations fail exact-match scoring due to unconstrained conversational text.
@@ -85,15 +85,15 @@ $\Delta$ denotes pass count difference. $p_{\text{raw}}$ denotes exact two-sided
 | Model Architecture | Parameters | $C_0$ Pass | $C_{2s}$ Pass | $C_{2sf}$ Pass | $C_0 \to C_{2sf}$ ($\Delta, p_{\text{raw}}$) | $p_{\text{Holm (m=6)}}$ | $p_{\text{Holm (m=18)}}$ | Observed Pattern |
 |:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---|
 | **Qwen 2.5 Coder 7B** | 7.61B | 2 / 18 (11.1%) | 3 / 18 (16.7%) | **10 / 18 (55.6%)** | **+8 ($p=0.00781$)** | **0.04688** | 0.14063 | Observed Format Recovery |
-| **Llama 3.1 8B Instruct** | 8.03B | 0 / 18 (0.0%) | 1 / 18 (5.6%) | **6 / 18 (33.3%)** | +6 ($p=0.03125$) | 0.15625 | 0.53125 | Observed increase; not significant after correction |
+| **Llama 3.1 8B Instruct** | 8.03B | 0 / 18 (0.0%) | 1 / 18 (5.6%) | **6 / 18 (33.3%)** | +6 ($p=0.03125$) | 0.15625 | 0.50000 | Observed increase; not significant after correction |
 | **Swiss AI Apertus 8B** | 8.00B | 2 / 18 (11.1%) | **8 / 18 (44.4%)** | 7 / 18 (38.9%) | +5 ($p=0.06250$) | 0.25000 | 0.93750 | Interface Benefit ($C_0 \to C_{2s}: p=0.031$) |
 | **Mistral 7B v0.3** | 7.25B | 0 / 18 (0.0%) | **4 / 18 (22.2%)** | 1 / 18 (5.6%) | +1 ($p=1.00000$) | 1.00000 | 1.00000 | Non-monotonic Sensitivity |
 | **Qwen 2.5 Coder 1.5B** | 1.54B | 0 / 18 (0.0%) | 1 / 18 (5.6%) | 1 / 18 (5.6%) | +1 ($p=1.00000$) | 1.00000 | 1.00000 | Sub-2B Inactive |
 | **Llama 3.2 3B Instruct** | 3.21B | 0 / 18 (0.0%) | 0 / 18 (0.0%) | 0 / 18 (0.0%) | 0 ($p=1.00000$) | 1.00000 | 1.00000 | Persistent Non-Parseable Output |
 
 ### Key Observations:
-1. **Testing Family Scope ($m=6$ vs. $m=18$)**: Under the post-hoc selected main-effect family ($m=6$ comparisons of $C_0 \to C_{2sf}$), Qwen 2.5 Coder 7B achieves statistically significant format recovery ($p_{\text{Holm}} = 0.04688$). However, under the full exploratory scope spanning all 18 pairwise comparisons ($m=18$), the adjusted value is $p_{\text{Holm}} = 0.14063$, which is not significant at $\alpha=0.05$. Because the pre-registered plan did not explicitly isolate $m=6$ in advance, both adjusted values are reported side-by-side.
-2. **Non-Monotonic Sensitivity (Mistral 7B)**: Mistral 7B scored 4/18 under schema governance ($C_{2s}$) but dropped to 1/18 when the rigid terminal scalar contract ($C_{2sf}$) was added. Step inspection reveals that the strict formatting instruction competed with argument extraction attention.
+1. **Testing Family Scope ($m=6$ vs. $m=18$)**: Under the post-hoc selected main-effect family ($m=6$ comparisons of $C_0 \to C_{2sf}$), Qwen 2.5 Coder 7B achieves statistically significant format recovery ($p_{\text{Holm}} = 0.04688$). However, under the full exploratory scope spanning all 18 pairwise comparisons ($m=18$), the adjusted value is $p_{\text{Holm}} = 0.14063$, which is not significant at $\alpha=0.05$. Because the original plan did not explicitly isolate $m=6$ in advance, both adjusted values are reported side-by-side.
+2. **Descriptive Difference (Mistral 7B)**: Mistral 7B scored 4/18 under schema governance ($C_{2s}$) but dropped to 1/18 when the rigid terminal scalar contract ($C_{2sf}$) was added. The paired raw p-value is 0.25; this decrease is not statistically significant. Competition for attention is an untested hypothesis, not an established mechanism.
 3. **Interface-Driven Recovery (Apertus 8B)**: Apertus 8B benefited strongly from schema governance alone ($C_0 \to C_{2s}: \Delta = +6, p = 0.03125$), while adding scalar constraints yielded no further improvement (7/18).
 
 ---
@@ -126,10 +126,14 @@ Contingency counts ($a$: both pass, $b$: ReAct only, $c$: Isolated only, $d$: bo
 2. **Compact Model Sensitivity**: Sub-2B parameter models exhibit high sensitivity to context truncation. Llama 3.2 1B regressed significantly under isolation, indicating that accumulating dialogue history provides useful context anchors for certain architectures.
 3. **Formatting Trade-offs**: In general-instruct models lacking dedicated tool-tuning (e.g. Mistral 7B), rigid output contracts may compete with generation bandwidth, causing performance drops.
 4. **Hardware & Backend Dependencies**: Attention backend choices (e.g. PyTorch SDPA alignment issues in Gemma 3) can introduce numerical and memory instability in 8-bit quantized models, requiring fallback to eager execution.
-5. **Timestamp Disclosure**: While RFC 3161 timestamps from DigiCert, Sectigo, and FreeTSA have been cryptographically validated via CMS, OpenTimestamps calendar responses remain pending Bitcoin block confirmation.
+5. **Timestamp Disclosure**: The retained v2–v4 RFC 3161 receipts verify; all three retained v5 receipts fail comparison with the declared target. Prior blanket verification claims are withdrawn. OpenTimestamps confirmation is not established.
 
 ---
 
 ## 6. Conclusion
 
-Prompt-level governance and execution isolation do not function as universal enhancers of multi-step tool reasoning in compact models. In empirical evaluations spanning 1,444 contracted tasks, governance provided format recovery in specific code-tuned $\ge 7\text{B}$ architectures (Qwen 7B Coder) and interface stabilization in Swiss AI Apertus 8B. However, it induced significant regressions in compact models (Llama 3.2 1B), non-monotonic interference in general-instruct models (Mistral 7B), and proved ineffective when models failed to emit structured syntax (Llama 3.2 3B). System designers must treat prompt contracts as architecture-specific interventions rather than general-purpose remedies.
+Across this task matrix, the bundled interventions showed heterogeneous outcomes. The experiment does not identify an isolated Engine effect or establish the proposed cognitive mechanisms. Independent replication is needed.
+
+## Protocol evidence correction (2026-10-11)
+
+See the [original protocol snapshots and independent checks](../../evidence/frozen-protocol/README.md). These are retrospectively disclosed private snapshots, not prior public registration. v2–v4 RFC 3161 checks pass; the retained v5 receipts do not match the declared bundle. Advance specification of the statistical tests and universal pre-start freezing are not established. Interpret the comparisons as exploratory.
