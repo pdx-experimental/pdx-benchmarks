@@ -38,3 +38,13 @@ OpenTimestamps confirmation is not claimed. These checks establish retained-byte
 ## Hygiene exception for original evidence
 
 The four byte-identical original plan snapshots retain two historical `file:` links into a private project directory. They contain no personal account name or credential and do not resolve in this release. They are preserved solely to avoid falsifying timestamp-bound evidence. Use the public scoring source and verifiers instead. No other private-path exception is authorized.
+
+## Follow-up questions and remaining gaps (2026-10-11)
+
+**v1 was retained privately, not destroyed.** It was superseded after harness interface defects during the initial Qwen 1.5B job. A sanitized transcription of its archive record is now disclosed in [v1_DEFECT_REPORT.md](../release-history/v1_DEFECT_REPORT.md), together with [original authorization metadata](../release-history/v1_original_authorization_record.json). An earlier separate attempt had post-timestamp bundle mutation and incomplete verification; see [attempt1_DEFECT_AUDIT.md](../release-history/attempt1_DEFECT_AUDIT.md). These are historical internal records, not independently authenticated proof of the sequence. Omitting this history from the initial public release was a disclosure error. v1 is not included in the v2–v5 timestamp-verification claim. Historical task calibration versions remain outside this release.
+
+**Actual start times remain unestablished for the full matrix.** Result completion timestamps and local submission metadata do not substitute for independently authenticated remote job start times. No claim is made that the 22-minute interval proves pre-start freezing.
+
+**No alternative verified seal for the final Gemma patch has been established.** Treat both Gemma jobs (224 rows) as having unresolved final-notebook provenance. The retained outputs can be rescored, but patch provenance is not thereby proven. The original five-model Phase 0 analysis is retained with this warning. A separately labelled post-hoc four-model sensitivity excluding Gemma is available in [exploratory_pairwise_statistics.json](../exploratory_pairwise_statistics.json); it must not be presented as a preregistered family.
+
+**Further reporting corrections:** Standard Holm recomputation gives 0.87500 for the two Phase 3 p=0.0625 comparisons. The prior 0.93750 values were reporting errors, not an alternative stated tie algorithm. Mistral schema-to-scalar pairing is (a,b,c,d)=(0,4,1,13), giving exact two-sided p=0.375; the prior appendix p=0.25 came from an incorrect contingency table. Task outcomes were not changed. All p-values are exploratory; nominal threshold crossings do not establish confirmatory evidence or intervention mechanisms.

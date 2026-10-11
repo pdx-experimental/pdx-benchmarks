@@ -16,3 +16,6 @@ slm-task-governance/data/results_formal_candidate/** -text
 
 # Timestamp-bound protocol snapshots retain original bytes
 slm-task-governance/evidence/** -text
+
+# Historical evidence retains its original CRLF bytes.
+slm-task-governance/evidence/** whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

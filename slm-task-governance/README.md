@@ -39,12 +39,12 @@ Evaluated across 6 model architectures on multi-step dependency DAG tasks ($n=18
 |:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---|
 | **Qwen 2.5 Coder 7B** | 7.61B | 2 / 18 (11.1%) | 3 / 18 (16.7%) | **10 / 18 (55.6%)** | **+8 ($p=0.00781$)** | **0.04688** | 0.14063 | Observed Format Recovery |
 | **Llama 3.1 8B Instruct** | 8.03B | 0 / 18 (0.0%) | 1 / 18 (5.6%) | **6 / 18 (33.3%)** | +6 ($p=0.03125$) | 0.15625 | 0.50000 | Observed increase; not significant after correction |
-| **Swiss AI Apertus 8B** | 8.00B | 2 / 18 (11.1%) | **8 / 18 (44.4%)** | 7 / 18 (38.9%) | +5 ($p=0.06250$) | 0.25000 | 0.93750 | Interface Benefit ($C_0 \to C_{2s}: p=0.031$) |
+| **Swiss AI Apertus 8B** | 8.00B | 2 / 18 (11.1%) | **8 / 18 (44.4%)** | 7 / 18 (38.9%) | +5 ($p=0.06250$) | 0.25000 | 0.87500 | Observed difference ($C_0 \to C_{2s}: p=0.031$) |
 | **Mistral 7B v0.3** | 7.25B | 0 / 18 (0.0%) | **4 / 18 (22.2%)** | 1 / 18 (5.6%) | +1 ($p=1.00000$) | 1.00000 | 1.00000 | Non-Monotonic Sensitivity |
 | **Qwen 2.5 Coder 1.5B** | 1.54B | 0 / 18 (0.0%) | 1 / 18 (5.6%) | 1 / 18 (5.6%) | +1 ($p=1.00000$) | 1.00000 | 1.00000 | Sub-2B Inactive |
 | **Llama 3.2 3B Instruct** | 3.21B | 0 / 18 (0.0%) | 0 / 18 (0.0%) | 0 / 18 (0.0%) | 0 ($p=1.00000$) | 1.00000 | 1.00000 | Persistent Non-Parseable Output |
 
-> **Hypothesis Family Disclosure**: Under the post-hoc selected main-effect family ($m=6$, $C_0 \to C_{2sf}$ across 6 models), Qwen 7B achieves statistically significant format recovery ($p_{\text{Holm}} = 0.04688$). In the full exploratory family across all 18 pairwise comparisons ($m=18$), the adjusted value is $p_{\text{Holm}} = 0.14063$ (not significant at $\alpha=0.05$). The pre-registration protocol (`master_execution_plan_a12.md`) specified paired McNemar testing and step-down Holm corrections, but did not pre-freeze $m=6$ prior to execution.
+> **Hypothesis Family Disclosure**: Under the post-hoc selected main-effect family ($m=6$, $C_0 \to C_{2sf}$ across 6 models), Qwen 7B shows a nominally significant difference within the exploratory family ($p_{\text{Holm}} = 0.04688$). In the full exploratory family across all 18 pairwise comparisons ($m=18$), the adjusted value is $p_{\text{Holm}} = 0.14063$ (not significant at $\alpha=0.05$). Advance specification of these tests and corrections is not established. All comparisons are exploratory.
 
 ---
 
@@ -54,10 +54,10 @@ Contrasts an accumulating ReAct loop against isolated per-step dispatch across 5
 
 | Model Architecture | Scale | ReAct Pass (95% Wilson CI) | Isolated Pass (95% Wilson CI) | Contingency ($a / b / c / d$) | Net $\Delta$ | $p_{\text{raw}}$ | $p_{\text{Holm}}$ | Empirical Verdict |
 |:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---|
-| **Qwen 2.5 Coder 1.5B** | 1.54B | 20 / 112 (17.9% [11.9, 26.0]) | **38 / 112 (33.9% [25.8, 43.1])** | 15 / 5 / 23 / 69 | **+16.1%** | 0.0009 | **0.0046** | **Significant Gain** |
-| **Qwen 2.5 Coder 3B** | 3.09B | 34 / 112 (30.4% [22.6, 39.4]) | 41 / 112 (36.6% [28.3, 45.8]) | 19 / 15 / 22 / 56 | +6.2% | 0.3240 | 0.9720 | No Significant Difference |
-| **Llama 3.2 1B** | 1.24B | **19 / 112 (17.0% [11.1, 25.0])** | 6 / 112 (5.4% [2.5, 11.2]) | 4 / 15 / 2 / 91 | **-11.6%** | 0.0023 | **0.0094** | **Significant Regression** |
-| **Llama 3.2 3B** | 3.21B | 29 / 112 (25.9% [18.7, 34.7]) | 26 / 112 (23.2% [16.4, 31.8]) | 14 / 15 / 12 / 71 | -2.7% | 0.7011 | 1.0000 | No Significant Difference |
+| **Qwen 2.5 Coder 1.5B** | 1.54B | 20 / 112 (17.9% [11.9, 26.0]) | **38 / 112 (33.9% [25.8, 43.1])** | 15 / 5 / 23 / 69 | **+16.1%** | 0.0009 | **0.0046** | **Nominal exploratory increase** |
+| **Qwen 2.5 Coder 3B** | 3.09B | 34 / 112 (30.4% [22.6, 39.4]) | 41 / 112 (36.6% [28.3, 45.8]) | 19 / 15 / 22 / 56 | +6.2% | 0.3240 | 0.9720 | No nominal difference |
+| **Llama 3.2 1B** | 1.24B | **19 / 112 (17.0% [11.1, 25.0])** | 6 / 112 (5.4% [2.5, 11.2]) | 4 / 15 / 2 / 91 | **-11.6%** | 0.0023 | **0.0094** | **Nominal exploratory decrease** |
+| **Llama 3.2 3B** | 3.21B | 29 / 112 (25.9% [18.7, 34.7]) | 26 / 112 (23.2% [16.4, 31.8]) | 14 / 15 / 12 / 71 | -2.7% | 0.7011 | 1.0000 | No nominal difference |
 | **Gemma 3 1B** | 1.00B | 17 / 112 (15.2% [9.7, 23.0]) | 18 / 112 (16.1% [10.4, 24.0]) | 7 / 10 / 11 / 84 | +0.9% | 1.0000 | 1.0000 | No significant difference (53 executions, 34 rejections) |
 
 ---
@@ -150,3 +150,7 @@ Reports: [main paper](docs/reports/MAIN_PAPER.md), [appendix](docs/reports/APPEN
 ## Protocol evidence and correction
 
 See the [retrospective protocol disclosure](evidence/frozen-protocol/README.md). v2–v4 TSA checks pass; v5 retained receipts fail their declared target. Prior claims of complete timestamp verification and advance specification of the statistical tests are withdrawn.
+
+## Independent validation proposal
+
+A separate [external parallel-validation plan](../docs/INDEPENDENT_VALIDATION_PLAN.md) prioritizes scoring robustness, matched-length placebo controls and framework-independent replication. It is a draft for external execution, not a completed validation or preregistered study.

@@ -56,26 +56,39 @@ To provide mathematical transparency for statistical testing, Table B1 reports t
 - Cell $d$: Both fail ($-/-$)
 - Exact $p$-value: Two-tailed exact binomial distribution on discordant pairs ($b, c$).
 
-**Table B1: Contingency cell distributions for Phase 3 ($N=18$) and Phase 0 ($N=112$).**
+**Table B1: All paired comparisons recomputed from released task-level outcomes.**
 
-| Model & Comparison Pair | $N$ | $a (+/+)$ | $b (+/-)$ | $c (-/+)$ | $d (-/-)$ | Net $\Delta$ | Discordant ($b, c$) | Exact $p_{\text{raw}}$ | Main-Effect $p_{\text{Holm}} (m=6)$ | Exploratory $p_{\text{Holm}} (m=18)$ |
-|:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| **P3: Qwen 7B ($C_0 \to C_{2sf}$)** | 18 | 2 | 0 | 8 | 8 | $+8$ | $(0, 8)$ | **0.00781** | **0.04688** ($m=6$) | 0.14063 ($m=18$) |
-| **P3: Qwen 7B ($C_{2s} \to C_{2sf}$)** | 18 | 3 | 0 | 7 | 8 | $+7$ | $(0, 7)$ | **0.01562** | — (Exploratory) | 0.26562 ($m=18$) |
-| **P3: Qwen 7B ($C_0 \to C_{2s}$)** | 18 | 2 | 0 | 1 | 15 | $+1$ | $(0, 1)$ | 1.00000 | — (Exploratory) | 1.00000 ($m=18$) |
-| **P3: Llama 8B ($C_0 \to C_{2sf}$)** | 18 | 0 | 0 | 6 | 12 | $+6$ | $(0, 6)$ | **0.03125** | 0.15625 ($m=6$) | 0.50000 ($m=18$) |
-| **P3: Llama 8B ($C_{2s} \to C_{2sf}$)** | 18 | 1 | 0 | 5 | 12 | $+5$ | $(0, 5)$ | 0.06250 | — (Exploratory) | 0.93750 ($m=18$) |
-| **P3: Apertus 8B ($C_0 \to C_{2s}$)** | 18 | 2 | 0 | 6 | 10 | $+6$ | $(0, 6)$ | **0.03125** | — (Exploratory) | 0.50000 ($m=18$) |
-| **P3: Apertus 8B ($C_0 \to C_{2sf}$)** | 18 | 2 | 0 | 5 | 11 | $+5$ | $(0, 5)$ | 0.06250 | 0.25000 ($m=6$) | 0.93750 ($m=18$) |
-| **P3: Mistral 7B ($C_0 \to C_{2s}$)** | 18 | 0 | 0 | 4 | 14 | $+4$ | $(0, 4)$ | 0.12500 | — (Exploratory) | 1.00000 ($m=18$) |
-| **P3: Mistral 7B ($C_{2s} \to C_{2sf}$)** | 18 | 1 | 3 | 0 | 14 | $-3$ | $(3, 0)$ | 0.25000 | — (Exploratory) | 1.00000 ($m=18$) |
-| **P3: Qwen 1.5B ($C_0 \to C_{2sf}$)** | 18 | 0 | 0 | 1 | 17 | $+1$ | $(0, 1)$ | 1.00000 | 1.00000 ($m=6$) | 1.00000 ($m=18$) |
-| **P3: Llama 3.2 3B ($C_0 \to C_{2sf}$)** | 18 | 0 | 0 | 0 | 18 | $0$ | $(0, 0)$ | 1.00000 | 1.00000 ($m=6$) | 1.00000 ($m=18$) |
-| **P0: Qwen 1.5B (ReAct $\to$ Iso)** | 112 | 15 | 5 | 23 | 69 | $+18$ | $(5, 23)$ | **0.0009** | **0.0046** ($m=5$) | **0.0046** (FDR) |
-| **P0: Qwen 3B (ReAct $\to$ Iso)** | 112 | 19 | 15 | 22 | 56 | $+7$ | $(15, 22)$ | 0.3240 | 0.9720 ($m=5$) | 0.5400 (FDR) |
-| **P0: Llama 1B (ReAct $\to$ Iso)** | 112 | 4 | 15 | 2 | 91 | $-13$ | $(15, 2)$ | **0.0023** | **0.0094** ($m=5$) | **0.0059** (FDR) |
-| **P0: Llama 3B (ReAct $\to$ Iso)** | 112 | 14 | 15 | 12 | 71 | $-3$ | $(15, 12)$ | 0.7011 | 1.0000 ($m=5$) | 0.8764 (FDR) |
-| **P0: Gemma 1B (ReAct $\to$ Iso)** | 112 | 7 | 10 | 11 | 84 | $+1$ | $(10, 11)$ | 1.0000 | 1.0000 ($m=5$) | 1.0000 (FDR) |
+| Phase / first → second | N | a | b | c | d | Delta | Exact raw p | Exploratory Holm | Post-hoc m=6 Holm |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| P3: qwen7_c0 → qwen7_c2sf | 18 | 2 | 0 | 8 | 8 | +8 | 0.00781 | 0.14062 (m=18) | 0.04688 |
+| P3: qwen7_c0 → qwen7_c2s | 18 | 1 | 1 | 2 | 14 | +1 | 1.00000 | 1.00000 (m=18) | — |
+| P3: qwen7_c2s → qwen7_c2sf | 18 | 3 | 0 | 7 | 8 | +7 | 0.01562 | 0.26562 (m=18) | — |
+| P3: llama8_c0 → llama8_c2sf | 18 | 0 | 0 | 6 | 12 | +6 | 0.03125 | 0.50000 (m=18) | 0.15625 |
+| P3: llama8_c0 → llama8_c2s | 18 | 0 | 0 | 1 | 17 | +1 | 1.00000 | 1.00000 (m=18) | — |
+| P3: llama8_c2s → llama8_c2sf | 18 | 1 | 0 | 5 | 12 | +5 | 0.06250 | 0.87500 (m=18) | — |
+| P3: apertus_c0 → apertus_c2sf | 18 | 2 | 0 | 5 | 11 | +5 | 0.06250 | 0.87500 (m=18) | 0.25000 |
+| P3: apertus_c0 → apertus_c2s | 18 | 2 | 0 | 6 | 10 | +6 | 0.03125 | 0.50000 (m=18) | — |
+| P3: apertus_c2s → apertus_c2sf | 18 | 5 | 3 | 2 | 8 | -1 | 1.00000 | 1.00000 (m=18) | — |
+| P3: mistral_c0 → mistral_c2sf | 18 | 0 | 0 | 1 | 17 | +1 | 1.00000 | 1.00000 (m=18) | 1.00000 |
+| P3: mistral_c0 → mistral_c2s | 18 | 0 | 0 | 4 | 14 | +4 | 0.12500 | 1.00000 (m=18) | — |
+| P3: mistral_c2s → mistral_c2sf | 18 | 0 | 4 | 1 | 13 | -3 | 0.37500 | 1.00000 (m=18) | — |
+| P3: qwen15_c0 → qwen15_c2sf | 18 | 0 | 0 | 1 | 17 | +1 | 1.00000 | 1.00000 (m=18) | 1.00000 |
+| P3: qwen15_c0 → qwen15_c2s | 18 | 0 | 0 | 1 | 17 | +1 | 1.00000 | 1.00000 (m=18) | — |
+| P3: qwen15_c2s → qwen15_c2sf | 18 | 0 | 1 | 1 | 16 | +0 | 1.00000 | 1.00000 (m=18) | — |
+| P3: llama3_c0 → llama3_c2sf | 18 | 0 | 0 | 0 | 18 | +0 | 1.00000 | 1.00000 (m=18) | 1.00000 |
+| P3: llama3_c0 → llama3_c2s | 18 | 0 | 0 | 0 | 18 | +0 | 1.00000 | 1.00000 (m=18) | — |
+| P3: llama3_c2s → llama3_c2sf | 18 | 0 | 0 | 0 | 18 | +0 | 1.00000 | 1.00000 (m=18) | — |
+| P0: qwen25_15b_react → qwen25_15b_isolated | 112 | 15 | 5 | 23 | 69 | +18 | 0.00091 | 0.00456 (m=5) | — |
+| P0: qwen25_3b_react → qwen25_3b_isolated | 112 | 19 | 15 | 22 | 56 | +7 | 0.32401 | 0.97203 (m=5) | — |
+| P0: llama32_1b_react → llama32_1b_isolated | 112 | 4 | 15 | 2 | 91 | -13 | 0.00235 | 0.00940 (m=5) | — |
+| P0: llama32_3b_react → llama32_3b_isolated | 112 | 14 | 15 | 12 | 71 | -3 | 0.70111 | 1.00000 (m=5) | — |
+| P0: gemma3_1b_react → gemma3_1b_isolated | 112 | 7 | 10 | 11 | 84 | +1 | 1.00000 | 1.00000 (m=5) | — |
+
+Holm uses sorted p-values with factors m, m−1, …, 1 and a cumulative maximum, including tied p-values. For the two p=0.0625 comparisons, ranks 5 and 6 give 0.875 and 0.8125; both adjusted values are 0.875. The former 0.9375 entries were reporting errors, not a declared alternative method.
+
+The corrected Mistral schema-to-scalar contingency is (a,b,c,d)=(0,4,1,13), giving exact two-sided p=0.375. Previous (1,3,0,14) and p=0.25 entries were incorrect.
+
+See [machine-readable calculations](../../evidence/exploratory_pairwise_statistics.json) and [the recomputation script](../../scripts/compute_pairwise_statistics.py). The post-hoc sensitivity excluding Gemma is provided separately; it is not a replacement preregistered analysis.
 
 ---
 

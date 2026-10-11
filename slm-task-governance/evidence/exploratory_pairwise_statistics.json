@@ -1,0 +1,311 @@
+{
+  "scope": "Exploratory; no confirmatory preregistration claim",
+  "phase3": [
+    {
+      "first": "phase3_qwen7_c0",
+      "second": "phase3_qwen7_c2sf",
+      "n": 18,
+      "a": 2,
+      "b": 0,
+      "c": 8,
+      "d": 8,
+      "delta": 8,
+      "p_raw": 0.0078125,
+      "holm_m18": 0.140625,
+      "holm_m6_posthoc": 0.046875
+    },
+    {
+      "first": "phase3_qwen7_c0",
+      "second": "phase3_qwen7_c2s",
+      "n": 18,
+      "a": 1,
+      "b": 1,
+      "c": 2,
+      "d": 14,
+      "delta": 1,
+      "p_raw": 1.0,
+      "holm_m18": 1.0
+    },
+    {
+      "first": "phase3_qwen7_c2s",
+      "second": "phase3_qwen7_c2sf",
+      "n": 18,
+      "a": 3,
+      "b": 0,
+      "c": 7,
+      "d": 8,
+      "delta": 7,
+      "p_raw": 0.015625,
+      "holm_m18": 0.265625
+    },
+    {
+      "first": "phase3_llama8_c0",
+      "second": "phase3_llama8_c2sf",
+      "n": 18,
+      "a": 0,
+      "b": 0,
+      "c": 6,
+      "d": 12,
+      "delta": 6,
+      "p_raw": 0.03125,
+      "holm_m18": 0.5,
+      "holm_m6_posthoc": 0.15625
+    },
+    {
+      "first": "phase3_llama8_c0",
+      "second": "phase3_llama8_c2s",
+      "n": 18,
+      "a": 0,
+      "b": 0,
+      "c": 1,
+      "d": 17,
+      "delta": 1,
+      "p_raw": 1.0,
+      "holm_m18": 1.0
+    },
+    {
+      "first": "phase3_llama8_c2s",
+      "second": "phase3_llama8_c2sf",
+      "n": 18,
+      "a": 1,
+      "b": 0,
+      "c": 5,
+      "d": 12,
+      "delta": 5,
+      "p_raw": 0.0625,
+      "holm_m18": 0.875
+    },
+    {
+      "first": "phase3_apertus_c0",
+      "second": "phase3_apertus_c2sf",
+      "n": 18,
+      "a": 2,
+      "b": 0,
+      "c": 5,
+      "d": 11,
+      "delta": 5,
+      "p_raw": 0.0625,
+      "holm_m18": 0.875,
+      "holm_m6_posthoc": 0.25
+    },
+    {
+      "first": "phase3_apertus_c0",
+      "second": "phase3_apertus_c2s",
+      "n": 18,
+      "a": 2,
+      "b": 0,
+      "c": 6,
+      "d": 10,
+      "delta": 6,
+      "p_raw": 0.03125,
+      "holm_m18": 0.5
+    },
+    {
+      "first": "phase3_apertus_c2s",
+      "second": "phase3_apertus_c2sf",
+      "n": 18,
+      "a": 5,
+      "b": 3,
+      "c": 2,
+      "d": 8,
+      "delta": -1,
+      "p_raw": 1.0,
+      "holm_m18": 1.0
+    },
+    {
+      "first": "phase3_mistral_c0",
+      "second": "phase3_mistral_c2sf",
+      "n": 18,
+      "a": 0,
+      "b": 0,
+      "c": 1,
+      "d": 17,
+      "delta": 1,
+      "p_raw": 1.0,
+      "holm_m18": 1.0,
+      "holm_m6_posthoc": 1.0
+    },
+    {
+      "first": "phase3_mistral_c0",
+      "second": "phase3_mistral_c2s",
+      "n": 18,
+      "a": 0,
+      "b": 0,
+      "c": 4,
+      "d": 14,
+      "delta": 4,
+      "p_raw": 0.125,
+      "holm_m18": 1.0
+    },
+    {
+      "first": "phase3_mistral_c2s",
+      "second": "phase3_mistral_c2sf",
+      "n": 18,
+      "a": 0,
+      "b": 4,
+      "c": 1,
+      "d": 13,
+      "delta": -3,
+      "p_raw": 0.375,
+      "holm_m18": 1.0
+    },
+    {
+      "first": "phase3_qwen15_c0",
+      "second": "phase3_qwen15_c2sf",
+      "n": 18,
+      "a": 0,
+      "b": 0,
+      "c": 1,
+      "d": 17,
+      "delta": 1,
+      "p_raw": 1.0,
+      "holm_m18": 1.0,
+      "holm_m6_posthoc": 1.0
+    },
+    {
+      "first": "phase3_qwen15_c0",
+      "second": "phase3_qwen15_c2s",
+      "n": 18,
+      "a": 0,
+      "b": 0,
+      "c": 1,
+      "d": 17,
+      "delta": 1,
+      "p_raw": 1.0,
+      "holm_m18": 1.0
+    },
+    {
+      "first": "phase3_qwen15_c2s",
+      "second": "phase3_qwen15_c2sf",
+      "n": 18,
+      "a": 0,
+      "b": 1,
+      "c": 1,
+      "d": 16,
+      "delta": 0,
+      "p_raw": 1.0,
+      "holm_m18": 1.0
+    },
+    {
+      "first": "phase3_llama3_c0",
+      "second": "phase3_llama3_c2sf",
+      "n": 18,
+      "a": 0,
+      "b": 0,
+      "c": 0,
+      "d": 18,
+      "delta": 0,
+      "p_raw": 1.0,
+      "holm_m18": 1.0,
+      "holm_m6_posthoc": 1.0
+    },
+    {
+      "first": "phase3_llama3_c0",
+      "second": "phase3_llama3_c2s",
+      "n": 18,
+      "a": 0,
+      "b": 0,
+      "c": 0,
+      "d": 18,
+      "delta": 0,
+      "p_raw": 1.0,
+      "holm_m18": 1.0
+    },
+    {
+      "first": "phase3_llama3_c2s",
+      "second": "phase3_llama3_c2sf",
+      "n": 18,
+      "a": 0,
+      "b": 0,
+      "c": 0,
+      "d": 18,
+      "delta": 0,
+      "p_raw": 1.0,
+      "holm_m18": 1.0
+    }
+  ],
+  "phase0": [
+    {
+      "first": "phase0_qwen25_15b_react",
+      "second": "phase0_qwen25_15b_isolated",
+      "n": 112,
+      "a": 15,
+      "b": 5,
+      "c": 23,
+      "d": 69,
+      "delta": 18,
+      "p_raw": 0.0009122341871261597,
+      "holm_m5": 0.004561170935630798
+    },
+    {
+      "first": "phase0_qwen25_3b_react",
+      "second": "phase0_qwen25_3b_isolated",
+      "n": 112,
+      "a": 19,
+      "b": 15,
+      "c": 22,
+      "d": 56,
+      "delta": 7,
+      "p_raw": 0.3240086000878364,
+      "holm_m5": 0.9720258002635092
+    },
+    {
+      "first": "phase0_llama32_1b_react",
+      "second": "phase0_llama32_1b_isolated",
+      "n": 112,
+      "a": 4,
+      "b": 15,
+      "c": 2,
+      "d": 91,
+      "delta": -13,
+      "p_raw": 0.002349853515625,
+      "holm_m5": 0.0093994140625
+    },
+    {
+      "first": "phase0_llama32_3b_react",
+      "second": "phase0_llama32_3b_isolated",
+      "n": 112,
+      "a": 14,
+      "b": 15,
+      "c": 12,
+      "d": 71,
+      "delta": -3,
+      "p_raw": 0.7011080384254456,
+      "holm_m5": 1.0
+    },
+    {
+      "first": "phase0_gemma3_1b_react",
+      "second": "phase0_gemma3_1b_isolated",
+      "n": 112,
+      "a": 7,
+      "b": 10,
+      "c": 11,
+      "d": 84,
+      "delta": 1,
+      "p_raw": 1.0,
+      "holm_m5": 1.0
+    }
+  ],
+  "posthoc_sensitivity_excluding_gemma": [
+    {
+      "first": "phase0_qwen25_15b_react",
+      "second": "phase0_qwen25_15b_isolated",
+      "holm_m4_excluding_gemma": 0.0036489367485046387
+    },
+    {
+      "first": "phase0_qwen25_3b_react",
+      "second": "phase0_qwen25_3b_isolated",
+      "holm_m4_excluding_gemma": 0.6480172001756728
+    },
+    {
+      "first": "phase0_llama32_1b_react",
+      "second": "phase0_llama32_1b_isolated",
+      "holm_m4_excluding_gemma": 0.007049560546875
+    },
+    {
+      "first": "phase0_llama32_3b_react",
+      "second": "phase0_llama32_3b_isolated",
+      "holm_m4_excluding_gemma": 0.7011080384254456
+    }
+  ]
+}

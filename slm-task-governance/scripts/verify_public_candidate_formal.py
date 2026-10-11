@@ -336,7 +336,17 @@ def verify_candidate_directory(candidate_dir: Path):
     print(f"  [PASS] Full Exploratory Family (m=18): Qwen 7B p_Holm = {qwen7_m18:.5f} (>= 0.05)")
 
     print("\n" + "=" * 80)
-    print("VERIFICATION COMPLETE: ALL 28 JOBS, 1,444 ROWS, AND STATISTICAL TESTS PASSED.")
+    from compute_pairwise_statistics import compute
+    recalculated = compute()
+    saved = json.loads((ROOT / "evidence/exploratory_pairwise_statistics.json").read_text(encoding="utf-8"))
+    assert recalculated == saved, "Published pairwise statistics differ from task-level recomputation"
+    mistral = next(r for r in recalculated["phase3"] if r["first"] == "phase3_mistral_c2s")
+    assert (mistral["a"], mistral["b"], mistral["c"], mistral["d"], mistral["p_raw"]) == (0, 4, 1, 13, 0.375)
+    for row in recalculated["phase3"]:
+        if row["p_raw"] == 0.0625:
+            assert row["holm_m18"] == 0.875
+    print("RESULT EXPORT VERIFIED: 28 jobs, 1,444 rows; all published pairwise statistics recomputed.")
+    print("Protocol timestamp verification is separate and includes an unresolved v5 failure.")
     print("=" * 80)
 
 

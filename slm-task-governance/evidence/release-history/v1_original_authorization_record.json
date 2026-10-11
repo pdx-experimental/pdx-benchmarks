@@ -1,0 +1,78 @@
+{
+  "schema_version": "pdx_formal_release_authorization_v1",
+  "authorization_status": "READY",
+  "formal_matrix_execution_gate": "UNLOCKED",
+  "public_root_release_gate": "BLOCKED_PENDING_MATRIX_EXECUTION_AND_REVIEW",
+  "authorized_bundle": {
+    "commit_sha": "38f5cef8bd21c5f1dcea0bdfd3883d1853b04f6e",
+    "tag_name": "formal-a12-immutable-bundle",
+    "tag_object_sha": "2e7597e2a6201501374c0256f808c5fca70ebcee",
+    "bundle_sha256": "6fb4a5ef571447252b1470d78709794383696979938988828d3589486b908b42",
+    "sha256sums_sha256": "953c47ba613300ce3d73248ebd9a04120b58ab3d40d301ed817b7d537e72b13f",
+    "immutable_bundle_sha256sums_sha256": "3cba645fed1170677298768baf5b748052ac44de8e7e1a11630aa8261e97c191",
+    "bundle_files_count": 79
+  },
+  "rfc3161_timestamp_verification": {
+    "DigiCert": {
+      "cms_signature_verification": "OK",
+      "trust_chain_verification": "OK",
+      "trust_anchor": "ca-bundle.crt",
+      "gen_time": "20261009030735Z",
+      "serial_number": "269636830753136580284047812766127116601",
+      "policy": "2.16.840.1.114412.7.1",
+      "tsr_file": "preregistration/a12/timestamps/bundle_digicert.tsr",
+      "verified_by": "OpenSSL 3.2.4 ts -verify"
+    },
+    "Sectigo": {
+      "cms_signature_verification": "OK",
+      "trust_chain_verification": "OK",
+      "trust_anchor": "ca-bundle.crt",
+      "gen_time": "20261009030736Z",
+      "serial_number": "24410916371117578753227490683723909310678033060",
+      "policy": "1.3.6.1.4.1.6449.2.1.1",
+      "tsr_file": "preregistration/a12/timestamps/bundle_sectigo.tsr",
+      "verified_by": "OpenSSL 3.2.4 ts -verify"
+    },
+    "FreeTSA": {
+      "cms_signature_verification": "OK",
+      "trust_chain_verification": "OK",
+      "trust_anchor": "freetsa_cacert.pem",
+      "gen_time": "20261009030737Z",
+      "serial_number": "152003165",
+      "policy": "1.2.3.4.1",
+      "tsr_file": "preregistration/a12/timestamps/bundle_freetsa.tsr",
+      "verified_by": "OpenSSL 3.2.4 ts -verify"
+    }
+  },
+  "opentimestamps_verification": {
+    "pool": {
+      "calendar_submission_status": "SUBMITTED",
+      "bitcoin_chain_confirmed": false,
+      "ots_file": "preregistration/a12/timestamps/bundle_pool.ots",
+      "file_bytes": 172,
+      "note": "Calendar submission proof recorded; Bitcoin block confirmation pending."
+    },
+    "alice": {
+      "calendar_submission_status": "SUBMITTED",
+      "bitcoin_chain_confirmed": false,
+      "ots_file": "preregistration/a12/timestamps/bundle_alice.ots",
+      "file_bytes": 172,
+      "note": "Calendar submission proof recorded; Bitcoin block confirmation pending."
+    },
+    "bob": {
+      "calendar_submission_status": "SUBMITTED",
+      "bitcoin_chain_confirmed": false,
+      "ots_file": "preregistration/a12/timestamps/bundle_bob.ots",
+      "file_bytes": 240,
+      "note": "Calendar submission proof recorded; Bitcoin block confirmation pending."
+    }
+  },
+  "gatekeeper_audit": {
+    "all_bundle_files_verified": true,
+    "bundle_drift_detected": false,
+    "all_cms_signatures_verified": true,
+    "all_ca_trust_chains_verified": true,
+    "all_message_imprints_match": true,
+    "audit_result": "PASSED"
+  }
+}

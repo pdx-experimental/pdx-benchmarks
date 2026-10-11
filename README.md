@@ -25,3 +25,7 @@ Code is licensed under [Apache-2.0](LICENSE); see [NOTICE](NOTICE).
 ## Protocol evidence and correction
 
 See the [retrospective protocol disclosure](slm-task-governance/evidence/frozen-protocol/README.md). v2–v4 TSA checks pass; v5 retained receipts fail their declared target. Prior claims of complete timestamp verification and advance specification of the statistical tests are withdrawn.
+
+## Independent validation proposal
+
+A separate [external parallel-validation plan](docs/INDEPENDENT_VALIDATION_PLAN.md) prioritizes scoring robustness, matched-length placebo controls and framework-independent replication. It is a draft for external execution, not a completed validation or preregistered study.
