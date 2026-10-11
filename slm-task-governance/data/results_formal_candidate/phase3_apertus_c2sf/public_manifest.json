@@ -1,0 +1,45 @@
+{
+  "schema_version": "pdx_public_manifest_v1",
+  "job_key": "phase3_apertus_c2sf",
+  "phase": "Phase 3",
+  "model": "Apertus 8B",
+  "arm": "c2sf",
+  "condition": "C2sf_scalar",
+  "total_tasks": 18,
+  "pass_count": 7,
+  "governed_rows": 18,
+  "control_rows": 0,
+  "total_engine_invocations": 45,
+  "ledger_sha256": "3302edf4a0096c9ccdae66769f6e38d70bb3d3c17ee3a42742dca08a8ca5d4f7",
+  "sqlite_bundle_sha256": "789f3877db740e22b6c39db2364a5732a62b4ef8f7c9ed0d26dbd9248a3d92d8",
+  "sqlite_databases_count": 18,
+  "provenance_bridge": {
+    "original_manifest_file": "original_run_manifest.json",
+    "original_manifest_sha256": "dfb1588389fdd14dd0b698eab66b1b3e803b61f9813925f91e268a3caeb7cc6b",
+    "original_ledger_sha256": "8d878309fdab0a5c45a1f228b26d5986b5dcebd1990013496e4f4ab5794616c2",
+    "manifest_created_at_utc": "2026-10-10T01:14:33Z",
+    "sanitization_transformations": [
+      "path_normalization_to_relative_posix",
+      "scrub_local_user_paths"
+    ]
+  },
+  "published_files": {
+    "benchmark_ledger.jsonl": {
+      "sha256": "3302edf4a0096c9ccdae66769f6e38d70bb3d3c17ee3a42742dca08a8ca5d4f7",
+      "size_bytes": 290666
+    },
+    "engine_evidence.jsonl": {
+      "sha256": "ffd2dc6509426f97ef5e25e21b7dc87334085168979224489e86c00d1e0d3604",
+      "size_bytes": 42845
+    },
+    "hardware_and_quantization_report.json": {
+      "sha256": "b135d15e0fd8374053ccc9fe0b91130cb76bbe5b1fd9cf4c41b7a1d996f957e1",
+      "size_bytes": 2295
+    },
+    "original_run_manifest.json": {
+      "sha256": "dfb1588389fdd14dd0b698eab66b1b3e803b61f9813925f91e268a3caeb7cc6b",
+      "size_bytes": 1493
+    }
+  },
+  "manifest_self_digest": "3eed71053f027e308ac90087d2dce984f7ff0270301f321d6f0dcc4e5861e3f0"
+}

@@ -1,0 +1,49 @@
+{
+  "schema_version": "pdx_public_manifest_v1",
+  "job_key": "phase3_qwen7_c2s",
+  "phase": "Phase 3",
+  "model": "Qwen 2.5 Coder 7B",
+  "arm": "c2s",
+  "condition": "C2s_schema",
+  "total_tasks": 18,
+  "pass_count": 3,
+  "governed_rows": 18,
+  "control_rows": 0,
+  "total_engine_invocations": 53,
+  "ledger_sha256": "2b3f9cd117a5b0574486b6b5282c0a9140c1f323b1cb15e7371e1abb38da19c7",
+  "sqlite_bundle_sha256": "4d832549c2312c8aff78f93326b2ab9f139062b1e7c4b10c6e9d9a73b14ece30",
+  "sqlite_databases_count": 18,
+  "provenance_bridge": {
+    "original_manifest_file": "original_run_manifest.json",
+    "original_manifest_sha256": "47c7221be64df7a4fe6496bf0a6bb12740498c3a4fc63250a6206ebc45094b4c",
+    "original_ledger_sha256": "ce88eb580914a913891e0ab5ec468819e13e6f9f99dcd6fa35d389632627a9b5",
+    "manifest_created_at_utc": "2026-10-09T08:32:12Z",
+    "sanitization_transformations": [
+      "path_normalization_to_relative_posix",
+      "scrub_local_user_paths"
+    ]
+  },
+  "published_files": {
+    "application_dependency_report.json": {
+      "sha256": "1b45a2be1c31614b04638909ab4f83990a6c4d214a8cb1dfc3032d154c7fcd62",
+      "size_bytes": 1525
+    },
+    "benchmark_ledger.jsonl": {
+      "sha256": "2b3f9cd117a5b0574486b6b5282c0a9140c1f323b1cb15e7371e1abb38da19c7",
+      "size_bytes": 323407
+    },
+    "engine_evidence.jsonl": {
+      "sha256": "1cdff8ddf1bcb5568bc079a1edd38fdf37da11717ea5638f11cfea440922ca01",
+      "size_bytes": 50995
+    },
+    "hardware_and_quantization_report.json": {
+      "sha256": "a497e54943b3add4bc66a41d0f5d6838b22c8717323508edb2893c81b85ab861",
+      "size_bytes": 1593
+    },
+    "original_run_manifest.json": {
+      "sha256": "47c7221be64df7a4fe6496bf0a6bb12740498c3a4fc63250a6206ebc45094b4c",
+      "size_bytes": 1495
+    }
+  },
+  "manifest_self_digest": "5979025bcca7c7a4b7dbfe2758487a0a6c9691aa3a60f0646f2240e747bf43b5"
+}

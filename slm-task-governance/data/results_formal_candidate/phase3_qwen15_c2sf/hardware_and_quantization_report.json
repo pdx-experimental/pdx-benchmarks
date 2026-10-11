@@ -1,0 +1,64 @@
+{
+  "model_slug": "Qwen/Qwen2.5-Coder-1.5B-Instruct",
+  "is_loaded_in_8bit": true,
+  "int8_module_count": 196,
+  "hf_device_map": {
+    "model.embed_tokens": "0",
+    "lm_head": "0",
+    "model.layers.0": "0",
+    "model.layers.1": "0",
+    "model.layers.2": "0",
+    "model.layers.3": "0",
+    "model.layers.4": "0",
+    "model.layers.5": "0",
+    "model.layers.6": "0",
+    "model.layers.7": "1",
+    "model.layers.8": "1",
+    "model.layers.9": "1",
+    "model.layers.10": "1",
+    "model.layers.11": "1",
+    "model.layers.12": "1",
+    "model.layers.13": "1",
+    "model.layers.14": "1",
+    "model.layers.15": "1",
+    "model.layers.16": "1",
+    "model.layers.17": "1",
+    "model.layers.18": "1",
+    "model.layers.19": "1",
+    "model.layers.20": "1",
+    "model.layers.21": "1",
+    "model.layers.22": "1",
+    "model.layers.23": "1",
+    "model.layers.24": "1",
+    "model.layers.25": "1",
+    "model.layers.26": "1",
+    "model.layers.27": "1",
+    "model.norm": "1",
+    "model.rotary_emb": "1"
+  },
+  "layer_distribution": {
+    "0": 9,
+    "1": 23
+  },
+  "is_distributed_across_both_gpus": true,
+  "post_inference_memory": {
+    "gpu_0": {
+      "device_name": "Tesla T4",
+      "allocated_mb": 783.95,
+      "peak_allocated_mb": 931.58,
+      "reserved_mb": 988.0,
+      "peak_reserved_mb": 1064.0
+    },
+    "gpu_1": {
+      "device_name": "Tesla T4",
+      "allocated_mb": 997.36,
+      "peak_allocated_mb": 1166.12,
+      "reserved_mb": 1224.0,
+      "peak_reserved_mb": 1290.0
+    }
+  },
+  "inference_peak_allocated_mb": {
+    "gpu_0": 931.58,
+    "gpu_1": 1166.12
+  }
+}

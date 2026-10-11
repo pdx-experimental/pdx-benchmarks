@@ -1,0 +1,45 @@
+{
+  "schema_version": "pdx_public_manifest_v1",
+  "job_key": "phase3_apertus_c0",
+  "phase": "Phase 3",
+  "model": "Apertus 8B",
+  "arm": "c0",
+  "condition": "C0_anchor",
+  "total_tasks": 18,
+  "pass_count": 2,
+  "governed_rows": 0,
+  "control_rows": 18,
+  "total_engine_invocations": 0,
+  "ledger_sha256": "8bd43249496f93d169a1fd3accfde5f2a4e08e10107be31754a6d508f3c7101c",
+  "sqlite_bundle_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "sqlite_databases_count": 0,
+  "provenance_bridge": {
+    "original_manifest_file": "original_run_manifest.json",
+    "original_manifest_sha256": "502e4454561d0f1f02e68292166347ebd1f739ebc8b254818e2e8faaf508f55d",
+    "original_ledger_sha256": "8bd43249496f93d169a1fd3accfde5f2a4e08e10107be31754a6d508f3c7101c",
+    "manifest_created_at_utc": "2026-10-10T00:32:51Z",
+    "sanitization_transformations": [
+      "path_normalization_to_relative_posix",
+      "scrub_local_user_paths"
+    ]
+  },
+  "published_files": {
+    "benchmark_ledger.jsonl": {
+      "sha256": "8bd43249496f93d169a1fd3accfde5f2a4e08e10107be31754a6d508f3c7101c",
+      "size_bytes": 63983
+    },
+    "engine_evidence.jsonl": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "hardware_and_quantization_report.json": {
+      "sha256": "a45cdfde3bf22b29441a9f5e3dbb205cf150931d9d292c57d81562853dd61864",
+      "size_bytes": 2295
+    },
+    "original_run_manifest.json": {
+      "sha256": "502e4454561d0f1f02e68292166347ebd1f739ebc8b254818e2e8faaf508f55d",
+      "size_bytes": 1480
+    }
+  },
+  "manifest_self_digest": "fef1fe6d3ffbe0599f288c9733623b877c04415ac69df95c0288d744a00ee42d"
+}

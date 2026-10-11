@@ -1,0 +1,49 @@
+{
+  "schema_version": "pdx_public_manifest_v1",
+  "job_key": "phase0_llama32_3b_react",
+  "phase": "Phase 0",
+  "model": "Llama 3.2 3B",
+  "arm": "react",
+  "condition": "goldplan_react",
+  "total_tasks": 112,
+  "pass_count": 29,
+  "governed_rows": 0,
+  "control_rows": 112,
+  "total_engine_invocations": 0,
+  "ledger_sha256": "e6e1e4b0e06f1d4bbbd50a5c412095cac46c224c574483fe0dabdcb39dcf1dd4",
+  "sqlite_bundle_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "sqlite_databases_count": 0,
+  "provenance_bridge": {
+    "original_manifest_file": "original_run_manifest.json",
+    "original_manifest_sha256": "9c449bb56be215592b1bf1c2690d560d5052dd73b200e7e5f6d96bf86398b294",
+    "original_ledger_sha256": "e6e1e4b0e06f1d4bbbd50a5c412095cac46c224c574483fe0dabdcb39dcf1dd4",
+    "manifest_created_at_utc": "2026-10-10T08:13:52Z",
+    "sanitization_transformations": [
+      "path_normalization_to_relative_posix",
+      "scrub_local_user_paths"
+    ]
+  },
+  "published_files": {
+    "application_dependency_report.json": {
+      "sha256": "1b45a2be1c31614b04638909ab4f83990a6c4d214a8cb1dfc3032d154c7fcd62",
+      "size_bytes": 1525
+    },
+    "benchmark_ledger.jsonl": {
+      "sha256": "e6e1e4b0e06f1d4bbbd50a5c412095cac46c224c574483fe0dabdcb39dcf1dd4",
+      "size_bytes": 4073238
+    },
+    "engine_evidence.jsonl": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "hardware_and_quantization_report.json": {
+      "sha256": "01a1b7f57f04e0cecc8ff5129f3e8829adf800d5ea72a98b889fa23b01c7734e",
+      "size_bytes": 1596
+    },
+    "original_run_manifest.json": {
+      "sha256": "9c449bb56be215592b1bf1c2690d560d5052dd73b200e7e5f6d96bf86398b294",
+      "size_bytes": 1524
+    }
+  },
+  "manifest_self_digest": "ffa86328e7e19539c1863e78d26d7291954273e49e0d07aaa9ff95000f5668cd"
+}

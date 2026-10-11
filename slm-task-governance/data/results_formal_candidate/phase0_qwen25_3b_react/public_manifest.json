@@ -1,0 +1,49 @@
+{
+  "schema_version": "pdx_public_manifest_v1",
+  "job_key": "phase0_qwen25_3b_react",
+  "phase": "Phase 0",
+  "model": "Qwen 2.5 Coder 3B",
+  "arm": "react",
+  "condition": "goldplan_react",
+  "total_tasks": 112,
+  "pass_count": 34,
+  "governed_rows": 0,
+  "control_rows": 112,
+  "total_engine_invocations": 0,
+  "ledger_sha256": "0efd9e3600efb6bbc57f6ca7f0fbba1f082292c9774ce6fa7bf93a38b1e90de9",
+  "sqlite_bundle_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "sqlite_databases_count": 0,
+  "provenance_bridge": {
+    "original_manifest_file": "original_run_manifest.json",
+    "original_manifest_sha256": "9885baa2b788837f0c5b6112a46122e7d9d1aaf8f7e22fba7a4f17cceb3ec9d1",
+    "original_ledger_sha256": "0efd9e3600efb6bbc57f6ca7f0fbba1f082292c9774ce6fa7bf93a38b1e90de9",
+    "manifest_created_at_utc": "2026-10-10T03:17:04Z",
+    "sanitization_transformations": [
+      "path_normalization_to_relative_posix",
+      "scrub_local_user_paths"
+    ]
+  },
+  "published_files": {
+    "application_dependency_report.json": {
+      "sha256": "1b45a2be1c31614b04638909ab4f83990a6c4d214a8cb1dfc3032d154c7fcd62",
+      "size_bytes": 1525
+    },
+    "benchmark_ledger.jsonl": {
+      "sha256": "0efd9e3600efb6bbc57f6ca7f0fbba1f082292c9774ce6fa7bf93a38b1e90de9",
+      "size_bytes": 3571835
+    },
+    "engine_evidence.jsonl": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "hardware_and_quantization_report.json": {
+      "sha256": "06213bf78e336bc505090a8b57c49e2a891cba8d0031bae72a1e7c6474aa50e6",
+      "size_bytes": 1818
+    },
+    "original_run_manifest.json": {
+      "sha256": "9885baa2b788837f0c5b6112a46122e7d9d1aaf8f7e22fba7a4f17cceb3ec9d1",
+      "size_bytes": 1519
+    }
+  },
+  "manifest_self_digest": "d9c88f2751e949d7e352f30fcb509d1ed933f429cdbea70110e97a655555e89a"
+}

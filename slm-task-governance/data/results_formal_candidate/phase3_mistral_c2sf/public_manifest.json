@@ -1,0 +1,49 @@
+{
+  "schema_version": "pdx_public_manifest_v1",
+  "job_key": "phase3_mistral_c2sf",
+  "phase": "Phase 3",
+  "model": "Mistral 7B",
+  "arm": "c2sf",
+  "condition": "C2sf_scalar",
+  "total_tasks": 18,
+  "pass_count": 1,
+  "governed_rows": 18,
+  "control_rows": 0,
+  "total_engine_invocations": 51,
+  "ledger_sha256": "874805541c9e8b3570b62785d92fbbd4f3c551216b51c2048b7a0942db924db4",
+  "sqlite_bundle_sha256": "dcdee8b8074450d8f4752ace32c4ed786ed665b47dbeb3e74c7157b2fc2a225a",
+  "sqlite_databases_count": 18,
+  "provenance_bridge": {
+    "original_manifest_file": "original_run_manifest.json",
+    "original_manifest_sha256": "f6d02c84f5b443bfadca33018bc1d61887277de4cfb8e606f8cd2a6849fb6d89",
+    "original_ledger_sha256": "439e08deb2c22d3aeeed4dcc7be5347db18208b0cb460d556be86933f4d1e6cd",
+    "manifest_created_at_utc": "2026-10-09T12:34:22Z",
+    "sanitization_transformations": [
+      "path_normalization_to_relative_posix",
+      "scrub_local_user_paths"
+    ]
+  },
+  "published_files": {
+    "application_dependency_report.json": {
+      "sha256": "1b45a2be1c31614b04638909ab4f83990a6c4d214a8cb1dfc3032d154c7fcd62",
+      "size_bytes": 1525
+    },
+    "benchmark_ledger.jsonl": {
+      "sha256": "874805541c9e8b3570b62785d92fbbd4f3c551216b51c2048b7a0942db924db4",
+      "size_bytes": 333932
+    },
+    "engine_evidence.jsonl": {
+      "sha256": "79cc4b06f48b0e8dfd225759af3030779801f2078d1c5b7f177a25db0fe23828",
+      "size_bytes": 50573
+    },
+    "hardware_and_quantization_report.json": {
+      "sha256": "a1954be3342a5d18708064a5d2db71dbd79c5960f4a484f415d804d6912eae43",
+      "size_bytes": 1710
+    },
+    "original_run_manifest.json": {
+      "sha256": "f6d02c84f5b443bfadca33018bc1d61887277de4cfb8e606f8cd2a6849fb6d89",
+      "size_bytes": 1505
+    }
+  },
+  "manifest_self_digest": "15a4eaa01d4865eae2c025809e26e561601ca806464b2eb42f2b964955737ae4"
+}

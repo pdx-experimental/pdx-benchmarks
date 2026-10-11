@@ -1,0 +1,34 @@
+{
+  "model_slug": "google/gemma-3-1b-it",
+  "is_loaded_in_8bit": true,
+  "int8_module_count": 182,
+  "hf_device_map": {
+    "": "1"
+  },
+  "layer_distribution": {
+    "1": 1
+  },
+  "is_distributed_across_both_gpus": false,
+  "attn_implementation_configured": "eager",
+  "attn_implementation_observed": "eager",
+  "post_inference_memory": {
+    "gpu_0": {
+      "device_name": "Tesla T4",
+      "allocated_mb": 0.0,
+      "peak_allocated_mb": 0.0,
+      "reserved_mb": 0.0,
+      "peak_reserved_mb": 2.0
+    },
+    "gpu_1": {
+      "device_name": "Tesla T4",
+      "allocated_mb": 1317.57,
+      "peak_allocated_mb": 6996.85,
+      "reserved_mb": 8892.0,
+      "peak_reserved_mb": 13366.0
+    }
+  },
+  "inference_peak_allocated_mb": {
+    "gpu_0": 0.0,
+    "gpu_1": 6996.85
+  }
+}

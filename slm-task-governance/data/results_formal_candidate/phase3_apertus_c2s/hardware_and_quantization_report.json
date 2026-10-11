@@ -1,0 +1,70 @@
+{
+  "model_slug": "swiss-ai/Apertus-v1.5-8B",
+  "is_loaded_in_8bit": true,
+  "int8_module_count": 217,
+  "hf_device_map": {
+    "model.language_model.embed_tokens": "0",
+    "model.language_model.layers.0": "0",
+    "model.language_model.layers.1": "0",
+    "model.language_model.layers.2": "0",
+    "model.language_model.layers.3": "0",
+    "model.language_model.layers.4": "0",
+    "model.language_model.layers.5": "0",
+    "model.language_model.layers.6": "0",
+    "model.language_model.layers.7": "0",
+    "model.language_model.layers.8": "1",
+    "model.language_model.layers.9": "1",
+    "model.language_model.layers.10": "1",
+    "model.language_model.layers.11": "1",
+    "model.language_model.layers.12": "1",
+    "model.language_model.layers.13": "1",
+    "model.language_model.layers.14": "1",
+    "model.language_model.layers.15": "1",
+    "model.language_model.layers.16": "1",
+    "model.language_model.layers.17": "1",
+    "model.language_model.layers.18": "1",
+    "model.language_model.layers.19": "1",
+    "model.language_model.layers.20": "1",
+    "model.language_model.layers.21": "1",
+    "model.language_model.layers.22": "1",
+    "model.language_model.layers.23": "1",
+    "model.language_model.layers.24": "1",
+    "model.language_model.layers.25": "1",
+    "model.language_model.layers.26": "1",
+    "model.language_model.layers.27": "1",
+    "model.language_model.layers.28": "1",
+    "model.language_model.layers.29": "1",
+    "model.language_model.layers.30": "1",
+    "model.language_model.layers.31": "1",
+    "model.language_model.norm": "1",
+    "model.language_model.rotary_emb": "1",
+    "model.vision_tokenizer": "1",
+    "model.audio_tokenizer": "1",
+    "lm_head": "1"
+  },
+  "layer_distribution": {
+    "0": 9,
+    "1": 29
+  },
+  "is_distributed_across_both_gpus": true,
+  "post_inference_memory": {
+    "gpu_0": {
+      "device_name": "Tesla T4",
+      "allocated_mb": 3758.37,
+      "peak_allocated_mb": 4784.27,
+      "reserved_mb": 4220.0,
+      "peak_reserved_mb": 6398.0
+    },
+    "gpu_1": {
+      "device_name": "Tesla T4",
+      "allocated_mb": 7028.98,
+      "peak_allocated_mb": 8148.78,
+      "reserved_mb": 11632.0,
+      "peak_reserved_mb": 12778.0
+    }
+  },
+  "inference_peak_allocated_mb": {
+    "gpu_0": 4784.27,
+    "gpu_1": 8148.78
+  }
+}
