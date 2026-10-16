@@ -1,0 +1,61 @@
+{
+  "module": "src.migration_registry",
+  "oracle_version": "stateful48-oracle-v4",
+  "required_files": [
+    "src/migrations/event_index.py",
+    "src/migration_registry.py",
+    "docs/migrations.md"
+  ],
+  "task_id": "multi_02_schema_migration",
+  "text_files": {
+    "docs/migrations.md": [
+      "DROP INDEX IF EXISTS idx_events_timestamp",
+      "base",
+      "event_index"
+    ]
+  },
+  "vectors": [
+    {
+      "expected": {
+        "indexes": [
+          "idx_events_timestamp"
+        ],
+        "order": [
+          "base",
+          "event_index"
+        ]
+      },
+      "input": {}
+    },
+    {
+      "expected": {
+        "indexes": [
+          "idx_events_timestamp"
+        ],
+        "order": [
+          "base",
+          "event_index"
+        ]
+      },
+      "input": {
+        "ignored": 1
+      }
+    },
+    {
+      "expected": {
+        "indexes": [
+          "idx_probe"
+        ],
+        "order": [
+          "base",
+          "event_index"
+        ]
+      },
+      "input": {},
+      "override_callable": {
+        "name": "apply",
+        "sql": "CREATE INDEX IF NOT EXISTS idx_probe ON events(timestamp)"
+      }
+    }
+  ]
+}

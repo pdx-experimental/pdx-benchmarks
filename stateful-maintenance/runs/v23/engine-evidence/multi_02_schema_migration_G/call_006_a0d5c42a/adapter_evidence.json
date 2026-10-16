@@ -1,0 +1,66 @@
+{
+  "arguments_sha256": "97618fa0157b3a656c8936f884ec0360ebe9ba6ddc1d0cab80bd88c02b88232f",
+  "artifact_manifest": {
+    "artifact_id": "call_006_a0d5c42a",
+    "artifact_type": "tool-call",
+    "files": [],
+    "provenance": [
+      {
+        "inputs": {
+          "arguments": {
+            "claimed_success": true,
+            "disposition": "COMPLETED",
+            "summary": "src/migrations/event_index.py updated"
+          }
+        },
+        "outputs": {
+          "error": "Step dispatch failed: cannot claim a completed modification: workspace has no changes",
+          "status": "failed"
+        },
+        "step_id": "dispatch",
+        "tool": "pdx.stateful.submit_completion"
+      }
+    ],
+    "schema_version": "pdx_artifact_manifest_v0",
+    "verification": [
+      {
+        "check": "step_completed:dispatch",
+        "details": "Step dispatch did not complete",
+        "status": "fail"
+      }
+    ]
+  },
+  "engine": "pdx-artifact-engine",
+  "engine_version": "0.3.0a12",
+  "request_id": "call_006_a0d5c42a",
+  "requested_arguments_sha256": "97618fa0157b3a656c8936f884ec0360ebe9ba6ddc1d0cab80bd88c02b88232f",
+  "requested_tool": "submit_completion",
+  "run_manifest": {
+    "artifact_manifest": "artifact_manifest.json",
+    "errors": [
+      "Step dispatch failed: cannot claim a completed modification: workspace has no changes"
+    ],
+    "planner": "stateful-gov",
+    "request_id": "call_006_a0d5c42a",
+    "run_id": "run_ec49d2d9cd99",
+    "schema_version": "pdx_run_manifest_v0",
+    "status": "failed",
+    "steps": [
+      {
+        "detail": "Step dispatch failed: cannot claim a completed modification: workspace has no changes",
+        "kind": "tool",
+        "name": "pdx.stateful.submit_completion",
+        "status": "failed",
+        "step_id": "dispatch"
+      }
+    ],
+    "verification": [
+      {
+        "check": "step_completed:dispatch",
+        "details": "Step dispatch did not complete",
+        "status": "fail"
+      }
+    ]
+  },
+  "tool": "submit_completion"
+}

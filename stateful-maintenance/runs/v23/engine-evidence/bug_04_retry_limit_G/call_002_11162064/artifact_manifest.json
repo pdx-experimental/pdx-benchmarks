@@ -1,0 +1,28 @@
+{
+  "schema_version": "pdx_artifact_manifest_v0",
+  "artifact_id": "call_002_11162064",
+  "artifact_type": "tool-call",
+  "files": [],
+  "provenance": [
+    {
+      "step_id": "dispatch",
+      "tool": "pdx.stateful.read_file",
+      "inputs": {
+        "arguments": {
+          "path": "src/retry.py",
+          "max_lines": 300
+        }
+      },
+      "outputs": {
+        "content": "def run(payload):\n    n = payload['max_attempts']\n    return {'attempts': list(range(1, n + 2)), 'delays': [0] + [payload['delay_seconds']] * (n - 1)}"
+      }
+    }
+  ],
+  "verification": [
+    {
+      "check": "step_completed:dispatch",
+      "status": "pass",
+      "details": "Step dispatch completed"
+    }
+  ]
+}

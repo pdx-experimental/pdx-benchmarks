@@ -1,0 +1,5 @@
+{
+  "docs/releases.md": "On compatibility failure, migrate schema or deploy compatible application. Existing tests must pass.\n",
+  "src/cli.py": "from src.release_gate import compatible\ndef run(payload):\n    ok = compatible(payload['min_schema'],payload['max_schema'],payload['deployed'])\n    return {'release':payload['tests_passed'] and ok,'compatibility':ok}\n",
+  "src/release_gate.py": "def compatible(min_schema,max_schema,deployed): return min_schema <= deployed <= max_schema\n"
+}

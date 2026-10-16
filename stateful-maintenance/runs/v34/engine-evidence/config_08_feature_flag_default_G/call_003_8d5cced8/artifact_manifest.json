@@ -1,0 +1,30 @@
+{
+  "schema_version": "pdx_artifact_manifest_v0",
+  "artifact_id": "call_003_8d5cced8",
+  "artifact_type": "tool-call",
+  "files": [],
+  "provenance": [
+    {
+      "step_id": "dispatch",
+      "tool": "pdx.stateful.write_file",
+      "inputs": {
+        "arguments": {
+          "path": "config/features.json",
+          "content": "{\"exporter\": {\"default_enabled\": false, \"environment_overrides\": {\"dev\": true, \"prod\": false}}}"
+        }
+      },
+      "outputs": {
+        "changed_paths": [
+          "config/features.json"
+        ]
+      }
+    }
+  ],
+  "verification": [
+    {
+      "check": "step_completed:dispatch",
+      "status": "pass",
+      "details": "Step dispatch completed"
+    }
+  ]
+}

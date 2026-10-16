@@ -1,0 +1,62 @@
+{
+  "arguments_sha256": "404c3a2fbcaf1795cdf6cd34aa83c4f61f19aa087dd23f6c71c1bf77bf35e570",
+  "artifact_manifest": {
+    "artifact_id": "call_002_809babfb",
+    "artifact_type": "tool-call",
+    "files": [],
+    "provenance": [
+      {
+        "inputs": {
+          "arguments": {
+            "max_lines": 300,
+            "path": "src/convert_sizes.py"
+          }
+        },
+        "outputs": {
+          "content": "def run(payload):\n    units = {'B':1,'KiB':1024,'MiB':1000000}\n    if payload['unit'] not in units: return {'error':'unknown_unit'}\n    return {'bytes':payload['value'] * units[payload['unit']]}"
+        },
+        "step_id": "dispatch",
+        "tool": "pdx.stateful.read_file"
+      }
+    ],
+    "schema_version": "pdx_artifact_manifest_v0",
+    "verification": [
+      {
+        "check": "step_completed:dispatch",
+        "details": "Step dispatch completed",
+        "status": "pass"
+      }
+    ]
+  },
+  "engine": "pdx-artifact-engine",
+  "engine_version": "0.3.0a12",
+  "request_id": "call_002_809babfb",
+  "requested_arguments_sha256": "404c3a2fbcaf1795cdf6cd34aa83c4f61f19aa087dd23f6c71c1bf77bf35e570",
+  "requested_tool": "read_file",
+  "run_manifest": {
+    "artifact_manifest": "artifact_manifest.json",
+    "errors": [],
+    "planner": "stateful-gov",
+    "request_id": "call_002_809babfb",
+    "run_id": "run_4dcc0fdd09cb",
+    "schema_version": "pdx_run_manifest_v0",
+    "status": "completed",
+    "steps": [
+      {
+        "detail": "ok",
+        "kind": "tool",
+        "name": "pdx.stateful.read_file",
+        "status": "completed",
+        "step_id": "dispatch"
+      }
+    ],
+    "verification": [
+      {
+        "check": "step_completed:dispatch",
+        "details": "Step dispatch completed",
+        "status": "pass"
+      }
+    ]
+  },
+  "tool": "read_file"
+}

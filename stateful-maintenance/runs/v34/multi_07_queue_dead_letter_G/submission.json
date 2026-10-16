@@ -1,0 +1,11 @@
+{
+  "arm": "G",
+  "completion": {
+    "claimed_success": true,
+    "disposition": "COMPLETED",
+    "summary": "Modified src/worker.py with correct logic based on config/queues.json values"
+  },
+  "patch_sha256": "2d4f2cac09cafe22d0705862c4c8d26bce7f6c6a6abcdd29b7cf6bc8f6842bda",
+  "schema": "pdx.stateful.candidate.v1",
+  "task_id": "multi_07_queue_dead_letter"
+}

@@ -1,0 +1,15 @@
+diff --git a/src/export_events.py b/src/export_events.py
+index 4f751ae..fad6eb6 100644
+--- a/src/export_events.py
++++ b/src/export_events.py
+@@ -1,5 +1,6 @@
+ from datetime import datetime, timezone
+ def run(payload):
+-    d = datetime.fromisoformat(payload['timestamp'].replace('Z','+00:00'))
+-    if d.utcoffset() is None: raise ValueError('naive timestamp')
+-    return {'timestamp':d.isoformat().replace('+00:00','Z')}
++    d = datetime.fromisoformat(payload['timestamp'].replace('Z', '+00:00'))
++    if d.utcoffset() is None:
++        raise ValueError('naive timestamp')
++    return {'timestamp': d.isoformat().replace('+00:00', 'Z')}
+\ No newline at end of file

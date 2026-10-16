@@ -1,0 +1,9 @@
+{
+  "config/metrics.json": {
+    "retry": "job_retry_total"
+  },
+  "dashboards/retries.json": {
+    "query": "sum(rate(job_retry_total[5m]))"
+  },
+  "src/retry.py": "import json\nfrom pathlib import Path\ndef run(payload):\n    n = min(payload['max_attempts'],payload['success_on']) if payload.get('success_on') is not None else payload['max_attempts']\n    metric = json.loads(Path('config/metrics.json').read_text())['retry']\n    return {'attempts':n,'retry_count':n-1,'metric':metric}\n"
+}

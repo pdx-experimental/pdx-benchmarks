@@ -1,0 +1,17 @@
+diff --git a/src/sanitize_logs.py b/src/sanitize_logs.py
+index f6e3ad4..8965916 100644
+--- a/src/sanitize_logs.py
++++ b/src/sanitize_logs.py
+@@ -1,5 +1,8 @@
+ def clean(value):
+-    if isinstance(value,dict): return {k:'[REDACTED]' if k in {'password','access_token','authorization'} else clean(v) for k,v in value.items()}
+-    if isinstance(value,list): return value
++    if isinstance(value, dict):
++        return {k: '[REDACTED]' if k in {'password', 'access_token', 'authorization'} else clean(v) for k, v in value.items()}
++    if isinstance(value, list):
++        return value
+     return value
+-def run(payload): return {'record':clean(payload['record'])}
++def run(payload):
++    return {'record': clean(payload['record'])}
+\ No newline at end of file

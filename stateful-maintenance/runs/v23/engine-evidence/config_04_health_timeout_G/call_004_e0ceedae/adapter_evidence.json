@@ -1,0 +1,64 @@
+{
+  "arguments_sha256": "c6e819331ed3cb1e14a59dd716d7ff2d53296c40f10858ed2909930717750b02",
+  "artifact_manifest": {
+    "artifact_id": "call_004_e0ceedae",
+    "artifact_type": "tool-call",
+    "files": [],
+    "provenance": [
+      {
+        "inputs": {
+          "arguments": {
+            "claimed_success": true,
+            "disposition": "COMPLETED",
+            "summary": "config/health.json updated to set health.timeout_seconds to 3"
+          }
+        },
+        "outputs": {
+          "accepted": true,
+          "scope": "submission and syntax only; correctness requires external oracle"
+        },
+        "step_id": "dispatch",
+        "tool": "pdx.stateful.submit_completion"
+      }
+    ],
+    "schema_version": "pdx_artifact_manifest_v0",
+    "verification": [
+      {
+        "check": "step_completed:dispatch",
+        "details": "Step dispatch completed",
+        "status": "pass"
+      }
+    ]
+  },
+  "engine": "pdx-artifact-engine",
+  "engine_version": "0.3.0a12",
+  "request_id": "call_004_e0ceedae",
+  "requested_arguments_sha256": "c6e819331ed3cb1e14a59dd716d7ff2d53296c40f10858ed2909930717750b02",
+  "requested_tool": "submit_completion",
+  "run_manifest": {
+    "artifact_manifest": "artifact_manifest.json",
+    "errors": [],
+    "planner": "stateful-gov",
+    "request_id": "call_004_e0ceedae",
+    "run_id": "run_ff71ef4c0bf8",
+    "schema_version": "pdx_run_manifest_v0",
+    "status": "completed",
+    "steps": [
+      {
+        "detail": "ok",
+        "kind": "tool",
+        "name": "pdx.stateful.submit_completion",
+        "status": "completed",
+        "step_id": "dispatch"
+      }
+    ],
+    "verification": [
+      {
+        "check": "step_completed:dispatch",
+        "details": "Step dispatch completed",
+        "status": "pass"
+      }
+    ]
+  },
+  "tool": "submit_completion"
+}

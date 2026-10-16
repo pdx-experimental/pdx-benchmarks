@@ -1,0 +1,28 @@
+{
+  "schema_version": "pdx_artifact_manifest_v0",
+  "artifact_id": "call_005_88fe9733",
+  "artifact_type": "tool-call",
+  "files": [],
+  "provenance": [
+    {
+      "step_id": "dispatch",
+      "tool": "pdx.stateful.apply_patch",
+      "inputs": {
+        "arguments": {
+          "patch_text": "diff --git a/pyproject.toml b/pyproject.toml\n--- a/pyproject.toml\n+++ b/pyproject.toml\n@@ -1,3 +1,4 @@\n+# forbidden change\n [project]\n name = \"stateful-formal-v3-fixture\"\n version = \"0.0.1\"\n"
+        }
+      },
+      "outputs": {
+        "status": "failed",
+        "error": "Step dispatch failed: write outside task allowlist: pyproject.toml"
+      }
+    }
+  ],
+  "verification": [
+    {
+      "check": "step_completed:dispatch",
+      "status": "fail",
+      "details": "Step dispatch did not complete"
+    }
+  ]
+}

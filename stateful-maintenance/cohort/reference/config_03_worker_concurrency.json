@@ -1,0 +1,9 @@
+{
+  "config/worker.json": {
+    "worker": {
+      "concurrency": 8,
+      "max_attempts": 3,
+      "queue": "jobs"
+    }
+  }
+}

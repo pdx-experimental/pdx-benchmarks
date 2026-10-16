@@ -1,0 +1,13 @@
+diff --git a/src/reconcile_inventory.py b/src/reconcile_inventory.py
+index 9b89449..3c56fe0 100644
+--- a/src/reconcile_inventory.py
++++ b/src/reconcile_inventory.py
+@@ -1,4 +1,5 @@
+ def run(payload):
+     totals = {}
+-    for r in payload['rows']: totals[r['sku']] = totals.get(r['sku'],0) + r['current'] - r['reserved']
+-    return {'items':[{'sku':k,'qty':max(0,totals[k]),'negative':totals[k]<0} for k in sorted(totals)]}
++    for r in payload['rows']:
++        totals[r['sku']] = totals.get(r['sku'], 0) + r['current'] - r['reserved']
++    return {'items': [{'sku': k, 'qty': max(0, totals[k]), 'negative': totals[k] < 0} for k in sorted(totals)}}
+\ No newline at end of file

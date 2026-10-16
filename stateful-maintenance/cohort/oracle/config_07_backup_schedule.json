@@ -1,0 +1,17 @@
+{
+  "json_files": {
+    "config/backup.json": {
+      "backup": {
+        "destination": "backups/",
+        "encrypted": true,
+        "retention_count": 7,
+        "schedule_utc": "02:30"
+      }
+    }
+  },
+  "oracle_version": "stateful48-oracle-v4",
+  "required_files": [
+    "config/backup.json"
+  ],
+  "task_id": "config_07_backup_schedule"
+}

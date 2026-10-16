@@ -1,0 +1,62 @@
+{
+  "arguments_sha256": "02595f0bb9654127e42f1ed9f7ce262d57debe43c3ab0b4f4d68f215f9e6d977",
+  "artifact_manifest": {
+    "artifact_id": "call_002_8bb2e097",
+    "artifact_type": "tool-call",
+    "files": [],
+    "provenance": [
+      {
+        "inputs": {
+          "arguments": {
+            "max_lines": 300,
+            "path": "config/health.json"
+          }
+        },
+        "outputs": {
+          "content": "{\n  \"health\": {\n    \"endpoint\": \"/live\",\n    \"failure_threshold\": 3,\n    \"interval_seconds\": 30,\n    \"timeout_seconds\": 10\n  }\n}"
+        },
+        "step_id": "dispatch",
+        "tool": "pdx.stateful.read_file"
+      }
+    ],
+    "schema_version": "pdx_artifact_manifest_v0",
+    "verification": [
+      {
+        "check": "step_completed:dispatch",
+        "details": "Step dispatch completed",
+        "status": "pass"
+      }
+    ]
+  },
+  "engine": "pdx-artifact-engine",
+  "engine_version": "0.3.0a12",
+  "request_id": "call_002_8bb2e097",
+  "requested_arguments_sha256": "02595f0bb9654127e42f1ed9f7ce262d57debe43c3ab0b4f4d68f215f9e6d977",
+  "requested_tool": "read_file",
+  "run_manifest": {
+    "artifact_manifest": "artifact_manifest.json",
+    "errors": [],
+    "planner": "stateful-gov",
+    "request_id": "call_002_8bb2e097",
+    "run_id": "run_2258e2f2d2ec",
+    "schema_version": "pdx_run_manifest_v0",
+    "status": "completed",
+    "steps": [
+      {
+        "detail": "ok",
+        "kind": "tool",
+        "name": "pdx.stateful.read_file",
+        "status": "completed",
+        "step_id": "dispatch"
+      }
+    ],
+    "verification": [
+      {
+        "check": "step_completed:dispatch",
+        "details": "Step dispatch completed",
+        "status": "pass"
+      }
+    ]
+  },
+  "tool": "read_file"
+}

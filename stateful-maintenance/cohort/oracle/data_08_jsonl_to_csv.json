@@ -1,0 +1,63 @@
+{
+  "module": "src.jsonl_to_csv",
+  "oracle_version": "stateful48-oracle-v4",
+  "required_files": [
+    "src/jsonl_to_csv.py"
+  ],
+  "task_id": "data_08_jsonl_to_csv",
+  "vectors": [
+    {
+      "expected": {
+        "csv": "id,text\na,\"x,y\"\nb,\"say \"\"hi\"\"\"\n"
+      },
+      "input": {
+        "fields": [
+          "id",
+          "text"
+        ],
+        "rows": [
+          {
+            "id": "a",
+            "text": "x,y"
+          },
+          {
+            "id": "b",
+            "text": "say \"hi\""
+          }
+        ]
+      }
+    },
+    {
+      "expected": {
+        "error": "unknown_field"
+      },
+      "input": {
+        "fields": [
+          "id"
+        ],
+        "rows": [
+          {
+            "extra": 1,
+            "id": "a"
+          }
+        ]
+      }
+    },
+    {
+      "expected": {
+        "csv": "id,text\na,\n"
+      },
+      "input": {
+        "fields": [
+          "id",
+          "text"
+        ],
+        "rows": [
+          {
+            "id": "a"
+          }
+        ]
+      }
+    }
+  ]
+}

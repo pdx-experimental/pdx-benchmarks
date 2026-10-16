@@ -1,0 +1,11 @@
+{
+  "arm": "G",
+  "completion": {
+    "claimed_success": true,
+    "disposition": "COMPLETED",
+    "summary": "src/retry.py updated with correct implementation"
+  },
+  "patch_sha256": "34d62e128de0fa89bc50b04b938af5fb9541787019f7480960c0f53698862463",
+  "schema": "pdx.stateful.candidate.v1",
+  "task_id": "bug_04_retry_limit"
+}

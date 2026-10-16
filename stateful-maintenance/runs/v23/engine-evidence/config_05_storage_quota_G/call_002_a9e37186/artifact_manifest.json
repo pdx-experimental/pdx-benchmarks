@@ -1,0 +1,28 @@
+{
+  "schema_version": "pdx_artifact_manifest_v0",
+  "artifact_id": "call_002_a9e37186",
+  "artifact_type": "tool-call",
+  "files": [],
+  "provenance": [
+    {
+      "step_id": "dispatch",
+      "tool": "pdx.stateful.read_file",
+      "inputs": {
+        "arguments": {
+          "path": "config/uploads.json",
+          "max_lines": 300
+        }
+      },
+      "outputs": {
+        "content": "{\n  \"upload\": {\n    \"backend\": \"local\",\n    \"max_mib\": 10,\n    \"mime_types\": [\n      \"text/csv\",\n      \"application/json\"\n    ]\n  }\n}"
+      }
+    }
+  ],
+  "verification": [
+    {
+      "check": "step_completed:dispatch",
+      "status": "pass",
+      "details": "Step dispatch completed"
+    }
+  ]
+}

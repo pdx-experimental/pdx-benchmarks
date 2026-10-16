@@ -1,0 +1,3 @@
+{
+  "src/convert_sizes.py": "def run(payload):\n    units = {'B':1,'KiB':1024,'MiB':1048576}\n    if payload['unit'] not in units: return {'error':'unknown_unit'}\n    return {'bytes':payload['value'] * units[payload['unit']]}\n"
+}

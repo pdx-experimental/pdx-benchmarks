@@ -1,0 +1,15 @@
+diff --git a/config/service.json b/config/service.json
+index 6bbaef8..1622d70 100644
+--- a/config/service.json
++++ b/config/service.json
+@@ -1,8 +1 @@
+-{
+-  "listener": "127.0.0.1:8443",
+-  "retry_limit": 3,
+-  "security": {
+-    "certificate_path": "/certs/service.pem",
+-    "tls_min_version": "1.0"
+-  }
+-}
++{"listener": "127.0.0.1:8443", "retry_limit": 3, "security": {"certificate_path": "/certs/service.pem", "tls_min_version": "1.2"}}}
+\ No newline at end of file

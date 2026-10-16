@@ -1,0 +1,5 @@
+{
+  "docs/archive.md": "Verify each manifest path with SHA-256 over the original UTF-8 file content.\n",
+  "src/cli.py": "from src.manifest import generate\ndef run(payload): return generate(payload['files'],payload['output_archive'])\n",
+  "src/manifest.py": "import hashlib\ndef generate(files,output_archive):\n    return {'manifest':[{'path':p,'sha256':hashlib.sha256(files[p].encode('utf-8')).hexdigest()} for p in sorted(files) if p != output_archive and not p.endswith('.tmp')]}\n"
+}

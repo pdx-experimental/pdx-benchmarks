@@ -1,0 +1,18 @@
+{
+  "json_files": {
+    "config/features.json": {
+      "exporter": {
+        "default_enabled": false,
+        "environment_overrides": {
+          "dev": true,
+          "prod": false
+        }
+      }
+    }
+  },
+  "oracle_version": "stateful48-oracle-v4",
+  "required_files": [
+    "config/features.json"
+  ],
+  "task_id": "config_08_feature_flag_default"
+}

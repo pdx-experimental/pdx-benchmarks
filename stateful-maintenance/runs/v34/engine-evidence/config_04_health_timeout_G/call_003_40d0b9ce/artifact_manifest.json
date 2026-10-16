@@ -1,0 +1,30 @@
+{
+  "schema_version": "pdx_artifact_manifest_v0",
+  "artifact_id": "call_003_40d0b9ce",
+  "artifact_type": "tool-call",
+  "files": [],
+  "provenance": [
+    {
+      "step_id": "dispatch",
+      "tool": "pdx.stateful.write_file",
+      "inputs": {
+        "arguments": {
+          "path": "config/health.json",
+          "content": "{\"health\": {\"endpoint\": \"/live\", \"failure_threshold\": 3, \"interval_seconds\": 30, \"timeout_seconds\": 10}}"
+        }
+      },
+      "outputs": {
+        "changed_paths": [
+          "config/health.json"
+        ]
+      }
+    }
+  ],
+  "verification": [
+    {
+      "check": "step_completed:dispatch",
+      "status": "pass",
+      "details": "Step dispatch completed"
+    }
+  ]
+}

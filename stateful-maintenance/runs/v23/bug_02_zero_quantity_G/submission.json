@@ -1,0 +1,11 @@
+{
+  "arm": "G",
+  "completion": {
+    "claimed_success": true,
+    "disposition": "COMPLETED",
+    "summary": "Updated src/invoices.py with correct quantity=0 handling"
+  },
+  "patch_sha256": "cd1736757c325632896b18ff6fbe1c73427558f8479f78136c9c2845039de6be",
+  "schema": "pdx.stateful.candidate.v1",
+  "task_id": "bug_02_zero_quantity"
+}

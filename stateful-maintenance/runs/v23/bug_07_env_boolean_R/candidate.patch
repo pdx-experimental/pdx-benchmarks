@@ -1,0 +1,16 @@
+diff --git a/src/settings.py b/src/settings.py
+index f1e92b9..8d33163 100644
+--- a/src/settings.py
++++ b/src/settings.py
+@@ -1,5 +1,7 @@
+ def run(payload):
+     value = payload['value'].strip().lower()
+-    if value in {'true','yes','1','on'}: return {'value': True}
+-    if value in {'false','no','0','off'}: return {'value': False}
+-    return {'value': True}
++    if value in {'true','yes','1','on'}:
++        return {'value': True}
++    if value in {'false','no','0','off'}:
++        return {'value': False}
++    return {'value': True}
+\ No newline at end of file

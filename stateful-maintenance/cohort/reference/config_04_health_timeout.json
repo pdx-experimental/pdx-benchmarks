@@ -1,0 +1,10 @@
+{
+  "config/health.json": {
+    "health": {
+      "endpoint": "/live",
+      "failure_threshold": 3,
+      "interval_seconds": 30,
+      "timeout_seconds": 3
+    }
+  }
+}

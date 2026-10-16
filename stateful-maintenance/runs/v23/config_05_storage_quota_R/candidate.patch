@@ -1,0 +1,17 @@
+diff --git a/config/uploads.json b/config/uploads.json
+index 225b0d0..9cd390d 100644
+--- a/config/uploads.json
++++ b/config/uploads.json
+@@ -1,10 +1 @@
+-{
+-  "upload": {
+-    "backend": "local",
+-    "max_mib": 10,
+-    "mime_types": [
+-      "text/csv",
+-      "application/json"
+-    ]
+-  }
+-}
++{"upload": {"backend": "local", "max_mib": 25, "mime_types": ["text/csv", "application/json"]}}
+\ No newline at end of file

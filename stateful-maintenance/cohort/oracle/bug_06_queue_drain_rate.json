@@ -1,0 +1,46 @@
+{
+  "module": "src.queue_capacity",
+  "oracle_version": "stateful48-oracle-v4",
+  "required_files": [
+    "src/queue_capacity.py"
+  ],
+  "task_id": "bug_06_queue_drain_rate",
+  "vectors": [
+    {
+      "expected": {
+        "seconds": 6
+      },
+      "input": {
+        "depth": 11,
+        "rate": 2
+      }
+    },
+    {
+      "expected": {
+        "seconds": 0
+      },
+      "input": {
+        "depth": 0,
+        "rate": 2
+      }
+    },
+    {
+      "expected": {
+        "seconds": null
+      },
+      "input": {
+        "depth": 2,
+        "rate": 0
+      }
+    },
+    {
+      "expected": {
+        "seconds": null
+      },
+      "input": {
+        "depth": 2,
+        "rate": -1
+      }
+    }
+  ]
+}

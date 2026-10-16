@@ -1,0 +1,21 @@
+diff --git a/src/discounts.py b/src/discounts.py
+index f617e40..7b3f1f3 100644
+--- a/src/discounts.py
++++ b/src/discounts.py
+@@ -1,2 +1,14 @@
++from decimal import Decimal
++
+ def run(payload):
+-    return {"total": payload["subtotal"] * (1 - payload.get("rate", 0))}
++    subtotal = Decimal(str(payload.get("subtotal", "0")))
++    fixed = Decimal(str(payload.get("fixed", "0")))
++    rate = Decimal(str(payload.get("rate", "0")))
++    
++    if fixed:
++        total = subtotal - fixed
++    else:
++        total = subtotal * (1 - rate)
++    
++    total = total.quantize(Decimal('0.01'), rounding=Decimal('0.005'))
++    return {"total": total}
+\ No newline at end of file

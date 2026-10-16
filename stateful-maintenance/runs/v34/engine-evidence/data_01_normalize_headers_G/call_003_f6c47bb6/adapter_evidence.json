@@ -1,0 +1,64 @@
+{
+  "arguments_sha256": "dca021ed9dcb3c75189c54ae9eedf50f62b0d11e4a94094621ad74d67715569c",
+  "artifact_manifest": {
+    "artifact_id": "call_003_f6c47bb6",
+    "artifact_type": "tool-call",
+    "files": [],
+    "provenance": [
+      {
+        "inputs": {
+          "arguments": {
+            "content": "def run(payload):\n    headers = payload['headers']\n    rows = payload['rows']\n    \n    normalized_headers = []\n    for header in headers:\n        header = header.strip().lower()\n        normalized_header = header.replace(''.join([c if 'a' <= c <= 'z' or '0' <= c <= '9' else '_' for c in header]), '_')\n        normalized_headers.append(normalized_header)\n    \n    if len(set(normalized_headers)) != len(normalized_headers):\n        return {\"error\":\"DUPLICATE_HEADERS\"}\n    \n    return {\"headers\": normalized_headers,\"rows\": rows}",
+            "path": "src/import_csv.py"
+          }
+        },
+        "outputs": {
+          "changed_paths": [
+            "src/import_csv.py"
+          ]
+        },
+        "step_id": "dispatch",
+        "tool": "pdx.stateful.write_file"
+      }
+    ],
+    "schema_version": "pdx_artifact_manifest_v0",
+    "verification": [
+      {
+        "check": "step_completed:dispatch",
+        "details": "Step dispatch completed",
+        "status": "pass"
+      }
+    ]
+  },
+  "engine": "pdx-artifact-engine",
+  "engine_version": "0.3.0a12",
+  "request_id": "call_003_f6c47bb6",
+  "requested_arguments_sha256": "dca021ed9dcb3c75189c54ae9eedf50f62b0d11e4a94094621ad74d67715569c",
+  "requested_tool": "write_file",
+  "run_manifest": {
+    "artifact_manifest": "artifact_manifest.json",
+    "errors": [],
+    "planner": "stateful-gov",
+    "request_id": "call_003_f6c47bb6",
+    "run_id": "run_d88e95552234",
+    "schema_version": "pdx_run_manifest_v0",
+    "status": "completed",
+    "steps": [
+      {
+        "detail": "ok",
+        "kind": "tool",
+        "name": "pdx.stateful.write_file",
+        "status": "completed",
+        "step_id": "dispatch"
+      }
+    ],
+    "verification": [
+      {
+        "check": "step_completed:dispatch",
+        "details": "Step dispatch completed",
+        "status": "pass"
+      }
+    ]
+  },
+  "tool": "write_file"
+}

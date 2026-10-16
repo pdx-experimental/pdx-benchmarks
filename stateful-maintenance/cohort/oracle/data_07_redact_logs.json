@@ -1,0 +1,56 @@
+{
+  "module": "src.sanitize_logs",
+  "oracle_version": "stateful48-oracle-v4",
+  "required_files": [
+    "src/sanitize_logs.py"
+  ],
+  "task_id": "data_07_redact_logs",
+  "vectors": [
+    {
+      "expected": {
+        "record": {
+          "nested": [
+            {
+              "access_token": "[REDACTED]",
+              "authorization": "[REDACTED]",
+              "other": 7
+            }
+          ],
+          "password": "[REDACTED]",
+          "timestamp": "t"
+        }
+      },
+      "input": {
+        "record": {
+          "nested": [
+            {
+              "access_token": "dummy",
+              "authorization": "dummy",
+              "other": 7
+            }
+          ],
+          "password": "synthetic",
+          "timestamp": "t"
+        }
+      }
+    },
+    {
+      "expected": {
+        "record": [
+          1,
+          {
+            "Password": "public"
+          }
+        ]
+      },
+      "input": {
+        "record": [
+          1,
+          {
+            "Password": "public"
+          }
+        ]
+      }
+    }
+  ]
+}

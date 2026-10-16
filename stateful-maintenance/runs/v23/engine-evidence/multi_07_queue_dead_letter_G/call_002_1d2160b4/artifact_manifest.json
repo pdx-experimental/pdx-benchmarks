@@ -1,0 +1,28 @@
+{
+  "schema_version": "pdx_artifact_manifest_v0",
+  "artifact_id": "call_002_1d2160b4",
+  "artifact_type": "tool-call",
+  "files": [],
+  "provenance": [
+    {
+      "step_id": "dispatch",
+      "tool": "pdx.stateful.read_file",
+      "inputs": {
+        "arguments": {
+          "path": "src/worker.py",
+          "max_lines": 300
+        }
+      },
+      "outputs": {
+        "content": "import json\nfrom pathlib import Path\ndef run(payload):\n    c = json.loads(Path('config/queues.json').read_text())\n    if payload['success']: return {'action':'ack','metric':None}\n    if payload['attempts'] <= c['max_attempts']: return {'action':'retry','metric':None}\n    return {'action':c['dead_letter'],'metric':c['failure_metric']}"
+      }
+    }
+  ],
+  "verification": [
+    {
+      "check": "step_completed:dispatch",
+      "status": "pass",
+      "details": "Step dispatch completed"
+    }
+  ]
+}

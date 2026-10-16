@@ -1,0 +1,28 @@
+{
+  "schema_version": "pdx_artifact_manifest_v0",
+  "artifact_id": "call_002_04b1708a",
+  "artifact_type": "tool-call",
+  "files": [],
+  "provenance": [
+    {
+      "step_id": "dispatch",
+      "tool": "pdx.stateful.read_file",
+      "inputs": {
+        "arguments": {
+          "path": "config/logging.json",
+          "max_lines": 300
+        }
+      },
+      "outputs": {
+        "content": "{\n  \"application\": {\n    \"retention_days\": 7\n  },\n  \"audit\": {\n    \"retention_days\": 30\n  }\n}"
+      }
+    }
+  ],
+  "verification": [
+    {
+      "check": "step_completed:dispatch",
+      "status": "pass",
+      "details": "Step dispatch completed"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "schema_version": "pdx_artifact_manifest_v0",
+  "artifact_id": "call_004_d7ce40a6",
+  "artifact_type": "tool-call",
+  "files": [],
+  "provenance": [
+    {
+      "step_id": "dispatch",
+      "tool": "pdx.stateful.read_file",
+      "inputs": {
+        "arguments": {
+          "path": "dashboards/retries.json",
+          "max_lines": 300
+        }
+      },
+      "outputs": {
+        "content": "{\n  \"query\": \"legacy_sum(rate(job_retry_total[5m]))\"\n}"
+      }
+    }
+  ],
+  "verification": [
+    {
+      "check": "step_completed:dispatch",
+      "status": "pass",
+      "details": "Step dispatch completed"
+    }
+  ]
+}

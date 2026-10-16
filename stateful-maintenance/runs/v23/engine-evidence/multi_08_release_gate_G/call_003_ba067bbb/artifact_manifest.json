@@ -1,0 +1,28 @@
+{
+  "schema_version": "pdx_artifact_manifest_v0",
+  "artifact_id": "call_003_ba067bbb",
+  "artifact_type": "tool-call",
+  "files": [],
+  "provenance": [
+    {
+      "step_id": "dispatch",
+      "tool": "pdx.stateful.read_file",
+      "inputs": {
+        "arguments": {
+          "path": "src/cli.py",
+          "max_lines": 300
+        }
+      },
+      "outputs": {
+        "content": "from src.release_gate import compatible\ndef run(payload):\n    ok = compatible(payload['min_schema'],payload['max_schema'],payload['deployed'])\n    return {'release':payload['tests_passed'] and ok,'compatibility':ok}"
+      }
+    }
+  ],
+  "verification": [
+    {
+      "check": "step_completed:dispatch",
+      "status": "pass",
+      "details": "Step dispatch completed"
+    }
+  ]
+}

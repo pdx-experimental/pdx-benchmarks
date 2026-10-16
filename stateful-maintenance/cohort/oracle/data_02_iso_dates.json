@@ -1,0 +1,32 @@
+{
+  "module": "src.export_events",
+  "oracle_version": "stateful48-oracle-v4",
+  "required_files": [
+    "src/export_events.py"
+  ],
+  "task_id": "data_02_iso_dates",
+  "vectors": [
+    {
+      "expected": {
+        "timestamp": "2026-01-01T00:00:00Z"
+      },
+      "input": {
+        "timestamp": "2026-01-01T01:00:00+01:00"
+      }
+    },
+    {
+      "expected": {
+        "timestamp": "2026-01-02T01:30:00Z"
+      },
+      "input": {
+        "timestamp": "2026-01-01T23:30:00-02:00"
+      }
+    },
+    {
+      "expected_exception": "ValueError",
+      "input": {
+        "timestamp": "2026-01-01T00:00:00"
+      }
+    }
+  ]
+}

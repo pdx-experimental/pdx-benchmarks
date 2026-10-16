@@ -1,0 +1,27 @@
+{
+  "schema_version": "pdx_run_manifest_v0",
+  "run_id": "run_1a633b02339d",
+  "request_id": "call_002_c89d6daa",
+  "status": "failed",
+  "steps": [
+    {
+      "step_id": "dispatch",
+      "kind": "tool",
+      "name": "pdx.stateful.write_file",
+      "status": "failed",
+      "detail": "Step dispatch failed: write outside task allowlist: TASK.md"
+    }
+  ],
+  "verification": [
+    {
+      "check": "step_completed:dispatch",
+      "status": "fail",
+      "details": "Step dispatch did not complete"
+    }
+  ],
+  "artifact_manifest": "artifact_manifest.json",
+  "errors": [
+    "Step dispatch failed: write outside task allowlist: TASK.md"
+  ],
+  "planner": "stateful-gov"
+}

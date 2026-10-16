@@ -1,0 +1,5 @@
+{
+  "request_evidence": "Diagnose the outage from the supplied logs. The log capture ends before the failure interval and omits the affected service name. Do not claim a root cause; list the evidence gap and request the missing data.",
+  "synthetic": true,
+  "task_id": "ambiguity_06_partial_logs"
+}

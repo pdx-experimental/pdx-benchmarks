@@ -1,0 +1,275 @@
+{
+  "scope": "Partial retained local inventory; absence is not proof no attempt occurred. No operator identifiers exported.",
+  "records": [
+    {
+      "source_record": "artifacts/stateful-admission-v3/dispatch-gpu/submission.json",
+      "source_sha256": "08c00421bcf7dfaba3c3f1c23c479cdf60f57d9163da403565911e295aa151e1",
+      "recorded_version": 13,
+      "row_count": null,
+      "scope": null,
+      "recorded_status": null,
+      "note": "Local metadata assertion, not authenticated remote execution history."
+    },
+    {
+      "source_record": "artifacts/stateful-admission-v3/dispatch-probe/submission.json",
+      "source_sha256": "fbc7fb5da6182e9e34e93ce206ab184b2e1783313df9b381ebb197a9cb571730",
+      "recorded_version": 12,
+      "row_count": null,
+      "scope": null,
+      "recorded_status": null,
+      "note": "Local metadata assertion, not authenticated remote execution history."
+    },
+    {
+      "source_record": "artifacts/stateful-formal-v3/dispatch-gpu/submission.json",
+      "source_sha256": "49920d2bac7cb6265c936d1d04260d4bc26326b177e380a5579811c3d4b9cc0c",
+      "recorded_version": 15,
+      "row_count": 96,
+      "scope": null,
+      "recorded_status": null,
+      "note": "Local metadata assertion, not authenticated remote execution history."
+    },
+    {
+      "source_record": "artifacts/stateful-formal-v3/dispatch-probe/submission.json",
+      "source_sha256": "61ebda8a3d0cd84aa1f4b7b5c29486360c666e323c12b70e4c85e0a628f0e5b9",
+      "recorded_version": 14,
+      "row_count": 96,
+      "scope": null,
+      "recorded_status": null,
+      "note": "Local metadata assertion, not authenticated remote execution history."
+    },
+    {
+      "source_record": "artifacts/stateful-formal-v4/dispatch-gpu-admission/submission.json",
+      "source_sha256": "80e2bba94ae0923ffe83f122e83b9bc2fecbd417f19e456979c30adcdf2b1cb7",
+      "recorded_version": 17,
+      "row_count": 12,
+      "scope": null,
+      "recorded_status": null,
+      "note": "Local metadata assertion, not authenticated remote execution history."
+    },
+    {
+      "source_record": "artifacts/stateful-formal-v4/dispatch-probe/submission.json",
+      "source_sha256": "fcec59716ee0480337c3773563c80047ad3aba46a736be20ecf2f35f928d536d",
+      "recorded_version": 16,
+      "row_count": 0,
+      "scope": null,
+      "recorded_status": null,
+      "note": "Local metadata assertion, not authenticated remote execution history."
+    },
+    {
+      "source_record": "artifacts/stateful-formal-v5/dispatch-compatibility/submission.json",
+      "source_sha256": "3dc6be013b00c40050b1ba112e3549125e3a4989b5583bbeebfc42900817cffd",
+      "recorded_version": 19,
+      "row_count": 4,
+      "scope": "one-shot mechanical constrained-decoding compatibility",
+      "recorded_status": null,
+      "note": "Local metadata assertion, not authenticated remote execution history."
+    },
+    {
+      "source_record": "artifacts/stateful-formal-v5/tokenizer-cpu-transfer/submission.json",
+      "source_sha256": "3621795a3318e2e5430eeb06f4bee49f1047cb9c20e81919c3ddfa406026a562",
+      "recorded_version": 18,
+      "row_count": null,
+      "scope": null,
+      "recorded_status": null,
+      "note": "Local metadata assertion, not authenticated remote execution history."
+    },
+    {
+      "source_record": "artifacts/stateful-formal-v5-full/dispatch-compatibility/submission.json",
+      "source_sha256": "cdc8f9fc0a7e729b8673d6a01e168d1c6df8e0c0344dec2ae3792d04a125e26b",
+      "recorded_version": 23,
+      "row_count": 96,
+      "scope": "96-row development replication; unchanged V22 run_arm and48-task fixtures",
+      "recorded_status": null,
+      "note": "Local metadata assertion, not authenticated remote execution history."
+    },
+    {
+      "source_record": "artifacts/stateful-formal-v5-full/remote-compatibility-v23/RECOVERY_REVIEW.json",
+      "source_sha256": "00bf2578feb39102014d26885db62ff318e9363c21c206fe2c4694f93ade5e3c",
+      "recorded_version": 23,
+      "row_count": null,
+      "scope": "96-row development replication; not held-out research or isolated Engine causal effect",
+      "recorded_status": "VERIFIED",
+      "note": "Local metadata assertion, not authenticated remote execution history."
+    },
+    {
+      "source_record": "artifacts/stateful-formal-v5-r1/dispatch-compatibility/submission.json",
+      "source_sha256": "9014dc9ec98a8aade230416c0413e2a65c1e800596106969727f3d43bdd702b5",
+      "recorded_version": 20,
+      "row_count": 4,
+      "scope": "explicitly authorized packaging-only compatibility resubmission; four mechanical rows",
+      "recorded_status": null,
+      "note": "Local metadata assertion, not authenticated remote execution history."
+    },
+    {
+      "source_record": "artifacts/stateful-formal-v5-r2/dispatch-compatibility/submission.json",
+      "source_sha256": "9adf4e78e5fbaca09c920447fc726025805fe74de05450aa7001030812f4fdb1",
+      "recorded_version": 21,
+      "row_count": 4,
+      "scope": "bounded exact-marker mechanical transport R2; not arbitrary code generation",
+      "recorded_status": null,
+      "note": "Local metadata assertion, not authenticated remote execution history."
+    },
+    {
+      "source_record": "artifacts/stateful-formal-v5-r2/remote-compatibility-v21/RECOVERY_REVIEW.json",
+      "source_sha256": "c4634a4ab338efc21d99700c9c8e0d18ba0fea37ae649750b3026900b6eae73d",
+      "recorded_version": 21,
+      "row_count": null,
+      "scope": null,
+      "recorded_status": "VERIFIED_BOUNDED_TRANSPORT_ONLY",
+      "note": "Local metadata assertion, not authenticated remote execution history."
+    },
+    {
+      "source_record": "artifacts/stateful-v25-latency-diagnostic/submission.json",
+      "source_sha256": "78ef1e33c3e4d85f5837f6f892be19e6b9e5e76793fe5440e6ba4822440802a8",
+      "recorded_version": 26,
+      "row_count": null,
+      "scope": null,
+      "recorded_status": null,
+      "note": "Local metadata assertion, not authenticated remote execution history."
+    },
+    {
+      "source_record": "artifacts/stateful-v25-latency-diagnostic-r2/submission.json",
+      "source_sha256": "d4df2c748908f9ed4abb2336d9a79664c418444eadaf4639a8f6c89fba129eb1",
+      "recorded_version": 27,
+      "row_count": null,
+      "scope": null,
+      "recorded_status": null,
+      "note": "Local metadata assertion, not authenticated remote execution history."
+    },
+    {
+      "source_record": "artifacts/stateful-v31-crash-ab/submission.json",
+      "source_sha256": "e0a6f8d0f7b08ceccfa797a6df18804663f41d7e4fb400701126274f7494ca65",
+      "recorded_version": 32,
+      "row_count": null,
+      "scope": null,
+      "recorded_status": null,
+      "note": "Local metadata assertion, not authenticated remote execution history."
+    },
+    {
+      "source_record": "artifacts/stateful-v5-free-admission/dispatch-compatibility/submission.json",
+      "source_sha256": "9b3b49e552199ab2bf1ddc1c7c31b089d36b495c2969a54fb31daacd30dfec37",
+      "recorded_version": 22,
+      "row_count": 12,
+      "scope": "six unchanged V4 development tasks x R/G; free file content; infrastructure admission only",
+      "recorded_status": null,
+      "note": "Local metadata assertion, not authenticated remote execution history."
+    },
+    {
+      "source_record": "artifacts/stateful-v6-admission/dispatch-compatibility/submission.json",
+      "source_sha256": "1dd45dd8bc3e8ccd241ed77fa5dcb93905ded94a2da5435b158119698bd6868c",
+      "recorded_version": 24,
+      "row_count": 12,
+      "scope": "V6 development admission; repaired wire metric, byte-accurate writes, escape-token mask",
+      "recorded_status": null,
+      "note": "Local metadata assertion, not authenticated remote execution history."
+    },
+    {
+      "source_record": "artifacts/stateful-v7-admission/dispatch-compatibility/submission.json",
+      "source_sha256": "ae11b9dc1fbf64c0b0ec39ee50b4cae55c0b7846f00028214811d22603257ea7",
+      "recorded_version": 25,
+      "row_count": 12,
+      "scope": "V7 bounded practical trial: simple10s/complex30s, exact replacement, typed last-edit completion, no-progress stops",
+      "recorded_status": null,
+      "note": "Local metadata assertion, not authenticated remote execution history."
+    },
+    {
+      "source_record": "artifacts/stateful-v8-development-96/submission.json",
+      "source_sha256": "d15a86f905d401b42419cc0c694e6af10087f3df231e356e1ef5e6000818201f",
+      "recorded_version": 31,
+      "row_count": null,
+      "scope": null,
+      "recorded_status": null,
+      "note": "Local metadata assertion, not authenticated remote execution history."
+    },
+    {
+      "source_record": "artifacts/stateful-v8-gpu-admission/submission.json",
+      "source_sha256": "7935bb72a8148d2bc4c623098093f68389308e5ffbb8f26d86325273f4a0dbcf",
+      "recorded_version": 28,
+      "row_count": null,
+      "scope": null,
+      "recorded_status": null,
+      "note": "Local metadata assertion, not authenticated remote execution history."
+    },
+    {
+      "source_record": "artifacts/stateful-v8-gpu-admission-r2/submission.json",
+      "source_sha256": "e2bb21f5dd29f5fb8d80ffc524bc247ba49b9ddb72fb8e796d6cd7e16796ad4d",
+      "recorded_version": 29,
+      "row_count": null,
+      "scope": null,
+      "recorded_status": null,
+      "note": "Local metadata assertion, not authenticated remote execution history."
+    },
+    {
+      "source_record": "artifacts/stateful-v8-gpu-admission-r4/RECOVERY_REVIEW.json",
+      "source_sha256": "dd46e598079b609bff27c5040a0212b588a247183d02ecb3cf0bab75cad06bbb",
+      "recorded_version": 30,
+      "row_count": null,
+      "scope": null,
+      "recorded_status": null,
+      "note": "Local metadata assertion, not authenticated remote execution history."
+    },
+    {
+      "source_record": "artifacts/stateful-v8-gpu-admission-r4/submission.json",
+      "source_sha256": "f93dbff8ad677b8b3e166d8051d515b82ee0ad87aebef59cb91119a7739c204c",
+      "recorded_version": 30,
+      "row_count": null,
+      "scope": null,
+      "recorded_status": null,
+      "note": "Local metadata assertion, not authenticated remote execution history."
+    },
+    {
+      "source_record": "artifacts/stateful-v9-development-96/RECOVERY_REVIEW.json",
+      "source_sha256": "c3236fde1a3ef4a516f744b0122d6c89b294f6e2742ab686a7dbfef9f19c9477",
+      "recorded_version": 34,
+      "row_count": 96,
+      "scope": "development replication; raw Oracle PASS distinct from full task and practical success",
+      "recorded_status": null,
+      "note": "Local metadata assertion, not authenticated remote execution history."
+    },
+    {
+      "source_record": "artifacts/stateful-v9-development-96/submission.json",
+      "source_sha256": "3981d1fae490809fc6a43895e15a1bbd10b4a0d968394a1e0b666c86636cd7ce",
+      "recorded_version": 34,
+      "row_count": null,
+      "scope": null,
+      "recorded_status": null,
+      "note": "Local metadata assertion, not authenticated remote execution history."
+    },
+    {
+      "source_record": "artifacts/stateful-v9-gpu-admission/RECOVERY_REVIEW.json",
+      "source_sha256": "b42bdef7af5f131d50a0bef9a52da6398a98de8a5e7e5621937e5467899bd318",
+      "recorded_version": 33,
+      "row_count": null,
+      "scope": null,
+      "recorded_status": null,
+      "note": "Local metadata assertion, not authenticated remote execution history."
+    },
+    {
+      "source_record": "artifacts/stateful-v9-gpu-admission/submission.json",
+      "source_sha256": "4b4b83b5f028983a1ea61ee3d6798283d4a5ec1f16786850c9267c53c87a9729",
+      "recorded_version": 33,
+      "row_count": null,
+      "scope": null,
+      "recorded_status": null,
+      "note": "Local metadata assertion, not authenticated remote execution history."
+    },
+    {
+      "source_record": "artifacts/stateful48-diagnostics/kernel-gpu/submission.json",
+      "source_sha256": "1b09e82f163bbb6620aa519c03cece8c811efd3839dce6a22c6eb1edea863e56",
+      "recorded_version": 11,
+      "row_count": null,
+      "scope": null,
+      "recorded_status": null,
+      "note": "Local metadata assertion, not authenticated remote execution history."
+    },
+    {
+      "source_record": "artifacts/stateful48-diagnostics/kernel-probe/submission.json",
+      "source_sha256": "bcd6603f2735fd1a7c6126b6933079ae343fd2a0ae2b2414f5ab6e9e1704bbad",
+      "recorded_version": 10,
+      "row_count": null,
+      "scope": null,
+      "recorded_status": null,
+      "note": "Local metadata assertion, not authenticated remote execution history."
+    }
+  ]
+}

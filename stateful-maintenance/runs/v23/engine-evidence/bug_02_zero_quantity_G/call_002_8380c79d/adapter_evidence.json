@@ -1,0 +1,62 @@
+{
+  "arguments_sha256": "90c59f40a050c157c47e45766f07014d3c0b5c3c9b013538da1d2ed7cdbfdea5",
+  "artifact_manifest": {
+    "artifact_id": "call_002_8380c79d",
+    "artifact_type": "tool-call",
+    "files": [],
+    "provenance": [
+      {
+        "inputs": {
+          "arguments": {
+            "max_lines": 300,
+            "path": "src/invoices.py"
+          }
+        },
+        "outputs": {
+          "content": "def run(payload):\n    quantity = payload['quantity']\n    return {'total': quantity * payload['unit_price'] * (1 + payload['tax_rate']) if quantity else 1}"
+        },
+        "step_id": "dispatch",
+        "tool": "pdx.stateful.read_file"
+      }
+    ],
+    "schema_version": "pdx_artifact_manifest_v0",
+    "verification": [
+      {
+        "check": "step_completed:dispatch",
+        "details": "Step dispatch completed",
+        "status": "pass"
+      }
+    ]
+  },
+  "engine": "pdx-artifact-engine",
+  "engine_version": "0.3.0a12",
+  "request_id": "call_002_8380c79d",
+  "requested_arguments_sha256": "90c59f40a050c157c47e45766f07014d3c0b5c3c9b013538da1d2ed7cdbfdea5",
+  "requested_tool": "read_file",
+  "run_manifest": {
+    "artifact_manifest": "artifact_manifest.json",
+    "errors": [],
+    "planner": "stateful-gov",
+    "request_id": "call_002_8380c79d",
+    "run_id": "run_3d70222bc4b3",
+    "schema_version": "pdx_run_manifest_v0",
+    "status": "completed",
+    "steps": [
+      {
+        "detail": "ok",
+        "kind": "tool",
+        "name": "pdx.stateful.read_file",
+        "status": "completed",
+        "step_id": "dispatch"
+      }
+    ],
+    "verification": [
+      {
+        "check": "step_completed:dispatch",
+        "details": "Step dispatch completed",
+        "status": "pass"
+      }
+    ]
+  },
+  "tool": "read_file"
+}

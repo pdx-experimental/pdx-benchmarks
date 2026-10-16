@@ -1,0 +1,30 @@
+{
+  "schema_version": "pdx_artifact_manifest_v0",
+  "artifact_id": "call_003_f6c47bb6",
+  "artifact_type": "tool-call",
+  "files": [],
+  "provenance": [
+    {
+      "step_id": "dispatch",
+      "tool": "pdx.stateful.write_file",
+      "inputs": {
+        "arguments": {
+          "path": "src/import_csv.py",
+          "content": "def run(payload):\n    headers = payload['headers']\n    rows = payload['rows']\n    \n    normalized_headers = []\n    for header in headers:\n        header = header.strip().lower()\n        normalized_header = header.replace(''.join([c if 'a' <= c <= 'z' or '0' <= c <= '9' else '_' for c in header]), '_')\n        normalized_headers.append(normalized_header)\n    \n    if len(set(normalized_headers)) != len(normalized_headers):\n        return {\"error\":\"DUPLICATE_HEADERS\"}\n    \n    return {\"headers\": normalized_headers,\"rows\": rows}"
+        }
+      },
+      "outputs": {
+        "changed_paths": [
+          "src/import_csv.py"
+        ]
+      }
+    }
+  ],
+  "verification": [
+    {
+      "check": "step_completed:dispatch",
+      "status": "pass",
+      "details": "Step dispatch completed"
+    }
+  ]
+}

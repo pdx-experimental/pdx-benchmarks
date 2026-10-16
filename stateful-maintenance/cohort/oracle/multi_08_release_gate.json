@@ -1,0 +1,70 @@
+{
+  "module": "src.cli",
+  "oracle_version": "stateful48-oracle-v4",
+  "required_files": [
+    "src/release_gate.py",
+    "src/cli.py",
+    "docs/releases.md"
+  ],
+  "task_id": "multi_08_release_gate",
+  "text_files": {
+    "docs/releases.md": [
+      "migrate schema",
+      "compatible application"
+    ]
+  },
+  "vectors": [
+    {
+      "expected": {
+        "compatibility": true,
+        "release": true
+      },
+      "input": {
+        "deployed": 2,
+        "max_schema": 4,
+        "min_schema": 2,
+        "tests_passed": true
+      }
+    },
+    {
+      "expected": {
+        "compatibility": true,
+        "release": false
+      },
+      "input": {
+        "deployed": 4,
+        "max_schema": 4,
+        "min_schema": 2,
+        "tests_passed": false
+      }
+    },
+    {
+      "expected": {
+        "compatibility": false,
+        "release": false
+      },
+      "input": {
+        "deployed": 5,
+        "max_schema": 4,
+        "min_schema": 2,
+        "tests_passed": true
+      }
+    },
+    {
+      "expected": {
+        "compatibility": false,
+        "release": false
+      },
+      "input": {
+        "deployed": 3,
+        "max_schema": 4,
+        "min_schema": 2,
+        "tests_passed": true
+      },
+      "override_callable": {
+        "name": "compatible",
+        "value": false
+      }
+    }
+  ]
+}

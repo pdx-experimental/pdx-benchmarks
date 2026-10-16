@@ -1,0 +1,11 @@
+{
+  "arm": "R",
+  "completion": {
+    "claimed_success": false,
+    "disposition": "STALE_EVIDENCE",
+    "summary": "Snapshot timestamp is 45 days old, exceeding the 24-hour policy requirement. No files modified as instructed."
+  },
+  "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "schema": "pdx.stateful.candidate.v1",
+  "task_id": "ambiguity_05_stale_snapshot"
+}

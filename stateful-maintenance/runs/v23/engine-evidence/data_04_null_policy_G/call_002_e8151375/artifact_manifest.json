@@ -1,0 +1,28 @@
+{
+  "schema_version": "pdx_artifact_manifest_v0",
+  "artifact_id": "call_002_e8151375",
+  "artifact_type": "tool-call",
+  "files": [],
+  "provenance": [
+    {
+      "step_id": "dispatch",
+      "tool": "pdx.stateful.read_file",
+      "inputs": {
+        "arguments": {
+          "path": "src/export_records.py",
+          "max_lines": 300
+        }
+      },
+      "outputs": {
+        "content": "def run(payload):\n    rows = []\n    for i,r in enumerate(payload['records']):\n        if False: return {'error':'missing_required:id','row':i}\n        rows.append(dict(r, optional=r.get('optional')))\n    return {'rows':rows}"
+      }
+    }
+  ],
+  "verification": [
+    {
+      "check": "step_completed:dispatch",
+      "status": "pass",
+      "details": "Step dispatch completed"
+    }
+  ]
+}

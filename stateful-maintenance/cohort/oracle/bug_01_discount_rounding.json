@@ -1,0 +1,66 @@
+{
+  "module": "src.discounts",
+  "oracle_version": "stateful48-oracle-v4",
+  "required_files": [
+    "src/discounts.py"
+  ],
+  "task_id": "bug_01_discount_rounding",
+  "vectors": [
+    {
+      "expected": {
+        "total": 16.99
+      },
+      "input": {
+        "rate": 0.15,
+        "subtotal": 19.99
+      }
+    },
+    {
+      "expected": {
+        "total": 8.0
+      },
+      "input": {
+        "fixed": 2,
+        "rate": 0.1,
+        "subtotal": 10
+      }
+    },
+    {
+      "expected": {
+        "total": 1.01
+      },
+      "input": {
+        "rate": 0,
+        "subtotal": "1.005"
+      }
+    },
+    {
+      "expected": {
+        "total": 10.0
+      },
+      "input": {
+        "fixed": 0,
+        "rate": 0.1,
+        "subtotal": 10
+      }
+    },
+    {
+      "expected": {
+        "total": 1.01
+      },
+      "input": {
+        "rate": 0,
+        "subtotal": 1.005
+      }
+    },
+    {
+      "expected": {
+        "total": 10.0
+      },
+      "input": {
+        "fixed": "0.50",
+        "subtotal": "10.50"
+      }
+    }
+  ]
+}

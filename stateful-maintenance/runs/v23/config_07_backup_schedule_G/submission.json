@@ -1,0 +1,11 @@
+{
+  "arm": "G",
+  "completion": {
+    "claimed_success": true,
+    "disposition": "COMPLETED",
+    "summary": "config/backup.json updated to set backup.schedule_utc to \"02:30\" while preserving all other keys/values and JSON structure."
+  },
+  "patch_sha256": "5fab3c4a01c53f52922efd21c68bdb56ac8c690f83e58b7723fdb2f7992b3870",
+  "schema": "pdx.stateful.candidate.v1",
+  "task_id": "config_07_backup_schedule"
+}

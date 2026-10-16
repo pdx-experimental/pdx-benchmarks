@@ -15,6 +15,10 @@ An empirical benchmark evaluating **Interface Governance**, **Prompt Contracts**
 
 ---
 
+## Relationship to stateful maintenance
+
+A separate [Stateful development export](../stateful-maintenance/README.md) tests real candidate code/configuration against external acceptance contracts and time limits. Its results are not added to this A12 denominator. Fixed-DAG contract outcomes and maintenance delivery are different endpoints. The combined evidence shows task-dependent outcomes and observable mediation, not a universal or isolated Engine benefit.
+
 ## Executive Summary
 
 Autonomous agent architectures typically place language models inside an open-ended conversational ReAct loop. While large frontier models (70B+) can navigate these loops with moderate stability, **Small Language Models (SLMs, 1B–8B)** routinely exhibit near-zero pass rates on compound multi-step benchmarks. A prevailing assumption in the literature is that this reflects an intrinsic deficit in multi-step reasoning capacity.
@@ -73,7 +77,7 @@ The public candidate release can be verified for exported integrity, scores and 
 ### 1. Environment Setup
 
 ```bash
-git clone https://github.com/pdx-experimental/pdx-benchmarks.git
+# Obtain the repository checkout through the hosting interface.
 cd pdx-benchmarks/slm-task-governance
 
 # Install required dependencies

@@ -1,0 +1,42 @@
+{
+  "module": "src.retry",
+  "oracle_version": "stateful48-oracle-v4",
+  "required_files": [
+    "src/retry.py"
+  ],
+  "task_id": "bug_04_retry_limit",
+  "vectors": [
+    {
+      "expected": {
+        "attempts": [
+          1
+        ],
+        "delays": [
+          0
+        ]
+      },
+      "input": {
+        "delay_seconds": 2,
+        "max_attempts": 1
+      }
+    },
+    {
+      "expected": {
+        "attempts": [
+          1,
+          2,
+          3
+        ],
+        "delays": [
+          0,
+          0.5,
+          0.5
+        ]
+      },
+      "input": {
+        "delay_seconds": 0.5,
+        "max_attempts": 3
+      }
+    }
+  ]
+}

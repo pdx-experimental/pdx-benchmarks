@@ -1,0 +1,28 @@
+{
+  "schema_version": "pdx_artifact_manifest_v0",
+  "artifact_id": "call_003_73f11f52",
+  "artifact_type": "tool-call",
+  "files": [],
+  "provenance": [
+    {
+      "step_id": "dispatch",
+      "tool": "pdx.stateful.read_file",
+      "inputs": {
+        "arguments": {
+          "path": "config/queues.json",
+          "max_lines": 300
+        }
+      },
+      "outputs": {
+        "content": "{\n  \"dead_letter\": \"jobs.dlq\",\n  \"failure_metric\": \"job_failure_total\",\n  \"max_attempts\": 4\n}"
+      }
+    }
+  ],
+  "verification": [
+    {
+      "check": "step_completed:dispatch",
+      "status": "pass",
+      "details": "Step dispatch completed"
+    }
+  ]
+}

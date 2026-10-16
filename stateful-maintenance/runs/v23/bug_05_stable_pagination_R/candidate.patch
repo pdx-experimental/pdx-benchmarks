@@ -1,0 +1,11 @@
+diff --git a/src/pagination.py b/src/pagination.py
+index 703020f..a78cc8a 100644
+--- a/src/pagination.py
++++ b/src/pagination.py
+@@ -1,3 +1,3 @@
+ def run(payload):
+-    rows = sorted(payload['records'], key=lambda r: r['created_at'])
+-    return {'ids': [r['record_id'] for r in rows[payload['offset']:payload['offset'] + payload['limit']]]}
++    rows = sorted(payload['records'], key=lambda r: (r['created_at'], r['record_id']))
++    return {"ids": [r['record_id'] for r in rows[payload['offset']:payload['offset'] + payload['limit']]]}
+\ No newline at end of file

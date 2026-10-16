@@ -1,0 +1,14 @@
+diff --git a/config/rate_limit.json b/config/rate_limit.json
+index 538775f..0b22ac3 100644
+--- a/config/rate_limit.json
++++ b/config/rate_limit.json
+@@ -4,6 +4,6 @@
+     "excluded_routes": [
+       "/live"
+     ],
+-    "requests_per_minute": 60
++    "requests_per_minute": 120
+   }
+-}
++}
+\ No newline at end of file

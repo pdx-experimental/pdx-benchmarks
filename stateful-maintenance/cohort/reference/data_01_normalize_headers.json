@@ -1,0 +1,3 @@
+{
+  "src/import_csv.py": "import re\n\ndef run(payload):\n    headers = [re.sub(r\"[^a-z0-9]+\", \"_\", h.strip().lower()).strip(\"_\") for h in payload[\"headers\"]]\n    if len(set(headers)) != len(headers):\n        return {\"error\": \"DUPLICATE_HEADERS\"}\n    return {\"headers\": headers, \"rows\": payload[\"rows\"]}\n"
+}

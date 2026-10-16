@@ -1,0 +1,64 @@
+{
+  "arguments_sha256": "4b7c43037d49dccf9e3ec70c4b3120bdc1e9861468d9e771dc4f395cb8554b7b",
+  "artifact_manifest": {
+    "artifact_id": "call_003_83c2584c",
+    "artifact_type": "tool-call",
+    "files": [],
+    "provenance": [
+      {
+        "inputs": {
+          "arguments": {
+            "content": "def run(payload):\n    n = payload['max_attempts']\n    attempts = list(range(1, n + 1))\n    delays = [0] + [payload['delay_seconds']] * (n - 1)\n    return {'attempts': attempts, 'delays': delays}",
+            "path": "src/retry.py"
+          }
+        },
+        "outputs": {
+          "changed_paths": [
+            "src/retry.py"
+          ]
+        },
+        "step_id": "dispatch",
+        "tool": "pdx.stateful.write_file"
+      }
+    ],
+    "schema_version": "pdx_artifact_manifest_v0",
+    "verification": [
+      {
+        "check": "step_completed:dispatch",
+        "details": "Step dispatch completed",
+        "status": "pass"
+      }
+    ]
+  },
+  "engine": "pdx-artifact-engine",
+  "engine_version": "0.3.0a12",
+  "request_id": "call_003_83c2584c",
+  "requested_arguments_sha256": "4b7c43037d49dccf9e3ec70c4b3120bdc1e9861468d9e771dc4f395cb8554b7b",
+  "requested_tool": "write_file",
+  "run_manifest": {
+    "artifact_manifest": "artifact_manifest.json",
+    "errors": [],
+    "planner": "stateful-gov",
+    "request_id": "call_003_83c2584c",
+    "run_id": "run_5af754fb6b07",
+    "schema_version": "pdx_run_manifest_v0",
+    "status": "completed",
+    "steps": [
+      {
+        "detail": "ok",
+        "kind": "tool",
+        "name": "pdx.stateful.write_file",
+        "status": "completed",
+        "step_id": "dispatch"
+      }
+    ],
+    "verification": [
+      {
+        "check": "step_completed:dispatch",
+        "details": "Step dispatch completed",
+        "status": "pass"
+      }
+    ]
+  },
+  "tool": "write_file"
+}

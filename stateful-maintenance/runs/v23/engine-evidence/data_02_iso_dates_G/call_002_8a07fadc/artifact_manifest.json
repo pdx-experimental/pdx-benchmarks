@@ -1,0 +1,28 @@
+{
+  "schema_version": "pdx_artifact_manifest_v0",
+  "artifact_id": "call_002_8a07fadc",
+  "artifact_type": "tool-call",
+  "files": [],
+  "provenance": [
+    {
+      "step_id": "dispatch",
+      "tool": "pdx.stateful.read_file",
+      "inputs": {
+        "arguments": {
+          "path": "src/export_events.py",
+          "max_lines": 300
+        }
+      },
+      "outputs": {
+        "content": "from datetime import datetime, timezone\ndef run(payload):\n    d = datetime.fromisoformat(payload['timestamp'].replace('Z','+00:00'))\n    if d.utcoffset() is None: raise ValueError('naive timestamp')\n    return {'timestamp':d.isoformat().replace('+00:00','Z')}"
+      }
+    }
+  ],
+  "verification": [
+    {
+      "check": "step_completed:dispatch",
+      "status": "pass",
+      "details": "Step dispatch completed"
+    }
+  ]
+}

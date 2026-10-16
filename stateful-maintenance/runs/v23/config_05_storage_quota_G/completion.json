@@ -1,0 +1,5 @@
+{
+  "claimed_success": true,
+  "disposition": "COMPLETED",
+  "summary": "upload.max_mib changed to 25 in config/uploads.json"
+}

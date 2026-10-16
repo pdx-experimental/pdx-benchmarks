@@ -1,0 +1,5 @@
+{
+  "claimed_success": false,
+  "disposition": "INSUFFICIENT_EVIDENCE",
+  "summary": "The logs end before the failure interval and omit the affected service name, leaving interval and service missing for diagnosis."
+}

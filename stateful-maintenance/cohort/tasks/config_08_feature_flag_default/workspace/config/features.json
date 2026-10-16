@@ -1,0 +1,9 @@
+{
+  "exporter": {
+    "default_enabled": true,
+    "environment_overrides": {
+      "dev": true,
+      "prod": false
+    }
+  }
+}

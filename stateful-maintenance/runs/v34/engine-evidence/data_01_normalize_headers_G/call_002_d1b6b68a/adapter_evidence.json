@@ -1,0 +1,62 @@
+{
+  "arguments_sha256": "1651ae21a103f6c74bd45d1e83d6371cfd6876106c6467b074e47809473b5386",
+  "artifact_manifest": {
+    "artifact_id": "call_002_d1b6b68a",
+    "artifact_type": "tool-call",
+    "files": [],
+    "provenance": [
+      {
+        "inputs": {
+          "arguments": {
+            "max_lines": 300,
+            "path": "src/import_csv.py"
+          }
+        },
+        "outputs": {
+          "content": "def run(payload):\n    return payload"
+        },
+        "step_id": "dispatch",
+        "tool": "pdx.stateful.read_file"
+      }
+    ],
+    "schema_version": "pdx_artifact_manifest_v0",
+    "verification": [
+      {
+        "check": "step_completed:dispatch",
+        "details": "Step dispatch completed",
+        "status": "pass"
+      }
+    ]
+  },
+  "engine": "pdx-artifact-engine",
+  "engine_version": "0.3.0a12",
+  "request_id": "call_002_d1b6b68a",
+  "requested_arguments_sha256": "1651ae21a103f6c74bd45d1e83d6371cfd6876106c6467b074e47809473b5386",
+  "requested_tool": "read_file",
+  "run_manifest": {
+    "artifact_manifest": "artifact_manifest.json",
+    "errors": [],
+    "planner": "stateful-gov",
+    "request_id": "call_002_d1b6b68a",
+    "run_id": "run_98301b19cf6b",
+    "schema_version": "pdx_run_manifest_v0",
+    "status": "completed",
+    "steps": [
+      {
+        "detail": "ok",
+        "kind": "tool",
+        "name": "pdx.stateful.read_file",
+        "status": "completed",
+        "step_id": "dispatch"
+      }
+    ],
+    "verification": [
+      {
+        "check": "step_completed:dispatch",
+        "details": "Step dispatch completed",
+        "status": "pass"
+      }
+    ]
+  },
+  "tool": "read_file"
+}

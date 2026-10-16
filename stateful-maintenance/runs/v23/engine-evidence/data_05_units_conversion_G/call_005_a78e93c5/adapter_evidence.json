@@ -1,0 +1,64 @@
+{
+  "arguments_sha256": "09d71ea9c5caf16685b23489d76d0484191de080f0df2b0c27e96ce463fa5aee",
+  "artifact_manifest": {
+    "artifact_id": "call_005_a78e93c5",
+    "artifact_type": "tool-call",
+    "files": [],
+    "provenance": [
+      {
+        "inputs": {
+          "arguments": {
+            "claimed_success": false,
+            "disposition": "UNVERIFIED_INCOMPLETE",
+            "summary": "Syntax error in src/convert_sizes.py: unmatched '}' on line 10"
+          }
+        },
+        "outputs": {
+          "accepted": true,
+          "scope": "submission and syntax only; correctness requires external oracle"
+        },
+        "step_id": "dispatch",
+        "tool": "pdx.stateful.submit_completion"
+      }
+    ],
+    "schema_version": "pdx_artifact_manifest_v0",
+    "verification": [
+      {
+        "check": "step_completed:dispatch",
+        "details": "Step dispatch completed",
+        "status": "pass"
+      }
+    ]
+  },
+  "engine": "pdx-artifact-engine",
+  "engine_version": "0.3.0a12",
+  "request_id": "call_005_a78e93c5",
+  "requested_arguments_sha256": "09d71ea9c5caf16685b23489d76d0484191de080f0df2b0c27e96ce463fa5aee",
+  "requested_tool": "submit_completion",
+  "run_manifest": {
+    "artifact_manifest": "artifact_manifest.json",
+    "errors": [],
+    "planner": "stateful-gov",
+    "request_id": "call_005_a78e93c5",
+    "run_id": "run_cd5358ef0f85",
+    "schema_version": "pdx_run_manifest_v0",
+    "status": "completed",
+    "steps": [
+      {
+        "detail": "ok",
+        "kind": "tool",
+        "name": "pdx.stateful.submit_completion",
+        "status": "completed",
+        "step_id": "dispatch"
+      }
+    ],
+    "verification": [
+      {
+        "check": "step_completed:dispatch",
+        "details": "Step dispatch completed",
+        "status": "pass"
+      }
+    ]
+  },
+  "tool": "submit_completion"
+}

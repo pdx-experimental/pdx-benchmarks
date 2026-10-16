@@ -1,0 +1,60 @@
+{
+  "json_files": {
+    "config/probes.json": {
+      "liveness": "/live",
+      "readiness": "/ready"
+    }
+  },
+  "module": "src.routes",
+  "oracle_version": "stateful48-oracle-v4",
+  "required_files": [
+    "src/health.py",
+    "src/routes.py",
+    "config/probes.json"
+  ],
+  "task_id": "multi_05_health_readiness",
+  "vectors": [
+    {
+      "expected": {
+        "status": "ok"
+      },
+      "input": {
+        "db_up": false,
+        "path": "/live"
+      }
+    },
+    {
+      "expected": {
+        "status": "unavailable"
+      },
+      "input": {
+        "db_up": false,
+        "path": "/ready"
+      }
+    },
+    {
+      "expected": {
+        "status": "ok"
+      },
+      "input": {
+        "db_up": true,
+        "path": "/ready"
+      }
+    },
+    {
+      "expected": {
+        "status": "dependency-probe"
+      },
+      "input": {
+        "db_up": true,
+        "path": "/ready"
+      },
+      "override_callable": {
+        "name": "ready",
+        "value": {
+          "status": "dependency-probe"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "config/queues.json": {
+    "dead_letter": "jobs.dlq",
+    "failure_metric": "job_failure_total",
+    "max_attempts": 3
+  },
+  "docs/queues.md": "max_attempts=3; dead_letter=jobs.dlq; failure_metric=job_failure_total.\n",
+  "src/worker.py": "import json\nfrom pathlib import Path\ndef run(payload):\n    c = json.loads(Path('config/queues.json').read_text())\n    if payload['success']: return {'action':'ack','metric':None}\n    if payload['attempts'] < c['max_attempts']: return {'action':'retry','metric':None}\n    return {'action':c['dead_letter'],'metric':c['failure_metric']}\n"
+}

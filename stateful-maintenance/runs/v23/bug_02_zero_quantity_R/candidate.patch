@@ -1,0 +1,12 @@
+diff --git a/src/invoices.py b/src/invoices.py
+index 2a13a3e..821c137 100644
+--- a/src/invoices.py
++++ b/src/invoices.py
+@@ -1,3 +1,5 @@
+ def run(payload):
+     quantity = payload['quantity']
+-    return {'total': quantity * payload['unit_price'] * (1 + payload['tax_rate']) if quantity else 1}
++    if quantity == 0:
++        return {'total': 0}
++    return {'total': quantity * payload['unit_price'] * (1 + payload['tax_rate'])}
+\ No newline at end of file

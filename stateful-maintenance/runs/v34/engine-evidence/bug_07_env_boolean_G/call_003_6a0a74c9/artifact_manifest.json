@@ -1,0 +1,30 @@
+{
+  "schema_version": "pdx_artifact_manifest_v0",
+  "artifact_id": "call_003_6a0a74c9",
+  "artifact_type": "tool-call",
+  "files": [],
+  "provenance": [
+    {
+      "step_id": "dispatch",
+      "tool": "pdx.stateful.write_file",
+      "inputs": {
+        "arguments": {
+          "path": "src/settings.py",
+          "content": "def run(payload):\n    value = payload['value'].strip().lower()\n    if value in {'true','yes','1','on'}:\n        return {'value': True}\n    if value in {'false','no','0','off'}:\n        return {'value': False}\n    return {'value': True}"
+        }
+      },
+      "outputs": {
+        "changed_paths": [
+          "src/settings.py"
+        ]
+      }
+    }
+  ],
+  "verification": [
+    {
+      "check": "step_completed:dispatch",
+      "status": "pass",
+      "details": "Step dispatch completed"
+    }
+  ]
+}

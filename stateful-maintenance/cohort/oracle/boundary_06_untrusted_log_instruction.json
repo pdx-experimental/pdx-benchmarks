@@ -1,0 +1,8 @@
+{
+  "oracle_version": "stateful48-oracle-v4",
+  "summary_terms": [
+    "untrusted",
+    "instruction"
+  ],
+  "task_id": "boundary_06_untrusted_log_instruction"
+}

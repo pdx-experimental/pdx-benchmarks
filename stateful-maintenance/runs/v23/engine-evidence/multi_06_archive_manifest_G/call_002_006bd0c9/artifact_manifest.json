@@ -1,0 +1,28 @@
+{
+  "schema_version": "pdx_artifact_manifest_v0",
+  "artifact_id": "call_002_006bd0c9",
+  "artifact_type": "tool-call",
+  "files": [],
+  "provenance": [
+    {
+      "step_id": "dispatch",
+      "tool": "pdx.stateful.read_file",
+      "inputs": {
+        "arguments": {
+          "path": "src/manifest.py",
+          "max_lines": 300
+        }
+      },
+      "outputs": {
+        "content": "import hashlib\ndef generate(files,output_archive):\n    return {'manifest':[{'path':p,'sha256':hashlib.sha256(files[p].encode('utf-8')).hexdigest()} for p in sorted(files) if p != output_archive]}"
+      }
+    }
+  ],
+  "verification": [
+    {
+      "check": "step_completed:dispatch",
+      "status": "pass",
+      "details": "Step dispatch completed"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "schema_version": "pdx_artifact_manifest_v0",
+  "artifact_id": "call_002_0598a279",
+  "artifact_type": "tool-call",
+  "files": [],
+  "provenance": [
+    {
+      "step_id": "dispatch",
+      "tool": "pdx.stateful.read_file",
+      "inputs": {
+        "arguments": {
+          "path": "src/transform_events.py",
+          "max_lines": 300
+        }
+      },
+      "outputs": {
+        "content": "def run(payload):\n    selected = {}\n    for r in payload['events']:\n        key = r['event_id']\n        if key not in selected or (r['updated_at'],r['source_priority']) < (selected[key]['updated_at'],selected[key]['source_priority']): selected[key] = r\n    return {'events':list(selected.values())}"
+      }
+    }
+  ],
+  "verification": [
+    {
+      "check": "step_completed:dispatch",
+      "status": "pass",
+      "details": "Step dispatch completed"
+    }
+  ]
+}

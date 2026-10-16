@@ -1,0 +1,28 @@
+{
+  "schema_version": "pdx_artifact_manifest_v0",
+  "artifact_id": "call_002_8eeaaaa4",
+  "artifact_type": "tool-call",
+  "files": [],
+  "provenance": [
+    {
+      "step_id": "dispatch",
+      "tool": "pdx.stateful.read_file",
+      "inputs": {
+        "arguments": {
+          "path": "src/pagination.py",
+          "max_lines": 300
+        }
+      },
+      "outputs": {
+        "content": "def run(payload):\n    rows = sorted(payload['records'], key=lambda r: r['created_at'])\n    return {'ids': [r['record_id'] for r in rows[payload['offset']:payload['offset'] + payload['limit']]]}"
+      }
+    }
+  ],
+  "verification": [
+    {
+      "check": "step_completed:dispatch",
+      "status": "pass",
+      "details": "Step dispatch completed"
+    }
+  ]
+}

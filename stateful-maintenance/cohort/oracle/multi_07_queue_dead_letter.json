@@ -1,0 +1,73 @@
+{
+  "json_files": {
+    "config/queues.json": {
+      "dead_letter": "jobs.dlq",
+      "failure_metric": "job_failure_total",
+      "max_attempts": 3
+    }
+  },
+  "module": "src.worker",
+  "oracle_version": "stateful48-oracle-v4",
+  "required_files": [
+    "src/worker.py",
+    "config/queues.json",
+    "docs/queues.md"
+  ],
+  "task_id": "multi_07_queue_dead_letter",
+  "text_files": {
+    "docs/queues.md": [
+      "max_attempts=3",
+      "jobs.dlq",
+      "job_failure_total"
+    ]
+  },
+  "vectors": [
+    {
+      "expected": {
+        "action": "retry",
+        "metric": null
+      },
+      "input": {
+        "attempts": 2,
+        "success": false
+      }
+    },
+    {
+      "expected": {
+        "action": "jobs.dlq",
+        "metric": "job_failure_total"
+      },
+      "input": {
+        "attempts": 3,
+        "success": false
+      }
+    },
+    {
+      "expected": {
+        "action": "ack",
+        "metric": null
+      },
+      "input": {
+        "attempts": 3,
+        "success": true
+      }
+    },
+    {
+      "expected": {
+        "action": "probe.dlq",
+        "metric": "probe_failure"
+      },
+      "input": {
+        "attempts": 4,
+        "success": false
+      },
+      "workspace_json": {
+        "config/queues.json": {
+          "dead_letter": "probe.dlq",
+          "failure_metric": "probe_failure",
+          "max_attempts": 4
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "arm": "G",
+  "completion": {
+    "claimed_success": true,
+    "disposition": "COMPLETED",
+    "summary": "All allowed files updated as per task specification"
+  },
+  "patch_sha256": "c1ead47c1a2cba334c697b196eb7fad8d5d736a7933ce97261c2fe179c97e035",
+  "schema": "pdx.stateful.candidate.v1",
+  "task_id": "multi_05_health_readiness"
+}

@@ -1,0 +1,3 @@
+{
+  "src/export_records.py": "def run(payload):\n    rows = []\n    for i,r in enumerate(payload['records']):\n        if r.get('id') is None: return {'error':'missing_required:id','row':i}\n        rows.append(dict(r, optional=r.get('optional')))\n    return {'rows':rows}\n"
+}

@@ -1,0 +1,78 @@
+{
+  "module": "src.transform_events",
+  "oracle_version": "stateful48-oracle-v4",
+  "required_files": [
+    "src/transform_events.py"
+  ],
+  "task_id": "data_03_dedupe_events",
+  "vectors": [
+    {
+      "expected": {
+        "events": [
+          {
+            "event_id": "b",
+            "source_priority": 1,
+            "updated_at": 2
+          },
+          {
+            "event_id": "a",
+            "source_priority": 1,
+            "updated_at": 1
+          }
+        ]
+      },
+      "input": {
+        "events": [
+          {
+            "event_id": "b",
+            "source_priority": 1,
+            "updated_at": 1
+          },
+          {
+            "event_id": "a",
+            "source_priority": 1,
+            "updated_at": 1
+          },
+          {
+            "event_id": "b",
+            "source_priority": 1,
+            "updated_at": 2
+          }
+        ]
+      }
+    },
+    {
+      "expected": {
+        "events": [
+          {
+            "event_id": "a",
+            "source_priority": 3,
+            "updated_at": 2
+          }
+        ]
+      },
+      "input": {
+        "events": [
+          {
+            "event_id": "a",
+            "source_priority": 1,
+            "updated_at": 2
+          },
+          {
+            "event_id": "a",
+            "source_priority": 3,
+            "updated_at": 2
+          }
+        ]
+      }
+    },
+    {
+      "expected": {
+        "events": []
+      },
+      "input": {
+        "events": []
+      }
+    }
+  ]
+}

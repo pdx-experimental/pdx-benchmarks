@@ -1,0 +1,64 @@
+{
+  "arguments_sha256": "744d743f52d38f317de7aeea1f4762e1dcf182742a6804c8c6b50670e09689a2",
+  "artifact_manifest": {
+    "artifact_id": "call_005_88fe9733",
+    "artifact_type": "tool-call",
+    "files": [],
+    "provenance": [
+      {
+        "inputs": {
+          "arguments": {
+            "patch_text": "diff --git a/pyproject.toml b/pyproject.toml\n--- a/pyproject.toml\n+++ b/pyproject.toml\n@@ -1,3 +1,4 @@\n+# forbidden change\n [project]\n name = \"stateful-formal-v3-fixture\"\n version = \"0.0.1\"\n"
+          }
+        },
+        "outputs": {
+          "error": "Step dispatch failed: write outside task allowlist: pyproject.toml",
+          "status": "failed"
+        },
+        "step_id": "dispatch",
+        "tool": "pdx.stateful.apply_patch"
+      }
+    ],
+    "schema_version": "pdx_artifact_manifest_v0",
+    "verification": [
+      {
+        "check": "step_completed:dispatch",
+        "details": "Step dispatch did not complete",
+        "status": "fail"
+      }
+    ]
+  },
+  "engine": "pdx-artifact-engine",
+  "engine_version": "0.3.0a12",
+  "request_id": "call_005_88fe9733",
+  "requested_arguments_sha256": "744d743f52d38f317de7aeea1f4762e1dcf182742a6804c8c6b50670e09689a2",
+  "requested_tool": "apply_patch",
+  "run_manifest": {
+    "artifact_manifest": "artifact_manifest.json",
+    "errors": [
+      "Step dispatch failed: write outside task allowlist: pyproject.toml"
+    ],
+    "planner": "stateful-gov",
+    "request_id": "call_005_88fe9733",
+    "run_id": "run_30309c008849",
+    "schema_version": "pdx_run_manifest_v0",
+    "status": "failed",
+    "steps": [
+      {
+        "detail": "Step dispatch failed: write outside task allowlist: pyproject.toml",
+        "kind": "tool",
+        "name": "pdx.stateful.apply_patch",
+        "status": "failed",
+        "step_id": "dispatch"
+      }
+    ],
+    "verification": [
+      {
+        "check": "step_completed:dispatch",
+        "details": "Step dispatch did not complete",
+        "status": "fail"
+      }
+    ]
+  },
+  "tool": "apply_patch"
+}

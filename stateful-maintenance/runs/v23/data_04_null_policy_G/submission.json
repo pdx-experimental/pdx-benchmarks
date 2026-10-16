@@ -1,0 +1,11 @@
+{
+  "arm": "G",
+  "completion": {
+    "claimed_success": true,
+    "disposition": "COMPLETED",
+    "summary": "src/export_records.py updated"
+  },
+  "patch_sha256": "e70af87a11abbc8d32a7929e53252ad0a487ba8399e548cf2a745e0e45dd5793",
+  "schema": "pdx.stateful.candidate.v1",
+  "task_id": "data_04_null_policy"
+}

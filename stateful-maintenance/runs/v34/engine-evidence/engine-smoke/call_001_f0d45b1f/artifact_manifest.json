@@ -1,0 +1,29 @@
+{
+  "schema_version": "pdx_artifact_manifest_v0",
+  "artifact_id": "call_001_f0d45b1f",
+  "artifact_type": "tool-call",
+  "files": [],
+  "provenance": [
+    {
+      "step_id": "dispatch",
+      "tool": "pdx.stateful.list_files",
+      "inputs": {
+        "arguments": {
+          "directory": "src"
+        }
+      },
+      "outputs": {
+        "paths": [
+          "src/discounts.py"
+        ]
+      }
+    }
+  ],
+  "verification": [
+    {
+      "check": "step_completed:dispatch",
+      "status": "pass",
+      "details": "Step dispatch completed"
+    }
+  ]
+}

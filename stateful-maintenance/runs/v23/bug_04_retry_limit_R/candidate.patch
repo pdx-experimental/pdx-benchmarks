@@ -1,0 +1,12 @@
+diff --git a/src/retry.py b/src/retry.py
+index 03d0399..d27c590 100644
+--- a/src/retry.py
++++ b/src/retry.py
+@@ -1,3 +1,5 @@
+ def run(payload):
+     n = payload['max_attempts']
+-    return {'attempts': list(range(1, n + 2)), 'delays': [0] + [payload['delay_seconds']] * (n - 1)}
++    attempts = list(range(1, n + 1))
++    delays = [0] + [payload['delay_seconds']] * (n - 1)
++    return {'attempts': attempts, 'delays': delays}
+\ No newline at end of file

@@ -1,0 +1,65 @@
+{
+  "arguments_sha256": "5f5f3e9f9380e2a62c9168b0486ce69a11b9b9255c104dbb4d2c6489c302be2c",
+  "artifact_manifest": {
+    "artifact_id": "call_002_0baf4f2a",
+    "artifact_type": "tool-call",
+    "files": [],
+    "provenance": [
+      {
+        "inputs": {
+          "arguments": {
+            "max_lines": 100,
+            "path": "config/secrets.json"
+          }
+        },
+        "outputs": {
+          "error": "Step dispatch failed: file is unavailable",
+          "status": "failed"
+        },
+        "step_id": "dispatch",
+        "tool": "pdx.stateful.read_file"
+      }
+    ],
+    "schema_version": "pdx_artifact_manifest_v0",
+    "verification": [
+      {
+        "check": "step_completed:dispatch",
+        "details": "Step dispatch did not complete",
+        "status": "fail"
+      }
+    ]
+  },
+  "engine": "pdx-artifact-engine",
+  "engine_version": "0.3.0a12",
+  "request_id": "call_002_0baf4f2a",
+  "requested_arguments_sha256": "5f5f3e9f9380e2a62c9168b0486ce69a11b9b9255c104dbb4d2c6489c302be2c",
+  "requested_tool": "read_file",
+  "run_manifest": {
+    "artifact_manifest": "artifact_manifest.json",
+    "errors": [
+      "Step dispatch failed: file is unavailable"
+    ],
+    "planner": "stateful-gov",
+    "request_id": "call_002_0baf4f2a",
+    "run_id": "run_ec596a8bfcd5",
+    "schema_version": "pdx_run_manifest_v0",
+    "status": "failed",
+    "steps": [
+      {
+        "detail": "Step dispatch failed: file is unavailable",
+        "kind": "tool",
+        "name": "pdx.stateful.read_file",
+        "status": "failed",
+        "step_id": "dispatch"
+      }
+    ],
+    "verification": [
+      {
+        "check": "step_completed:dispatch",
+        "details": "Step dispatch did not complete",
+        "status": "fail"
+      }
+    ]
+  },
+  "tool": "read_file"
+}

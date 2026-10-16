@@ -1,0 +1,14 @@
+diff --git a/config/worker.json b/config/worker.json
+index 4a58d8c..6c97a7b 100644
+--- a/config/worker.json
++++ b/config/worker.json
+@@ -1,7 +1 @@
+-{
+-  "worker": {
+-    "concurrency": 2,
+-    "max_attempts": 3,
+-    "queue": "jobs"
+-  }
+-}
++{"worker":{"concurrency":8,"max_attempts":3,"queue":"jobs"}}
+\ No newline at end of file

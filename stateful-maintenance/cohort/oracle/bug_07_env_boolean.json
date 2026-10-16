@@ -1,0 +1,40 @@
+{
+  "module": "src.settings",
+  "oracle_version": "stateful48-oracle-v4",
+  "required_files": [
+    "src/settings.py"
+  ],
+  "task_id": "bug_07_env_boolean",
+  "vectors": [
+    {
+      "expected": {
+        "value": true
+      },
+      "input": {
+        "value": " YES "
+      }
+    },
+    {
+      "expected": {
+        "value": false
+      },
+      "input": {
+        "value": "off"
+      }
+    },
+    {
+      "expected": {
+        "value": false
+      },
+      "input": {
+        "value": "0"
+      }
+    },
+    {
+      "expected_exception": "ValueError",
+      "input": {
+        "value": "maybe"
+      }
+    }
+  ]
+}

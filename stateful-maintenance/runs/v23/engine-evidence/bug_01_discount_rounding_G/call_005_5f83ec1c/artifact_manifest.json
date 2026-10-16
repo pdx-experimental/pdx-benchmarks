@@ -1,0 +1,30 @@
+{
+  "schema_version": "pdx_artifact_manifest_v0",
+  "artifact_id": "call_005_5f83ec1c",
+  "artifact_type": "tool-call",
+  "files": [],
+  "provenance": [
+    {
+      "step_id": "dispatch",
+      "tool": "pdx.stateful.write_file",
+      "inputs": {
+        "arguments": {
+          "path": "src/discounts.py",
+          "content": "from decimal import Decimal\n\ndef run(payload):\n    subtotal = Decimal(str(payload.get(\"subtotal\", \"0\")))\n    fixed = Decimal(str(payload.get(\"fixed\", \"0\")))\n    rate = Decimal(str(payload.get(\"rate\", \"0\")))\n    \n    if fixed:\n        total = subtotal - fixed\n    else:\n        total = subtotal * (1 - rate)\n    \n    total = total.quantize(Decimal('0.01'), rounding=Decimal('0.005'))\n    return {\"total\": total}"
+        }
+      },
+      "outputs": {
+        "changed_paths": [
+          "src/discounts.py"
+        ]
+      }
+    }
+  ],
+  "verification": [
+    {
+      "check": "step_completed:dispatch",
+      "status": "pass",
+      "details": "Step dispatch completed"
+    }
+  ]
+}

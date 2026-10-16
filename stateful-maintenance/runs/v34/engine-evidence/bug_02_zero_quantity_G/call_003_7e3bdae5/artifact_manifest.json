@@ -1,0 +1,30 @@
+{
+  "schema_version": "pdx_artifact_manifest_v0",
+  "artifact_id": "call_003_7e3bdae5",
+  "artifact_type": "tool-call",
+  "files": [],
+  "provenance": [
+    {
+      "step_id": "dispatch",
+      "tool": "pdx.stateful.write_file",
+      "inputs": {
+        "arguments": {
+          "path": "src/invoices.py",
+          "content": "def run(payload):\n    quantity = payload['quantity']\n    if quantity == 0:\n        return {'total': 0}\n    return {'total': quantity * payload['unit_price'] * (1 + payload['tax_rate'])}"
+        }
+      },
+      "outputs": {
+        "changed_paths": [
+          "src/invoices.py"
+        ]
+      }
+    }
+  ],
+  "verification": [
+    {
+      "check": "step_completed:dispatch",
+      "status": "pass",
+      "details": "Step dispatch completed"
+    }
+  ]
+}

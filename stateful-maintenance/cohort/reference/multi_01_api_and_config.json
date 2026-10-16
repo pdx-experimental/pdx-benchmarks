@@ -1,0 +1,8 @@
+{
+  "config/client.json": {
+    "retries": 3,
+    "timeout": 5
+  },
+  "docs/operations.md": "Default timeout: 5 seconds. Retries: 3.\n",
+  "src/client.py": "import json\nfrom pathlib import Path\n\ndef run(payload):\n    config = json.loads(Path(\"config/client.json\").read_text())\n    return {\"timeout\": config.get(\"timeout\", 5), \"retries\": config[\"retries\"]}\n"
+}

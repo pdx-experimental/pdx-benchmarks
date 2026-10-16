@@ -1,0 +1,64 @@
+{
+  "arguments_sha256": "e20335bda010e39bd5ae9d6e9a49ef5d2334d768d4a5ce26f858bf279a1a0570",
+  "artifact_manifest": {
+    "artifact_id": "call_003_e011de74",
+    "artifact_type": "tool-call",
+    "files": [],
+    "provenance": [
+      {
+        "inputs": {
+          "arguments": {
+            "content": "def clean(value):\n    if isinstance(value, dict):\n        return {k: '[REDACTED]' if k in {'password', 'access_token', 'authorization'} else clean(v) for k, v in value.items()}\n    if isinstance(value, list):\n        return value\n    return value\ndef run(payload):\n    return {'record': clean(payload['record'])}",
+            "path": "src/sanitize_logs.py"
+          }
+        },
+        "outputs": {
+          "changed_paths": [
+            "src/sanitize_logs.py"
+          ]
+        },
+        "step_id": "dispatch",
+        "tool": "pdx.stateful.write_file"
+      }
+    ],
+    "schema_version": "pdx_artifact_manifest_v0",
+    "verification": [
+      {
+        "check": "step_completed:dispatch",
+        "details": "Step dispatch completed",
+        "status": "pass"
+      }
+    ]
+  },
+  "engine": "pdx-artifact-engine",
+  "engine_version": "0.3.0a12",
+  "request_id": "call_003_e011de74",
+  "requested_arguments_sha256": "e20335bda010e39bd5ae9d6e9a49ef5d2334d768d4a5ce26f858bf279a1a0570",
+  "requested_tool": "write_file",
+  "run_manifest": {
+    "artifact_manifest": "artifact_manifest.json",
+    "errors": [],
+    "planner": "stateful-gov",
+    "request_id": "call_003_e011de74",
+    "run_id": "run_a53c3bd17d54",
+    "schema_version": "pdx_run_manifest_v0",
+    "status": "completed",
+    "steps": [
+      {
+        "detail": "ok",
+        "kind": "tool",
+        "name": "pdx.stateful.write_file",
+        "status": "completed",
+        "step_id": "dispatch"
+      }
+    ],
+    "verification": [
+      {
+        "check": "step_completed:dispatch",
+        "details": "Step dispatch completed",
+        "status": "pass"
+      }
+    ]
+  },
+  "tool": "write_file"
+}

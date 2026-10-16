@@ -1,0 +1,10 @@
+{
+  "upload": {
+    "backend": "local",
+    "max_mib": 10,
+    "mime_types": [
+      "text/csv",
+      "application/json"
+    ]
+  }
+}

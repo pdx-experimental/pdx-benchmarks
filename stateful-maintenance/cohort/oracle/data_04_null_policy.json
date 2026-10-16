@@ -1,0 +1,64 @@
+{
+  "module": "src.export_records",
+  "oracle_version": "stateful48-oracle-v4",
+  "required_files": [
+    "src/export_records.py"
+  ],
+  "task_id": "data_04_null_policy",
+  "vectors": [
+    {
+      "expected": {
+        "rows": [
+          {
+            "id": 1,
+            "optional": null
+          },
+          {
+            "id": 2,
+            "optional": "x"
+          }
+        ]
+      },
+      "input": {
+        "records": [
+          {
+            "id": 1
+          },
+          {
+            "id": 2,
+            "optional": "x"
+          }
+        ]
+      }
+    },
+    {
+      "expected": {
+        "error": "missing_required:id",
+        "row": 1
+      },
+      "input": {
+        "records": [
+          {
+            "id": 1
+          },
+          {
+            "optional": null
+          }
+        ]
+      }
+    },
+    {
+      "expected": {
+        "error": "missing_required:id",
+        "row": 0
+      },
+      "input": {
+        "records": [
+          {
+            "id": null
+          }
+        ]
+      }
+    }
+  ]
+}

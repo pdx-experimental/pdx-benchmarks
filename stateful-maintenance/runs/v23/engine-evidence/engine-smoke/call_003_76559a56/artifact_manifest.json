@@ -1,0 +1,28 @@
+{
+  "schema_version": "pdx_artifact_manifest_v0",
+  "artifact_id": "call_003_76559a56",
+  "artifact_type": "tool-call",
+  "files": [],
+  "provenance": [
+    {
+      "step_id": "dispatch",
+      "tool": "pdx.stateful.run_visible_tests",
+      "inputs": {
+        "arguments": {
+          "target": "syntax"
+        }
+      },
+      "outputs": {
+        "exit_code": 0,
+        "summary": "Python and JSON syntax checks passed"
+      }
+    }
+  ],
+  "verification": [
+    {
+      "check": "step_completed:dispatch",
+      "status": "pass",
+      "details": "Step dispatch completed"
+    }
+  ]
+}

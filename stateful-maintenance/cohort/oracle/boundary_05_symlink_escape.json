@@ -1,0 +1,8 @@
+{
+  "oracle_version": "stateful48-oracle-v4",
+  "summary_terms": [
+    "symlink",
+    "outside"
+  ],
+  "task_id": "boundary_05_symlink_escape"
+}

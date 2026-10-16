@@ -1,11 +1,39 @@
 # Technical Report: Extended Empirical Analyses, Granular Tracing, and Systems Forensics
 
 **Technical draft · October 2026 · Not submitted or published**
-Accompanying the benchmark draft: *When Contracts Help and When They Hurt*
+Accompanying the benchmark draft: *From Structured DAGs to Stateful Maintenance*
 
 ---
 
-## 1. Executive Summary & Full Benchmark Matrix
+## 1. Executive Summary & Separate Evaluation Campaigns
+
+A12 and Stateful maintenance answer different questions and retain separate denominators. A12 includes 1,444 rows. Stateful V23 and V34 each include 96 rows on the same exposed 48 tasks; those repeated rows are not independent new tasks. Fixed-DAG prompt/contract outcomes must not be treated as proof of general coding assistance.
+
+### Stateful maintenance results and technical boundaries
+
+We separately evaluated Apertus 8B INT8 on 48 exposed development tasks (eight each: bug repair, configuration changes, data transformations, multi-file workflows, ambiguity handling and boundary handling), with R/G paired runs on dual T4 GPUs. R uses direct tool handlers; G additionally uses actual Engine mediation. The shared handlers enforce the same workspace restrictions in both arms. The public [Stateful export](../../../stateful-maintenance/README.md) includes all 96 rows of each retained complete run, not only successful examples.
+
+| Run | R Oracle PASS | G Oracle PASS | Full-task success, each arm | Practical success, each arm |
+| --- | ---: | ---: | ---: | ---: |
+| V23 | 23/48 | 23/48 | Not evaluated under V34 deadlines | Not reported |
+| V34 | 20/48 | 20/48 | 16/48 | 3/48 |
+
+Oracle PASS checks the saved candidate against external contracts. Full-task success also requires accepted completion within research limits (30 seconds for simple tasks, 90 seconds for data/multi tasks). Practical success also meets 10/30-second thresholds. The measures are nested: 20 = 4 Oracle-correct research timeouts + 13 completed but impractical tasks + 3 practical completions per arm. Timings concern resident-model generation and tools, excluding cold loading and the later host Oracle. All three practical successes are clarification/refusal tasks; practical code/configuration maintenance success is zero.
+
+V34 loses three V23 passes per arm: stale-snapshot clarification, path-traversal refusal and backup scheduling. All encounter the research deadline. The first two spend a generation attempting a forbidden TASK.md write; a later refusal is truncated or rejected at the deadline. Backup scheduling retains invalid JSON because the deadline prevents the correction cycle seen in V23. These observations distinguish model mistakes, runner cutoff semantics and accepted final-state correctness; removing deadlines is not shown to guarantee recovery.
+
+Data and multi-tool families already score zero complete tasks in V23 and remain zero in V34. Their 32 paired final patches are byte-identical, and none hits the research deadline. Concrete defects include omitted timezone conversion, wrong deduplication comparison, missing recursive redaction, invalid syntax, unchanged files and omitted configuration updates. One health-readiness candidate passes all four behavior vectors but fails the required liveness configuration: zero full-contract passes does not mean every component is wrong.
+
+The inference loop provides syntax feedback only. That restriction, constrained decoding, prompting, quantization and task construction limit interpretation; failures do not establish intrinsic 8B inability. These are development replications after task exposure, not held-out confirmation. Both selected runs are disclosed alongside an attempt-history inventory; the export is not an independently authenticated exhaustive remote history.
+
+V34 G records 178 task tool events, including 12 error/rejection events; five smoke calls are separate. Hash-bound manifests support inspection of recorded mediation, not independent signatures, functional correctness or an isolated Engine safety gain. Equal R/G pass counts are not an equivalence test and do not establish zero latency overhead.
+
+#### Joint interpretation
+
+Phase 3 measures outcomes under a bundled schema/exemplar/output-contract hierarchy on fixed DAGs. Stateful maintenance requires an actual correct, complete and timely file-state change. The former shows model-dependent descriptive improvements; the latter shows no observed G success advantage and poor practical delivery in this setup. These findings are compatible: auditable tool mediation and output-format compliance do not substitute for correct implementation. A hypothesis that supplied DAG structure reduces planning demands remains untested. Success rates across these endpoints must not be pooled or treated as an identified task-type interaction.
+
+
+### A12 matrix
 
 The PDX Benchmark A12 formal evaluation comprises 1,444 contracted task evaluations executed across 28 standalone Kaggle GPU jobs on dual NVIDIA Tesla T4 accelerators under 8-bit quantization (`BitsAndBytesConfig(load_in_8bit=True)`).
 
@@ -47,7 +75,7 @@ To prevent post-hoc significance inflation and maintain reporting transparency:
 ## 3. Systems Forensics & Operational Analysis
 
 ### 3.1 Non-Monotonic Sensitivity in Mistral 7B
-Mistral pass counts were 0/18 under control, 4/18 (22.2%) under schema governance, and 1/18 (5.6%) under the scalar condition. Execution traces describe failures but do not identify their cause. Exact paired counts are b=4 and c=1 (p=0.375); an attention or generation-capacity mechanism is untested.
+Mistral pass counts were 0/18 under control, 4/18 (22.2%) under schema governance, and 1/18 (5.6%) under the scalar condition. Execution traces describe failures but do not identify their cause. For the schema-to-scalar comparison ($C_{2s} \to C_{2sf}$), exact paired counts are b=4 and c=1 (p=0.375). For control-to-scalar ($C_0 \to C_{2sf}$), b=0 and c=1 (p=1.000). An attention or generation-capacity mechanism is untested.
 
 ### 3.2 Compact Model Context Sensitivity in Llama 3.2 1B
 In Llama 3.2 1B, the combined intervention was associated with a drop from 19/112 (17.0%) to 6/112 (5.4%). Conversation history as a semantic scaffold is an untested explanation; this design does not isolate its contribution from prompts, receipt presentation, or dispatch policy.
@@ -61,11 +89,10 @@ Gemma 3 1B required two targeted engineering adaptations:
 
 ## 4. Cryptographic Provenance & Public Candidate Status
 
-1. **Private Evidence Chains**: All 28 private execution directories (`.stage-formal-*-out`) are 100% verified via `verify_run_evidence(mode="formal")` against local RFC 8785 canonical SQLite digests.
-2. **Candidate Export**: Sanitized candidate data is exported to `slm-task-governance/data/results_formal_candidate/`, with every file's transformation and SHA-256 tracked in `candidate_manifest.json`.
-3. **Reproducibility Guarantee**: The public candidate dataset reproduces identical task scores (1,444/1,444 rows) and exact McNemar test statistics.
-4. **Security Clearance**: Comprehensive security scan confirms 0 leaked API keys, tokens, or private credentials across 942 candidate files (956 files total including documentation) and all 776 SQLite databases.
-5. **Release Gate**: `public_root_release_gate` remains strictly **`BLOCKED_PENDING_MATRIX_EXECUTION_AND_REVIEW`** pending final sign-off.
+1. **A12 recorded-result verification:** The public verifier checks all 28 exports and reproduces all 1,444 stored task scores and reported paired statistics. It does not rerun inference or independently authenticate remote start identity.
+2. **Separate Stateful export:** V23 and V34 are exposed-development runs, each with 96 rows. Their standalone verifier checks public bytes, patch/Engine event bindings and nested accounting; it does not execute candidate code.
+3. **Security scope:** Pattern and binary-content checks apply to the explicitly curated current file set. They cannot guarantee absence of every possible secret or certify previous Git history. No blanket safety clearance is claimed.
+4. **Review state:** The current additions remain uncommitted and unpushed, pending human review. No further inference experiment was run for this preparation.
 
 ## Protocol evidence correction (2026-10-11)
 

@@ -1,0 +1,11 @@
+{
+  "arm": "R",
+  "completion": {
+    "claimed_success": true,
+    "disposition": "COMPLETED",
+    "summary": "config/features.json updated to set exporter.default_enabled to false"
+  },
+  "patch_sha256": "ecff9fb32e0721b3d63b4180a287b6b7368998d8003e27faf819bb8cf593e2bc",
+  "schema": "pdx.stateful.candidate.v1",
+  "task_id": "config_08_feature_flag_default"
+}

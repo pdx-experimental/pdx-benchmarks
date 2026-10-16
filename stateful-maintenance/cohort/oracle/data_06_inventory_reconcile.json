@@ -1,0 +1,53 @@
+{
+  "module": "src.reconcile_inventory",
+  "oracle_version": "stateful48-oracle-v4",
+  "required_files": [
+    "src/reconcile_inventory.py"
+  ],
+  "task_id": "data_06_inventory_reconcile",
+  "vectors": [
+    {
+      "expected": {
+        "items": [
+          {
+            "negative": true,
+            "qty": -1,
+            "sku": "a"
+          },
+          {
+            "negative": false,
+            "qty": 2,
+            "sku": "b"
+          }
+        ]
+      },
+      "input": {
+        "rows": [
+          {
+            "current": 2,
+            "reserved": 0,
+            "sku": "b"
+          },
+          {
+            "current": 3,
+            "reserved": 5,
+            "sku": "a"
+          },
+          {
+            "current": 1,
+            "reserved": 0,
+            "sku": "a"
+          }
+        ]
+      }
+    },
+    {
+      "expected": {
+        "items": []
+      },
+      "input": {
+        "rows": []
+      }
+    }
+  ]
+}

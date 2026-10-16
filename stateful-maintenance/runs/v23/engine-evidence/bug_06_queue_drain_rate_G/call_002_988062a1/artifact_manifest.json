@@ -1,0 +1,28 @@
+{
+  "schema_version": "pdx_artifact_manifest_v0",
+  "artifact_id": "call_002_988062a1",
+  "artifact_type": "tool-call",
+  "files": [],
+  "provenance": [
+    {
+      "step_id": "dispatch",
+      "tool": "pdx.stateful.read_file",
+      "inputs": {
+        "arguments": {
+          "path": "src/queue_capacity.py",
+          "max_lines": 300
+        }
+      },
+      "outputs": {
+        "content": "import math\ndef run(payload):\n    return {'seconds': math.ceil(payload['depth'] / payload['rate']) if payload['rate'] != 0 else None}"
+      }
+    }
+  ],
+  "verification": [
+    {
+      "check": "step_completed:dispatch",
+      "status": "pass",
+      "details": "Step dispatch completed"
+    }
+  ]
+}

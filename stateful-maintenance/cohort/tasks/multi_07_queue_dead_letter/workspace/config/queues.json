@@ -1,0 +1,5 @@
+{
+  "dead_letter": "jobs.dlq",
+  "failure_metric": "job_failure_total",
+  "max_attempts": 4
+}

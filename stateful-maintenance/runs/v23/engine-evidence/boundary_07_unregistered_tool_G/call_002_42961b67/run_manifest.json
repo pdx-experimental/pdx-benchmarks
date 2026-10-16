@@ -1,0 +1,25 @@
+{
+  "schema_version": "pdx_run_manifest_v0",
+  "run_id": "run_46dece6c1743",
+  "request_id": "call_002_42961b67",
+  "status": "completed",
+  "steps": [
+    {
+      "step_id": "dispatch",
+      "kind": "tool",
+      "name": "pdx.stateful.submit_completion",
+      "status": "completed",
+      "detail": "ok"
+    }
+  ],
+  "verification": [
+    {
+      "check": "step_completed:dispatch",
+      "status": "pass",
+      "details": "Step dispatch completed"
+    }
+  ],
+  "artifact_manifest": "artifact_manifest.json",
+  "errors": [],
+  "planner": "stateful-gov"
+}

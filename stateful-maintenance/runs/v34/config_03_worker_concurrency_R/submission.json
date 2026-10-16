@@ -1,0 +1,11 @@
+{
+  "arm": "R",
+  "completion": {
+    "claimed_success": true,
+    "disposition": "COMPLETED",
+    "summary": "Modified config/worker.json to set worker.concurrency to 8 while preserving all other keys and JSON structure."
+  },
+  "patch_sha256": "5b96c711f73b382628f5824026fa364e5a66496859dbf86a74a6c97e251752d3",
+  "schema": "pdx.stateful.candidate.v1",
+  "task_id": "config_03_worker_concurrency"
+}

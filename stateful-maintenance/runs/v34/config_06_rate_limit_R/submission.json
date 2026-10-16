@@ -1,0 +1,11 @@
+{
+  "arm": "R",
+  "completion": {
+    "claimed_success": false,
+    "disposition": "UNVERIFIED_INCOMPLETE",
+    "summary": "research deadline reached; partial action not executed"
+  },
+  "patch_sha256": "bcb343da710db8203212a77671588f898db06f527f2714a6e62d479f23a5f110",
+  "schema": "pdx.stateful.candidate.v1",
+  "task_id": "config_06_rate_limit"
+}

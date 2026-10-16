@@ -1,0 +1,28 @@
+{
+  "schema_version": "pdx_artifact_manifest_v0",
+  "artifact_id": "call_003_3e4ea02a",
+  "artifact_type": "tool-call",
+  "files": [],
+  "provenance": [
+    {
+      "step_id": "dispatch",
+      "tool": "pdx.stateful.read_file",
+      "inputs": {
+        "arguments": {
+          "path": "src/migration_registry.py",
+          "max_lines": 300
+        }
+      },
+      "outputs": {
+        "content": "import sqlite3\nfrom src.migrations.event_index import apply\ndef run(payload):\n    db = sqlite3.connect(':memory:'); db.execute('CREATE TABLE events(timestamp TEXT)')\n    for _ in range(2): apply(db)\n    names = sorted(r[1] for r in db.execute('PRAGMA index_list(events)'))\n    db.close(); return {'indexes':names,'order':['base']}"
+      }
+    }
+  ],
+  "verification": [
+    {
+      "check": "step_completed:dispatch",
+      "status": "pass",
+      "details": "Step dispatch completed"
+    }
+  ]
+}

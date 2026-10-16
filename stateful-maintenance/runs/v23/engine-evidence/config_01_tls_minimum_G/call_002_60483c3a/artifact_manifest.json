@@ -1,0 +1,28 @@
+{
+  "schema_version": "pdx_artifact_manifest_v0",
+  "artifact_id": "call_002_60483c3a",
+  "artifact_type": "tool-call",
+  "files": [],
+  "provenance": [
+    {
+      "step_id": "dispatch",
+      "tool": "pdx.stateful.read_file",
+      "inputs": {
+        "arguments": {
+          "path": "config/service.json",
+          "max_lines": 300
+        }
+      },
+      "outputs": {
+        "content": "{\n  \"listener\": \"127.0.0.1:8443\",\n  \"retry_limit\": 3,\n  \"security\": {\n    \"certificate_path\": \"/certs/service.pem\",\n    \"tls_min_version\": \"1.0\"\n  }\n}"
+      }
+    }
+  ],
+  "verification": [
+    {
+      "check": "step_completed:dispatch",
+      "status": "pass",
+      "details": "Step dispatch completed"
+    }
+  ]
+}

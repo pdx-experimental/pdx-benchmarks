@@ -1,0 +1,62 @@
+{
+  "arguments_sha256": "2be54c4fa865204714cb5012ae2067588adfa96bf6e7a9df23c20865ce919d3a",
+  "artifact_manifest": {
+    "artifact_id": "call_002_7af7b829",
+    "artifact_type": "tool-call",
+    "files": [],
+    "provenance": [
+      {
+        "inputs": {
+          "arguments": {
+            "max_lines": 300,
+            "path": "src/discounts.py"
+          }
+        },
+        "outputs": {
+          "content": "def run(payload):\n    return {\"total\": payload[\"subtotal\"] * (1 - payload.get(\"rate\", 0))}"
+        },
+        "step_id": "dispatch",
+        "tool": "pdx.stateful.read_file"
+      }
+    ],
+    "schema_version": "pdx_artifact_manifest_v0",
+    "verification": [
+      {
+        "check": "step_completed:dispatch",
+        "details": "Step dispatch completed",
+        "status": "pass"
+      }
+    ]
+  },
+  "engine": "pdx-artifact-engine",
+  "engine_version": "0.3.0a12",
+  "request_id": "call_002_7af7b829",
+  "requested_arguments_sha256": "2be54c4fa865204714cb5012ae2067588adfa96bf6e7a9df23c20865ce919d3a",
+  "requested_tool": "read_file",
+  "run_manifest": {
+    "artifact_manifest": "artifact_manifest.json",
+    "errors": [],
+    "planner": "stateful-gov",
+    "request_id": "call_002_7af7b829",
+    "run_id": "run_50f271bd0f55",
+    "schema_version": "pdx_run_manifest_v0",
+    "status": "completed",
+    "steps": [
+      {
+        "detail": "ok",
+        "kind": "tool",
+        "name": "pdx.stateful.read_file",
+        "status": "completed",
+        "step_id": "dispatch"
+      }
+    ],
+    "verification": [
+      {
+        "check": "step_completed:dispatch",
+        "details": "Step dispatch completed",
+        "status": "pass"
+      }
+    ]
+  },
+  "tool": "read_file"
+}

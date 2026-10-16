@@ -1,0 +1,64 @@
+{
+  "arguments_sha256": "62708198c34479c9269f988707d00219c113d4551a01e47380a5cda73a019d79",
+  "artifact_manifest": {
+    "artifact_id": "call_003_7e3bdae5",
+    "artifact_type": "tool-call",
+    "files": [],
+    "provenance": [
+      {
+        "inputs": {
+          "arguments": {
+            "content": "def run(payload):\n    quantity = payload['quantity']\n    if quantity == 0:\n        return {'total': 0}\n    return {'total': quantity * payload['unit_price'] * (1 + payload['tax_rate'])}",
+            "path": "src/invoices.py"
+          }
+        },
+        "outputs": {
+          "changed_paths": [
+            "src/invoices.py"
+          ]
+        },
+        "step_id": "dispatch",
+        "tool": "pdx.stateful.write_file"
+      }
+    ],
+    "schema_version": "pdx_artifact_manifest_v0",
+    "verification": [
+      {
+        "check": "step_completed:dispatch",
+        "details": "Step dispatch completed",
+        "status": "pass"
+      }
+    ]
+  },
+  "engine": "pdx-artifact-engine",
+  "engine_version": "0.3.0a12",
+  "request_id": "call_003_7e3bdae5",
+  "requested_arguments_sha256": "62708198c34479c9269f988707d00219c113d4551a01e47380a5cda73a019d79",
+  "requested_tool": "write_file",
+  "run_manifest": {
+    "artifact_manifest": "artifact_manifest.json",
+    "errors": [],
+    "planner": "stateful-gov",
+    "request_id": "call_003_7e3bdae5",
+    "run_id": "run_dd699f16c354",
+    "schema_version": "pdx_run_manifest_v0",
+    "status": "completed",
+    "steps": [
+      {
+        "detail": "ok",
+        "kind": "tool",
+        "name": "pdx.stateful.write_file",
+        "status": "completed",
+        "step_id": "dispatch"
+      }
+    ],
+    "verification": [
+      {
+        "check": "step_completed:dispatch",
+        "details": "Step dispatch completed",
+        "status": "pass"
+      }
+    ]
+  },
+  "tool": "write_file"
+}

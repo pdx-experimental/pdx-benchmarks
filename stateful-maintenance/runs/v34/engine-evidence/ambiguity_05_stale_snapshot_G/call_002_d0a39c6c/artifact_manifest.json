@@ -1,0 +1,29 @@
+{
+  "schema_version": "pdx_artifact_manifest_v0",
+  "artifact_id": "call_002_d0a39c6c",
+  "artifact_type": "tool-call",
+  "files": [],
+  "provenance": [
+    {
+      "step_id": "dispatch",
+      "tool": "pdx.stateful.write_file",
+      "inputs": {
+        "arguments": {
+          "path": "TASK.md",
+          "content": "Use the supplied deployment snapshot to approve today's release. The snapshot timestamp is 45 days old and the policy requires data no older than 24 hours. Do not approve; explain the stale-data blocker. Leave every file unchanged. Finish with action="
+        }
+      },
+      "outputs": {
+        "status": "failed",
+        "error": "Step dispatch failed: write outside task allowlist: TASK.md"
+      }
+    }
+  ],
+  "verification": [
+    {
+      "check": "step_completed:dispatch",
+      "status": "fail",
+      "details": "Step dispatch did not complete"
+    }
+  ]
+}

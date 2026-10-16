@@ -1,0 +1,120 @@
+{
+  "module": "src.import_csv",
+  "oracle_version": "stateful48-oracle-v4",
+  "required_files": [
+    "src/import_csv.py"
+  ],
+  "task_id": "data_01_normalize_headers",
+  "vectors": [
+    {
+      "expected": {
+        "headers": [
+          "order_id",
+          "total"
+        ],
+        "rows": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            4
+          ]
+        ]
+      },
+      "input": {
+        "headers": [
+          "Order ID",
+          "Total ($)"
+        ],
+        "rows": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            4
+          ]
+        ]
+      }
+    },
+    {
+      "expected": {
+        "error": "DUPLICATE_HEADERS"
+      },
+      "input": {
+        "headers": [
+          " A ",
+          "a!"
+        ],
+        "rows": []
+      }
+    },
+    {
+      "expected": {
+        "headers": [
+          "sku_code"
+        ],
+        "rows": [
+          [
+            "x"
+          ]
+        ]
+      },
+      "input": {
+        "headers": [
+          " SKU-code "
+        ],
+        "rows": [
+          [
+            "x"
+          ]
+        ]
+      }
+    },
+    {
+      "expected": {
+        "headers": [
+          "z_field",
+          "a_b",
+          "tag"
+        ],
+        "rows": [
+          [
+            1,
+            2,
+            3
+          ]
+        ]
+      },
+      "input": {
+        "headers": [
+          "Z field",
+          "a--b",
+          "\u00c9-tag"
+        ],
+        "rows": [
+          [
+            1,
+            2,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "expected": {
+        "error": "DUPLICATE_HEADERS"
+      },
+      "input": {
+        "headers": [
+          " a_- b ",
+          "A b"
+        ],
+        "rows": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+{
+  "src/transform_events.py": "def run(payload):\n    selected = {}\n    for r in payload['events']:\n        key = r['event_id']\n        if key not in selected or (r['updated_at'],r['source_priority']) > (selected[key]['updated_at'],selected[key]['source_priority']): selected[key] = r\n    return {'events':list(selected.values())}\n"
+}

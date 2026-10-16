@@ -1,0 +1,3 @@
+{
+  "src/export_events.py": "from datetime import datetime, timezone\ndef run(payload):\n    d = datetime.fromisoformat(payload['timestamp'].replace('Z','+00:00'))\n    if d.utcoffset() is None: raise ValueError('naive timestamp')\n    return {'timestamp':d.astimezone(timezone.utc).isoformat().replace('+00:00','Z')}\n"
+}

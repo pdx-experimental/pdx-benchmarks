@@ -1,0 +1,38 @@
+diff --git a/config/probes.json b/config/probes.json
+index de7c8fc..f94330d 100644
+--- a/config/probes.json
++++ b/config/probes.json
+@@ -1,4 +1 @@
+-{
+-  "liveness": "legacy_/live",
+-  "readiness": "/ready"
+-}
++{"liveness":"legacy_/live","readiness":"/ready"}
+\ No newline at end of file
+diff --git a/src/health.py b/src/health.py
+index 3d2b4ef..feb65f1 100644
+--- a/src/health.py
++++ b/src/health.py
+@@ -1,2 +1,5 @@
+-def live(db_up): return {'status':'ok'}
+-def ready(db_up): return {'status':'ok' if db_up else 'unavailable'}
++def live(db_up):
++    return {"status":"ok"}
++
++def ready(db_up):
++    return {"status":"ok" if db_up else "unavailable"}
+\ No newline at end of file
+diff --git a/src/routes.py b/src/routes.py
+index 85a6db3..41fe4a2 100644
+--- a/src/routes.py
++++ b/src/routes.py
+@@ -1,4 +1,5 @@
+-from src.health import live,ready
++from src.health import live, ready
+ def run(payload):
+-    routes = {'/live':live,'/ready':live}
+-    return routes[payload['path']](payload['db_up'])
++    routes = {"/live": live,
++          "/ready": ready}
++    return routes[payload["path"]](payload["db_up"])
+\ No newline at end of file

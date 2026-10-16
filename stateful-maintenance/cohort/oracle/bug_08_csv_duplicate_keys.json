@@ -1,0 +1,50 @@
+{
+  "module": "src.inventory",
+  "oracle_version": "stateful48-oracle-v4",
+  "required_files": [
+    "src/inventory.py"
+  ],
+  "task_id": "bug_08_csv_duplicate_keys",
+  "vectors": [
+    {
+      "expected": {
+        "count": 0,
+        "ok": true
+      },
+      "input": {
+        "rows": []
+      }
+    },
+    {
+      "expected": {
+        "count": 1,
+        "ok": true
+      },
+      "input": {
+        "rows": [
+          {
+            "qty": 1,
+            "sku": "a"
+          }
+        ]
+      }
+    },
+    {
+      "expected": {
+        "error": "duplicate_sku"
+      },
+      "input": {
+        "rows": [
+          {
+            "qty": 1,
+            "sku": "a"
+          },
+          {
+            "qty": 2,
+            "sku": "a"
+          }
+        ]
+      }
+    }
+  ]
+}

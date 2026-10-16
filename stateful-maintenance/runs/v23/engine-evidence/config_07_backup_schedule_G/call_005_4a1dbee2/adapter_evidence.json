@@ -1,0 +1,64 @@
+{
+  "arguments_sha256": "3f4df2668c02d30333203c92c61f17846043074aa0012a59bfa1d5f337e229d9",
+  "artifact_manifest": {
+    "artifact_id": "call_005_4a1dbee2",
+    "artifact_type": "tool-call",
+    "files": [],
+    "provenance": [
+      {
+        "inputs": {
+          "arguments": {
+            "content": "{\"backup\": {\"destination\": \"backups/\", \"encrypted\": true, \"retention_count\": 7, \"schedule_utc\": \"02:30\"}}",
+            "path": "config/backup.json"
+          }
+        },
+        "outputs": {
+          "changed_paths": [
+            "config/backup.json"
+          ]
+        },
+        "step_id": "dispatch",
+        "tool": "pdx.stateful.write_file"
+      }
+    ],
+    "schema_version": "pdx_artifact_manifest_v0",
+    "verification": [
+      {
+        "check": "step_completed:dispatch",
+        "details": "Step dispatch completed",
+        "status": "pass"
+      }
+    ]
+  },
+  "engine": "pdx-artifact-engine",
+  "engine_version": "0.3.0a12",
+  "request_id": "call_005_4a1dbee2",
+  "requested_arguments_sha256": "3f4df2668c02d30333203c92c61f17846043074aa0012a59bfa1d5f337e229d9",
+  "requested_tool": "write_file",
+  "run_manifest": {
+    "artifact_manifest": "artifact_manifest.json",
+    "errors": [],
+    "planner": "stateful-gov",
+    "request_id": "call_005_4a1dbee2",
+    "run_id": "run_aef61d733195",
+    "schema_version": "pdx_run_manifest_v0",
+    "status": "completed",
+    "steps": [
+      {
+        "detail": "ok",
+        "kind": "tool",
+        "name": "pdx.stateful.write_file",
+        "status": "completed",
+        "step_id": "dispatch"
+      }
+    ],
+    "verification": [
+      {
+        "check": "step_completed:dispatch",
+        "details": "Step dispatch completed",
+        "status": "pass"
+      }
+    ]
+  },
+  "tool": "write_file"
+}

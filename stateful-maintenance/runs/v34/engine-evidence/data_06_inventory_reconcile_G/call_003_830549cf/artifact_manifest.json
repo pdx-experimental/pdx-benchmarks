@@ -1,0 +1,30 @@
+{
+  "schema_version": "pdx_artifact_manifest_v0",
+  "artifact_id": "call_003_830549cf",
+  "artifact_type": "tool-call",
+  "files": [],
+  "provenance": [
+    {
+      "step_id": "dispatch",
+      "tool": "pdx.stateful.write_file",
+      "inputs": {
+        "arguments": {
+          "path": "src/reconcile_inventory.py",
+          "content": "def run(payload):\n    totals = {}\n    for r in payload['rows']:\n        totals[r['sku']] = totals.get(r['sku'], 0) + r['current'] - r['reserved']\n    return {'items': [{'sku': k, 'qty': max(0, totals[k]), 'negative': totals[k] < 0} for k in sorted(totals)}}"
+        }
+      },
+      "outputs": {
+        "changed_paths": [
+          "src/reconcile_inventory.py"
+        ]
+      }
+    }
+  ],
+  "verification": [
+    {
+      "check": "step_completed:dispatch",
+      "status": "pass",
+      "details": "Step dispatch completed"
+    }
+  ]
+}

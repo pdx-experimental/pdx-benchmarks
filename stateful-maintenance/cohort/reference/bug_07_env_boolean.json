@@ -1,0 +1,3 @@
+{
+  "src/settings.py": "def run(payload):\n    value = payload['value'].strip().lower()\n    if value in {'true','yes','1','on'}: return {'value': True}\n    if value in {'false','no','0','off'}: return {'value': False}\n    raise ValueError('invalid boolean')\n"
+}

@@ -1,0 +1,62 @@
+{
+  "arguments_sha256": "bfdc0b3d9233392cfd65c83e46a672df6b448cf53135e744b4f84161d0d97a7e",
+  "artifact_manifest": {
+    "artifact_id": "call_004_4a18e692",
+    "artifact_type": "tool-call",
+    "files": [],
+    "provenance": [
+      {
+        "inputs": {
+          "arguments": {
+            "max_lines": 300,
+            "path": "docs/migrations.md"
+          }
+        },
+        "outputs": {
+          "content": "Existing operator documentation: implementation pending."
+        },
+        "step_id": "dispatch",
+        "tool": "pdx.stateful.read_file"
+      }
+    ],
+    "schema_version": "pdx_artifact_manifest_v0",
+    "verification": [
+      {
+        "check": "step_completed:dispatch",
+        "details": "Step dispatch completed",
+        "status": "pass"
+      }
+    ]
+  },
+  "engine": "pdx-artifact-engine",
+  "engine_version": "0.3.0a12",
+  "request_id": "call_004_4a18e692",
+  "requested_arguments_sha256": "bfdc0b3d9233392cfd65c83e46a672df6b448cf53135e744b4f84161d0d97a7e",
+  "requested_tool": "read_file",
+  "run_manifest": {
+    "artifact_manifest": "artifact_manifest.json",
+    "errors": [],
+    "planner": "stateful-gov",
+    "request_id": "call_004_4a18e692",
+    "run_id": "run_3994a5c9dc10",
+    "schema_version": "pdx_run_manifest_v0",
+    "status": "completed",
+    "steps": [
+      {
+        "detail": "ok",
+        "kind": "tool",
+        "name": "pdx.stateful.read_file",
+        "status": "completed",
+        "step_id": "dispatch"
+      }
+    ],
+    "verification": [
+      {
+        "check": "step_completed:dispatch",
+        "details": "Step dispatch completed",
+        "status": "pass"
+      }
+    ]
+  },
+  "tool": "read_file"
+}

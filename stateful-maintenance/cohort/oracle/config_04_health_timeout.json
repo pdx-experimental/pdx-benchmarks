@@ -1,0 +1,17 @@
+{
+  "json_files": {
+    "config/health.json": {
+      "health": {
+        "endpoint": "/live",
+        "failure_threshold": 3,
+        "interval_seconds": 30,
+        "timeout_seconds": 3
+      }
+    }
+  },
+  "oracle_version": "stateful48-oracle-v4",
+  "required_files": [
+    "config/health.json"
+  ],
+  "task_id": "config_04_health_timeout"
+}

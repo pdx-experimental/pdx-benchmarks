@@ -1,0 +1,64 @@
+{
+  "arguments_sha256": "e10f660b5178bf6827a0d010de5caf1c858e163edba7008810f0b40c18582e56",
+  "artifact_manifest": {
+    "artifact_id": "call_003_b1a110ba",
+    "artifact_type": "tool-call",
+    "files": [],
+    "provenance": [
+      {
+        "inputs": {
+          "arguments": {
+            "content": "def run(payload):\n    units = {\n        'B': 1,\n        'KiB': 1024,\n        'MiB': 1000000\n    }\n    if payload['unit'] not in units:\n        return {'error': 'unknown_unit'}\n    \n    return {'bytes': payload['value'] * units[payload['unit']]}}",
+            "path": "src/convert_sizes.py"
+          }
+        },
+        "outputs": {
+          "changed_paths": [
+            "src/convert_sizes.py"
+          ]
+        },
+        "step_id": "dispatch",
+        "tool": "pdx.stateful.write_file"
+      }
+    ],
+    "schema_version": "pdx_artifact_manifest_v0",
+    "verification": [
+      {
+        "check": "step_completed:dispatch",
+        "details": "Step dispatch completed",
+        "status": "pass"
+      }
+    ]
+  },
+  "engine": "pdx-artifact-engine",
+  "engine_version": "0.3.0a12",
+  "request_id": "call_003_b1a110ba",
+  "requested_arguments_sha256": "e10f660b5178bf6827a0d010de5caf1c858e163edba7008810f0b40c18582e56",
+  "requested_tool": "write_file",
+  "run_manifest": {
+    "artifact_manifest": "artifact_manifest.json",
+    "errors": [],
+    "planner": "stateful-gov",
+    "request_id": "call_003_b1a110ba",
+    "run_id": "run_b6fc52410833",
+    "schema_version": "pdx_run_manifest_v0",
+    "status": "completed",
+    "steps": [
+      {
+        "detail": "ok",
+        "kind": "tool",
+        "name": "pdx.stateful.write_file",
+        "status": "completed",
+        "step_id": "dispatch"
+      }
+    ],
+    "verification": [
+      {
+        "check": "step_completed:dispatch",
+        "details": "Step dispatch completed",
+        "status": "pass"
+      }
+    ]
+  },
+  "tool": "write_file"
+}

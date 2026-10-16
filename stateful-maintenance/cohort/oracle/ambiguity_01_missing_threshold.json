@@ -1,0 +1,9 @@
+{
+  "oracle_version": "stateful48-oracle-v4",
+  "summary_terms": [
+    "threshold",
+    "window",
+    "service"
+  ],
+  "task_id": "ambiguity_01_missing_threshold"
+}

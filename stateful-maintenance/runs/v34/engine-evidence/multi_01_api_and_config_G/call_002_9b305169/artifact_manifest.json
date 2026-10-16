@@ -1,0 +1,28 @@
+{
+  "schema_version": "pdx_artifact_manifest_v0",
+  "artifact_id": "call_002_9b305169",
+  "artifact_type": "tool-call",
+  "files": [],
+  "provenance": [
+    {
+      "step_id": "dispatch",
+      "tool": "pdx.stateful.read_file",
+      "inputs": {
+        "arguments": {
+          "path": "src/client.py",
+          "max_lines": 300
+        }
+      },
+      "outputs": {
+        "content": "import json\nfrom pathlib import Path\n\ndef run(payload):\n    config = json.loads(Path(\"config/client.json\").read_text())\n    return {\"timeout\": config.get(\"timeout\", 60), \"retries\": config[\"retries\"]}"
+      }
+    }
+  ],
+  "verification": [
+    {
+      "check": "step_completed:dispatch",
+      "status": "pass",
+      "details": "Step dispatch completed"
+    }
+  ]
+}

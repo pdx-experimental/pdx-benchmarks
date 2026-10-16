@@ -1,0 +1,20 @@
+diff --git a/src/retry.py b/src/retry.py
+index ec48a9a..30360b8 100644
+--- a/src/retry.py
++++ b/src/retry.py
+@@ -1,6 +1,11 @@
+ import json
+ from pathlib import Path
++
+ def run(payload):
+-    n = min(payload['max_attempts'],payload['success_on']) if payload.get('success_on') is not None else payload['max_attempts']
+-    metric = json.loads(Path('config/metrics.json').read_text())['retry']
+-    return {'attempts':n,'retry_count':n,'metric':metric}
++    max_attempts = payload.get('max_attempts', None)
++    success_on = payload.get('success_on')
++    n = min(max_attempts, success_on) if success_on is not None else max_attempts
++    with open(Path('config/metrics.json').read_text(), 'r') as f:
++        metrics = json.load(f)
++    metric = metrics['retry']
++    return {'attempts': n, 'retry_count': n, 'metric': metric}
+\ No newline at end of file

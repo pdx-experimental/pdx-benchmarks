@@ -1,0 +1,15 @@
+diff --git a/config/health.json b/config/health.json
+index 4da7eb0..ea3473f 100644
+--- a/config/health.json
++++ b/config/health.json
+@@ -1,8 +1 @@
+-{
+-  "health": {
+-    "endpoint": "/live",
+-    "failure_threshold": 3,
+-    "interval_seconds": 30,
+-    "timeout_seconds": 10
+-  }
+-}
++{"health": {"endpoint": "/live", "failure_threshold": 3, "interval_seconds": 30, "timeout_seconds": 10}}
+\ No newline at end of file

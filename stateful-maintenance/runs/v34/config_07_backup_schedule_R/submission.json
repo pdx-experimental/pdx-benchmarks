@@ -1,0 +1,11 @@
+{
+  "arm": "R",
+  "completion": {
+    "claimed_success": false,
+    "disposition": "UNVERIFIED_INCOMPLETE",
+    "summary": "research deadline reached; partial action not executed"
+  },
+  "patch_sha256": "674afa413f9b82492ecf65e42f6eeda3bde1fb1c2513762d83ca0085323275bf",
+  "schema": "pdx.stateful.candidate.v1",
+  "task_id": "config_07_backup_schedule"
+}

@@ -1,0 +1,4 @@
+{
+  "liveness": "legacy_/live",
+  "readiness": "/ready"
+}

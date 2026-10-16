@@ -1,0 +1,16 @@
+diff --git a/config/features.json b/config/features.json
+index 5fb0753..2f966dd 100644
+--- a/config/features.json
++++ b/config/features.json
+@@ -1,9 +1 @@
+-{
+-  "exporter": {
+-    "default_enabled": true,
+-    "environment_overrides": {
+-      "dev": true,
+-      "prod": false
+-    }
+-  }
+-}
++{"exporter": {"default_enabled": false, "environment_overrides": {"dev": true, "prod": false}}}
+\ No newline at end of file

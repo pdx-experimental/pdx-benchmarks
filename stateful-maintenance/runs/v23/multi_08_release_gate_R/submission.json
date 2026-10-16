@@ -1,0 +1,11 @@
+{
+  "arm": "R",
+  "completion": {
+    "claimed_success": true,
+    "disposition": "COMPLETED",
+    "summary": "src/release_gate.py updated with compatible(min_schema,max_schema,deployed) function"
+  },
+  "patch_sha256": "930ae715674438333107e4dc4bf6704f5ab8427768381bd2ac3b64e2ade23872",
+  "schema": "pdx.stateful.candidate.v1",
+  "task_id": "multi_08_release_gate"
+}

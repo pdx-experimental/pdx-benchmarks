@@ -1,4 +1,4 @@
-# Formal A12 release scope
+# Release scope: A12 and Stateful development evidence
 
 Phase 2 is a separate historical exploratory study, not part of the A12 denominator. Its exclusion was a release-scope decision, not a finding of invalidity. See [Phase 2 audit status](PHASE2_STATUS.md) for verified scoring consistency, the absence of Engine dispatch in the retained execution path, and outstanding disclosure work.
 
@@ -15,3 +15,13 @@ Phase 3 uses hierarchical prompt conditions, not an orthogonal factorial design.
 Security review covers the current release file set. Pattern scanning cannot guarantee absence of all possible secrets. Previously published history requires separate treatment if a credential is discovered.
 
 Selected original protocol snapshots and TSA receipts are now included for retrospective audit. See [the evidence limitations](../slm-task-governance/evidence/frozen-protocol/README.md); v5 timestamp verification is explicitly failed.
+
+## Stateful development export (prepared for review)
+
+The separate stateful-maintenance directory releases all 96 task/arm outcomes from each of V23 and V34, including failures, paired comparison, original prompt/token sequences, observations, patches, completion claims, Engine evidence, 48 workspaces, Oracle vectors and reference file contents. It does not expand the A12 denominator. Private source archives remain unchanged; per-file lineage describes public sanitization. This is retrospective development disclosure, not prospective registration or independent replication.
+
+No remote submission metadata containing operator identifiers, deployment notebooks, raw cloud logs, wheels, caches, credentials or duplicate original archive containers are included. Runtime source is inspection material, not a turnkey cloud rerun. An offline standard-library verifier checks public integrity and recorded accounting. An optional portable Docker Oracle adapter is provided; it was not run during this preparation and does not reproduce the original image digest.
+
+Current narrative documentation is English. Timestamp-bound historical protocol source snapshots are original evidence, not newly authored documentation: their original language and bytes remain intact. Translating those committed bytes would invalidate their existing hashes; no fresh timestamp or translated document is substituted as historical evidence. No personal/operator identifier is permitted by this evidence exception. The four original plans retain already-disclosed generic private-project links.
+
+All new material is prepared for human review. No commit, push or additional experiment is authorized or performed by this preparation.

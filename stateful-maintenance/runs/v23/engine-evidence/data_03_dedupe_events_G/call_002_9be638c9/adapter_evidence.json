@@ -1,0 +1,62 @@
+{
+  "arguments_sha256": "a10f1013f3f2c68d0ce5a2e2a1b30c05f2d38635496c7ded27417f16a0df9fed",
+  "artifact_manifest": {
+    "artifact_id": "call_002_9be638c9",
+    "artifact_type": "tool-call",
+    "files": [],
+    "provenance": [
+      {
+        "inputs": {
+          "arguments": {
+            "max_lines": 300,
+            "path": "src/transform_events.py"
+          }
+        },
+        "outputs": {
+          "content": "def run(payload):\n    selected = {}\n    for r in payload['events']:\n        key = r['event_id']\n        if key not in selected or (r['updated_at'],r['source_priority']) < (selected[key]['updated_at'],selected[key]['source_priority']): selected[key] = r\n    return {'events':list(selected.values())}"
+        },
+        "step_id": "dispatch",
+        "tool": "pdx.stateful.read_file"
+      }
+    ],
+    "schema_version": "pdx_artifact_manifest_v0",
+    "verification": [
+      {
+        "check": "step_completed:dispatch",
+        "details": "Step dispatch completed",
+        "status": "pass"
+      }
+    ]
+  },
+  "engine": "pdx-artifact-engine",
+  "engine_version": "0.3.0a12",
+  "request_id": "call_002_9be638c9",
+  "requested_arguments_sha256": "a10f1013f3f2c68d0ce5a2e2a1b30c05f2d38635496c7ded27417f16a0df9fed",
+  "requested_tool": "read_file",
+  "run_manifest": {
+    "artifact_manifest": "artifact_manifest.json",
+    "errors": [],
+    "planner": "stateful-gov",
+    "request_id": "call_002_9be638c9",
+    "run_id": "run_7dd86b240005",
+    "schema_version": "pdx_run_manifest_v0",
+    "status": "completed",
+    "steps": [
+      {
+        "detail": "ok",
+        "kind": "tool",
+        "name": "pdx.stateful.read_file",
+        "status": "completed",
+        "step_id": "dispatch"
+      }
+    ],
+    "verification": [
+      {
+        "check": "step_completed:dispatch",
+        "details": "Step dispatch completed",
+        "status": "pass"
+      }
+    ]
+  },
+  "tool": "read_file"
+}

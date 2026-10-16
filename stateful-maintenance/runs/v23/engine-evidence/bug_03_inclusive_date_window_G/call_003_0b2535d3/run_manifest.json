@@ -1,0 +1,27 @@
+{
+  "schema_version": "pdx_run_manifest_v0",
+  "run_id": "run_ae85452808fa",
+  "request_id": "call_003_0b2535d3",
+  "status": "failed",
+  "steps": [
+    {
+      "step_id": "dispatch",
+      "kind": "tool",
+      "name": "pdx.stateful.submit_completion",
+      "status": "failed",
+      "detail": "Step dispatch failed: cannot claim a completed modification: workspace has no changes"
+    }
+  ],
+  "verification": [
+    {
+      "check": "step_completed:dispatch",
+      "status": "fail",
+      "details": "Step dispatch did not complete"
+    }
+  ],
+  "artifact_manifest": "artifact_manifest.json",
+  "errors": [
+    "Step dispatch failed: cannot claim a completed modification: workspace has no changes"
+  ],
+  "planner": "stateful-gov"
+}

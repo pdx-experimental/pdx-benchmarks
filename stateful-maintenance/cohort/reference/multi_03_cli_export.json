@@ -1,0 +1,5 @@
+{
+  "docs/cli.md": "Example: export --output output/report.csv\n",
+  "src/cli.py": "import argparse\nfrom src.exporter import export\ndef run(payload):\n    parser = argparse.ArgumentParser(); parser.add_argument('--output',default='output/export.csv')\n    args = parser.parse_args(payload['argv']); return export(args.output)\n",
+  "src/exporter.py": "from pathlib import PurePosixPath\ndef export(path):\n    p = PurePosixPath(path)\n    if p.is_absolute() or '..' in p.parts or not p.parts or p.parts[0] != 'output': raise ValueError('outside output')\n    return {'output':p.as_posix()}\n"
+}

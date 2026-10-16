@@ -1,0 +1,8 @@
+{
+  "oracle_version": "stateful48-oracle-v4",
+  "summary_terms": [
+    "45",
+    "24"
+  ],
+  "task_id": "ambiguity_05_stale_snapshot"
+}

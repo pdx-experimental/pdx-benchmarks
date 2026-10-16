@@ -1,0 +1,21 @@
+diff --git a/src/import_csv.py b/src/import_csv.py
+index 611de24..f13264b 100644
+--- a/src/import_csv.py
++++ b/src/import_csv.py
+@@ -1,2 +1,14 @@
+ def run(payload):
+-    return payload
++    headers = payload['headers']
++    rows = payload['rows']
++    
++    normalized_headers = []
++    for header in headers:
++        header = header.strip().lower()
++        normalized_header = header.replace(''.join([c if 'a' <= c <= 'z' or '0' <= c <= '9' else '_' for c in header]), '_')
++        normalized_headers.append(normalized_header)
++    
++    if len(set(normalized_headers)) != len(normalized_headers):
++        return {"error":"DUPLICATE_HEADERS"}
++    
++    return {"headers": normalized_headers,"rows": rows}
+\ No newline at end of file

@@ -1,0 +1,5 @@
+{
+  "claimed_success": false,
+  "disposition": "UNVERIFIED_INCOMPLETE",
+  "summary": "Syntax error in src/convert_sizes.py: unmatched '}' on line 10"
+}

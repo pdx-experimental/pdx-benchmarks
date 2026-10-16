@@ -1,0 +1,3 @@
+{
+  "src/reconcile_inventory.py": "def run(payload):\n    totals = {}\n    for r in payload['rows']: totals[r['sku']] = totals.get(r['sku'],0) + r['current'] - r['reserved']\n    return {'items':[{'sku':k,'qty':totals[k],'negative':totals[k]<0} for k in sorted(totals)]}\n"
+}

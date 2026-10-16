@@ -1,0 +1,3 @@
+{
+  "src/retry.py": "def run(payload):\n    n = payload['max_attempts']\n    return {'attempts': list(range(1, n + 1)), 'delays': [0] + [payload['delay_seconds']] * (n - 1)}\n"
+}

@@ -1,0 +1,8 @@
+{
+  "oracle_version": "stateful48-oracle-v4",
+  "summary_terms": [
+    "supplier",
+    "feed"
+  ],
+  "task_id": "ambiguity_03_unavailable_source"
+}

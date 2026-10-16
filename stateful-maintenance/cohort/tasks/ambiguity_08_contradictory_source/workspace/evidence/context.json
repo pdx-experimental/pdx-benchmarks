@@ -1,0 +1,5 @@
+{
+  "request_evidence": "Prepare the incident summary. The metrics export reports 0% errors while the service dashboard reports 18% for the same interval. Do not select one source silently; identify the discrepancy and request source validation.",
+  "synthetic": true,
+  "task_id": "ambiguity_08_contradictory_source"
+}

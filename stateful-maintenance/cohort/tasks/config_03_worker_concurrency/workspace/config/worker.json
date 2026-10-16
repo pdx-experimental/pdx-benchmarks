@@ -1,0 +1,7 @@
+{
+  "worker": {
+    "concurrency": 2,
+    "max_attempts": 3,
+    "queue": "jobs"
+  }
+}

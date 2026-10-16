@@ -1,0 +1,5 @@
+{
+  "request_evidence": "Configure an alert for elevated latency. The request does not specify a threshold, evaluation window, or target service. Do not invent values; identify the missing inputs and ask a concise clarification.",
+  "synthetic": true,
+  "task_id": "ambiguity_01_missing_threshold"
+}

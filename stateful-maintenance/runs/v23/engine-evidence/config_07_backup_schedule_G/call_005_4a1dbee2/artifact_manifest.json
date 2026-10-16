@@ -1,0 +1,30 @@
+{
+  "schema_version": "pdx_artifact_manifest_v0",
+  "artifact_id": "call_005_4a1dbee2",
+  "artifact_type": "tool-call",
+  "files": [],
+  "provenance": [
+    {
+      "step_id": "dispatch",
+      "tool": "pdx.stateful.write_file",
+      "inputs": {
+        "arguments": {
+          "path": "config/backup.json",
+          "content": "{\"backup\": {\"destination\": \"backups/\", \"encrypted\": true, \"retention_count\": 7, \"schedule_utc\": \"02:30\"}}"
+        }
+      },
+      "outputs": {
+        "changed_paths": [
+          "config/backup.json"
+        ]
+      }
+    }
+  ],
+  "verification": [
+    {
+      "check": "step_completed:dispatch",
+      "status": "pass",
+      "details": "Step dispatch completed"
+    }
+  ]
+}

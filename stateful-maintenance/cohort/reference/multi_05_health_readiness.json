@@ -1,0 +1,8 @@
+{
+  "config/probes.json": {
+    "liveness": "/live",
+    "readiness": "/ready"
+  },
+  "src/health.py": "def live(db_up): return {'status':'ok'}\ndef ready(db_up): return {'status':'ok' if db_up else 'unavailable'}\n",
+  "src/routes.py": "from src.health import live,ready\ndef run(payload):\n    routes = {'/live':live,'/ready':ready}\n    return routes[payload['path']](payload['db_up'])\n"
+}

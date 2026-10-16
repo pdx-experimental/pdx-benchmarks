@@ -1,0 +1,3 @@
+{
+  "src/jsonl_to_csv.py": "import csv, io\ndef run(payload):\n    fields, rows = payload['fields'], payload['rows']\n    if any(set(r)-set(fields) for r in rows): return {'error':'unknown_field'}\n    output = io.StringIO(newline='')\n    writer = csv.DictWriter(output,fieldnames=fields,lineterminator='\\n')\n    writer.writeheader(); writer.writerows(rows)\n    return {'csv':output.getvalue()}\n"
+}

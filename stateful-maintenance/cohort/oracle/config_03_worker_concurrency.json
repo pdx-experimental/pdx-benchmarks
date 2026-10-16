@@ -1,0 +1,16 @@
+{
+  "json_files": {
+    "config/worker.json": {
+      "worker": {
+        "concurrency": 8,
+        "max_attempts": 3,
+        "queue": "jobs"
+      }
+    }
+  },
+  "oracle_version": "stateful48-oracle-v4",
+  "required_files": [
+    "config/worker.json"
+  ],
+  "task_id": "config_03_worker_concurrency"
+}

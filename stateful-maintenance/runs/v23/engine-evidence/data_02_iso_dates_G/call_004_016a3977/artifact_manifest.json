@@ -1,0 +1,30 @@
+{
+  "schema_version": "pdx_artifact_manifest_v0",
+  "artifact_id": "call_004_016a3977",
+  "artifact_type": "tool-call",
+  "files": [],
+  "provenance": [
+    {
+      "step_id": "dispatch",
+      "tool": "pdx.stateful.submit_completion",
+      "inputs": {
+        "arguments": {
+          "claimed_success": true,
+          "disposition": "COMPLETED",
+          "summary": "src/export_events.py updated with correct datetime.isoformat() and naive timestamp rejection logic"
+        }
+      },
+      "outputs": {
+        "accepted": true,
+        "scope": "submission and syntax only; correctness requires external oracle"
+      }
+    }
+  ],
+  "verification": [
+    {
+      "check": "step_completed:dispatch",
+      "status": "pass",
+      "details": "Step dispatch completed"
+    }
+  ]
+}

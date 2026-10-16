@@ -1,0 +1,5 @@
+{
+  "docs/migrations.md": "Rollback: DROP INDEX IF EXISTS idx_events_timestamp. Migration order: base then event_index.\n",
+  "src/migration_registry.py": "import sqlite3\nfrom src.migrations.event_index import apply\ndef run(payload):\n    db = sqlite3.connect(':memory:'); db.execute('CREATE TABLE events(timestamp TEXT)')\n    for _ in range(2): apply(db)\n    names = sorted(r[1] for r in db.execute('PRAGMA index_list(events)'))\n    db.close(); return {'indexes':names,'order':['base','event_index']}\n",
+  "src/migrations/event_index.py": "def apply(connection):\n    connection.execute('CREATE INDEX IF NOT EXISTS idx_events_timestamp ON events(timestamp)')\n"
+}

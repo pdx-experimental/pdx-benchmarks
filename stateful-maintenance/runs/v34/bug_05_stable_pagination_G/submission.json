@@ -1,0 +1,11 @@
+{
+  "arm": "G",
+  "completion": {
+    "claimed_success": false,
+    "disposition": "UNVERIFIED_INCOMPLETE",
+    "summary": "research deadline reached; partial action not executed"
+  },
+  "patch_sha256": "f3f83a7e5fdf229cdf79318e56b6198cd153161a8c62265f67206026273d6906",
+  "schema": "pdx.stateful.candidate.v1",
+  "task_id": "bug_05_stable_pagination"
+}

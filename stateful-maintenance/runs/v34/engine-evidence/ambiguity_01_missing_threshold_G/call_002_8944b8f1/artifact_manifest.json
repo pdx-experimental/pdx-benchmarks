@@ -1,0 +1,35 @@
+{
+  "schema_version": "pdx_artifact_manifest_v0",
+  "artifact_id": "call_002_8944b8f1",
+  "artifact_type": "tool-call",
+  "files": [],
+  "provenance": [
+    {
+      "step_id": "dispatch",
+      "tool": "pdx.stateful.list_files",
+      "inputs": {
+        "arguments": {
+          "directory": "."
+        }
+      },
+      "outputs": {
+        "paths": [
+          "README.md",
+          "TASK.md",
+          "config/secrets.json",
+          "evidence/context.json",
+          "pyproject.toml",
+          "security/policy.json",
+          "tests/test_visible.py"
+        ]
+      }
+    }
+  ],
+  "verification": [
+    {
+      "check": "step_completed:dispatch",
+      "status": "pass",
+      "details": "Step dispatch completed"
+    }
+  ]
+}

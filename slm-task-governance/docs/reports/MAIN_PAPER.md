@@ -1,4 +1,4 @@
-# When Contracts Help and When They Hurt: An Empirical Benchmark of Interface and Format Governance on Small Language Models
+# From Structured DAGs to Stateful Maintenance: Task-Dependent Outcomes and Limits of Small-Model Governance
 
 **Technical draft · October 2026 · Not submitted or published**
 
@@ -6,7 +6,7 @@
 
 ## Abstract
 
-Multi-step tool invocation in Small Language Models (SLMs, 1B–8B parameters) commonly exhibits near-zero completion rates on compound autonomous agent benchmarks. A prevailing assumption is that this reflects an intrinsic deficit in multi-step reasoning capacity. In this work, we deconstruct multi-step task execution into interface impedance (parameter schema mismatches), context referral impedance (unstructured intermediate receipt citation), and format impedance (conversational verbosity triggering automated parsing failure). We evaluate a prompt-level governance hierarchy comprising OpenAPI parameter schemas ($C_{2s}$) and terminal scalar output contracts ($C_{2sf}$) across an evaluation matrix with retrospectively disclosed, privately timestamped protocol snapshots spanning 1,444 contracted task executions across 28 standalone jobs on dual NVIDIA Tesla T4 GPUs.
+This exploratory study examines fixed dependency workflows and a separate exposed Python-maintenance cohort. In the A12 component, we distinguish multi-step task execution into interface impedance (parameter schema mismatches), context referral impedance (unstructured intermediate receipt citation), and format impedance (conversational verbosity triggering automated parsing failure). We evaluate a prompt-level governance hierarchy comprising OpenAPI parameter schemas ($C_{2s}$) and terminal scalar output contracts ($C_{2sf}$) across an evaluation matrix with retrospectively disclosed, privately timestamped protocol snapshots spanning 1,444 contracted task executions across 28 standalone jobs on dual NVIDIA Tesla T4 GPUs.
 
 In **Phase 3 (Calibrated Multi-Step Dependency Tasks, $N=324$ rows across 6 architectures)**, we evaluate an unassisted anchor ($C_0$), schema governance ($C_{2s}$), and full format contracts ($C_{2sf}$) on calibrated DAG tasks ($n=18$ per model, `dag_chain_v3`):
 1. **Qwen 2.5 Coder 7B**: Advances from 2/18 (11.1%) under $C_0$ to 3/18 (16.7%) under $C_{2s}$, and to **10/18 (55.6%)** under $C_{2sf}$ (paired $\Delta = +8, p_{\text{raw}} = 0.00781$). Under the post-hoc selected main-effect family of 6 primary model comparisons ($m=6$), this gain is nominally significant within the exploratory family ($p_{\text{Holm}} = \mathbf{0.04688}$). However, under the full exploratory family across all 18 pairwise comparisons ($m=18$), the adjusted value is $p_{\text{Holm}} = 0.14063$, which does not meet conventional significance ($\alpha=0.05$). The $m=6$ family was selected post-hoc; the exported original plan does not establish advance specification of McNemar testing or Holm correction.
@@ -23,13 +23,15 @@ In **Phase 0 (Cross-Architecture Synthetic Fair Benchmark, $N=1,120$ rows across
 - **Llama 3.2 3B**: ReAct 29/112 (25.9%) vs. Isolated 26/112 (23.2%) ($\Delta = -2.7\%, p_{\text{raw}} = 0.7011$; not significant).
 - **Gemma 3 1B**: ReAct 17/112 (15.2%) vs. Isolated 18/112 (16.1%) ($\Delta = +0.9\%, p_{\text{raw}} = 1.000$; negligible difference with 34 schema rejections).
 
+**Separate Stateful development results:** Apertus V23 R/G each pass 23/48 external contracts; V34 R/G each pass 20/48, with 16/48 full completions and 3/48 practical completions. The three practical successes are clarification/refusal tasks, not code repairs. These repeated exposed-cohort results are outside the 1,444 A12 denominator. G records actual Engine mediation but shows no observed task-success advantage.
+
 **Observed outcome**: Effects differed across models and conditions. These bundled interventions do not establish a universal benefit or isolate an Engine-specific causal effect. Architecture and attention explanations remain hypotheses.
 
 ---
 
 ## 1. Introduction
 
-Deploying Small Language Models (SLMs, 1B–8B parameters) on commodity edge accelerators (e.g., dual NVIDIA Tesla T4 GPUs) is essential for cost-effective enterprise AI systems. However, evaluations of compact models on multi-step tool invocation tasks routinely report pass rates near zero. Standard literature often interprets these outcomes as evidence of an intrinsic cognitive ceiling: models below 10B parameters are assumed to lack working memory and attention capacity for multi-step execution.
+Compact-model deployment raises separate questions about task correctness, tool mediation and response latency. The experiments below examine these questions in bounded synthetic workflows; they do not measure unrestricted repository maintenance or production readiness.
 
 In this work, we investigate the operational boundaries of this assumption. Execution traces and multi-arm comparisons identify three observed categories of failure:
 1. **Interface Impedance**: Tool definitions lacking explicit schemas trigger argument hallucination (e.g., emitting raw strings for structured key-value stores).
@@ -94,7 +96,7 @@ $\Delta$ denotes pass count difference. $p_{\text{raw}}$ denotes exact two-sided
 ### Key Observations:
 1. **Testing Family Scope ($m=6$ vs. $m=18$)**: Under the post-hoc selected main-effect family ($m=6$ comparisons of $C_0 \to C_{2sf}$), Qwen 2.5 Coder 7B shows a nominally significant difference within the exploratory family ($p_{\text{Holm}} = 0.04688$). However, under the full exploratory scope spanning all 18 pairwise comparisons ($m=18$), the adjusted value is $p_{\text{Holm}} = 0.14063$, which is not significant at $\alpha=0.05$. Because the original plan did not explicitly isolate $m=6$ in advance, both adjusted values are reported side-by-side.
 2. **Descriptive Difference (Mistral 7B)**: Mistral 7B scored 4/18 under schema governance ($C_{2s}$) but dropped to 1/18 when the rigid terminal scalar contract ($C_{2sf}$) was added. The paired raw p-value is 0.375; this decrease is not nominally significant within the exploratory family. Competition for attention is an untested hypothesis, not an established mechanism.
-3. **Interface-Driven Recovery (Apertus 8B)**: Apertus 8B benefited strongly from schema governance alone ($C_0 \to C_{2s}: \Delta = +6, p = 0.03125$), while adding scalar constraints yielded no further improvement (7/18).
+3. **Descriptive Apertus Difference**: Apertus 8B has a higher recorded pass count under the combined schema/exemplar condition ($C_0 \to C_{2s}: \Delta = +6, p = 0.03125$), while adding scalar constraints yielded no further improvement (7/18).
 
 ---
 
@@ -120,7 +122,30 @@ Contingency counts ($a$: both pass, $b$: ReAct only, $c$: Isolated only, $d$: bo
 
 ---
 
-## 5. Limitations & Boundary Conditions
+## 5. Stateful Maintenance: delivery and auditability beyond fixed DAGs
+
+We separately evaluated Apertus 8B INT8 on 48 exposed development tasks (eight each: bug repair, configuration changes, data transformations, multi-file workflows, ambiguity handling and boundary handling), with R/G paired runs on dual T4 GPUs. R uses direct tool handlers; G additionally uses actual Engine mediation. The shared handlers enforce the same workspace restrictions in both arms. The public [Stateful export](../../../stateful-maintenance/README.md) includes all 96 rows of each retained complete run, not only successful examples.
+
+| Run | R Oracle PASS | G Oracle PASS | Full-task success, each arm | Practical success, each arm |
+| --- | ---: | ---: | ---: | ---: |
+| V23 | 23/48 | 23/48 | Not evaluated under V34 deadlines | Not reported |
+| V34 | 20/48 | 20/48 | 16/48 | 3/48 |
+
+Oracle PASS checks the saved candidate against external contracts. Full-task success also requires accepted completion within research limits (30 seconds for simple tasks, 90 seconds for data/multi tasks). Practical success also meets 10/30-second thresholds. The measures are nested: 20 = 4 Oracle-correct research timeouts + 13 completed but impractical tasks + 3 practical completions per arm. Timings concern resident-model generation and tools, excluding cold loading and the later host Oracle. All three practical successes are clarification/refusal tasks; practical code/configuration maintenance success is zero.
+
+V34 loses three V23 passes per arm: stale-snapshot clarification, path-traversal refusal and backup scheduling. All encounter the research deadline. The first two spend a generation attempting a forbidden TASK.md write; a later refusal is truncated or rejected at the deadline. Backup scheduling retains invalid JSON because the deadline prevents the correction cycle seen in V23. These observations distinguish model mistakes, runner cutoff semantics and accepted final-state correctness; removing deadlines is not shown to guarantee recovery.
+
+Data and multi-tool families already score zero complete tasks in V23 and remain zero in V34. Their 32 paired final patches are byte-identical, and none hits the research deadline. Concrete defects include omitted timezone conversion, wrong deduplication comparison, missing recursive redaction, invalid syntax, unchanged files and omitted configuration updates. One health-readiness candidate passes all four behavior vectors but fails the required liveness configuration: zero full-contract passes does not mean every component is wrong.
+
+The inference loop provides syntax feedback only. That restriction, constrained decoding, prompting, quantization and task construction limit interpretation; failures do not establish intrinsic 8B inability. These are development replications after task exposure, not held-out confirmation. Both selected runs are disclosed alongside an attempt-history inventory; the export is not an independently authenticated exhaustive remote history.
+
+V34 G records 178 task tool events, including 12 error/rejection events; five smoke calls are separate. Hash-bound manifests support inspection of recorded mediation, not independent signatures, functional correctness or an isolated Engine safety gain. Equal R/G pass counts are not an equivalence test and do not establish zero latency overhead.
+
+### Joint interpretation
+
+Phase 3 measures outcomes under a bundled schema/exemplar/output-contract hierarchy on fixed DAGs. Stateful maintenance requires an actual correct, complete and timely file-state change. The former shows model-dependent descriptive improvements; the latter shows no observed G success advantage and poor practical delivery in this setup. These findings are compatible: auditable tool mediation and output-format compliance do not substitute for correct implementation. A hypothesis that supplied DAG structure reduces planning demands remains untested. Success rates across these endpoints must not be pooled or treated as an identified task-type interaction.
+
+## 6. Limitations & Boundary Conditions
 
 1. **Intervention Bundle Nature**: Phase 0 evaluates the combined effect of isolated single-step dispatch, structured prompts, and engine receipt verification. Differences cannot be attributed solely to the engine governance component.
 2. **Compact Model Sensitivity**: Llama 3.2 1B had lower observed accuracy under the combined intervention. Dialogue-history effects and other components were not separately tested.
@@ -130,9 +155,9 @@ Contingency counts ($a$: both pass, $b$: ReAct only, $c$: Isolated only, $d$: bo
 
 ---
 
-## 6. Conclusion
+## 7. Conclusion
 
-Across this task matrix, the bundled interventions showed heterogeneous outcomes. The experiment does not identify an isolated Engine effect or establish the proposed cognitive mechanisms. Independent replication is needed.
+Across fixed DAGs, bundled interventions show heterogeneous model-dependent outcomes. In the separate Stateful cohort, recorded Engine mediation does not yield an observed task-success advantage, and practical maintenance delivery remains unsuccessful under the stated thresholds. Auditability is distinct from competence and latency. Neither experiment isolates an Engine effect or establishes the proposed mechanisms. Independent held-out replication and scoring robustness checks remain necessary.
 
 ## Protocol evidence correction (2026-10-11)
 

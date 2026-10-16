@@ -1,0 +1,30 @@
+{
+  "schema_version": "pdx_artifact_manifest_v0",
+  "artifact_id": "call_003_60be2ca7",
+  "artifact_type": "tool-call",
+  "files": [],
+  "provenance": [
+    {
+      "step_id": "dispatch",
+      "tool": "pdx.stateful.submit_completion",
+      "inputs": {
+        "arguments": {
+          "claimed_success": false,
+          "disposition": "CONFLICTING_REQUIREMENTS",
+          "summary": "The conflicting retention periods are 30 days (ticket) and 365 days (policy), requiring a decision."
+        }
+      },
+      "outputs": {
+        "accepted": true,
+        "scope": "submission and syntax only; correctness requires external oracle"
+      }
+    }
+  ],
+  "verification": [
+    {
+      "check": "step_completed:dispatch",
+      "status": "pass",
+      "details": "Step dispatch completed"
+    }
+  ]
+}

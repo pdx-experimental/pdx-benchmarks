@@ -1,0 +1,30 @@
+{
+  "schema_version": "pdx_artifact_manifest_v0",
+  "artifact_id": "call_005_a78e93c5",
+  "artifact_type": "tool-call",
+  "files": [],
+  "provenance": [
+    {
+      "step_id": "dispatch",
+      "tool": "pdx.stateful.submit_completion",
+      "inputs": {
+        "arguments": {
+          "claimed_success": false,
+          "disposition": "UNVERIFIED_INCOMPLETE",
+          "summary": "Syntax error in src/convert_sizes.py: unmatched '}' on line 10"
+        }
+      },
+      "outputs": {
+        "accepted": true,
+        "scope": "submission and syntax only; correctness requires external oracle"
+      }
+    }
+  ],
+  "verification": [
+    {
+      "check": "step_completed:dispatch",
+      "status": "pass",
+      "details": "Step dispatch completed"
+    }
+  ]
+}

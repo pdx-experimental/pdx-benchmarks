@@ -1,0 +1,28 @@
+{
+  "schema_version": "pdx_artifact_manifest_v0",
+  "artifact_id": "call_002_a67cf1ba",
+  "artifact_type": "tool-call",
+  "files": [],
+  "provenance": [
+    {
+      "step_id": "dispatch",
+      "tool": "pdx.stateful.read_file",
+      "inputs": {
+        "arguments": {
+          "path": "src/retry.py",
+          "max_lines": 300
+        }
+      },
+      "outputs": {
+        "content": "import json\nfrom pathlib import Path\ndef run(payload):\n    n = min(payload['max_attempts'],payload['success_on']) if payload.get('success_on') is not None else payload['max_attempts']\n    metric = json.loads(Path('config/metrics.json').read_text())['retry']\n    return {'attempts':n,'retry_count':n,'metric':metric}"
+      }
+    }
+  ],
+  "verification": [
+    {
+      "check": "step_completed:dispatch",
+      "status": "pass",
+      "details": "Step dispatch completed"
+    }
+  ]
+}

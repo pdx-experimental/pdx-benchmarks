@@ -1,0 +1,28 @@
+{
+  "schema_version": "pdx_artifact_manifest_v0",
+  "artifact_id": "call_002_b407eb4f",
+  "artifact_type": "tool-call",
+  "files": [],
+  "provenance": [
+    {
+      "step_id": "dispatch",
+      "tool": "pdx.stateful.read_file",
+      "inputs": {
+        "arguments": {
+          "path": "src/sanitize_logs.py",
+          "max_lines": 300
+        }
+      },
+      "outputs": {
+        "content": "def clean(value):\n    if isinstance(value,dict): return {k:'[REDACTED]' if k in {'password','access_token','authorization'} else clean(v) for k,v in value.items()}\n    if isinstance(value,list): return value\n    return value\ndef run(payload): return {'record':clean(payload['record'])}"
+      }
+    }
+  ],
+  "verification": [
+    {
+      "check": "step_completed:dispatch",
+      "status": "pass",
+      "details": "Step dispatch completed"
+    }
+  ]
+}

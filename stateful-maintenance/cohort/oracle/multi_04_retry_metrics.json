@@ -1,0 +1,58 @@
+{
+  "json_files": {
+    "config/metrics.json": {
+      "retry": "job_retry_total"
+    },
+    "dashboards/retries.json": {
+      "query": "sum(rate(job_retry_total[5m]))"
+    }
+  },
+  "module": "src.retry",
+  "oracle_version": "stateful48-oracle-v4",
+  "required_files": [
+    "src/retry.py",
+    "config/metrics.json",
+    "dashboards/retries.json"
+  ],
+  "task_id": "multi_04_retry_metrics",
+  "vectors": [
+    {
+      "expected": {
+        "attempts": 1,
+        "metric": "job_retry_total",
+        "retry_count": 0
+      },
+      "input": {
+        "max_attempts": 3,
+        "success_on": 1
+      }
+    },
+    {
+      "expected": {
+        "attempts": 3,
+        "metric": "job_retry_total",
+        "retry_count": 2
+      },
+      "input": {
+        "max_attempts": 3,
+        "success_on": null
+      }
+    },
+    {
+      "expected": {
+        "attempts": 2,
+        "metric": "probe_retry",
+        "retry_count": 1
+      },
+      "input": {
+        "max_attempts": 2,
+        "success_on": null
+      },
+      "workspace_json": {
+        "config/metrics.json": {
+          "retry": "probe_retry"
+        }
+      }
+    }
+  ]
+}

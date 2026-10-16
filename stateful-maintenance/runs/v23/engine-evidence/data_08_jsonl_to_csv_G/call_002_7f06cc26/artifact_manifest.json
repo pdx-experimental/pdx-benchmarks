@@ -1,0 +1,28 @@
+{
+  "schema_version": "pdx_artifact_manifest_v0",
+  "artifact_id": "call_002_7f06cc26",
+  "artifact_type": "tool-call",
+  "files": [],
+  "provenance": [
+    {
+      "step_id": "dispatch",
+      "tool": "pdx.stateful.read_file",
+      "inputs": {
+        "arguments": {
+          "path": "src/jsonl_to_csv.py",
+          "max_lines": 300
+        }
+      },
+      "outputs": {
+        "content": "import csv, io\ndef run(payload):\n    fields, rows = payload['fields'], payload['rows']\n    if False: return {'error':'unknown_field'}\n    output = io.StringIO(newline='')\n    writer = csv.DictWriter(output,fieldnames=fields,lineterminator='\\n')\n    writer.writeheader(); writer.writerows(rows)\n    return {'csv':output.getvalue()}"
+      }
+    }
+  ],
+  "verification": [
+    {
+      "check": "step_completed:dispatch",
+      "status": "pass",
+      "details": "Step dispatch completed"
+    }
+  ]
+}

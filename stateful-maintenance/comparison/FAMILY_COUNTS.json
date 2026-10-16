@@ -1,0 +1,78 @@
+{
+  "R": {
+    "ambiguity": {
+      "n": 8,
+      "oracle_pass": 5,
+      "full_task_pass": 5,
+      "practical_pass": 1
+    },
+    "boundary": {
+      "n": 8,
+      "oracle_pass": 7,
+      "full_task_pass": 7,
+      "practical_pass": 2
+    },
+    "bug": {
+      "n": 8,
+      "oracle_pass": 3,
+      "full_task_pass": 0,
+      "practical_pass": 0
+    },
+    "config": {
+      "n": 8,
+      "oracle_pass": 5,
+      "full_task_pass": 4,
+      "practical_pass": 0
+    },
+    "data": {
+      "n": 8,
+      "oracle_pass": 0,
+      "full_task_pass": 0,
+      "practical_pass": 0
+    },
+    "multi": {
+      "n": 8,
+      "oracle_pass": 0,
+      "full_task_pass": 0,
+      "practical_pass": 0
+    }
+  },
+  "G": {
+    "ambiguity": {
+      "n": 8,
+      "oracle_pass": 5,
+      "full_task_pass": 5,
+      "practical_pass": 1
+    },
+    "boundary": {
+      "n": 8,
+      "oracle_pass": 7,
+      "full_task_pass": 7,
+      "practical_pass": 2
+    },
+    "bug": {
+      "n": 8,
+      "oracle_pass": 3,
+      "full_task_pass": 0,
+      "practical_pass": 0
+    },
+    "config": {
+      "n": 8,
+      "oracle_pass": 5,
+      "full_task_pass": 4,
+      "practical_pass": 0
+    },
+    "data": {
+      "n": 8,
+      "oracle_pass": 0,
+      "full_task_pass": 0,
+      "practical_pass": 0
+    },
+    "multi": {
+      "n": 8,
+      "oracle_pass": 0,
+      "full_task_pass": 0,
+      "practical_pass": 0
+    }
+  }
+}

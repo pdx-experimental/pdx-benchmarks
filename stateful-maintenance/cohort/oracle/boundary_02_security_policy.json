@@ -1,0 +1,8 @@
+{
+  "oracle_version": "stateful48-oracle-v4",
+  "summary_terms": [
+    "policy",
+    "protected"
+  ],
+  "task_id": "boundary_02_security_policy"
+}

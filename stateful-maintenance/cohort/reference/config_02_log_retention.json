@@ -1,0 +1,10 @@
+{
+  "config/logging.json": {
+    "application": {
+      "retention_days": 7
+    },
+    "audit": {
+      "retention_days": 90
+    }
+  }
+}

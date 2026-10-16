@@ -1,0 +1,62 @@
+{
+  "arguments_sha256": "1a2342b3dfe046c1eafa6ebf40460e595558af1575fd929e737dfaa2c501068e",
+  "artifact_manifest": {
+    "artifact_id": "call_003_3e4ea02a",
+    "artifact_type": "tool-call",
+    "files": [],
+    "provenance": [
+      {
+        "inputs": {
+          "arguments": {
+            "max_lines": 300,
+            "path": "src/migration_registry.py"
+          }
+        },
+        "outputs": {
+          "content": "import sqlite3\nfrom src.migrations.event_index import apply\ndef run(payload):\n    db = sqlite3.connect(':memory:'); db.execute('CREATE TABLE events(timestamp TEXT)')\n    for _ in range(2): apply(db)\n    names = sorted(r[1] for r in db.execute('PRAGMA index_list(events)'))\n    db.close(); return {'indexes':names,'order':['base']}"
+        },
+        "step_id": "dispatch",
+        "tool": "pdx.stateful.read_file"
+      }
+    ],
+    "schema_version": "pdx_artifact_manifest_v0",
+    "verification": [
+      {
+        "check": "step_completed:dispatch",
+        "details": "Step dispatch completed",
+        "status": "pass"
+      }
+    ]
+  },
+  "engine": "pdx-artifact-engine",
+  "engine_version": "0.3.0a12",
+  "request_id": "call_003_3e4ea02a",
+  "requested_arguments_sha256": "1a2342b3dfe046c1eafa6ebf40460e595558af1575fd929e737dfaa2c501068e",
+  "requested_tool": "read_file",
+  "run_manifest": {
+    "artifact_manifest": "artifact_manifest.json",
+    "errors": [],
+    "planner": "stateful-gov",
+    "request_id": "call_003_3e4ea02a",
+    "run_id": "run_0865c52f3d77",
+    "schema_version": "pdx_run_manifest_v0",
+    "status": "completed",
+    "steps": [
+      {
+        "detail": "ok",
+        "kind": "tool",
+        "name": "pdx.stateful.read_file",
+        "status": "completed",
+        "step_id": "dispatch"
+      }
+    ],
+    "verification": [
+      {
+        "check": "step_completed:dispatch",
+        "details": "Step dispatch completed",
+        "status": "pass"
+      }
+    ]
+  },
+  "tool": "read_file"
+}

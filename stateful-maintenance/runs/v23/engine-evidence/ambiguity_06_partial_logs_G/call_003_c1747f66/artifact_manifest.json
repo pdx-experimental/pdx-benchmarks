@@ -1,0 +1,30 @@
+{
+  "schema_version": "pdx_artifact_manifest_v0",
+  "artifact_id": "call_003_c1747f66",
+  "artifact_type": "tool-call",
+  "files": [],
+  "provenance": [
+    {
+      "step_id": "dispatch",
+      "tool": "pdx.stateful.submit_completion",
+      "inputs": {
+        "arguments": {
+          "claimed_success": false,
+          "disposition": "INSUFFICIENT_EVIDENCE",
+          "summary": "The logs end before the failure interval and omit the affected service name, leaving interval and service missing for diagnosis."
+        }
+      },
+      "outputs": {
+        "accepted": true,
+        "scope": "submission and syntax only; correctness requires external oracle"
+      }
+    }
+  ],
+  "verification": [
+    {
+      "check": "step_completed:dispatch",
+      "status": "pass",
+      "details": "Step dispatch completed"
+    }
+  ]
+}

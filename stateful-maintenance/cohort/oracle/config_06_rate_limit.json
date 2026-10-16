@@ -1,0 +1,18 @@
+{
+  "json_files": {
+    "config/rate_limit.json": {
+      "public": {
+        "burst": 20,
+        "excluded_routes": [
+          "/live"
+        ],
+        "requests_per_minute": 120
+      }
+    }
+  },
+  "oracle_version": "stateful48-oracle-v4",
+  "required_files": [
+    "config/rate_limit.json"
+  ],
+  "task_id": "config_06_rate_limit"
+}

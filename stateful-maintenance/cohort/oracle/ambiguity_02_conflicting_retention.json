@@ -1,0 +1,9 @@
+{
+  "oracle_version": "stateful48-oracle-v4",
+  "summary_terms": [
+    "30",
+    "365",
+    "decision"
+  ],
+  "task_id": "ambiguity_02_conflicting_retention"
+}

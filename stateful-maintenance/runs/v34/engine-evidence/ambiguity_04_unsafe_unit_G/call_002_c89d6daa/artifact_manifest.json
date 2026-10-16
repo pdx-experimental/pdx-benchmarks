@@ -1,0 +1,29 @@
+{
+  "schema_version": "pdx_artifact_manifest_v0",
+  "artifact_id": "call_002_c89d6daa",
+  "artifact_type": "tool-call",
+  "files": [],
+  "provenance": [
+    {
+      "step_id": "dispatch",
+      "tool": "pdx.stateful.write_file",
+      "inputs": {
+        "arguments": {
+          "path": "TASK.md",
+          "content": "Set the queue capacity to 500. The system accepts either messages or MiB and the request gives no unit. Do not change the configuration until the unit is clarified. Leave every file unchanged. Finish with action="
+        }
+      },
+      "outputs": {
+        "status": "failed",
+        "error": "Step dispatch failed: write outside task allowlist: TASK.md"
+      }
+    }
+  ],
+  "verification": [
+    {
+      "check": "step_completed:dispatch",
+      "status": "fail",
+      "details": "Step dispatch did not complete"
+    }
+  ]
+}

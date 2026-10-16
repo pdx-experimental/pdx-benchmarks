@@ -1,0 +1,5 @@
+{
+  "request_evidence": "Reconcile this week's inventory against the supplier feed. The supplied workspace contains no supplier feed. Do not infer missing stock values; state what is unavailable and what is needed.",
+  "synthetic": true,
+  "task_id": "ambiguity_03_unavailable_source"
+}

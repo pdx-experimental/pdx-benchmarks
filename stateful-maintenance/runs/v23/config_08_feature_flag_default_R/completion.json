@@ -1,0 +1,5 @@
+{
+  "claimed_success": true,
+  "disposition": "COMPLETED",
+  "summary": "config/features.json updated to set exporter.default_enabled to false"
+}

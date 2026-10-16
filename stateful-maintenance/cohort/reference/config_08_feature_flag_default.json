@@ -1,0 +1,11 @@
+{
+  "config/features.json": {
+    "exporter": {
+      "default_enabled": false,
+      "environment_overrides": {
+        "dev": true,
+        "prod": false
+      }
+    }
+  }
+}

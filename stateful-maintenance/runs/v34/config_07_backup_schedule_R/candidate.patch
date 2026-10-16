@@ -1,0 +1,15 @@
+diff --git a/config/backup.json b/config/backup.json
+index 90e1c15..5fb29f2 100644
+--- a/config/backup.json
++++ b/config/backup.json
+@@ -1,8 +1 @@
+-{
+-  "backup": {
+-    "destination": "backups/",
+-    "encrypted": true,
+-    "retention_count": 7,
+-    "schedule_utc": "04:00"
+-  }
+-}
++{"backup": {"destination": "backups/", "encrypted": true, "retention_count": 7, "schedule_utc": "02:30"}}}
+\ No newline at end of file

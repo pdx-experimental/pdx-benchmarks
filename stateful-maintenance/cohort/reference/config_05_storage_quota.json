@@ -1,0 +1,12 @@
+{
+  "config/uploads.json": {
+    "upload": {
+      "backend": "local",
+      "max_mib": 25,
+      "mime_types": [
+        "text/csv",
+        "application/json"
+      ]
+    }
+  }
+}

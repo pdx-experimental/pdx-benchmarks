@@ -1,0 +1,30 @@
+{
+  "schema_version": "pdx_artifact_manifest_v0",
+  "artifact_id": "call_005_13c35c2b",
+  "artifact_type": "tool-call",
+  "files": [],
+  "provenance": [
+    {
+      "step_id": "dispatch",
+      "tool": "pdx.stateful.write_file",
+      "inputs": {
+        "arguments": {
+          "path": "src/health.py",
+          "content": "def live(db_up):\n    return {\"status\":\"ok\"}\n\ndef ready(db_up):\n    return {\"status\":\"ok\" if db_up else \"unavailable\"}"
+        }
+      },
+      "outputs": {
+        "changed_paths": [
+          "src/health.py"
+        ]
+      }
+    }
+  ],
+  "verification": [
+    {
+      "check": "step_completed:dispatch",
+      "status": "pass",
+      "details": "Step dispatch completed"
+    }
+  ]
+}

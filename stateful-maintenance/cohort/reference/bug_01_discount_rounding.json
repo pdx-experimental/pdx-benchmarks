@@ -1,0 +1,3 @@
+{
+  "src/discounts.py": "from decimal import Decimal, ROUND_HALF_UP\n\ndef run(payload):\n    subtotal = Decimal(str(payload[\"subtotal\"]))\n    amount = subtotal - Decimal(str(payload[\"fixed\"])) if \"fixed\" in payload else subtotal * (Decimal(\"1\") - Decimal(str(payload.get(\"rate\", 0))))\n    return {\"total\": float(amount.quantize(Decimal(\"0.01\"), rounding=ROUND_HALF_UP))}\n"
+}

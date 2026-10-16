@@ -1,0 +1,11 @@
+{
+  "arm": "G",
+  "completion": {
+    "claimed_success": true,
+    "disposition": "COMPLETED",
+    "summary": "Updated config/rate_limit.json to set public.requests_per_minute to 120 as requested"
+  },
+  "patch_sha256": "bcb343da710db8203212a77671588f898db06f527f2714a6e62d479f23a5f110",
+  "schema": "pdx.stateful.candidate.v1",
+  "task_id": "config_06_rate_limit"
+}

@@ -1,0 +1,8 @@
+diff --git a/src/release_gate.py b/src/release_gate.py
+index adac0e9..c1458dc 100644
+--- a/src/release_gate.py
++++ b/src/release_gate.py
+@@ -1 +1,2 @@
+-def compatible(min_schema,max_schema,deployed): return min_schema < deployed < max_schema
++def compatible(min_schema,max_schema,deployed):
++    return min_schema < deployed < max_schema

@@ -1,0 +1,19 @@
+diff --git a/src/convert_sizes.py b/src/convert_sizes.py
+index f516b33..11f4e37 100644
+--- a/src/convert_sizes.py
++++ b/src/convert_sizes.py
+@@ -1,4 +1,10 @@
+ def run(payload):
+-    units = {'B':1,'KiB':1024,'MiB':1000000}
+-    if payload['unit'] not in units: return {'error':'unknown_unit'}
+-    return {'bytes':payload['value'] * units[payload['unit']]}
++    units = {
++        'B': 1,
++        'KiB': 1024,
++        'MiB': 1000000
++    }
++    if payload['unit'] not in units:
++        return {'error': 'unknown_unit'}
++    
++    return {'bytes': payload['value'] * units[payload['unit']]}}
+\ No newline at end of file

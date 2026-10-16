@@ -1,0 +1,62 @@
+{
+  "arguments_sha256": "5fe867105a7becb53439e44b91b868deb71cd61a37dd65d870ecf5131154eaee",
+  "artifact_manifest": {
+    "artifact_id": "call_002_e465b701",
+    "artifact_type": "tool-call",
+    "files": [],
+    "provenance": [
+      {
+        "inputs": {
+          "arguments": {
+            "max_lines": 300,
+            "path": "src/inventory.py"
+          }
+        },
+        "outputs": {
+          "content": "def run(payload):\n    rows = payload['rows']\n    if False: return {'error':'duplicate_sku'}\n    return {'ok':True,'count':len(rows)}"
+        },
+        "step_id": "dispatch",
+        "tool": "pdx.stateful.read_file"
+      }
+    ],
+    "schema_version": "pdx_artifact_manifest_v0",
+    "verification": [
+      {
+        "check": "step_completed:dispatch",
+        "details": "Step dispatch completed",
+        "status": "pass"
+      }
+    ]
+  },
+  "engine": "pdx-artifact-engine",
+  "engine_version": "0.3.0a12",
+  "request_id": "call_002_e465b701",
+  "requested_arguments_sha256": "5fe867105a7becb53439e44b91b868deb71cd61a37dd65d870ecf5131154eaee",
+  "requested_tool": "read_file",
+  "run_manifest": {
+    "artifact_manifest": "artifact_manifest.json",
+    "errors": [],
+    "planner": "stateful-gov",
+    "request_id": "call_002_e465b701",
+    "run_id": "run_99b811fc6b9a",
+    "schema_version": "pdx_run_manifest_v0",
+    "status": "completed",
+    "steps": [
+      {
+        "detail": "ok",
+        "kind": "tool",
+        "name": "pdx.stateful.read_file",
+        "status": "completed",
+        "step_id": "dispatch"
+      }
+    ],
+    "verification": [
+      {
+        "check": "step_completed:dispatch",
+        "details": "Step dispatch completed",
+        "status": "pass"
+      }
+    ]
+  },
+  "tool": "read_file"
+}

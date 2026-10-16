@@ -1,0 +1,3 @@
+{
+  "src/inventory.py": "def run(payload):\n    rows = payload['rows']\n    if len({r['sku'] for r in rows}) != len(rows): return {'error':'duplicate_sku'}\n    return {'ok':True,'count':len(rows)}\n"
+}

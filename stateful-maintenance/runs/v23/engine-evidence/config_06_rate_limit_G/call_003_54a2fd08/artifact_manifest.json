@@ -1,0 +1,30 @@
+{
+  "schema_version": "pdx_artifact_manifest_v0",
+  "artifact_id": "call_003_54a2fd08",
+  "artifact_type": "tool-call",
+  "files": [],
+  "provenance": [
+    {
+      "step_id": "dispatch",
+      "tool": "pdx.stateful.write_file",
+      "inputs": {
+        "arguments": {
+          "path": "config/rate_limit.json",
+          "content": "{\n  \"public\": {\n    \"burst\": 20,\n    \"excluded_routes\": [\n      \"/live\"\n    ],\n    \"requests_per_minute\": 120\n  }\n}"
+        }
+      },
+      "outputs": {
+        "changed_paths": [
+          "config/rate_limit.json"
+        ]
+      }
+    }
+  ],
+  "verification": [
+    {
+      "check": "step_completed:dispatch",
+      "status": "pass",
+      "details": "Step dispatch completed"
+    }
+  ]
+}

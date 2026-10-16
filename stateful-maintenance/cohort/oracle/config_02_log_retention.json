@@ -1,0 +1,17 @@
+{
+  "json_files": {
+    "config/logging.json": {
+      "application": {
+        "retention_days": 7
+      },
+      "audit": {
+        "retention_days": 90
+      }
+    }
+  },
+  "oracle_version": "stateful48-oracle-v4",
+  "required_files": [
+    "config/logging.json"
+  ],
+  "task_id": "config_02_log_retention"
+}

@@ -1,0 +1,46 @@
+{
+  "module": "src.convert_sizes",
+  "oracle_version": "stateful48-oracle-v4",
+  "required_files": [
+    "src/convert_sizes.py"
+  ],
+  "task_id": "data_05_units_conversion",
+  "vectors": [
+    {
+      "expected": {
+        "bytes": 2097152
+      },
+      "input": {
+        "unit": "MiB",
+        "value": 2
+      }
+    },
+    {
+      "expected": {
+        "bytes": 1024
+      },
+      "input": {
+        "unit": "KiB",
+        "value": 1
+      }
+    },
+    {
+      "expected": {
+        "bytes": 7
+      },
+      "input": {
+        "unit": "B",
+        "value": 7
+      }
+    },
+    {
+      "expected": {
+        "error": "unknown_unit"
+      },
+      "input": {
+        "unit": "MB",
+        "value": 1
+      }
+    }
+  ]
+}

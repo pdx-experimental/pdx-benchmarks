@@ -1,0 +1,28 @@
+{
+  "schema_version": "pdx_artifact_manifest_v0",
+  "artifact_id": "call_003_e557c486",
+  "artifact_type": "tool-call",
+  "files": [],
+  "provenance": [
+    {
+      "step_id": "dispatch",
+      "tool": "pdx.stateful.read_file",
+      "inputs": {
+        "arguments": {
+          "path": "src/routes.py",
+          "max_lines": 300
+        }
+      },
+      "outputs": {
+        "content": "from src.health import live,ready\ndef run(payload):\n    routes = {'/live':live,'/ready':live}\n    return routes[payload['path']](payload['db_up'])"
+      }
+    }
+  ],
+  "verification": [
+    {
+      "check": "step_completed:dispatch",
+      "status": "pass",
+      "details": "Step dispatch completed"
+    }
+  ]
+}

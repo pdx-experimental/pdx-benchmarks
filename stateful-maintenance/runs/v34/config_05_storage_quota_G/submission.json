@@ -1,0 +1,11 @@
+{
+  "arm": "G",
+  "completion": {
+    "claimed_success": true,
+    "disposition": "COMPLETED",
+    "summary": "upload.max_mib changed to 25 in config/uploads.json"
+  },
+  "patch_sha256": "4e65d636d0ab6473d1d632a1ffab2f2ca6ec3dd801a5b85d0389723e29753b4e",
+  "schema": "pdx.stateful.candidate.v1",
+  "task_id": "config_05_storage_quota"
+}

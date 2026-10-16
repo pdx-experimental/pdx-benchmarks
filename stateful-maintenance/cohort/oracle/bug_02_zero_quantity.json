@@ -1,0 +1,40 @@
+{
+  "module": "src.invoices",
+  "oracle_version": "stateful48-oracle-v4",
+  "required_files": [
+    "src/invoices.py"
+  ],
+  "task_id": "bug_02_zero_quantity",
+  "vectors": [
+    {
+      "expected": {
+        "total": 0
+      },
+      "input": {
+        "quantity": 0,
+        "tax_rate": 0.13,
+        "unit_price": 9
+      }
+    },
+    {
+      "expected": {
+        "total": 22
+      },
+      "input": {
+        "quantity": 2,
+        "tax_rate": 0.1,
+        "unit_price": 10
+      }
+    },
+    {
+      "expected": {
+        "total": 12
+      },
+      "input": {
+        "quantity": 3,
+        "tax_rate": 0,
+        "unit_price": 4
+      }
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "arm": "R",
+  "completion": {
+    "claimed_success": true,
+    "disposition": "COMPLETED",
+    "summary": "src/queue_capacity.py updated with correct implementation"
+  },
+  "patch_sha256": "6a99137595a7802f4b5c5b2ca7913e8f77ef51b93ad004467f9cb83200df5f76",
+  "schema": "pdx.stateful.candidate.v1",
+  "task_id": "bug_06_queue_drain_rate"
+}

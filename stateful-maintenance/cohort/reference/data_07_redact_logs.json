@@ -1,0 +1,3 @@
+{
+  "src/sanitize_logs.py": "def clean(value):\n    if isinstance(value,dict): return {k:'[REDACTED]' if k in {'password','access_token','authorization'} else clean(v) for k,v in value.items()}\n    if isinstance(value,list): return [clean(v) for v in value]\n    return value\ndef run(payload): return {'record':clean(payload['record'])}\n"
+}

@@ -1,0 +1,64 @@
+{
+  "arguments_sha256": "84079b9fc893746ff0519e20a5ba3b12136582f03fc8408d5d25ea5974fe36a2",
+  "artifact_manifest": {
+    "artifact_id": "call_005_af5e291b",
+    "artifact_type": "tool-call",
+    "files": [],
+    "provenance": [
+      {
+        "inputs": {
+          "arguments": {
+            "content": "import json\nfrom pathlib import Path\n\ndef run(payload):\n    max_attempts = payload.get('max_attempts', None)\n    success_on = payload.get('success_on')\n    n = min(max_attempts, success_on) if success_on is not None else max_attempts\n    with open(Path('config/metrics.json').read_text(), 'r') as f:\n        metrics = json.load(f)\n    metric = metrics['retry']\n    return {'attempts': n, 'retry_count': n, 'metric': metric}",
+            "path": "src/retry.py"
+          }
+        },
+        "outputs": {
+          "changed_paths": [
+            "src/retry.py"
+          ]
+        },
+        "step_id": "dispatch",
+        "tool": "pdx.stateful.write_file"
+      }
+    ],
+    "schema_version": "pdx_artifact_manifest_v0",
+    "verification": [
+      {
+        "check": "step_completed:dispatch",
+        "details": "Step dispatch completed",
+        "status": "pass"
+      }
+    ]
+  },
+  "engine": "pdx-artifact-engine",
+  "engine_version": "0.3.0a12",
+  "request_id": "call_005_af5e291b",
+  "requested_arguments_sha256": "84079b9fc893746ff0519e20a5ba3b12136582f03fc8408d5d25ea5974fe36a2",
+  "requested_tool": "write_file",
+  "run_manifest": {
+    "artifact_manifest": "artifact_manifest.json",
+    "errors": [],
+    "planner": "stateful-gov",
+    "request_id": "call_005_af5e291b",
+    "run_id": "run_a48718c5c845",
+    "schema_version": "pdx_run_manifest_v0",
+    "status": "completed",
+    "steps": [
+      {
+        "detail": "ok",
+        "kind": "tool",
+        "name": "pdx.stateful.write_file",
+        "status": "completed",
+        "step_id": "dispatch"
+      }
+    ],
+    "verification": [
+      {
+        "check": "step_completed:dispatch",
+        "details": "Step dispatch completed",
+        "status": "pass"
+      }
+    ]
+  },
+  "tool": "write_file"
+}

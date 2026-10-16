@@ -1,0 +1,11 @@
+{
+  "arm": "G",
+  "completion": {
+    "claimed_success": true,
+    "disposition": "COMPLETED",
+    "summary": "src/import_csv.py updated with run(payload) implementation"
+  },
+  "patch_sha256": "502a4b4ec6f768f8d99ef349fab153494eea2a6672618436a8a46ac6ec6e74c3",
+  "schema": "pdx.stateful.candidate.v1",
+  "task_id": "data_01_normalize_headers"
+}

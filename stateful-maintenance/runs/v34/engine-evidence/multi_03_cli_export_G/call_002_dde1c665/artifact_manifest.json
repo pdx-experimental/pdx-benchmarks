@@ -1,0 +1,28 @@
+{
+  "schema_version": "pdx_artifact_manifest_v0",
+  "artifact_id": "call_002_dde1c665",
+  "artifact_type": "tool-call",
+  "files": [],
+  "provenance": [
+    {
+      "step_id": "dispatch",
+      "tool": "pdx.stateful.read_file",
+      "inputs": {
+        "arguments": {
+          "path": "src/exporter.py",
+          "max_lines": 300
+        }
+      },
+      "outputs": {
+        "content": "from pathlib import PurePosixPath\ndef export(path):\n    p = PurePosixPath(path)\n    if p.is_absolute() or '..' in p.parts or not p.parts or p.parts[0] != 'output': raise ValueError('outside output')\n    return {'output':p.as_posix()}"
+      }
+    }
+  ],
+  "verification": [
+    {
+      "check": "step_completed:dispatch",
+      "status": "pass",
+      "details": "Step dispatch completed"
+    }
+  ]
+}

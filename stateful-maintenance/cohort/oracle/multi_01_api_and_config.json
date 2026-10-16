@@ -1,0 +1,59 @@
+{
+  "config_variants": [
+    {
+      "config": {
+        "retries": 3
+      },
+      "expected": {
+        "retries": 3,
+        "timeout": 5
+      }
+    },
+    {
+      "config": {
+        "retries": 4,
+        "timeout": 7
+      },
+      "expected": {
+        "retries": 4,
+        "timeout": 7
+      }
+    }
+  ],
+  "documentation_patterns": [
+    "(?i)default\\s+timeout\\s*(?:is|:)\\s*5\\s+seconds\\b",
+    "(?i)\\bretries\\s*(?:=|:|are|is)\\s*3\\b"
+  ],
+  "expected_config": {
+    "retries": 3,
+    "timeout": 5
+  },
+  "json_files": {
+    "config/client.json": {
+      "retries": 3,
+      "timeout": 5
+    }
+  },
+  "module": "src.client",
+  "oracle_version": "stateful48-oracle-v4",
+  "required_artifacts": {
+    "config/client.json": "timeout",
+    "docs/operations.md": "5 seconds",
+    "src/client.py": "timeout"
+  },
+  "required_files": [
+    "src/client.py",
+    "config/client.json",
+    "docs/operations.md"
+  ],
+  "task_id": "multi_01_api_and_config",
+  "vectors": [
+    {
+      "expected": {
+        "retries": 3,
+        "timeout": 5
+      },
+      "input": {}
+    }
+  ]
+}

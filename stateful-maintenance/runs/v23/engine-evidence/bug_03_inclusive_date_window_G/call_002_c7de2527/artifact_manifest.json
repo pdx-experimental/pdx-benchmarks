@@ -1,0 +1,28 @@
+{
+  "schema_version": "pdx_artifact_manifest_v0",
+  "artifact_id": "call_002_c7de2527",
+  "artifact_type": "tool-call",
+  "files": [],
+  "provenance": [
+    {
+      "step_id": "dispatch",
+      "tool": "pdx.stateful.read_file",
+      "inputs": {
+        "arguments": {
+          "path": "src/reporting.py",
+          "max_lines": 300
+        }
+      },
+      "outputs": {
+        "content": "from datetime import datetime\ndef parse(value):\n    d = datetime.fromisoformat(value.replace('Z', '+00:00'))\n    if d.utcoffset() is None: raise ValueError('timezone required')\n    return d\ndef run(payload):\n    start, end = parse(payload['start']), parse(payload['end'])\n    return {'events': [x for x in payload['events'] if start < parse(x) < end]}"
+      }
+    }
+  ],
+  "verification": [
+    {
+      "check": "step_completed:dispatch",
+      "status": "pass",
+      "details": "Step dispatch completed"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "listener": "127.0.0.1:8443",
+  "retry_limit": 3,
+  "security": {
+    "certificate_path": "/certs/service.pem",
+    "tls_min_version": "1.0"
+  }
+}

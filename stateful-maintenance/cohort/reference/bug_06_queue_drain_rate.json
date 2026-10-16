@@ -1,0 +1,3 @@
+{
+  "src/queue_capacity.py": "import math\ndef run(payload):\n    return {'seconds': math.ceil(payload['depth'] / payload['rate']) if payload['rate'] > 0 else None}\n"
+}

@@ -1,0 +1,8 @@
+{
+  "oracle_version": "stateful48-oracle-v4",
+  "summary_terms": [
+    "interval",
+    "service"
+  ],
+  "task_id": "ambiguity_06_partial_logs"
+}

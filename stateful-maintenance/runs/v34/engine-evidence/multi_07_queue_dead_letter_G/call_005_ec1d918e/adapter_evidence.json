@@ -1,0 +1,64 @@
+{
+  "arguments_sha256": "649a4204eb7183908f1630e0c4c879f30fff5eaa4c58ee16dcfb132d48302311",
+  "artifact_manifest": {
+    "artifact_id": "call_005_ec1d918e",
+    "artifact_type": "tool-call",
+    "files": [],
+    "provenance": [
+      {
+        "inputs": {
+          "arguments": {
+            "content": "import json\nfrom pathlib import Path\n\ndef run(payload):\n    c = json.loads(Path('config/queues.json').read_text())\n    if payload['success']:\n        return {'action':'ack','metric':None}\n    if payload['attempts'] <= c['max_attempts']:\n        return {'action':'retry','metric':None}\n    return {'action':c['dead_letter'],'metric':c['failure_metric']}",
+            "path": "src/worker.py"
+          }
+        },
+        "outputs": {
+          "changed_paths": [
+            "src/worker.py"
+          ]
+        },
+        "step_id": "dispatch",
+        "tool": "pdx.stateful.write_file"
+      }
+    ],
+    "schema_version": "pdx_artifact_manifest_v0",
+    "verification": [
+      {
+        "check": "step_completed:dispatch",
+        "details": "Step dispatch completed",
+        "status": "pass"
+      }
+    ]
+  },
+  "engine": "pdx-artifact-engine",
+  "engine_version": "0.3.0a12",
+  "request_id": "call_005_ec1d918e",
+  "requested_arguments_sha256": "649a4204eb7183908f1630e0c4c879f30fff5eaa4c58ee16dcfb132d48302311",
+  "requested_tool": "write_file",
+  "run_manifest": {
+    "artifact_manifest": "artifact_manifest.json",
+    "errors": [],
+    "planner": "stateful-gov",
+    "request_id": "call_005_ec1d918e",
+    "run_id": "run_2700b60b1b3a",
+    "schema_version": "pdx_run_manifest_v0",
+    "status": "completed",
+    "steps": [
+      {
+        "detail": "ok",
+        "kind": "tool",
+        "name": "pdx.stateful.write_file",
+        "status": "completed",
+        "step_id": "dispatch"
+      }
+    ],
+    "verification": [
+      {
+        "check": "step_completed:dispatch",
+        "details": "Step dispatch completed",
+        "status": "pass"
+      }
+    ]
+  },
+  "tool": "write_file"
+}

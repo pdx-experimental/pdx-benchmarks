@@ -1,0 +1,9 @@
+{
+  "oracle_version": "stateful48-oracle-v4",
+  "summary_terms": [
+    "date",
+    "retention",
+    "authorization"
+  ],
+  "task_id": "ambiguity_07_missing_authority"
+}

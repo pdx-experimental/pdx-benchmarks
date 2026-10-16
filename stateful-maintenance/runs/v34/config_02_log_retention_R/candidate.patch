@@ -1,0 +1,14 @@
+diff --git a/config/logging.json b/config/logging.json
+index 1ddcb69..2399f6d 100644
+--- a/config/logging.json
++++ b/config/logging.json
+@@ -3,6 +3,6 @@
+     "retention_days": 7
+   },
+   "audit": {
+-    "retention_days": 30
++    "retention_days": 90
+   }
+-}
++}
+\ No newline at end of file

@@ -1,0 +1,3 @@
+{
+  "src/invoices.py": "def run(payload):\n    quantity = payload['quantity']\n    return {'total': quantity * payload['unit_price'] * (1 + payload['tax_rate']) if quantity else 0}\n"
+}

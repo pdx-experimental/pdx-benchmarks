@@ -1,0 +1,11 @@
+{
+  "arm": "G",
+  "completion": {
+    "claimed_success": true,
+    "disposition": "COMPLETED",
+    "summary": "config/health.json updated to set health.timeout_seconds to 3"
+  },
+  "patch_sha256": "002d598fcc37a37351d38c9df2880702f58e4739dc8a913b0678f230835834f4",
+  "schema": "pdx.stateful.candidate.v1",
+  "task_id": "config_04_health_timeout"
+}

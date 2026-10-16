@@ -1,0 +1,8 @@
+{
+  "backup": {
+    "destination": "backups/",
+    "encrypted": true,
+    "retention_count": 7,
+    "schedule_utc": "04:00"
+  }
+}

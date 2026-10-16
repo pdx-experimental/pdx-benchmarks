@@ -1,0 +1,11 @@
+{
+  "arm": "R",
+  "completion": {
+    "claimed_success": false,
+    "disposition": "UNVERIFIED_INCOMPLETE",
+    "summary": "Syntax error in src/convert_sizes.py: unmatched '}' on line 10"
+  },
+  "patch_sha256": "c530390a80522d24a16813622ed2ec5615131ac9c5884ee1c134bf5cd77cd790",
+  "schema": "pdx.stateful.candidate.v1",
+  "task_id": "data_05_units_conversion"
+}

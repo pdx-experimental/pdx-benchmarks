@@ -1,0 +1,28 @@
+{
+  "schema_version": "pdx_artifact_manifest_v0",
+  "artifact_id": "call_002_5f0eeb5f",
+  "artifact_type": "tool-call",
+  "files": [],
+  "provenance": [
+    {
+      "step_id": "dispatch",
+      "tool": "pdx.stateful.read_file",
+      "inputs": {
+        "arguments": {
+          "path": "config/health.json",
+          "max_lines": 300
+        }
+      },
+      "outputs": {
+        "content": "{\n  \"health\": {\n    \"endpoint\": \"/live\",\n    \"failure_threshold\": 3,\n    \"interval_seconds\": 30,\n    \"timeout_seconds\": 10\n  }\n}"
+      }
+    }
+  ],
+  "verification": [
+    {
+      "check": "step_completed:dispatch",
+      "status": "pass",
+      "details": "Step dispatch completed"
+    }
+  ]
+}

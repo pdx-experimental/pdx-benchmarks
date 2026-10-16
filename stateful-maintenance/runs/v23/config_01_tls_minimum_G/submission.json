@@ -1,0 +1,11 @@
+{
+  "arm": "G",
+  "completion": {
+    "claimed_success": false,
+    "disposition": "UNVERIFIED_INCOMPLETE",
+    "summary": "Syntax error in config/service.json prevented submission"
+  },
+  "patch_sha256": "4c163adc3b5765d6866652e5afb37fd4e6bc50f59961bb9483439ebd448c77fc",
+  "schema": "pdx.stateful.candidate.v1",
+  "task_id": "config_01_tls_minimum"
+}

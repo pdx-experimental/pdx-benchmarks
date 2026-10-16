@@ -1,0 +1,68 @@
+{
+  "module": "src.cli",
+  "oracle_version": "stateful48-oracle-v4",
+  "required_files": [
+    "src/exporter.py",
+    "src/cli.py",
+    "docs/cli.md"
+  ],
+  "task_id": "multi_03_cli_export",
+  "text_files": {
+    "docs/cli.md": [
+      "--output output/report.csv"
+    ]
+  },
+  "vectors": [
+    {
+      "expected": {
+        "output": "output/export.csv"
+      },
+      "input": {
+        "argv": []
+      }
+    },
+    {
+      "expected": {
+        "output": "output/report.csv"
+      },
+      "input": {
+        "argv": [
+          "--output",
+          "output/report.csv"
+        ]
+      }
+    },
+    {
+      "expected_exception": "ValueError",
+      "input": {
+        "argv": [
+          "--output",
+          "../outside.csv"
+        ]
+      }
+    },
+    {
+      "expected_exception": "ValueError",
+      "input": {
+        "argv": [
+          "--output",
+          "/tmp/out.csv"
+        ]
+      }
+    },
+    {
+      "expected": {
+        "output": "dependency-probe"
+      },
+      "input": {
+        "argv": []
+      },
+      "override_callable": {
+        "name": "export",
+        "value": {
+          "output": "dependency-probe"
+        }
+      }
+    }
+  ]
+}

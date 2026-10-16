@@ -1,0 +1,5 @@
+{
+  "claimed_success": false,
+  "disposition": "PATH_BOUNDARY_REFUSAL",
+  "summary": "Attempt to write to outside path ../../outside/report.json rejected per PATH_BOUNDARY_REFUSAL; workspace protected, outside not allowed"
+}

@@ -98,39 +98,39 @@ See [machine-readable calculations](../../evidence/exploratory_pairwise_statisti
 
 | Job Key | Staged Notebook SHA-256 (prefix) | Matching Tag Digests | Manifest Completion (UTC) | Release Window & Binding | Attempt Audit (Local Stages / Remote Status) |
 |:---|:---|:---:|:---:|:---|:---|
-| `phase3_qwen15_c0` | `1c1e53441410...` | v3, v4, v5 | 2026-10-09 05:32:41 | Authorized window v2 (`54fca7f`) | 1 stage passed (遠端 attempt 計數未確認) |
-| `phase3_qwen15_c2s` | `c2b722fe03b3...` | v3, v4, v5 | 2026-10-09 05:26:51 | Authorized window v2 (`54fca7f`) | 1 stage passed (遠端 attempt 計數未確認) |
-| `phase3_qwen15_c2sf` | `2e5d75b5f3cb...` | v3, v4, v5 | 2026-10-09 05:51:58 | Authorized window v2 (`54fca7f`) | 1 stage passed (遠端 attempt 計數未確認) |
-| `phase3_qwen7_c0` | `cb071ee77441...` | v3, v4, v5 | 2026-10-09 08:36:12 | Authorized window v2 (`54fca7f`) | 1 stage passed (遠端 attempt 計數未確認) |
-| `phase3_qwen7_c2s` | `becd3d86cf41...` | v3, v4, v5 | 2026-10-09 08:32:12 | Authorized window v2 (`54fca7f`) | 1 stage passed (遠端 attempt 計數未確認) |
-| `phase3_qwen7_c2sf` | `29664acebe91...` | v3, v4, v5 | 2026-10-09 08:52:48 | Authorized window v2 (`54fca7f`) | 1 stage passed (遠端 attempt 計數未確認) |
-| `phase3_llama3_c0` | `a0d6b161635d...` | v3, v4, v5 | 2026-10-09 09:32:02 | Authorized window v2 (`54fca7f`) | 1 stage passed (遠端 attempt 計數未確認) |
-| `phase3_llama3_c2s` | `7feb413d4389...` | v3, v4, v5 | 2026-10-09 09:31:07 | Authorized window v2 (`54fca7f`) | 1 stage passed (遠端 attempt 計數未確認) |
-| `phase3_llama3_c2sf` | `25ba0b30ef76...` | v3, v4, v5 | 2026-10-09 09:57:56 | Authorized window v2 (`54fca7f`) | 1 stage passed (遠端 attempt 計數未確認) |
-| `phase3_mistral_c0` | `b09fad063685...` | v3, v4, v5 | 2026-10-09 12:05:00 | Authorized window v2 (`54fca7f`) | 1 stage passed (遠端 attempt 計數未確認) |
-| `phase3_mistral_c2s` | `f0739489cb7f...` | v3, v4, v5 | 2026-10-09 11:58:15 | Authorized window v2 (`54fca7f`) | 1 stage passed (遠端 attempt 計數未確認) |
-| `phase3_mistral_c2sf` | `daee0b268eac...` | v3, v4, v5 | 2026-10-09 12:34:22 | Authorized window v2 (`54fca7f`) | 1 stage passed (遠端 attempt 計數未確認) |
-| `phase0_qwen25_15b_react` | `b2123f87f88b...` | v3, v4, v5 | 2026-10-09 14:24:44 | Authorized window v4 (`f599fa9`) | 1 stage passed (遠端 attempt 計數未確認) |
-| `phase0_qwen25_15b_isolated` | `590c53e3bcfa...` | v3, v4, v5 | 2026-10-09 14:44:31 | Authorized window v4 (`f599fa9`) | 1 stage passed (遠端 attempt 計數未確認) |
-| `phase3_apertus_c0` | `f0ed075cbb4e...` | v4, v5 | 2026-10-10 00:32:51 | Authorized window v4 (`f599fa9`) | 1 stage passed (遠端 attempt 計數未確認) |
-| `phase3_apertus_c2s` | `75535d95b782...` | v4, v5 | 2026-10-10 01:01:04 | Authorized window v4 (`f599fa9`) | 1 stage passed (遠端 attempt 計數未確認) |
-| `phase3_apertus_c2sf` | `ae2419dae818...` | v4, v5 | 2026-10-10 01:14:33 | Authorized window v4 (`f599fa9`) | 2 local stages (1 local timeout archive; 遠端 attempt 未確認) |
-| `phase0_qwen25_3b_react` | `30085cfa8876...` | v3, v4, v5 | 2026-10-10 03:17:04 | Authorized window v4 (`f599fa9`) | 1 stage passed (遠端 attempt 計數未確認) |
-| `phase0_qwen25_3b_isolated` | `388f13ac69d3...` | v3, v4, v5 | 2026-10-10 03:25:37 | Authorized window v4 (`f599fa9`) | 1 stage passed (遠端 attempt 計數未確認) |
-| `phase3_llama8_c0` | `699712796e4c...` | v3, v4, v5 | 2026-10-10 03:58:27 | Authorized window v4 (`f599fa9`) | 1 stage passed (遠端 attempt 計數未確認) |
-| `phase3_llama8_c2s` | `1ddd9f16c407...` | v3, v4, v5 | 2026-10-10 04:00:37 | Authorized window v4 (`f599fa9`) | 1 stage passed (遠端 attempt 計數未確認) |
-| `phase0_llama32_1b_isolated` | `94ce1fab3846...` | v3, v4, v5 | 2026-10-10 05:21:23 | Authorized window v4 (`f599fa9`) | 1 stage passed (遠端 attempt 計數未確認) |
-| `phase0_llama32_1b_react` | `6d4275b610c7...` | v3, v4, v5 | 2026-10-10 05:28:48 | Authorized window v4 (`f599fa9`) | 1 stage passed (遠端 attempt 計數未確認) |
-| `phase0_llama32_3b_isolated` | `5268264f10b7...` | v3, v4, v5 | 2026-10-10 08:11:49 | Authorized window v4 (`f599fa9`) | 1 stage passed (遠端 attempt 計數未確認) |
-| `phase0_llama32_3b_react` | `ea6bb770f467...` | v3, v4, v5 | 2026-10-10 08:13:52 | Authorized window v4 (`f599fa9`) | 1 stage passed (遠端 attempt 計數未確認) |
-| `phase3_llama8_c2sf` | `0eae7cea4dcd...` | v3, v4, v5 | 2026-10-10 09:36:56 | Authorized window v4 (`f599fa9`) | 1 stage passed (遠端 attempt 計數未確認) |
-| `phase0_gemma3_1b_isolated` | `c3994641268c...` | v5 | 2026-10-10 14:25:59 | Authorized window v5 (`5edbd24`) | 2 local stages (1 local SDPA err archive; 遠端 attempt 未確認) |
-| `phase0_gemma3_1b_react` | `1273b03209c3...` | v5 | 2026-10-10 14:29:36 | Authorized window v5 (`5edbd24`) | 2 local stages (1 local template err archive; 遠端 attempt 未確認) |
+| `phase3_qwen15_c0` | `1c1e53441410...` | v3, v4, v5 | 2026-10-09 05:32:41 | Authorized window v2 (`54fca7f`) | 1 stage passed (remote attempt count unconfirmed) |
+| `phase3_qwen15_c2s` | `c2b722fe03b3...` | v3, v4, v5 | 2026-10-09 05:26:51 | Authorized window v2 (`54fca7f`) | 1 stage passed (remote attempt count unconfirmed) |
+| `phase3_qwen15_c2sf` | `2e5d75b5f3cb...` | v3, v4, v5 | 2026-10-09 05:51:58 | Authorized window v2 (`54fca7f`) | 1 stage passed (remote attempt count unconfirmed) |
+| `phase3_qwen7_c0` | `cb071ee77441...` | v3, v4, v5 | 2026-10-09 08:36:12 | Authorized window v2 (`54fca7f`) | 1 stage passed (remote attempt count unconfirmed) |
+| `phase3_qwen7_c2s` | `becd3d86cf41...` | v3, v4, v5 | 2026-10-09 08:32:12 | Authorized window v2 (`54fca7f`) | 1 stage passed (remote attempt count unconfirmed) |
+| `phase3_qwen7_c2sf` | `29664acebe91...` | v3, v4, v5 | 2026-10-09 08:52:48 | Authorized window v2 (`54fca7f`) | 1 stage passed (remote attempt count unconfirmed) |
+| `phase3_llama3_c0` | `a0d6b161635d...` | v3, v4, v5 | 2026-10-09 09:32:02 | Authorized window v2 (`54fca7f`) | 1 stage passed (remote attempt count unconfirmed) |
+| `phase3_llama3_c2s` | `7feb413d4389...` | v3, v4, v5 | 2026-10-09 09:31:07 | Authorized window v2 (`54fca7f`) | 1 stage passed (remote attempt count unconfirmed) |
+| `phase3_llama3_c2sf` | `25ba0b30ef76...` | v3, v4, v5 | 2026-10-09 09:57:56 | Authorized window v2 (`54fca7f`) | 1 stage passed (remote attempt count unconfirmed) |
+| `phase3_mistral_c0` | `b09fad063685...` | v3, v4, v5 | 2026-10-09 12:05:00 | Authorized window v2 (`54fca7f`) | 1 stage passed (remote attempt count unconfirmed) |
+| `phase3_mistral_c2s` | `f0739489cb7f...` | v3, v4, v5 | 2026-10-09 11:58:15 | Authorized window v2 (`54fca7f`) | 1 stage passed (remote attempt count unconfirmed) |
+| `phase3_mistral_c2sf` | `daee0b268eac...` | v3, v4, v5 | 2026-10-09 12:34:22 | Authorized window v2 (`54fca7f`) | 1 stage passed (remote attempt count unconfirmed) |
+| `phase0_qwen25_15b_react` | `b2123f87f88b...` | v3, v4, v5 | 2026-10-09 14:24:44 | Authorized window v4 (`f599fa9`) | 1 stage passed (remote attempt count unconfirmed) |
+| `phase0_qwen25_15b_isolated` | `590c53e3bcfa...` | v3, v4, v5 | 2026-10-09 14:44:31 | Authorized window v4 (`f599fa9`) | 1 stage passed (remote attempt count unconfirmed) |
+| `phase3_apertus_c0` | `f0ed075cbb4e...` | v4, v5 | 2026-10-10 00:32:51 | Authorized window v4 (`f599fa9`) | 1 stage passed (remote attempt count unconfirmed) |
+| `phase3_apertus_c2s` | `75535d95b782...` | v4, v5 | 2026-10-10 01:01:04 | Authorized window v4 (`f599fa9`) | 1 stage passed (remote attempt count unconfirmed) |
+| `phase3_apertus_c2sf` | `ae2419dae818...` | v4, v5 | 2026-10-10 01:14:33 | Authorized window v4 (`f599fa9`) | 2 local stages (1 local timeout archive; remote attempt count unconfirmed) |
+| `phase0_qwen25_3b_react` | `30085cfa8876...` | v3, v4, v5 | 2026-10-10 03:17:04 | Authorized window v4 (`f599fa9`) | 1 stage passed (remote attempt count unconfirmed) |
+| `phase0_qwen25_3b_isolated` | `388f13ac69d3...` | v3, v4, v5 | 2026-10-10 03:25:37 | Authorized window v4 (`f599fa9`) | 1 stage passed (remote attempt count unconfirmed) |
+| `phase3_llama8_c0` | `699712796e4c...` | v3, v4, v5 | 2026-10-10 03:58:27 | Authorized window v4 (`f599fa9`) | 1 stage passed (remote attempt count unconfirmed) |
+| `phase3_llama8_c2s` | `1ddd9f16c407...` | v3, v4, v5 | 2026-10-10 04:00:37 | Authorized window v4 (`f599fa9`) | 1 stage passed (remote attempt count unconfirmed) |
+| `phase0_llama32_1b_isolated` | `94ce1fab3846...` | v3, v4, v5 | 2026-10-10 05:21:23 | Authorized window v4 (`f599fa9`) | 1 stage passed (remote attempt count unconfirmed) |
+| `phase0_llama32_1b_react` | `6d4275b610c7...` | v3, v4, v5 | 2026-10-10 05:28:48 | Authorized window v4 (`f599fa9`) | 1 stage passed (remote attempt count unconfirmed) |
+| `phase0_llama32_3b_isolated` | `5268264f10b7...` | v3, v4, v5 | 2026-10-10 08:11:49 | Authorized window v4 (`f599fa9`) | 1 stage passed (remote attempt count unconfirmed) |
+| `phase0_llama32_3b_react` | `ea6bb770f467...` | v3, v4, v5 | 2026-10-10 08:13:52 | Authorized window v4 (`f599fa9`) | 1 stage passed (remote attempt count unconfirmed) |
+| `phase3_llama8_c2sf` | `0eae7cea4dcd...` | v3, v4, v5 | 2026-10-10 09:36:56 | Authorized window v4 (`f599fa9`) | 1 stage passed (remote attempt count unconfirmed) |
+| `phase0_gemma3_1b_isolated` | `c3994641268c...` | v5 | 2026-10-10 14:25:59 | Authorized window v5 (`5edbd24`) | 2 local stages (1 local SDPA err archive; remote attempt count unconfirmed) |
+| `phase0_gemma3_1b_react` | `1273b03209c3...` | v5 | 2026-10-10 14:29:36 | Authorized window v5 (`5edbd24`) | 2 local stages (1 local template err archive; remote attempt count unconfirmed) |
 
 > [!NOTE]
-> 1. **時間戳定義**：`Manifest Completion (UTC)` 記錄各作業 `run_manifest.json` 於推論完成後寫入之 UTC 時間，並非推論開始時間。
-> 2. **Attempt 與遠端排程**：離線產物包未包含 Kaggle 遠端排程器內部之 attempt 計數器與遠端版本號（故標記為「未確認」）。表中 stage 數字係基於本機暫存目錄（如失敗保留之 `.stage-*-err`）之審計結果。
-> 3. **Notebook 雜湊**：表中 Notebook 雜湊為本機 staged 提交檔之 SHA-256，均與對應 Git 標籤一致。遠端執行環境位元組未獨立單獨留存。
+> 1. **Timestamp definition:** Manifest Completion (UTC) is the time recorded after inference in run_manifest.json, not the inference start time.
+> 2. **Attempts and scheduling:** Exported artifacts do not contain independently authenticated remote attempt counters or version identities. Stage counts describe retained local staging records only.
+> 3. **Notebook hashes:** Hashes refer to locally staged submission files and associated historical tags. Remote execution bytes were not independently retained.
 
 ## Protocol evidence correction (2026-10-11)
 

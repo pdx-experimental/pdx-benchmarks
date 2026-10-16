@@ -1,0 +1,30 @@
+{
+  "schema_version": "pdx_artifact_manifest_v0",
+  "artifact_id": "call_003_bca5b13f",
+  "artifact_type": "tool-call",
+  "files": [],
+  "provenance": [
+    {
+      "step_id": "dispatch",
+      "tool": "pdx.stateful.write_file",
+      "inputs": {
+        "arguments": {
+          "path": "src/convert_sizes.py",
+          "content": "def run(payload):\n    units = {\n        'B': 1,\n        'KiB': 1024,\n        'MiB': 1000000\n    }\n    if payload['unit'] not in units:\n        return {'error': 'unknown_unit'}\n    \n    return {'bytes': payload['value'] * units[payload['unit']]}}"
+        }
+      },
+      "outputs": {
+        "changed_paths": [
+          "src/convert_sizes.py"
+        ]
+      }
+    }
+  ],
+  "verification": [
+    {
+      "check": "step_completed:dispatch",
+      "status": "pass",
+      "details": "Step dispatch completed"
+    }
+  ]
+}

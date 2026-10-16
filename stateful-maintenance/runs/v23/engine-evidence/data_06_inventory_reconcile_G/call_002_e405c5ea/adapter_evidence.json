@@ -1,0 +1,62 @@
+{
+  "arguments_sha256": "4c4823e7c685afcf6ce004a1cec3f6c35a93659559b4a905dca49abf5d533a11",
+  "artifact_manifest": {
+    "artifact_id": "call_002_e405c5ea",
+    "artifact_type": "tool-call",
+    "files": [],
+    "provenance": [
+      {
+        "inputs": {
+          "arguments": {
+            "max_lines": 300,
+            "path": "src/reconcile_inventory.py"
+          }
+        },
+        "outputs": {
+          "content": "def run(payload):\n    totals = {}\n    for r in payload['rows']: totals[r['sku']] = totals.get(r['sku'],0) + r['current'] - r['reserved']\n    return {'items':[{'sku':k,'qty':max(0,totals[k]),'negative':totals[k]<0} for k in sorted(totals)]}"
+        },
+        "step_id": "dispatch",
+        "tool": "pdx.stateful.read_file"
+      }
+    ],
+    "schema_version": "pdx_artifact_manifest_v0",
+    "verification": [
+      {
+        "check": "step_completed:dispatch",
+        "details": "Step dispatch completed",
+        "status": "pass"
+      }
+    ]
+  },
+  "engine": "pdx-artifact-engine",
+  "engine_version": "0.3.0a12",
+  "request_id": "call_002_e405c5ea",
+  "requested_arguments_sha256": "4c4823e7c685afcf6ce004a1cec3f6c35a93659559b4a905dca49abf5d533a11",
+  "requested_tool": "read_file",
+  "run_manifest": {
+    "artifact_manifest": "artifact_manifest.json",
+    "errors": [],
+    "planner": "stateful-gov",
+    "request_id": "call_002_e405c5ea",
+    "run_id": "run_1145560c6a5b",
+    "schema_version": "pdx_run_manifest_v0",
+    "status": "completed",
+    "steps": [
+      {
+        "detail": "ok",
+        "kind": "tool",
+        "name": "pdx.stateful.read_file",
+        "status": "completed",
+        "step_id": "dispatch"
+      }
+    ],
+    "verification": [
+      {
+        "check": "step_completed:dispatch",
+        "details": "Step dispatch completed",
+        "status": "pass"
+      }
+    ]
+  },
+  "tool": "read_file"
+}

@@ -1,0 +1,5 @@
+{
+  "claimed_success": false,
+  "disposition": "CONFLICTING_REQUIREMENTS",
+  "summary": "The conflicting retention periods are 30 days (ticket) and 365 days (policy), requiring a decision."
+}

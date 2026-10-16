@@ -1,0 +1,11 @@
+{
+  "arm": "G",
+  "completion": {
+    "claimed_success": true,
+    "disposition": "COMPLETED",
+    "summary": "src/export_events.py updated with correct datetime.isoformat() and naive timestamp rejection logic"
+  },
+  "patch_sha256": "fd61c587b9bfe8159679146ef0acc7c6805769b475f905bc8cae2f10caf4ddc9",
+  "schema": "pdx.stateful.candidate.v1",
+  "task_id": "data_02_iso_dates"
+}

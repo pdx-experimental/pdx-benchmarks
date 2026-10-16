@@ -1,0 +1,11 @@
+{
+  "arm": "R",
+  "completion": {
+    "claimed_success": false,
+    "disposition": "UNVERIFIED_INCOMPLETE",
+    "summary": "research deadline reached; partial action not executed"
+  },
+  "patch_sha256": "2f613ff7bb5ecb7aa23e4f420990669fe207d56f36e634c4f81113428b84f43f",
+  "schema": "pdx.stateful.candidate.v1",
+  "task_id": "bug_07_env_boolean"
+}

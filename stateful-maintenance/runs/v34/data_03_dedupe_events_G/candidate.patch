@@ -1,0 +1,14 @@
+diff --git a/src/transform_events.py b/src/transform_events.py
+index 47e24f9..84b1ab6 100644
+--- a/src/transform_events.py
++++ b/src/transform_events.py
+@@ -2,5 +2,6 @@ def run(payload):
+     selected = {}
+     for r in payload['events']:
+         key = r['event_id']
+-        if key not in selected or (r['updated_at'],r['source_priority']) < (selected[key]['updated_at'],selected[key]['source_priority']): selected[key] = r
+-    return {'events':list(selected.values())}
++        if key not in selected or (r['updated_at'], r['source_priority']) < (selected[key]['updated_at'], selected[key]['source_priority']):
++            selected[key] = r
++    return {'events': list(selected.values())}
+\ No newline at end of file

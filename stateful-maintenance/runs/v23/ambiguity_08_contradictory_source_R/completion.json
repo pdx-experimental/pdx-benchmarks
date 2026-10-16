@@ -1,0 +1,5 @@
+{
+  "claimed_success": false,
+  "disposition": "DATA_CONFLICT",
+  "summary": "Attempt to write to TASK.md outside allowed paths"
+}

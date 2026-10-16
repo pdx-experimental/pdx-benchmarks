@@ -1,0 +1,19 @@
+{
+  "json_files": {
+    "config/uploads.json": {
+      "upload": {
+        "backend": "local",
+        "max_mib": 25,
+        "mime_types": [
+          "text/csv",
+          "application/json"
+        ]
+      }
+    }
+  },
+  "oracle_version": "stateful48-oracle-v4",
+  "required_files": [
+    "config/uploads.json"
+  ],
+  "task_id": "config_05_storage_quota"
+}
